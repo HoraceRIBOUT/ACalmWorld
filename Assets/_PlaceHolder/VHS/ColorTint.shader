@@ -1,4 +1,4 @@
-﻿Shader "CustomMy/ColorTint"
+﻿Shader "ACalmPostProcess/ColorTint"
 {
     Properties
     {
