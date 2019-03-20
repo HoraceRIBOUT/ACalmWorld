@@ -1,0 +1,485 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bba57cfc1244734b0a3f4b4631d43a, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 2c5b7e0f5392624d8fa47ddf70bbb28d
+    GuidInternal: 
+    m_lastTime: -8586486720234775808
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 0ff6def33c40d34caed71a7661ebbde4
+    GuidInternal: 
+    m_lastTime: -8586486667794775808
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 2dbab81db74f9c47b960c9262200ba39
+    GuidInternal: 
+    m_lastTime: -8586486720234775808
+    List:
+    - name: Prototype
+      guid: dc58634407e912408ecc6828eb7b30f6
+      id: 3565403361
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Prototype
+        ObjectType: 7
+      Path: Default Work Unit\Prototype
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: d462de141e6c514394705aab8fc2359b
+    GuidInternal: 
+    m_lastTime: -8586486720234775808
+    List: []
+  - PhysicalPath: Events\Musique.wwu
+    ParentPhysicalPath: 
+    guid: 8b3b7fd60fe434469f67fb15c866b032
+    GuidInternal: 
+    m_lastTime: -8586486720234775808
+    List:
+    - name: Mute_ACW_Lofi_Musique_Percus_01_Lp
+      guid: 35403a9dbef26746833ef0121cea4cc5
+      id: 2522917259
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: Mute
+        ObjectType: 4
+      - ElementName: Mute_ACW_Lofi_Musique_Percus_01_Lp
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\Mute\\Mute_ACW_Lofi_Musique_Percus_01_Lp"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Mute_ACW_Lofi_Musique_PianoVintage_01_Lp
+      guid: e80365a4d3ebb546bc46845c1e9902c4
+      id: 2267308724
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: Mute
+        ObjectType: 4
+      - ElementName: Mute_ACW_Lofi_Musique_PianoVintage_01_Lp
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\Mute\\Mute_ACW_Lofi_Musique_PianoVintage_01_Lp"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Mute_ACW_Lofi_Musique_Synth_Aerie_01_Lp
+      guid: fbe0b70c7b7d1b4a9b93c01d16320612
+      id: 137050274
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: Mute
+        ObjectType: 4
+      - ElementName: Mute_ACW_Lofi_Musique_Synth_Aerie_01_Lp
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\Mute\\Mute_ACW_Lofi_Musique_Synth_Aerie_01_Lp"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Mute_ACW_Lofi_Musique_Synth_Low_01_Lp
+      guid: 13d7400d5a3a314588e7955442d7268e
+      id: 1865460946
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: Mute
+        ObjectType: 4
+      - ElementName: Mute_ACW_Lofi_Musique_Synth_Low_01_Lp
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\Mute\\Mute_ACW_Lofi_Musique_Synth_Low_01_Lp"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Mute_ACW_Lofi_Musique1_Synth_Mid
+      guid: 921a95df46e79549b72a6975dc73af5a
+      id: 1810795320
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: Mute
+        ObjectType: 4
+      - ElementName: Mute_ACW_Lofi_Musique1_Synth_Mid
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\Mute\\Mute_ACW_Lofi_Musique1_Synth_Mid"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_ACW_Lofi_Musique_01_Aerie
+      guid: 696b2d5574177f4888c63f2a7f897521
+      id: 2826529837
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Play_ACW_Lofi_Musique_01_Aerie
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\Play_Innit\\Play_ACW_Lofi_Musique_01_Aerie"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_ACW_Lofi_Musique_01_All
+      guid: 57b1c7c26d9ffe458039bdfd828591eb
+      id: 3349124594
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: Play_ACW_Lofi_Musique_01_All
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\Play_ACW_Lofi_Musique_01_All"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_ACW_Lofi_Musique_01_Percus_Lp
+      guid: dfa52390063a974c89f6d1d51015565d
+      id: 2037650088
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Play_ACW_Lofi_Musique_01_Percus_Lp
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\Play_Innit\\Play_ACW_Lofi_Musique_01_Percus_Lp"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_ACW_Lofi_Musique_PianoVintage_01
+      guid: f7c7f9f9e054704da97a4eec80613afa
+      id: 1964948850
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Play_ACW_Lofi_Musique_PianoVintage_01
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\Play_Innit\\Play_ACW_Lofi_Musique_PianoVintage_01"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_ACW_Lofi_Musique_Synth_Low
+      guid: 07b7d9751e249a40b4bde58f03aa2fa3
+      id: 1263386092
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Play_ACW_Lofi_Musique_Synth_Low
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\Play_Innit\\Play_ACW_Lofi_Musique_Synth_Low"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_ACW_Lofi_Musique_Synth_Mid
+      guid: b215070ec9e0a84994ece976af7ddee5
+      id: 625983492
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Play_ACW_Lofi_Musique_Synth_Mid
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\Play_Innit\\Play_ACW_Lofi_Musique_Synth_Mid"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UnMute_ACW_Lofi_Musique1_Percus
+      guid: 69258df81352a84cbb1b7b2fe66c8dc6
+      id: 3746330588
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: UnMute
+        ObjectType: 4
+      - ElementName: UnMute_ACW_Lofi_Musique1_Percus
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\UnMute\\UnMute_ACW_Lofi_Musique1_Percus"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UnMute_ACW_Lofi_Musique1_PianoVintage
+      guid: 27cdfa2635533840b0506e37f27f0ed6
+      id: 3232013003
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: UnMute
+        ObjectType: 4
+      - ElementName: UnMute_ACW_Lofi_Musique1_PianoVintage
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\UnMute\\UnMute_ACW_Lofi_Musique1_PianoVintage"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UnMute_ACW_Lofi_Musique1_Synth_Aerie
+      guid: 88cf725b09064d419685dea618b19d2f
+      id: 3032933881
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: UnMute
+        ObjectType: 4
+      - ElementName: UnMute_ACW_Lofi_Musique1_Synth_Aerie
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\UnMute\\UnMute_ACW_Lofi_Musique1_Synth_Aerie"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UnMute_ACW_Lofi_Musique1_Synth_Low
+      guid: 8339f2dd5ce7ee4e9baaa65486f8e090
+      id: 3318802773
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: UnMute
+        ObjectType: 4
+      - ElementName: UnMute_ACW_Lofi_Musique1_Synth_Low
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\UnMute\\UnMute_ACW_Lofi_Musique1_Synth_Low"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UnMute_ACW_Lofi_Musique1_Synth_Mid
+      guid: 96ff9e91e8ae5947b30ff7dfb700cb48
+      id: 2882437625
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: "Musique\xB001"
+        ObjectType: 4
+      - ElementName: UnMute
+        ObjectType: 4
+      - ElementName: UnMute_ACW_Lofi_Musique1_Synth_Mid
+        ObjectType: 3
+      Path: "Musique\\Musique\xB001\\UnMute\\UnMute_ACW_Lofi_Musique1_Synth_Mid"
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 05c1c6b07a958446a3d6bd4d76f94476
+    GuidInternal: 
+    m_lastTime: -8586486672454775808
+    List:
+    - name: Kick
+      guid: 58530fa645fa094d8f3840b80c0b22f9
+      id: 2181839183
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Kick
+        ObjectType: 13
+      Path: Default Work Unit\Kick
+    - name: Piano_Vintage
+      guid: d448187836f17243bb2d42b1b1b9f184
+      id: 2702213971
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Piano_Vintage
+        ObjectType: 13
+      Path: Default Work Unit\Piano_Vintage
+    - name: Synth_Low
+      guid: 6d23e8c87a85ed4280d76df5a9f1cbad
+      id: 2478286086
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Synth_Low
+        ObjectType: 13
+      Path: Default Work Unit\Synth_Low
+    - name: Synth_Mid
+      guid: fbf0839c40865243b3d385d0b521b069
+      id: 3115982782
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Synth_Mid
+        ObjectType: 13
+      Path: Default Work Unit\Synth_Mid
+    - name: Sytnh_aerie
+      guid: 735d26e6952cee44ac3b9c9567d42766
+      id: 56683494
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Sytnh_aerie
+        ObjectType: 13
+      Path: Default Work Unit\Sytnh_aerie
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 7a2691cf65a679439ca95d450aab9be0
+    GuidInternal: 
+    m_lastTime: -8586486720234775808
+    List:
+    - name: Music_01
+      guid: f37371e7e44c2046b9aa8c40ce402ca9
+      id: 1973439780
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music_01
+        ObjectType: 9
+      Path: Default Work Unit\Music_01
+      values:
+      - name: None
+        guid: bee26ff64ad4414f9e75fc38c26c3e3b
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Percus
+        guid: 30ae63835dbae940901bcc565b01006b
+        id: 1896895925
+        PathAndIcons:
+        - ElementName: Percus
+          ObjectType: 8
+      - name: PianoVintage
+        guid: 843a9b3273e6e04198287eab2f913a1c
+        id: 1310495234
+        PathAndIcons:
+        - ElementName: PianoVintage
+          ObjectType: 8
+      - name: Synth_Aerie
+        guid: fda233e51d423942a36a2925de4e1ac2
+        id: 18049790
+        PathAndIcons:
+        - ElementName: Synth_Aerie
+          ObjectType: 8
+      - name: Synth_Low
+        guid: 539b7b6ed14e7c41bef56e0ca3ba789d
+        id: 2478286086
+        PathAndIcons:
+        - ElementName: Synth_Low
+          ObjectType: 8
+      - name: Synth_Mid
+        guid: 46e80e712bb3ca4a858d69e0f5dfc96c
+        id: 3115982782
+        PathAndIcons:
+        - ElementName: Synth_Mid
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 4089d2fa6f52c44eac8a8c9d1394d133
+    GuidInternal: 
+    m_lastTime: -8586486720234775808
+    List:
+    - name: Music
+      guid: 57ad0c1353c2d746a3347f38e8c59af4
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 11
+      Path: Default Work Unit\Music
+      values:
+      - name: Music_01
+        guid: 8a61aeaf96f44f468853ad9c48479fd1
+        id: 1973439780
+        PathAndIcons:
+        - ElementName: Music_01
+          ObjectType: 10
+      - name: Music_02
+        guid: 0c4a470d642f8a43ba17320cac68e36f
+        id: 1973439783
+        PathAndIcons:
+        - ElementName: Music_02
+          ObjectType: 10
+      - name: Synth_Aerie
+        guid: 98cb4941411fe548b539a705abd88de3
+        id: 18049790
+        PathAndIcons:
+        - ElementName: Synth_Aerie
+          ObjectType: 10
+      - name: Synth_Low
+        guid: 286dd70731e78349b53b3eefe2af4eef
+        id: 2478286086
+        PathAndIcons:
+        - ElementName: Synth_Low
+          ObjectType: 10
+      - name: Synth_Mid
+        guid: bd9ae820366d5a43842b842e16617605
+        id: 3115982782
+        PathAndIcons:
+        - ElementName: Synth_Mid
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: cfc3182b04a73347a78c464a022294a7
+    GuidInternal: 
+    m_lastTime: -8586486720234775808
+    List: []
+  ExpandedItems:
+  - /ACalmWorld_WwiseProject
+  - /ACalmWorld_WwiseProject/Events
+  - /ACalmWorld_WwiseProject/Events/Musique
+  - "/ACalmWorld_WwiseProject/Events/Musique/Musique\xB001"
+  - "/ACalmWorld_WwiseProject/Events/Musique/Musique\xB001/Mute"
+  - "/ACalmWorld_WwiseProject/Events/Musique/Musique\xB001/Play_Innit"
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 
