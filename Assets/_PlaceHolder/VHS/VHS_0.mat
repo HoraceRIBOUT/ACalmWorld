@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VHS_effect
+  m_Name: VHS_0
   m_Shader: {fileID: 4800000, guid: 1fb0f22cec755d342a2c6967dacde376, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -60,8 +60,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Blur: 0
-    - _BlurForBlue: 0
+    - _Blur: 0.00335
+    - _BlurForBlue: 0.00354
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _Decalage: 0.01
@@ -70,29 +70,28 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Hauteur: 0
+    - _Hauteur: 0.5
     - _Metallic: 0
     - _Mode: 0
-    - _NbIntensity: 0.52
+    - _NbIntensity: 0.57
     - _OcclusionStrength: 1
-    - _OffsetBlue: 0.001
-    - _OffsetGreen: 0.001
+    - _OffsetBlue: 0.005
     - _Parallax: 0.02
     - _Saturation: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 1
     - _SrcBlend: 1
-    - _Taille: 0
-    - _ToleranceBWNoise: 0.231
-    - _Tram2: 1
-    - _TramIntensity: 10
-    - _Tramage: 0.1
+    - _Taille: 0.016
+    - _ToleranceBWNoise: 0.221
+    - _Tram2: 0
+    - _TramIntensity: 60
+    - _Tramage: 0.003
     - _UVSec: 0
     - _ZWrite: 1
-    - _typeOfBug: 0
+    - _typeOfBug: 1
     m_Colors:
-    - _Color: {r: 0.8254717, g: 1, b: 0.99999994, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NoiseColor: {r: 0, g: 0.48795986, b: 1, a: 0}
-    - _TramColor: {r: 0, g: 0, b: 1, a: 1}
+    - _NoiseColor: {r: 0, g: 0.0124306595, b: 0.4528302, a: 1}
+    - _TramColor: {r: 0, g: 0.2535498, b: 1, a: 1}

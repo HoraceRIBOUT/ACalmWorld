@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VHS_effect
-  m_Shader: {fileID: 4800000, guid: 1fb0f22cec755d342a2c6967dacde376, type: 3}
+  m_Name: __LocalBug
+  m_Shader: {fileID: 4800000, guid: 3de10051d1dfc3848846c80a0e38a17d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BlackNoiseTex:
-        m_Texture: {fileID: 2800000, guid: 2957f928f7414334f888c755de5e0d2d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -60,39 +60,38 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Blur: 0
-    - _BlurForBlue: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Decalage: 0.01
+    - _Decalage: -0.06
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Hauteur: 0
+    - _Hauteur: 0.634
     - _Metallic: 0
     - _Mode: 0
-    - _NbIntensity: 0.52
+    - _NbIntensity: 0.5
     - _OcclusionStrength: 1
-    - _OffsetBlue: 0.001
-    - _OffsetGreen: 0.001
+    - _OffsetGreen: -0.05
     - _Parallax: 0.02
-    - _Saturation: 1
+    - _Saturation: 0.67
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 1
     - _SrcBlend: 1
-    - _Taille: 0
-    - _ToleranceBWNoise: 0.231
-    - _Tram2: 1
-    - _TramIntensity: 10
-    - _Tramage: 0.1
+    - _Taille: 0.048
+    - _ToleranceBWNoise: 0.1
     - _UVSec: 0
     - _ZWrite: 1
-    - _typeOfBug: 0
+    - _debugPTX: 23456
+    - _debugPTY: 12346
+    - _nbIntensity: 0
+    - _numberHole: 7
+    - _saturation: 1.79
+    - _sizeHorizontH: 0.1
+    - _sizeVerticalH: 0.1
+    - _typeOfBug: 1
     m_Colors:
-    - _Color: {r: 0.8254717, g: 1, b: 0.99999994, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NoiseColor: {r: 0, g: 0.48795986, b: 1, a: 0}
-    - _TramColor: {r: 0, g: 0, b: 1, a: 1}
