@@ -9,7 +9,7 @@ public class Cube1 : TouchOnOff
     {
         if (on)
         {
-            AkSoundEngine.PostEvent("UnMute_ACW_Lofi_Musique1_Drums", gameObject);
+            AkSoundEngine.PostEvent("UnMute_ACW_Lofi_Musique1_Percus", gameObject);
         }
 
         else
