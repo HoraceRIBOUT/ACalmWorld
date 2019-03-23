@@ -53,6 +53,8 @@ public class LightSource : MonoBehaviour
 
     void ModifyMat(Vector4 source)
     {
+        if (matToModify.Count != 0)
+        {
             foreach (Material mat in matToModify)
             {
                 mat.SetVector("_Source", source);
@@ -61,19 +63,24 @@ public class LightSource : MonoBehaviour
                 mat.SetFloat("_Rayon", rayon);
                 mat.SetFloat("_NoiseEffect", noiseIntensity);
             }
+        }
+            
     }
 
     void ModifyMesh(Vector4 source)
     {
-        foreach (SkinnedMeshRenderer mes in meshToModify)
+        if (meshToModify.Count != 0)
         {
-            foreach (Material mat in mes.materials)
+            foreach (SkinnedMeshRenderer mes in meshToModify)
             {
-                mat.SetVector("_Source", source);
-                mat.SetVector("_RimColor", lightColor);
-                mat.SetFloat("_RimPower", intensity);
-                mat.SetFloat("_Rayon", rayon);
-                mat.SetFloat("_NoiseEffect", noiseIntensity);
+                foreach (Material mat in mes.materials)
+                {
+                    mat.SetVector("_Source", source);
+                    mat.SetVector("_RimColor", lightColor);
+                    mat.SetFloat("_RimPower", intensity);
+                    mat.SetFloat("_Rayon", rayon);
+                    mat.SetFloat("_NoiseEffect", noiseIntensity);
+                }
             }
         }
     }
