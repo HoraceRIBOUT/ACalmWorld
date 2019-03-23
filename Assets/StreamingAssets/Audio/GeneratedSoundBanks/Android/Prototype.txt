@@ -1,0 +1,26 @@
+Event	ID	Name			Wwise Object Path	Notes
+	137050274	Mute_ACW_Lofi_Musique_Synth_Aerie_01_Lp			\Musique\Musique°01\Mute\Mute_ACW_Lofi_Musique_Synth_Aerie_01_Lp	
+	625983492	Play_ACW_Lofi_Musique_Synth_Mid			\Musique\Musique°01\Play_Innit\Play_ACW_Lofi_Musique_Synth_Mid	
+	1263386092	Play_ACW_Lofi_Musique_Synth_Low			\Musique\Musique°01\Play_Innit\Play_ACW_Lofi_Musique_Synth_Low	
+	1810795320	Mute_ACW_Lofi_Musique1_Synth_Mid			\Musique\Musique°01\Mute\Mute_ACW_Lofi_Musique1_Synth_Mid	
+	1865460946	Mute_ACW_Lofi_Musique_Synth_Low_01_Lp			\Musique\Musique°01\Mute\Mute_ACW_Lofi_Musique_Synth_Low_01_Lp	
+	1964948850	Play_ACW_Lofi_Musique_PianoVintage_01			\Musique\Musique°01\Play_Innit\Play_ACW_Lofi_Musique_PianoVintage_01	
+	2037650088	Play_ACW_Lofi_Musique_01_Percus_Lp			\Musique\Musique°01\Play_Innit\Play_ACW_Lofi_Musique_01_Percus_Lp	
+	2267308724	Mute_ACW_Lofi_Musique_PianoVintage_01_Lp			\Musique\Musique°01\Mute\Mute_ACW_Lofi_Musique_PianoVintage_01_Lp	
+	2522917259	Mute_ACW_Lofi_Musique_Percus_01_Lp			\Musique\Musique°01\Mute\Mute_ACW_Lofi_Musique_Percus_01_Lp	
+	2826529837	Play_ACW_Lofi_Musique_01_Aerie			\Musique\Musique°01\Play_Innit\Play_ACW_Lofi_Musique_01_Aerie	
+	2882437625	UnMute_ACW_Lofi_Musique1_Synth_Mid			\Musique\Musique°01\UnMute\UnMute_ACW_Lofi_Musique1_Synth_Mid	
+	3032933881	UnMute_ACW_Lofi_Musique1_Synth_Aerie			\Musique\Musique°01\UnMute\UnMute_ACW_Lofi_Musique1_Synth_Aerie	
+	3232013003	UnMute_ACW_Lofi_Musique1_PianoVintage			\Musique\Musique°01\UnMute\UnMute_ACW_Lofi_Musique1_PianoVintage	
+	3318802773	UnMute_ACW_Lofi_Musique1_Synth_Low			\Musique\Musique°01\UnMute\UnMute_ACW_Lofi_Musique1_Synth_Low	
+	3349124594	Play_ACW_Lofi_Musique_01_All			\Musique\Musique°01\Play_ACW_Lofi_Musique_01_All	
+	3746330588	UnMute_ACW_Lofi_Musique1_Percus			\Musique\Musique°01\UnMute\UnMute_ACW_Lofi_Musique1_Percus	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	61725049	ACW_Lofi_Musique_Percus_Kick_Lp	Y:\Desktop\ACalmWorld\ACalmWorld_WwiseProject\ACalmWorld_WwiseProject\.cache\Android\SFX\ACW_Lofi_Musique_Percus_Kick_Lp_8956FC97.wem		\Interactive Music Hierarchy\ACW_Musique\Porototype\ACW_Lofi_Musique_01_Percus_Lp\ACW_Lofi_Musique_Percus_01\ACW_Lofi_Musique_Percus_Kick_Lp		6288240
+	67025200	ACW_Lofi_Musique1_Synth_Mid	Y:\Desktop\ACalmWorld\ACalmWorld_WwiseProject\ACalmWorld_WwiseProject\.cache\Android\SFX\ACW_Lofi_Musique_Synth_Mid_01_Lp_8956FC97.wem		\Interactive Music Hierarchy\ACW_Musique\Porototype\ACW_Lofi_Musique_Synth_Mid\ACW_Lofi_Musique_Synth_Mid_01_Lp\ACW_Lofi_Musique1_Synth_Mid		7336816
+	162553249	ACW_Lofi_Musique_PianoVintage_01_Lp	Y:\Desktop\ACalmWorld\ACalmWorld_WwiseProject\ACalmWorld_WwiseProject\.cache\Android\SFX\ACW_Lofi_Musique_PianoVintage_01_Lp_8956FC97.wem		\Interactive Music Hierarchy\ACW_Musique\Porototype\ACW_Lofi_Musique_PianoVintage_01\ACW_Lofi_Musique_PianoVintage_01\ACW_Lofi_Musique_PianoVintage_01_Lp		7598960
+	243714193	ACW_Lofi_Musique_Synth_Aerie_01_Lp	Y:\Desktop\ACalmWorld\ACalmWorld_WwiseProject\ACalmWorld_WwiseProject\.cache\Android\SFX\ACW_Lofi_Musique_Synth_Aerie_01_Lp_8956FC97.wem		\Interactive Music Hierarchy\ACW_Musique\Porototype\ACW_Lofi_Musique_01_Aerie\ACW_Lofi_Musique_Synth_Aerie_01_Lp\ACW_Lofi_Musique_Synth_Aerie_01_Lp		6288240
+	271897428	ACW_Lofi_Musique_Percus_01_Lp	Y:\Desktop\ACalmWorld\ACalmWorld_WwiseProject\ACalmWorld_WwiseProject\.cache\Android\SFX\ACW_Lofi_Musique_Percus_reste_Lp_8956FC97.wem		\Interactive Music Hierarchy\ACW_Musique\Porototype\ACW_Lofi_Musique_01_Percus_Lp\ACW_Lofi_Musique_Percus_01\ACW_Lofi_Musique_Percus_01_Lp		6288240
+	480790063	ACW_Lofi_Musique_Synth_Low_01_Lp	Y:\Desktop\ACalmWorld\ACalmWorld_WwiseProject\ACalmWorld_WwiseProject\.cache\Android\SFX\ACW_Lofi_Musique_Synth_Low_01_Lp_8956FC97.wem		\Interactive Music Hierarchy\ACW_Musique\Porototype\ACW_Lofi_Musique_Synth_Low\ACW_Lofi_Musique_Synth_Low\ACW_Lofi_Musique_Synth_Low_01_Lp		6026096
+
