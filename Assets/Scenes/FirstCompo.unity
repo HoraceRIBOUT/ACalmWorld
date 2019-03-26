@@ -1712,7 +1712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   on: 0
-  changeToColor: {r: 0, g: 0, b: 0, a: 1}
+  changeToColor: {r: 0.4433962, g: 0, b: 0.16344805, a: 1}
   ColorIntensity: -48
   spriteRdr: {fileID: 733409248}
   meshRdr: {fileID: 0}
@@ -1732,22 +1732,7 @@ MonoBehaviour:
     groupIdInternal: 0
     groupGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  states:
-  - idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+  states: []
   currentPos: 0
   rtpcId:
     idInternal: 0
