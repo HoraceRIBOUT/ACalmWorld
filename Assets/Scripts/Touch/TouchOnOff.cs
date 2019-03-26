@@ -80,8 +80,11 @@ public class TouchOnOff : MonoBehaviour
             Debug.Log("Mute");
         }
 
-        if(states.Count != 0 || switchGroup == null)
+        if(currentPos != states.Count || states.Count != 0 || switchGroup == null)
+        {
             AkSoundEngine.SetSwitch(switchGroup.Id, states[currentPos].Id, this.gameObject);
+            currentPos++;
+        }
         else
             Debug.Log(switchGroup == null ? "Error : did not have switch group " : "Error : did not have any state ", this.gameObject);
         
