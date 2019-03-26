@@ -38,14 +38,14 @@ public abstract class MainInstrument : MonoBehaviour
             on = true;
             currentState = 0;
             AkSoundEngine.PostEvent(nameEventUnMute.Id, gameObject);
-            Debug.Log("Unmute " + nameEventUnMute.Id);
+            //Debug.Log("Unmute " + nameEventUnMute.Id);
         }
         else if (currentState == states.Count)
         {
             on = false;
             currentState = 0;
             AkSoundEngine.PostEvent(nameEventMute.Id, gameObject);
-            Debug.Log("Mute " + nameEventMute.Id);
+            //Debug.Log("Mute " + nameEventMute.Id);
         }
 
         if(states.Count != 0 && switchGroup != null)

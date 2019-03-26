@@ -33,7 +33,6 @@ public class ColorChange : MainInstrument
         else if (meshRdr != null)
         {
             meshRdr.material.color = startColor + changeToColor * valueZerOne;
-
         }
     }
 
