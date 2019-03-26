@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cube4 : TouchOnOff
+public class Cube4 : ColorChange
 {
     
 }
