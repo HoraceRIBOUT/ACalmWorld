@@ -480,6 +480,6 @@ MonoBehaviour:
   - /ACalmWorld_WwiseProject/Events/Musique
   - "/ACalmWorld_WwiseProject/Events/Musique/Musique\xB001"
   - "/ACalmWorld_WwiseProject/Events/Musique/Musique\xB001/Mute"
-  - "/ACalmWorld_WwiseProject/Events/Musique/Musique\xB001/Play_Innit"
+  - "/ACalmWorld_WwiseProject/Events/Musique/Musique\xB001/UnMute"
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

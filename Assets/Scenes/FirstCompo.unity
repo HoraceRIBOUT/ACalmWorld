@@ -444,12 +444,12 @@ MonoBehaviour:
   nameEventUnMute:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 1178335aa70a8416c9800461e12ff773,
+    WwiseObjectReference: {fileID: 11400000, guid: afd77a7db2d680d49920e73a743d3f76,
       type: 2}
   nameEventMute:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: afd77a7db2d680d49920e73a743d3f76,
+    WwiseObjectReference: {fileID: 11400000, guid: 1178335aa70a8416c9800461e12ff773,
       type: 2}
   switchGroup:
     idInternal: 0
@@ -459,6 +459,11 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 0}
   states: []
   currentPos: 0
+  trpc:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ff71c9c8e75b2c74eadc6971be62c3d5,
+      type: 2}
 --- !u!114 &303661657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,12 +663,12 @@ MonoBehaviour:
   nameEventUnMute:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: b5a0c7b70783c194a87dbdc7b9426d65,
+    WwiseObjectReference: {fileID: 11400000, guid: 6814db77eceb63a48b89598621c2f95a,
       type: 2}
   nameEventMute:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6814db77eceb63a48b89598621c2f95a,
+    WwiseObjectReference: {fileID: 11400000, guid: b5a0c7b70783c194a87dbdc7b9426d65,
       type: 2}
   switchGroup:
     idInternal: 0
@@ -673,6 +678,11 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 0}
   states: []
   currentPos: 0
+  trpc:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4a7b3c4b3dd35274390c96a09740f2ce,
+      type: 2}
 --- !u!114 &447632078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,7 +874,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 1.24, y: 1.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -890,12 +900,12 @@ MonoBehaviour:
   nameEventUnMute:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 06761a723daf9a145b0bdecbd635fad8,
+    WwiseObjectReference: {fileID: 11400000, guid: 72fbff7e49721a647a0a5c7d1268ceed,
       type: 2}
   nameEventMute:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: cac8fcbf23c095644b4a9283b921b5dc,
+    WwiseObjectReference: {fileID: 11400000, guid: 4f187c4fb6eeb154c892a616188f5838,
       type: 2}
   switchGroup:
     idInternal: 0
@@ -905,6 +915,11 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 0}
   states: []
   currentPos: 0
+  trpc:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ae6a503ed47e48c4fa10ab3d2bec1262,
+      type: 2}
 --- !u!61 &511987187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -923,7 +938,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.24, y: 1.24}
-    newSize: {x: 0.16, y: 0.16}
+    newSize: {x: 1.24, y: 1.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1529,12 +1544,12 @@ MonoBehaviour:
   nameEventUnMute:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4f187c4fb6eeb154c892a616188f5838,
+    WwiseObjectReference: {fileID: 11400000, guid: cac8fcbf23c095644b4a9283b921b5dc,
       type: 2}
   nameEventMute:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 72fbff7e49721a647a0a5c7d1268ceed,
+    WwiseObjectReference: {fileID: 11400000, guid: 06761a723daf9a145b0bdecbd635fad8,
       type: 2}
   switchGroup:
     idInternal: 0
@@ -1544,6 +1559,11 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 0}
   states: []
   currentPos: 0
+  trpc:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 91b42222e925c3744986813b6af5a2dd,
+      type: 2}
 --- !u!114 &1146223935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1699,12 +1719,12 @@ MonoBehaviour:
   nameEventUnMute:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a00aec97b3dff45efbd009d1233d9b7b,
+    WwiseObjectReference: {fileID: 11400000, guid: 7518341ca6a87c34495753c06a8bff0f,
       type: 2}
   nameEventMute:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 7518341ca6a87c34495753c06a8bff0f,
+    WwiseObjectReference: {fileID: 11400000, guid: a00aec97b3dff45efbd009d1233d9b7b,
       type: 2}
   switchGroup:
     idInternal: 0
@@ -1712,8 +1732,28 @@ MonoBehaviour:
     groupIdInternal: 0
     groupGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  states: []
+  states:
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   currentPos: 0
+  trpc:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 972887e476843da45bf96efc1dd6dc20,
+      type: 2}
 --- !u!114 &1267375142
 MonoBehaviour:
   m_ObjectHideFlags: 0
