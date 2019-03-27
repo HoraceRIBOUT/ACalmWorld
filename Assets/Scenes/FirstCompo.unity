@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1586802740}
-  m_IndirectSpecularColor: {r: 0.25088635, g: 0.29264095, b: 0.57133126, a: 1}
+  m_IndirectSpecularColor: {r: 0.25088674, g: 0.2926414, b: 0.57133186, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -451,7 +451,6 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 1178335aa70a8416c9800461e12ff773,
       type: 2}
-  switchGroup: 
   switchs: []
   currentPos: 0
   rtpcId:
@@ -666,7 +665,6 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: b5a0c7b70783c194a87dbdc7b9426d65,
       type: 2}
-  switchGroup: 
   switchs:
   - idInternal: 0
     valueGuidInternal: 
@@ -916,8 +914,19 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 4f187c4fb6eeb154c892a616188f5838,
       type: 2}
-  switchGroup: 
-  switchs: []
+  switchs:
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d3972a8f8e7524046a9eacb94872364a,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 235314b952bebf44b9ca5923ed373e96,
+      type: 2}
   currentPos: 0
   rtpcId:
     idInternal: 0
@@ -1494,8 +1503,6 @@ GameObject:
   - component: {fileID: 1146223932}
   - component: {fileID: 1146223931}
   - component: {fileID: 1146223934}
-  - component: {fileID: 1146223936}
-  - component: {fileID: 1146223935}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Untagged
@@ -1603,8 +1610,19 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 06761a723daf9a145b0bdecbd635fad8,
       type: 2}
-  switchGroup: 
-  switchs: []
+  switchs:
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 349ef1e51a8223e4ab4c16a2827843e2,
+      type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a725341259050374f99c898e62e4916c,
+      type: 2}
   currentPos: 0
   rtpcId:
     idInternal: 0
@@ -1612,57 +1630,6 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 91b42222e925c3744986813b6af5a2dd,
       type: 2}
   sound_Manager: {fileID: 0}
---- !u!114 &1146223935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146223929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b25336d149746c6b17c9d0a6a5b232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  useCallbacks: 0
-  Callbacks: []
-  playingId: 0
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  eventIdInternal: 0
-  valueGuidInternal: 
-  m_callbackDataInternal: {fileID: 0}
---- !u!114 &1146223936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146223929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 741e9e0343ca04644a5a816b896e3065, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
-  isEnvironmentAware: 1
-  isStaticObject: 0
-  m_positionOffsetData:
-    KeepMe: 0
-    positionOffset: {x: 0, y: 0, z: 0}
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
 --- !u!1 &1267375138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,7 +1740,6 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: a00aec97b3dff45efbd009d1233d9b7b,
       type: 2}
-  switchGroup: 
   switchs: []
   currentPos: 0
   rtpcId:

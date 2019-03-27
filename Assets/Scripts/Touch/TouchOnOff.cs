@@ -14,7 +14,6 @@ public class TouchOnOff : MonoBehaviour
 
     public AK.Wwise.Event nameEventUnMute;
     public AK.Wwise.Event nameEventMute;
-    public string switchGroup;
     public List<AK.Wwise.Switch> switchs;
     public int currentPos = 0;
     
@@ -81,15 +80,16 @@ public class TouchOnOff : MonoBehaviour
             on = false;
             AkSoundEngine.PostEvent(nameEventMute.Id, sound_Manager);
             Debug.Log("Mute");
+            currentPos = 0;
         }
 
-        if(currentPos != switchs.Count || switchs.Count != 0 || switchGroup != "")
+        if(currentPos != switchs.Count || switchs.Count != 0)
         {
-            AkSoundEngine.SetSwitch(3286326380U, switchs[currentPos].Id, sound_Manager);
+            AkSoundEngine.SetSwitch(switchs[currentPos].GroupId, switchs[currentPos].Id, sound_Manager);
             currentPos++;
         }
         else
-            Debug.Log(switchGroup == null ? "Error : did not have switch group " : "Error : did not have any state ", this.gameObject);
+            Debug.Log("Error : did not have any state ", this.gameObject);
         
     }
 
