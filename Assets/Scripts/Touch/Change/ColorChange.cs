@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ColorChange : Change
 {
-    public Color changeToColor = Color.green;
+    public List<Color> changeToColor = new List<Color>();
     public AnimationCurve colorIntensityFunction = AnimationCurve.Linear(0,0,1,1);
     public SpriteRenderer spriteRdr;
     public MeshRenderer meshRdr;
     private Color startColor;
+    private int state = 0;
 
     public override void ChangeOnStart()
     {
@@ -24,7 +25,7 @@ public class ColorChange : Change
 
     public override void ChangeOnClick(int currentState, bool on)
     {
-        //nothing
+        state = currentState - 1;
     }
 
     public override void ChangeOnUpdate(float rtpcValue)
@@ -39,12 +40,12 @@ public class ColorChange : Change
         //change the color to the right one
         if (spriteRdr != null)
         {
-            spriteRdr.color = startColor + changeToColor * valueZerOne;
+            spriteRdr.color = Color.Lerp(startColor, changeToColor[state], valueZerOne);
 
         }
         else if (meshRdr != null)
         {
-            meshRdr.material.color = startColor + changeToColor * valueZerOne;
+            meshRdr.material.color = Color.Lerp(startColor, changeToColor[state], valueZerOne);
         }
     }
 }

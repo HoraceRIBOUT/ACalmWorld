@@ -5,6 +5,7 @@ using UnityEngine;
 public class Animated : Change
 {
     public Animator animator;
+    protected int state;
 
     public override void ChangeOnStart()
     {
@@ -15,6 +16,7 @@ public class Animated : Change
     public override void ChangeOnClick(int currentState, bool on)
     {
         animator.SetTrigger("Click");
+        state = currentState - 1;
     }
 
     public override void ChangeOnUpdate(float rtpcValue)
