@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cube1 : TouchOnOff
+public class Cube1 : ColorChange
 {
+   
 
-    
 }
