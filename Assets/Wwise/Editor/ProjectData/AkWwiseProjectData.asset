@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2c5b7e0f5392624d8fa47ddf70bbb28d
     GuidInternal: 
-    m_lastTime: -8586486720234775808
+    m_lastTime: -8586486720224775808
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 0ff6def33c40d34caed71a7661ebbde4
     GuidInternal: 
-    m_lastTime: -8586486667794775808
+    m_lastTime: -8586485104094775808
     List: []
   BankWwu:
-  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+  - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2dbab81db74f9c47b960c9262200ba39
     GuidInternal: 
-    m_lastTime: -8586486720234775808
+    m_lastTime: -8586486720224775808
     List:
     - name: Prototype
       guid: dc58634407e912408ecc6828eb7b30f6
@@ -41,19 +41,19 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Prototype
         ObjectType: 7
-      Path: Default Work Unit\Prototype
+      Path: Default Work Unit/Prototype
   EventWwu:
-  - PhysicalPath: Events\Default Work Unit.wwu
+  - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: d462de141e6c514394705aab8fc2359b
     GuidInternal: 
-    m_lastTime: -8586486720234775808
+    m_lastTime: -8586485148484775808
     List: []
-  - PhysicalPath: Events\Musique.wwu
+  - PhysicalPath: Events/Musique.wwu
     ParentPhysicalPath: 
     guid: 8b3b7fd60fe434469f67fb15c866b032
     GuidInternal: 
-    m_lastTime: -8586486720234775808
+    m_lastTime: -8586479155994775808
     List:
     - name: Mute_ACW_Lofi_Musique_Percus_01_Lp
       guid: 35403a9dbef26746833ef0121cea4cc5
@@ -61,13 +61,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: "Musique\xB001"
+      - ElementName: Musique_01_V1
         ObjectType: 4
       - ElementName: Mute
         ObjectType: 4
       - ElementName: Mute_ACW_Lofi_Musique_Percus_01_Lp
         ObjectType: 3
-      Path: "Musique\\Musique\xB001\\Mute\\Mute_ACW_Lofi_Musique_Percus_01_Lp"
+      Path: Musique/Musique_01_V1/Mute/Mute_ACW_Lofi_Musique_Percus_01_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -77,13 +77,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: "Musique\xB001"
+      - ElementName: Musique_01_V1
         ObjectType: 4
       - ElementName: Mute
         ObjectType: 4
       - ElementName: Mute_ACW_Lofi_Musique_PianoVintage_01_Lp
         ObjectType: 3
-      Path: "Musique\\Musique\xB001\\Mute\\Mute_ACW_Lofi_Musique_PianoVintage_01_Lp"
+      Path: Musique/Musique_01_V1/Mute/Mute_ACW_Lofi_Musique_PianoVintage_01_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -93,13 +93,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: "Musique\xB001"
+      - ElementName: Musique_01_V1
         ObjectType: 4
       - ElementName: Mute
         ObjectType: 4
       - ElementName: Mute_ACW_Lofi_Musique_Synth_Aerie_01_Lp
         ObjectType: 3
-      Path: "Musique\\Musique\xB001\\Mute\\Mute_ACW_Lofi_Musique_Synth_Aerie_01_Lp"
+      Path: Musique/Musique_01_V1/Mute/Mute_ACW_Lofi_Musique_Synth_Aerie_01_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -109,13 +109,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: "Musique\xB001"
+      - ElementName: Musique_01_V1
         ObjectType: 4
       - ElementName: Mute
         ObjectType: 4
       - ElementName: Mute_ACW_Lofi_Musique_Synth_Low_01_Lp
         ObjectType: 3
-      Path: "Musique\\Musique\xB001\\Mute\\Mute_ACW_Lofi_Musique_Synth_Low_01_Lp"
+      Path: Musique/Musique_01_V1/Mute/Mute_ACW_Lofi_Musique_Synth_Low_01_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -125,123 +125,45 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: "Musique\xB001"
+      - ElementName: Musique_01_V1
         ObjectType: 4
       - ElementName: Mute
         ObjectType: 4
       - ElementName: Mute_ACW_Lofi_Musique1_Synth_Mid
         ObjectType: 3
-      Path: "Musique\\Musique\xB001\\Mute\\Mute_ACW_Lofi_Musique1_Synth_Mid"
+      Path: Musique/Musique_01_V1/Mute/Mute_ACW_Lofi_Musique1_Synth_Mid
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Play_ACW_Lofi_Musique_01_Aerie
-      guid: 696b2d5574177f4888c63f2a7f897521
-      id: 2826529837
+    - name: Play_Acw_Lofi_Musique_Innit_02
+      guid: 875330d5f3afc74083e1dd126409a3bf
+      id: 3922558540
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: "Musique\xB001"
+      - ElementName: Musique_01_V1
         ObjectType: 4
       - ElementName: Play_Innit
         ObjectType: 4
-      - ElementName: Play_ACW_Lofi_Musique_01_Aerie
+      - ElementName: Play_Acw_Lofi_Musique_Innit_02
         ObjectType: 3
-      Path: "Musique\\Musique\xB001\\Play_Innit\\Play_ACW_Lofi_Musique_01_Aerie"
+      Path: Musique/Musique_01_V1/Play_Innit/Play_Acw_Lofi_Musique_Innit_02
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Play_ACW_Lofi_Musique_01_All
-      guid: 57b1c7c26d9ffe458039bdfd828591eb
-      id: 3349124594
-      PathAndIcons:
-      - ElementName: Musique
-        ObjectType: 12
-      - ElementName: "Musique\xB001"
-        ObjectType: 4
-      - ElementName: Play_ACW_Lofi_Musique_01_All
-        ObjectType: 3
-      Path: "Musique\\Musique\xB001\\Play_ACW_Lofi_Musique_01_All"
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Play_ACW_Lofi_Musique_01_Percus_Lp
-      guid: dfa52390063a974c89f6d1d51015565d
-      id: 2037650088
-      PathAndIcons:
-      - ElementName: Musique
-        ObjectType: 12
-      - ElementName: "Musique\xB001"
-        ObjectType: 4
-      - ElementName: Play_Innit
-        ObjectType: 4
-      - ElementName: Play_ACW_Lofi_Musique_01_Percus_Lp
-        ObjectType: 3
-      Path: "Musique\\Musique\xB001\\Play_Innit\\Play_ACW_Lofi_Musique_01_Percus_Lp"
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Play_ACW_Lofi_Musique_PianoVintage_01
-      guid: f7c7f9f9e054704da97a4eec80613afa
-      id: 1964948850
-      PathAndIcons:
-      - ElementName: Musique
-        ObjectType: 12
-      - ElementName: "Musique\xB001"
-        ObjectType: 4
-      - ElementName: Play_Innit
-        ObjectType: 4
-      - ElementName: Play_ACW_Lofi_Musique_PianoVintage_01
-        ObjectType: 3
-      Path: "Musique\\Musique\xB001\\Play_Innit\\Play_ACW_Lofi_Musique_PianoVintage_01"
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Play_ACW_Lofi_Musique_Synth_Low
-      guid: 07b7d9751e249a40b4bde58f03aa2fa3
-      id: 1263386092
-      PathAndIcons:
-      - ElementName: Musique
-        ObjectType: 12
-      - ElementName: "Musique\xB001"
-        ObjectType: 4
-      - ElementName: Play_Innit
-        ObjectType: 4
-      - ElementName: Play_ACW_Lofi_Musique_Synth_Low
-        ObjectType: 3
-      Path: "Musique\\Musique\xB001\\Play_Innit\\Play_ACW_Lofi_Musique_Synth_Low"
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Play_ACW_Lofi_Musique_Synth_Mid
-      guid: b215070ec9e0a84994ece976af7ddee5
-      id: 625983492
-      PathAndIcons:
-      - ElementName: Musique
-        ObjectType: 12
-      - ElementName: "Musique\xB001"
-        ObjectType: 4
-      - ElementName: Play_Innit
-        ObjectType: 4
-      - ElementName: Play_ACW_Lofi_Musique_Synth_Mid
-        ObjectType: 3
-      Path: "Musique\\Musique\xB001\\Play_Innit\\Play_ACW_Lofi_Musique_Synth_Mid"
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: UnMute_ACW_Lofi_Musique1_Percus
+    - name: UnMute_ACW_Lofi_Musique1_Drums
       guid: 69258df81352a84cbb1b7b2fe66c8dc6
-      id: 3746330588
+      id: 2603562247
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: "Musique\xB001"
+      - ElementName: Musique_01_V1
         ObjectType: 4
       - ElementName: UnMute
         ObjectType: 4
-      - ElementName: UnMute_ACW_Lofi_Musique1_Percus
+      - ElementName: UnMute_ACW_Lofi_Musique1_Drums
         ObjectType: 3
-      Path: "Musique\\Musique\xB001\\UnMute\\UnMute_ACW_Lofi_Musique1_Percus"
+      Path: Musique/Musique_01_V1/UnMute/UnMute_ACW_Lofi_Musique1_Drums
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -251,13 +173,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: "Musique\xB001"
+      - ElementName: Musique_01_V1
         ObjectType: 4
       - ElementName: UnMute
         ObjectType: 4
       - ElementName: UnMute_ACW_Lofi_Musique1_PianoVintage
         ObjectType: 3
-      Path: "Musique\\Musique\xB001\\UnMute\\UnMute_ACW_Lofi_Musique1_PianoVintage"
+      Path: Musique/Musique_01_V1/UnMute/UnMute_ACW_Lofi_Musique1_PianoVintage
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -267,13 +189,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: "Musique\xB001"
+      - ElementName: Musique_01_V1
         ObjectType: 4
       - ElementName: UnMute
         ObjectType: 4
       - ElementName: UnMute_ACW_Lofi_Musique1_Synth_Aerie
         ObjectType: 3
-      Path: "Musique\\Musique\xB001\\UnMute\\UnMute_ACW_Lofi_Musique1_Synth_Aerie"
+      Path: Musique/Musique_01_V1/UnMute/UnMute_ACW_Lofi_Musique1_Synth_Aerie
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -283,13 +205,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: "Musique\xB001"
+      - ElementName: Musique_01_V1
         ObjectType: 4
       - ElementName: UnMute
         ObjectType: 4
       - ElementName: UnMute_ACW_Lofi_Musique1_Synth_Low
         ObjectType: 3
-      Path: "Musique\\Musique\xB001\\UnMute\\UnMute_ACW_Lofi_Musique1_Synth_Low"
+      Path: Musique/Musique_01_V1/UnMute/UnMute_ACW_Lofi_Musique1_Synth_Low
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -299,185 +221,330 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: "Musique\xB001"
+      - ElementName: Musique_01_V1
         ObjectType: 4
       - ElementName: UnMute
         ObjectType: 4
       - ElementName: UnMute_ACW_Lofi_Musique1_Synth_Mid
         ObjectType: 3
-      Path: "Musique\\Musique\xB001\\UnMute\\UnMute_ACW_Lofi_Musique1_Synth_Mid"
+      Path: Musique/Musique_01_V1/UnMute/UnMute_ACW_Lofi_Musique1_Synth_Mid
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
   RtpcWwu:
-  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+  - PhysicalPath: Game Parameters/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 05c1c6b07a958446a3d6bd4d76f94476
     GuidInternal: 
-    m_lastTime: -8586486672454775808
+    m_lastTime: -8586485223884775808
     List:
-    - name: Kick
+    - name: Kick_Meter
       guid: 58530fa645fa094d8f3840b80c0b22f9
-      id: 2181839183
+      id: 1313634581
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Kick
+      - ElementName: Wwise_Meters
+        ObjectType: 4
+      - ElementName: Kick_Meter
         ObjectType: 13
-      Path: Default Work Unit\Kick
-    - name: Piano_Vintage
+      Path: Default Work Unit/Wwise_Meters/Kick_Meter
+    - name: Piano_Vintage_Meter
       guid: d448187836f17243bb2d42b1b1b9f184
-      id: 2702213971
+      id: 926458545
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Piano_Vintage
+      - ElementName: Wwise_Meters
+        ObjectType: 4
+      - ElementName: Piano_Vintage_Meter
         ObjectType: 13
-      Path: Default Work Unit\Piano_Vintage
-    - name: Synth_Low
+      Path: Default Work Unit/Wwise_Meters/Piano_Vintage_Meter
+    - name: Synth_Aerie_Offset
+      guid: a6d34d7f20495447a307fc782ff2ff54
+      id: 3853040844
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GP_Offset
+        ObjectType: 4
+      - ElementName: Synth_Aerie_Offset
+        ObjectType: 13
+      Path: Default Work Unit/GP_Offset/Synth_Aerie_Offset
+    - name: Synth_Drums_Offset
+      guid: 323efb4227bb8948b1263f7171f40dda
+      id: 292738071
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GP_Offset
+        ObjectType: 4
+      - ElementName: Synth_Drums_Offset
+        ObjectType: 13
+      Path: Default Work Unit/GP_Offset/Synth_Drums_Offset
+    - name: Synth_Low_Meter
       guid: 6d23e8c87a85ed4280d76df5a9f1cbad
-      id: 2478286086
+      id: 711224572
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Synth_Low
+      - ElementName: Wwise_Meters
+        ObjectType: 4
+      - ElementName: Synth_Low_Meter
         ObjectType: 13
-      Path: Default Work Unit\Synth_Low
-    - name: Synth_Mid
+      Path: Default Work Unit/Wwise_Meters/Synth_Low_Meter
+    - name: Synth_Low_Offset
+      guid: d45012be6c69d743a7c703257f98c177
+      id: 978722724
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GP_Offset
+        ObjectType: 4
+      - ElementName: Synth_Low_Offset
+        ObjectType: 13
+      Path: Default Work Unit/GP_Offset/Synth_Low_Offset
+    - name: Synth_Mid_Meter
       guid: fbf0839c40865243b3d385d0b521b069
-      id: 3115982782
+      id: 675098388
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Synth_Mid
+      - ElementName: Wwise_Meters
+        ObjectType: 4
+      - ElementName: Synth_Mid_Meter
         ObjectType: 13
-      Path: Default Work Unit\Synth_Mid
-    - name: Sytnh_aerie
+      Path: Default Work Unit/Wwise_Meters/Synth_Mid_Meter
+    - name: Synth_Mid_Offset
+      guid: c359f7f53a3d9143b01b3ef23f6da248
+      id: 946663820
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GP_Offset
+        ObjectType: 4
+      - ElementName: Synth_Mid_Offset
+        ObjectType: 13
+      Path: Default Work Unit/GP_Offset/Synth_Mid_Offset
+    - name: Synth_PianoVintage_Offset
+      guid: 289b282d8ad36147a059127c4d3e6737
+      id: 2832888443
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GP_Offset
+        ObjectType: 4
+      - ElementName: Synth_PianoVintage_Offset
+        ObjectType: 13
+      Path: Default Work Unit/GP_Offset/Synth_PianoVintage_Offset
+    - name: Sytnh_Aerie_Meter
       guid: 735d26e6952cee44ac3b9c9567d42766
-      id: 56683494
+      id: 4207567004
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Sytnh_aerie
+      - ElementName: Wwise_Meters
+        ObjectType: 4
+      - ElementName: Sytnh_Aerie_Meter
         ObjectType: 13
-      Path: Default Work Unit\Sytnh_aerie
+      Path: Default Work Unit/Wwise_Meters/Sytnh_Aerie_Meter
   StateWwu:
-  - PhysicalPath: States\Default Work Unit.wwu
+  - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7a2691cf65a679439ca95d450aab9be0
     GuidInternal: 
-    m_lastTime: -8586486720234775808
-    List:
-    - name: Music_01
-      guid: f37371e7e44c2046b9aa8c40ce402ca9
-      id: 1973439780
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Music_01
-        ObjectType: 9
-      Path: Default Work Unit\Music_01
-      values:
-      - name: None
-        guid: bee26ff64ad4414f9e75fc38c26c3e3b
-        id: 748895195
-        PathAndIcons:
-        - ElementName: None
-          ObjectType: 8
-      - name: Percus
-        guid: 30ae63835dbae940901bcc565b01006b
-        id: 1896895925
-        PathAndIcons:
-        - ElementName: Percus
-          ObjectType: 8
-      - name: PianoVintage
-        guid: 843a9b3273e6e04198287eab2f913a1c
-        id: 1310495234
-        PathAndIcons:
-        - ElementName: PianoVintage
-          ObjectType: 8
-      - name: Synth_Aerie
-        guid: fda233e51d423942a36a2925de4e1ac2
-        id: 18049790
-        PathAndIcons:
-        - ElementName: Synth_Aerie
-          ObjectType: 8
-      - name: Synth_Low
-        guid: 539b7b6ed14e7c41bef56e0ca3ba789d
-        id: 2478286086
-        PathAndIcons:
-        - ElementName: Synth_Low
-          ObjectType: 8
-      - name: Synth_Mid
-        guid: 46e80e712bb3ca4a858d69e0f5dfc96c
-        id: 3115982782
-        PathAndIcons:
-        - ElementName: Synth_Mid
-          ObjectType: 8
-      ValueGuids: []
-      ValueIcons: []
-      valuesInternal: []
+    m_lastTime: -8586485223884775808
+    List: []
   SwitchWwu:
-  - PhysicalPath: Switches\Default Work Unit.wwu
+  - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 4089d2fa6f52c44eac8a8c9d1394d133
     GuidInternal: 
-    m_lastTime: -8586486720234775808
+    m_lastTime: -8586480031014775808
     List:
-    - name: Music
-      guid: 57ad0c1353c2d746a3347f38e8c59af4
-      id: 3991942870
+    - name: Music1_Drums
+      guid: 8a08d38db744734faebdfc84fd9b38c4
+      id: 3840963893
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Music
+      - ElementName: Lofi_Musique01
+        ObjectType: 4
+      - ElementName: Music1_Drums
         ObjectType: 11
-      Path: Default Work Unit\Music
+      Path: Default Work Unit/Lofi_Musique01/Music1_Drums
       values:
-      - name: Music_01
-        guid: 8a61aeaf96f44f468853ad9c48479fd1
-        id: 1973439780
+      - name: Drums_01
+        guid: e6820ee5664d214896f35c6ae6b8b1df
+        id: 2901449310
         PathAndIcons:
-        - ElementName: Music_01
+        - ElementName: Drums_01
           ObjectType: 10
-      - name: Music_02
-        guid: 0c4a470d642f8a43ba17320cac68e36f
-        id: 1973439783
+      - name: Drums_02
+        guid: b0d7437a5ecab44c9492c95c73276a04
+        id: 2901449309
         PathAndIcons:
-        - ElementName: Music_02
+        - ElementName: Drums_02
           ObjectType: 10
-      - name: Synth_Aerie
-        guid: 98cb4941411fe548b539a705abd88de3
-        id: 18049790
+      - name: Drums_03
+        guid: 0dc2a6c0fb203a479858dd1be2d76931
+        id: 2901449308
         PathAndIcons:
-        - ElementName: Synth_Aerie
+        - ElementName: Drums_03
           ObjectType: 10
-      - name: Synth_Low
-        guid: 286dd70731e78349b53b3eefe2af4eef
-        id: 2478286086
+      - name: Off
+        guid: 5f5b44a95982a54ab8f42d2cfad2a748
+        id: 930712164
         PathAndIcons:
-        - ElementName: Synth_Low
+        - ElementName: Off
           ObjectType: 10
-      - name: Synth_Mid
-        guid: bd9ae820366d5a43842b842e16617605
-        id: 3115982782
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Music1_Synth_Aerie
+      guid: 4351e42be9bf8a418e9462251912376b
+      id: 825184583
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Lofi_Musique01
+        ObjectType: 4
+      - ElementName: Music1_Synth_Aerie
+        ObjectType: 11
+      Path: Default Work Unit/Lofi_Musique01/Music1_Synth_Aerie
+      values:
+      - name: Aerie_01
+        guid: 267ffb99efec8542837b8bcd3c5b9d22
+        id: 162589045
         PathAndIcons:
-        - ElementName: Synth_Mid
+        - ElementName: Aerie_01
+          ObjectType: 10
+      - name: Aerie_02
+        guid: c7cd4d697c45fe4fa1e90e93eef25c76
+        id: 162589046
+        PathAndIcons:
+        - ElementName: Aerie_02
+          ObjectType: 10
+      - name: Aerie_03
+        guid: 942bca01c32e7448a47f8323a9a792d9
+        id: 162589047
+        PathAndIcons:
+        - ElementName: Aerie_03
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Music1_Synth_Low
+      guid: 57b3ef8a0aebe84fbc31b0f1f8cf882a
+      id: 3931937431
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Lofi_Musique01
+        ObjectType: 4
+      - ElementName: Music1_Synth_Low
+        ObjectType: 11
+      Path: Default Work Unit/Lofi_Musique01/Music1_Synth_Low
+      values:
+      - name: Synth_Low_01
+        guid: ce271af3d2cd2a4a8511a6cde6236dff
+        id: 938059156
+        PathAndIcons:
+        - ElementName: Synth_Low_01
+          ObjectType: 10
+      - name: Synth_Low_02
+        guid: 68112531cf3ca641a8e25cc0ca6677f0
+        id: 938059159
+        PathAndIcons:
+        - ElementName: Synth_Low_02
+          ObjectType: 10
+      - name: Synth_Low_03
+        guid: b82260c05f0d7d4898bd41c4bac27268
+        id: 938059158
+        PathAndIcons:
+        - ElementName: Synth_Low_03
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Music1_Synth_Mid
+      guid: e537ea1f39f7d849a4f7aca8114a8a09
+      id: 207262123
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Lofi_Musique01
+        ObjectType: 4
+      - ElementName: Music1_Synth_Mid
+        ObjectType: 11
+      Path: Default Work Unit/Lofi_Musique01/Music1_Synth_Mid
+      values:
+      - name: Synth_Mid_01
+        guid: b4e7c127128f39469af93b91009aef42
+        id: 2295844684
+        PathAndIcons:
+        - ElementName: Synth_Mid_01
+          ObjectType: 10
+      - name: Synth_Mid_02
+        guid: 130d13268838194a80a74e7ab4f530a4
+        id: 2295844687
+        PathAndIcons:
+        - ElementName: Synth_Mid_02
+          ObjectType: 10
+      - name: Synth_Mid_03
+        guid: 978a123d8a706f49a07ed0a9426d670c
+        id: 2295844686
+        PathAndIcons:
+        - ElementName: Synth_Mid_03
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Music1_Synth_PianoVintage
+      guid: d0b0a9931eb54a4f9d8857a036f5b366
+      id: 3286326380
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Lofi_Musique01
+        ObjectType: 4
+      - ElementName: Music1_Synth_PianoVintage
+        ObjectType: 11
+      Path: Default Work Unit/Lofi_Musique01/Music1_Synth_PianoVintage
+      values:
+      - name: Piano_Vintage_01
+        guid: 57507a051ac9594d8e427f3bb35db9ed
+        id: 1895472967
+        PathAndIcons:
+        - ElementName: Piano_Vintage_01
+          ObjectType: 10
+      - name: Piano_Vintage_02
+        guid: 894554e19282654a9d2a3a9228ce9dcc
+        id: 1895472964
+        PathAndIcons:
+        - ElementName: Piano_Vintage_02
+          ObjectType: 10
+      - name: Piano_Vintage_03
+        guid: 4eea67dbf915434ca1daf4f5de73294c
+        id: 1895472965
+        PathAndIcons:
+        - ElementName: Piano_Vintage_03
           ObjectType: 10
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
   TriggerWwu:
-  - PhysicalPath: Triggers\Default Work Unit.wwu
+  - PhysicalPath: Triggers/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: cfc3182b04a73347a78c464a022294a7
     GuidInternal: 
-    m_lastTime: -8586486720234775808
+    m_lastTime: -8586486720224775808
     List: []
   ExpandedItems:
   - /ACalmWorld_WwiseProject
   - /ACalmWorld_WwiseProject/Switches
   - /ACalmWorld_WwiseProject/Switches/Default Work Unit
-  - /ACalmWorld_WwiseProject/Switches/Default Work Unit/Music
+  - /ACalmWorld_WwiseProject/Switches/Default Work Unit/Lofi_Musique01
+  - /ACalmWorld_WwiseProject/Switches/Default Work Unit/Lofi_Musique01/Music1_Drums
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca1ac9d683dec4c26a451f551a21b37b, type: 3}
-  m_Name: 07D76D28-E731-4983-B53B-3EEFE2AF4EEF
+  m_Name: E1544589-8292-4A65-9D2A-3A9228CE9DCC
   m_EditorClassIdentifier: 
-  objectName: Synth_Low
-  id: 2478286086
-  guid: 07D76D28-E731-4983-B53B-3EEFE2AF4EEF
-  WwiseSwitchGroupReference: {fileID: 0}
+  objectName: Piano_Vintage_02
+  id: 1895472964
+  guid: E1544589-8292-4A65-9D2A-3A9228CE9DCC
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 9b2df194e42464b0090b5b76b8ee676b,
+    type: 2}

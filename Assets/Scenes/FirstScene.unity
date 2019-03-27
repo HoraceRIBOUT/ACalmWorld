@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1821113473}
-  m_IndirectSpecularColor: {r: 0.29591426, g: 0.43482295, b: 0.75047463, a: 1}
+  m_IndirectSpecularColor: {r: 0.29591408, g: 0.43482295, b: 0.75047463, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -216,9 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ad0e943e600bf4298eaaa7d1dc2d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  changeToColor: {r: 1, g: 0.37961707, b: 0, a: 1}
-  ColorIntensity: 0
 --- !u!1 &280407156
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,9 +320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16b125c726cb574191e9b754564eb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  changeToColor: {r: 0, g: 1, b: 0.7287984, a: 1}
-  ColorIntensity: 0
 --- !u!1 &326891563
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +498,29 @@ MonoBehaviour:
   on: 0
   changeToColor: {r: 1, g: 0, b: 0.52914333, a: 1}
   ColorIntensity: -48
+  spriteRdr: {fileID: 0}
+  meshRdr: {fileID: 0}
+  nameEventUnMute:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  nameEventMute:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  switchGroup:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  states: []
+  currentPos: 0
+  rtpcId:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  sound_Manager: {fileID: 0}
 --- !u!114 &331882566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,8 +541,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 62dd885e6d71045d3864de13b3cddd5c,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   useCallbacks: 0
   Callbacks: []
   playingId: 0
@@ -707,6 +723,29 @@ MonoBehaviour:
   on: 0
   changeToColor: {r: 0.6162486, g: 0, b: 1, a: 1}
   ColorIntensity: -48
+  spriteRdr: {fileID: 0}
+  meshRdr: {fileID: 0}
+  nameEventUnMute:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  nameEventMute:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  switchGroup:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  states: []
+  currentPos: 0
+  rtpcId:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  sound_Manager: {fileID: 0}
 --- !u!114 &500175403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,8 +766,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6641f0830579f414fa1ca1385999e844,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   useCallbacks: 0
   Callbacks: []
   playingId: 0
@@ -869,6 +907,29 @@ MonoBehaviour:
   on: 0
   changeToColor: {r: 0.6226415, g: 0.5198469, b: 0.53552955, a: 1}
   ColorIntensity: -48
+  spriteRdr: {fileID: 0}
+  meshRdr: {fileID: 0}
+  nameEventUnMute:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  nameEventMute:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  switchGroup:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  states: []
+  currentPos: 0
+  rtpcId:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  sound_Manager: {fileID: 0}
 --- !u!114 &593353129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,8 +1002,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 50ee6c68ed52445aab6e9d5cf1cf0dd7,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   useCallbacks: 0
   Callbacks: []
   playingId: 0
@@ -1272,9 +1332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0695b8f3eecd0894091351a07b97274e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  changeToColor: {r: 0, g: 0.8415315, b: 1, a: 1}
-  ColorIntensity: 0
 --- !u!1 &1358752451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1441,29 @@ MonoBehaviour:
   on: 0
   changeToColor: {r: 0, g: 0.07667971, b: 1, a: 1}
   ColorIntensity: -48
+  spriteRdr: {fileID: 0}
+  meshRdr: {fileID: 0}
+  nameEventUnMute:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  nameEventMute:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  switchGroup:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  states: []
+  currentPos: 0
+  rtpcId:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  sound_Manager: {fileID: 0}
 --- !u!114 &1358752457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,8 +1484,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 208bff27e29bf4681aa8d9437687d8f8,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   useCallbacks: 0
   Callbacks: []
   playingId: 0
@@ -1540,9 +1619,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e875feac2b88499429be664b9a97ce56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  changeToColor: {r: 0.36445355, g: 0.6145964, b: 0.8490566, a: 1}
-  ColorIntensity: 0
+--- !u!1 &1579568899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579568901}
+  - component: {fileID: 1579568900}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1579568900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579568899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e30c9e9d5eb547ba8c786b3c223a553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+--- !u!4 &1579568901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579568899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.9882238, y: -3.52559, z: 9.1610985}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1602301950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,9 +1770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4b52cb83abc25428a887066f957b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  changeToColor: {r: 0.5188679, g: 0.21293165, b: 0.3310311, a: 1}
-  ColorIntensity: 0
 --- !u!1 &1687463942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,9 +1874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805ba3dd8186b8741a9ab5fdf12e8a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  changeToColor: {r: 0, g: 0, b: 0, a: 1}
-  ColorIntensity: 0
 --- !u!1 &1804691821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,9 +2199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb422cf1271e424b967af55c96f740c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  changeToColor: {r: 0, g: 1, b: 0, a: 1}
-  ColorIntensity: 0
 --- !u!1 &2130195707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,6 +2308,29 @@ MonoBehaviour:
   on: 0
   changeToColor: {r: 1, g: 0.05270496, b: 0, a: 1}
   ColorIntensity: -48
+  spriteRdr: {fileID: 0}
+  meshRdr: {fileID: 0}
+  nameEventUnMute:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  nameEventMute:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  switchGroup:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  states: []
+  currentPos: 0
+  rtpcId:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  sound_Manager: {fileID: 0}
 --- !u!114 &2130195713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2214,8 +2351,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 351dc8ae1e4cc403a805f003b3d8aba0,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   useCallbacks: 0
   Callbacks: []
   playingId: 0

@@ -14,15 +14,18 @@ public class TouchOnOff : MonoBehaviour
 
     public AK.Wwise.Event nameEventUnMute;
     public AK.Wwise.Event nameEventMute;
-    public AK.Wwise.Switch switchGroup;
-    public List<AK.Wwise.State> states;
+    public string switchGroup;
+    public List<AK.Wwise.Switch> switchs;
     public int currentPos = 0;
     
     public AK.Wwise.RTPC rtpcId;
     //public int maxSize = 3;
 
+    public GameObject sound_Manager;
+
     public void Start()
     {
+        sound_Manager = Sound_Manager.instance.gameObject;
         if (spriteRdr != null)
         {
             startColor = spriteRdr.color;
@@ -70,19 +73,19 @@ public class TouchOnOff : MonoBehaviour
         {
             on = true;
             currentPos = 0;
-            AkSoundEngine.PostEvent(nameEventUnMute.Id, gameObject);
+            AkSoundEngine.PostEvent(nameEventUnMute.Id, sound_Manager);
             Debug.Log("Unmute");
         }
-        else if (currentPos == states.Count)
+        else if (currentPos == switchs.Count)
         {
             on = false;
-            AkSoundEngine.PostEvent(nameEventMute.Id, gameObject);
+            AkSoundEngine.PostEvent(nameEventMute.Id, sound_Manager);
             Debug.Log("Mute");
         }
 
-        if(currentPos != states.Count || states.Count != 0 || switchGroup == null)
+        if(currentPos != switchs.Count || switchs.Count != 0 || switchGroup != "")
         {
-            AkSoundEngine.SetSwitch(switchGroup.Id, states[currentPos].Id, this.gameObject);
+            AkSoundEngine.SetSwitch(3286326380U, switchs[currentPos].Id, sound_Manager);
             currentPos++;
         }
         else
