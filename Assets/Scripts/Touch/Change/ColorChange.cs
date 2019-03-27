@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorChange : MainInstrument
+public class ColorChange : Change
 {
     public Color changeToColor = Color.green;
+    public AnimationCurve colorIntensityFunction = AnimationCurve.Linear(0,0,1,1);
     public SpriteRenderer spriteRdr;
     public MeshRenderer meshRdr;
     private Color startColor;
 
-    public void Start()
+    public override void ChangeOnStart()
     {
         if (spriteRdr != null)
         {
@@ -21,9 +22,20 @@ public class ColorChange : MainInstrument
         }
     }
 
-    protected void ChangeColor()
+    public override void ChangeOnClick(int currentState, bool on)
+    {
+        //nothing
+    }
+
+    public override void ChangeOnUpdate(float rtpcValue)
+    {
+        ChangeColor(rtpcValue);
+    }
+
+    public void ChangeColor(float rtpcValue)
     {
         float valueZerOne = (rtpcValue + 48) / 48;
+        valueZerOne = colorIntensityFunction.Evaluate(valueZerOne);
         //change the color to the right one
         if (spriteRdr != null)
         {
@@ -34,15 +46,5 @@ public class ColorChange : MainInstrument
         {
             meshRdr.material.color = startColor + changeToColor * valueZerOne;
         }
-    }
-
-    protected override void ChangeOnClick()
-    {
-        //nothing
-    }
-
-    protected override void ChangeOnUpdate()
-    {
-        ChangeColor();
     }
 }

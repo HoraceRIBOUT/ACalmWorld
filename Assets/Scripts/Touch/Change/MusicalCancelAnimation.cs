@@ -8,7 +8,7 @@ public class MusicalCancelAnimation : Animated
     public bool canDoIt = true;
     public float seuil = -14;
 
-    protected override void ChangeOnUpdate()
+    public override void ChangeOnUpdate(float rtpcValue)
     {
         if (canDoIt)
         {

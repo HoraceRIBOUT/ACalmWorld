@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Animated : MainInstrument
+public class Animated : Change
 {
     public Animator animator;
 
-    public void Start()
+    public override void ChangeOnStart()
     {
         if (animator == null)
             animator = this.GetComponent<Animator>();
     }
 
-    protected override void ChangeOnClick()
+    public override void ChangeOnClick(int currentState, bool on)
     {
         animator.SetTrigger("Click");
     }
 
-    protected override void ChangeOnUpdate()
+    public override void ChangeOnUpdate(float rtpcValue)
     {
         //nothing
     }

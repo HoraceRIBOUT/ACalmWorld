@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ImmeubleAndAssembly : MainInstrument
+public class ImmeubleAndAssembly : Change
 {
     private class Floor
     {
@@ -11,11 +11,14 @@ public class ImmeubleAndAssembly : MainInstrument
     }
     public List<Transform> floorsTransform = new List<Transform>();
     private List<Floor> floors = new List<Floor>();
-
-
+    
+    private int offset;
+    private float lastTime;
+    public float delay = 0.2f;
+    public float calmDown = 0.4f;
 
     // Start is called before the first frame update
-    void Start()
+    public override void ChangeOnStart()
     {
         foreach(Transform floorTransfom in floorsTransform)
         {
@@ -26,17 +29,12 @@ public class ImmeubleAndAssembly : MainInstrument
         }
     }
 
-    protected override void ChangeOnClick()
+    public override void ChangeOnClick(int currentState, bool on)
     {
 
     }
 
-    private int offset;
-    private float lastTime;
-    public float delay = 0.2f;
-    public float calmDown = 0.4f;
-
-    protected override void ChangeOnUpdate()
+    public override void ChangeOnUpdate(float rtpcValue)
     {
         float valueZerOne = (rtpcValue + 48) / 48;
 

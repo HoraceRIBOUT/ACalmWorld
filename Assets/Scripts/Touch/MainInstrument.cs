@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class MainInstrument : MonoBehaviour
+public class MainInstrument : MonoBehaviour
 {
     [Header("State data")]
     public bool on = false;
@@ -10,13 +10,28 @@ public abstract class MainInstrument : MonoBehaviour
     public float rtpcValue = -48;
 
     [Header("Wwise info")]
-    public AK.Wwise.Event nameEventUnMute;
-    public AK.Wwise.Event nameEventMute;
-    public AK.Wwise.Switch switchGroup;
-    public List<AK.Wwise.State> states;
-    public AK.Wwise.RTPC rtpcId;
+    [SerializeField] private AK.Wwise.Event nameEventUnMute;
+    [SerializeField] private AK.Wwise.Event nameEventMute;
+    [SerializeField] private AK.Wwise.Switch switchGroup;
+    [SerializeField] private List<AK.Wwise.State> states;
+    [SerializeField] private AK.Wwise.RTPC rtpcId;
 
-    //public int maxSize = 3;
+    [Header("Change")]
+    public List<Change> changeCmpt = new List<Change>();
+
+    public void Start()
+    {
+        if(changeCmpt.Count == 0)
+        {
+            foreach(Change ch in GetComponents<Change>())
+            {
+                changeCmpt.Add(ch);
+            }
+        }
+
+
+        ChangeOnStart();
+    }
 
     private void OnMouseDown()
     {
@@ -65,7 +80,20 @@ public abstract class MainInstrument : MonoBehaviour
         AkSoundEngine.GetRTPCValue(rtpcId.Id, gameObject, 0, out rtpcValue, ref type);
     }
 
-    protected abstract void ChangeOnClick();
-    protected abstract void ChangeOnUpdate();
+    protected void ChangeOnStart()
+    {
+        foreach (Change ch in changeCmpt)
+            ch.ChangeOnStart();
+    }
+    protected void ChangeOnClick()
+    {
+        foreach (Change ch in changeCmpt)
+            ch.ChangeOnClick(currentState, on);
+    }
+    protected void ChangeOnUpdate()
+    {
+        foreach (Change ch in changeCmpt)
+            ch.ChangeOnUpdate(rtpcValue);
+    }
 
 }
