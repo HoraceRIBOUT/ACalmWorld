@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class MusicalCancelAnimation : Animated
 {
-
     public bool canDoIt = true;
-    public float seuil = -14;
+    public List<float> seuilPerState = new List<float>();
 
     public override void ChangeOnUpdate(float rtpcValue)
     {
         if (canDoIt)
         {
-            if(rtpcValue > seuil)
+            if(rtpcValue > seuilPerState[state])
             {
                 canDoIt = false;
                 ActionAtSeuil();
@@ -20,7 +19,7 @@ public class MusicalCancelAnimation : Animated
         }
         else
         {
-            if (rtpcValue < seuil)
+            if (rtpcValue < seuilPerState[state])
             {
                 canDoIt = true;
                 ActionAfterSeuil();
