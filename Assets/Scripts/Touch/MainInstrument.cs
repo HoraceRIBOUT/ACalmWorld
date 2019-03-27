@@ -12,16 +12,18 @@ public class MainInstrument : MonoBehaviour
     [Header("Wwise info")]
     [SerializeField] private AK.Wwise.Event nameEventUnMute;
     [SerializeField] private AK.Wwise.Event nameEventMute;
-    [SerializeField] private AK.Wwise.Switch switchGroup;
-    [SerializeField] private List<AK.Wwise.State> states;
+    [SerializeField] private List<AK.Wwise.Switch> switches;
     [SerializeField] private AK.Wwise.RTPC rtpcId;
+
+    public GameObject sound_manager; 
 
     [Header("Change")]
     public List<Change> changeCmpt = new List<Change>();
 
     public void Start()
     {
-        if(changeCmpt.Count == 0)
+        sound_manager = Sound_Manager.instance.gameObject;
+        if (changeCmpt.Count == 0)
         {
             foreach(Change ch in GetComponents<Change>())
             {
@@ -52,24 +54,24 @@ public class MainInstrument : MonoBehaviour
         {
             on = true;
             currentState = 0;
-            AkSoundEngine.PostEvent(nameEventUnMute.Id, gameObject);
+            AkSoundEngine.PostEvent(nameEventUnMute.Id, sound_manager);
             //Debug.Log("Unmute " + nameEventUnMute.Id);
         }
-        else if (currentState == states.Count)
+        else if (currentState == switches.Count)
         {
             on = false;
             currentState = 0;
-            AkSoundEngine.PostEvent(nameEventMute.Id, gameObject);
+            AkSoundEngine.PostEvent(nameEventMute.Id, sound_manager);
             //Debug.Log("Mute " + nameEventMute.Id);
         }
 
-        if(states.Count != 0 && switchGroup != null)
+        if(switches.Count != 0)
         {
-            AkSoundEngine.SetSwitch(switchGroup.Id, states[currentState].Id, this.gameObject);
+            AkSoundEngine.SetSwitch(switches[currentState].GroupId, switches[currentState].Id, sound_manager);
             currentState++;
         }
         else
-            Debug.Log(switchGroup == null ? "Error : did not have switch group " : "Error : did not have any state ", this.gameObject);
+            Debug.Log("Error : did not have any state ", sound_manager);
 
         ChangeOnClick();
     }
@@ -77,7 +79,7 @@ public class MainInstrument : MonoBehaviour
     public void GetRTPCValue()
     {
         int type = 1;
-        AkSoundEngine.GetRTPCValue(rtpcId.Id, gameObject, 0, out rtpcValue, ref type);
+        AkSoundEngine.GetRTPCValue(rtpcId.Id, sound_manager, 0, out rtpcValue, ref type);
     }
 
     protected void ChangeOnStart()
