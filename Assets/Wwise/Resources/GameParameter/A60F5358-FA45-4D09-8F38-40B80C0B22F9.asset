@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d402b4939f4ad4d39bff9c6dccd42eb0, type: 3}
   m_Name: A60F5358-FA45-4D09-8F38-40B80C0B22F9
   m_EditorClassIdentifier: 
-  objectName: Kick
-  id: 2181839183
+  objectName: Kick_Meter
+  id: 1313634581
   guid: A60F5358-FA45-4D09-8F38-40B80C0B22F9
