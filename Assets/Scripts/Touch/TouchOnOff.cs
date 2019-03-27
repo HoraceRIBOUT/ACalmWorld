@@ -48,8 +48,7 @@ public class TouchOnOff : MonoBehaviour
 
         ChangeColor();
     }
-
-
+    
     protected void ChangeColor()
     {
         float valueZerOne = (ColorIntensity + 48) / 48;
@@ -83,7 +82,7 @@ public class TouchOnOff : MonoBehaviour
             currentPos = 0;
         }
 
-        if(currentPos != switchs.Count || switchs.Count != 0)
+        if(currentPos != switchs.Count && switchs.Count != 0)
         {
             AkSoundEngine.SetSwitch(switchs[currentPos].GroupId, switchs[currentPos].Id, sound_Manager);
             currentPos++;

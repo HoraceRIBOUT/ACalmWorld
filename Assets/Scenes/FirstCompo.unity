@@ -783,7 +783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 508678062}
   m_Layer: 0
-  m_Name: Neon
+  m_Name: Neon-Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2087,7 +2087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1766782326}
   m_Layer: 0
-  m_Name: Sky
+  m_Name: Sky-aerie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2119,7 +2119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1772749154}
   m_Layer: 0
-  m_Name: Doggo
+  m_Name: Doggo-Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2150,7 +2150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1777550659}
   m_Layer: 0
-  m_Name: Personnage
+  m_Name: Perso-PianoVintage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
