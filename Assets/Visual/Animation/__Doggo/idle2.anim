@@ -20,12 +20,12 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: {x: -9.726001, y: 42.920002, z: 174.423}
-        inSlope: {x: -588.93365, y: -241.4143, z: -2001.7201}
-        outSlope: {x: -588.93365, y: -241.4143, z: -2001.7201}
+        inSlope: {x: -262.11862, y: -165.66412, z: -878.90204}
+        outSlope: {x: -262.11862, y: -165.66412, z: -878.90204}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.078947365, y: 0.15789473, z: 0.097238846}
+        outWeight: {x: 0.3394737, y: 0.37894735, z: 0.18157893}
       - serializedVersion: 3
         time: 0.33333334
         value: {x: -42.896866, y: 24.55408, z: 32.782127}
@@ -398,12 +398,12 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: -9.726001
-        inSlope: -588.93365
-        outSlope: -588.93365
+        inSlope: -262.11862
+        outSlope: -262.11862
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.078947365
+        outWeight: 0.3394737
       - serializedVersion: 3
         time: 0.33333334
         value: -42.896866
@@ -435,12 +435,12 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 42.920002
-        inSlope: -241.4143
-        outSlope: -241.4143
+        inSlope: -165.66412
+        outSlope: -165.66412
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.15789473
+        outWeight: 0.37894735
       - serializedVersion: 3
         time: 0.33333334
         value: 24.55408
@@ -472,12 +472,12 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 174.423
-        inSlope: -2001.7201
-        outSlope: -2001.7201
+        inSlope: -878.90204
+        outSlope: -878.90204
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.097238846
+        outWeight: 0.18157893
       - serializedVersion: 3
         time: 0.33333334
         value: 32.782127
