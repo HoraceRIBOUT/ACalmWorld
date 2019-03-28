@@ -10,12 +10,13 @@ public class MainInstrument : MonoBehaviour
     public float rtpcValue = -48;
 
     [Header("Wwise info")]
-    [SerializeField] private AK.Wwise.Event nameEventUnMute;
-    [SerializeField] private AK.Wwise.Event nameEventMute;
-    [SerializeField] private List<AK.Wwise.Switch> switches;
-    [SerializeField] private AK.Wwise.RTPC rtpcId;
+    [SerializeField] public AK.Wwise.Event nameEventUnMute;
+    [SerializeField] public AK.Wwise.Event nameEventMute;
+    [SerializeField] public List<AK.Wwise.Switch> switches;
+    [SerializeField] public AK.Wwise.RTPC rtpcId;
 
-    public GameObject sound_manager; 
+    public GameObject sound_manager;
+    [HideInInspector] public int indexForSoundManager;
 
     [Header("Change")]
     public List<Change> changeCmpt = new List<Change>();
@@ -23,6 +24,7 @@ public class MainInstrument : MonoBehaviour
     public void Start()
     {
         sound_manager = Sound_Manager.instance.gameObject;
+
         if (changeCmpt.Count == 0)
         {
             foreach(Change ch in GetComponents<Change>())
@@ -31,10 +33,9 @@ public class MainInstrument : MonoBehaviour
             }
         }
 
-
         ChangeOnStart();
     }
-
+    
     private void OnMouseDown()
     {
         //call the function of the child 
