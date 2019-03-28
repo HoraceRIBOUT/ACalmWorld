@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Synth_Low_02
   id: 938059159
   guid: 31251168-3CCF-41A6-A8E2-5CC0CA6677F0
-  WwiseSwitchGroupReference: {fileID: 0}
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 733bac595dada6e4080e2c8b701d1b20,
+    type: 2}
