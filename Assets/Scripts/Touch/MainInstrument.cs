@@ -4,25 +4,16 @@ using UnityEngine;
 
 public class MainInstrument : MonoBehaviour
 {
-    [Header("State data")]
-    public bool on = false;
-    public int currentState = 0;
-    public float rtpcValue = -48;
-
-    [Header("Wwise info")]
-    [SerializeField] private AK.Wwise.Event nameEventUnMute;
-    [SerializeField] private AK.Wwise.Event nameEventMute;
-    [SerializeField] private List<AK.Wwise.Switch> switches;
-    [SerializeField] private AK.Wwise.RTPC rtpcId;
-
-    public GameObject sound_manager; 
+    public Sound_Manager sound_manager;
+    [HideInInspector] public int indexForSoundManager;
 
     [Header("Change")]
     public List<Change> changeCmpt = new List<Change>();
 
     public void Start()
     {
-        sound_manager = Sound_Manager.instance.gameObject;
+        sound_manager = Sound_Manager.instance;
+
         if (changeCmpt.Count == 0)
         {
             foreach(Change ch in GetComponents<Change>())
@@ -31,10 +22,9 @@ public class MainInstrument : MonoBehaviour
             }
         }
 
-
         ChangeOnStart();
     }
-
+    
     private void OnMouseDown()
     {
         //call the function of the child 
@@ -43,59 +33,62 @@ public class MainInstrument : MonoBehaviour
 
     public void Update()
     {
-        GetRTPCValue();
+        UpdateRTPCValue();
 
         ChangeOnUpdate();
     }
     
     public void Touched()
     {
-        if (!on)
+        Sound_Manager.InstruData instruData = sound_manager.getData(indexForSoundManager);
+        if (!instruData.on)
         {
-            on = true;
-            currentState = 0;
-            AkSoundEngine.PostEvent(nameEventUnMute.Id, sound_manager);
+            instruData.on = true;
+            instruData.currentState = 0;
+            AkSoundEngine.PostEvent(instruData.nameEventUnMute.Id, sound_manager.gameObject);
             //Debug.Log("Unmute " + nameEventUnMute.Id);
         }
-        else if (currentState == switches.Count)
+        else if (instruData.currentState == instruData.switches.Count)
         {
-            on = false;
-            currentState = 0;
-            AkSoundEngine.PostEvent(nameEventMute.Id, sound_manager);
+            instruData.on = false;
+            instruData.currentState = 0;
+            AkSoundEngine.PostEvent(instruData.nameEventMute.Id, sound_manager.gameObject);
             //Debug.Log("Mute " + nameEventMute.Id);
         }
 
-        if(switches.Count != 0)
+        if(instruData.switches.Count != 0)
         {
-            AkSoundEngine.SetSwitch(switches[currentState].GroupId, switches[currentState].Id, sound_manager);
-            currentState++;
+            AkSoundEngine.SetSwitch(instruData.switches[instruData.currentState].GroupId, instruData.switches[instruData.currentState].Id, sound_manager.gameObject);
+            instruData.currentState++;
         }
         else
-            Debug.Log("Error : did not have any state ", sound_manager);
+            Debug.Log("Error : did not have any state ", sound_manager.gameObject);
 
         ChangeOnClick();
     }
 
-    public void GetRTPCValue()
+    public void UpdateRTPCValue()
     {
-        int type = 1;
-        AkSoundEngine.GetRTPCValue(rtpcId.Id, sound_manager, 0, out rtpcValue, ref type);
+        sound_manager.UpdateRTPCValue(indexForSoundManager);
     }
 
     protected void ChangeOnStart()
     {
+        Sound_Manager.InstruData instruData = sound_manager.getData(indexForSoundManager);
         foreach (Change ch in changeCmpt)
             ch.ChangeOnStart();
     }
     protected void ChangeOnClick()
     {
+        Sound_Manager.InstruData instruData = sound_manager.getData(indexForSoundManager);
         foreach (Change ch in changeCmpt)
-            ch.ChangeOnClick(currentState, on);
+            ch.ChangeOnClick(instruData.currentState, instruData.on);
     }
     protected void ChangeOnUpdate()
     {
+        Sound_Manager.InstruData instruData = sound_manager.getData(indexForSoundManager);
         foreach (Change ch in changeCmpt)
-            ch.ChangeOnUpdate(rtpcValue);
+            ch.ChangeOnUpdate(instruData.rtpcValue);
     }
 
 }
