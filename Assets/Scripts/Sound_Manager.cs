@@ -37,13 +37,28 @@ public class Sound_Manager : MonoBehaviour
         {
             instance = this;
             AkSoundEngine.PostEvent(startEvent.Id, instance.gameObject);
+
+            for (int i = 0; i < listInstru.Count; i++)
+            {
+                listInstru[i].gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().indexForSoundManager = i;
+            }
         }
         else
             Debug.Log("More than one sound manager");
     }
     
     public AK.Wwise.Event startEvent;
-    
 
-    
+    public InstruData getData(int index)
+    {
+        return listInstru[index];
+    }
+
+    public void UpdateRTPCValue(int index)
+    {
+        int type = 1;
+        AkSoundEngine.GetRTPCValue(listInstru[index].rtpcId.Id, gameObject, 0, out listInstru[index].rtpcValue, ref type);
+    }
+
+
 }

@@ -488,256 +488,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &265191208
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 265191210}
-  - component: {fileID: 265191209}
-  - component: {fileID: 265191212}
-  - component: {fileID: 265191211}
-  m_Layer: 0
-  m_Name: Sound_Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &265191209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265191208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e30c9e9d5eb547ba8c786b3c223a553, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listInstru:
-  - id: Personnage-pianoVintage
-    gameObjectOfTheInstrument: {fileID: 1777550658}
-    nameEventUnMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 6814db77eceb63a48b89598621c2f95a,
-        type: 2}
-    nameEventMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: b5a0c7b70783c194a87dbdc7b9426d65,
-        type: 2}
-    switches:
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 9f2e292362672457eb5b8f7378a6c0a0,
-        type: 2}
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: eaa208897fcc748e2a1330847e23e957,
-        type: 2}
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 4022e3c50b7de4cc88d356d465af987a,
-        type: 2}
-    rtpcId:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 4a7b3c4b3dd35274390c96a09740f2ce,
-        type: 2}
-    on: 0
-    currentState: 0
-    rtpcValue: -48
-  - id: Doggo-Low
-    gameObjectOfTheInstrument: {fileID: 1772749153}
-    nameEventUnMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: cac8fcbf23c095644b4a9283b921b5dc,
-        type: 2}
-    nameEventMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 06761a723daf9a145b0bdecbd635fad8,
-        type: 2}
-    switches:
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: d4e7c6a1d3231f14fbf1c43e2d31454b,
-        type: 2}
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: e18b2a688044f174fb2c6505735159ce,
-        type: 2}
-    rtpcId:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 91b42222e925c3744986813b6af5a2dd,
-        type: 2}
-    on: 0
-    currentState: 0
-    rtpcValue: -48
-  - id: Neon-Mid
-    gameObjectOfTheInstrument: {fileID: 508678061}
-    nameEventUnMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 72fbff7e49721a647a0a5c7d1268ceed,
-        type: 2}
-    nameEventMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 4f187c4fb6eeb154c892a616188f5838,
-        type: 2}
-    switches:
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 751cf508bf8d11444aae4718ae1cdc59,
-        type: 2}
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: a46baf4bce2369c449632f7a05308271,
-        type: 2}
-    rtpcId:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: ae6a503ed47e48c4fa10ab3d2bec1262,
-        type: 2}
-    on: 0
-    currentState: 0
-    rtpcValue: -48
-  - id: Sky-aerie
-    gameObjectOfTheInstrument: {fileID: 1766782325}
-    nameEventUnMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 7518341ca6a87c34495753c06a8bff0f,
-        type: 2}
-    nameEventMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: a00aec97b3dff45efbd009d1233d9b7b,
-        type: 2}
-    switches: []
-    rtpcId:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 972887e476843da45bf96efc1dd6dc20,
-        type: 2}
-    on: 0
-    currentState: 0
-    rtpcValue: -48
-  - id: Immeuble-kick
-    gameObjectOfTheInstrument: {fileID: 491206886}
-    nameEventUnMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: afd77a7db2d680d49920e73a743d3f76,
-        type: 2}
-    nameEventMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 1178335aa70a8416c9800461e12ff773,
-        type: 2}
-    switches: []
-    rtpcId:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: ff71c9c8e75b2c74eadc6971be62c3d5,
-        type: 2}
-    on: 0
-    currentState: 0
-    rtpcValue: -48
-  startEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6d5a55b04bebf45a48322a9562e7982a,
-      type: 2}
---- !u!4 &265191210
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265191208}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.57, y: 9.66, z: 13.72}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &265191211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265191208}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b25336d149746c6b17c9d0a6a5b232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6d5a55b04bebf45a48322a9562e7982a,
-      type: 2}
-  useCallbacks: 0
-  Callbacks: []
-  playingId: 0
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  eventIdInternal: 0
-  valueGuidInternal: 
-  m_callbackDataInternal: {fileID: 0}
---- !u!114 &265191212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265191208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 741e9e0343ca04644a5a816b896e3065, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
-  isEnvironmentAware: 1
-  isStaticObject: 0
-  m_positionOffsetData:
-    KeepMe: 0
-    positionOffset: {x: 0, y: 0, z: 0}
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
 --- !u!1 &303661651
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,25 +597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ebda4721e97f64997d34ea6f53e96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  currentState: 0
-  rtpcValue: -48
-  nameEventUnMute:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: afd77a7db2d680d49920e73a743d3f76,
-      type: 2}
-  nameEventMute:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 1178335aa70a8416c9800461e12ff773,
-      type: 2}
-  switches: []
-  rtpcId:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: ff71c9c8e75b2c74eadc6971be62c3d5,
-      type: 2}
   sound_manager: {fileID: 0}
   indexForSoundManager: 0
   changeCmpt: []
@@ -5915,43 +5646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ebda4721e97f64997d34ea6f53e96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  currentState: 0
-  rtpcValue: -48
-  nameEventUnMute:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6814db77eceb63a48b89598621c2f95a,
-      type: 2}
-  nameEventMute:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: b5a0c7b70783c194a87dbdc7b9426d65,
-      type: 2}
-  switches:
-  - idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9f2e292362672457eb5b8f7378a6c0a0,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: eaa208897fcc748e2a1330847e23e957,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4022e3c50b7de4cc88d356d465af987a,
-      type: 2}
-  rtpcId:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4a7b3c4b3dd35274390c96a09740f2ce,
-      type: 2}
   sound_manager: {fileID: 0}
   indexForSoundManager: 0
   changeCmpt: []
@@ -6178,37 +5872,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ebda4721e97f64997d34ea6f53e96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  currentState: 0
-  rtpcValue: -48
-  nameEventUnMute:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 72fbff7e49721a647a0a5c7d1268ceed,
-      type: 2}
-  nameEventMute:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4f187c4fb6eeb154c892a616188f5838,
-      type: 2}
-  switches:
-  - idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 751cf508bf8d11444aae4718ae1cdc59,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a46baf4bce2369c449632f7a05308271,
-      type: 2}
-  rtpcId:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: ae6a503ed47e48c4fa10ab3d2bec1262,
-      type: 2}
   sound_manager: {fileID: 0}
   indexForSoundManager: 0
   changeCmpt: []
@@ -12043,37 +11706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ebda4721e97f64997d34ea6f53e96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  currentState: 0
-  rtpcValue: -48
-  nameEventUnMute:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: cac8fcbf23c095644b4a9283b921b5dc,
-      type: 2}
-  nameEventMute:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 06761a723daf9a145b0bdecbd635fad8,
-      type: 2}
-  switches:
-  - idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d4e7c6a1d3231f14fbf1c43e2d31454b,
-      type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e18b2a688044f174fb2c6505735159ce,
-      type: 2}
-  rtpcId:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 91b42222e925c3744986813b6af5a2dd,
-      type: 2}
   sound_manager: {fileID: 0}
   indexForSoundManager: 0
   changeCmpt: []
@@ -12391,25 +12023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ebda4721e97f64997d34ea6f53e96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
-  currentState: 0
-  rtpcValue: -48
-  nameEventUnMute:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 7518341ca6a87c34495753c06a8bff0f,
-      type: 2}
-  nameEventMute:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a00aec97b3dff45efbd009d1233d9b7b,
-      type: 2}
-  switches: []
-  rtpcId:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 972887e476843da45bf96efc1dd6dc20,
-      type: 2}
   sound_manager: {fileID: 0}
   indexForSoundManager: 0
   changeCmpt: []
@@ -13840,3 +13453,97 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2301719244543614983
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2301719244556836655, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_Name
+      value: Sound_Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[0].gameObjectOfTheInstrument
+      value: 
+      objectReference: {fileID: 1777550658}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[1].gameObjectOfTheInstrument
+      value: 
+      objectReference: {fileID: 1772749153}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[2].gameObjectOfTheInstrument
+      value: 
+      objectReference: {fileID: 508678061}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[3].gameObjectOfTheInstrument
+      value: 
+      objectReference: {fileID: 1766782325}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[4].gameObjectOfTheInstrument
+      value: 
+      objectReference: {fileID: 491206886}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3aa5adca42125b8479ebf311c1132300, type: 3}
