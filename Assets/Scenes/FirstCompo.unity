@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: 0.6531902, g: 0.63529414, b: 1, a: 1}
+  m_AmbientEquatorColor: {r: 0.12941177, g: 0.13725491, b: 0.47843137, a: 1}
+  m_AmbientGroundColor: {r: 0.15686275, g: 0.16470589, b: 0.36862746, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: e0b5d0e5931eba7409c588541b9c5dd5, type: 2}
   m_HaloStrength: 0.5
@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.25088674, g: 0.2926414, b: 0.57133186, a: 1}
+  m_Sun: {fileID: 1586802740}
+  m_IndirectSpecularColor: {r: 0.24132028, g: 0.2918026, b: 0.57152474, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -51,7 +51,7 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 10
@@ -11614,6 +11614,7 @@ GameObject:
   - component: {fileID: 1146223931}
   - component: {fileID: 1146223937}
   - component: {fileID: 1146223938}
+  - component: {fileID: 1146223935}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Untagged
@@ -11709,6 +11710,21 @@ MonoBehaviour:
   sound_manager: {fileID: 0}
   indexForSoundManager: 0
   changeCmpt: []
+--- !u!114 &1146223935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146223929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ede65cf70ee474d9c40ac4a5243e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleForEachState:
+  - {fileID: 444056253}
+  - {fileID: 700910957}
 --- !u!114 &1146223937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11915,7 +11931,8 @@ GameObject:
   - component: {fileID: 1267375145}
   - component: {fileID: 1267375140}
   - component: {fileID: 1267375144}
-  - component: {fileID: 1267375146}
+  - component: {fileID: 1267375141}
+  - component: {fileID: 1267375142}
   m_Layer: 0
   m_Name: Stars
   m_TagString: Untagged
@@ -11985,6 +12002,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1267375141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267375138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf3e964ca27b524f9b16dcd9fd0cff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1267375142}
+  skybox: {fileID: 2100000, guid: e0b5d0e5931eba7409c588541b9c5dd5, type: 2}
+  ambientLight: {fileID: 1586802740}
+  skyboxSky: {r: 0.6531902, g: 0.63529414, b: 1, a: 1}
+  skyboxEquator: {r: 0.12941177, g: 0.13725491, b: 0.47843137, a: 1}
+  skyboxGround: {r: 0.15686275, g: 0.16470589, b: 0.36862746, a: 1}
+  lightColor: {r: 0.49019608, g: 0.47058824, b: 0.65882355, a: 1}
+--- !u!95 &1267375142
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267375138}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90b42d21903970a4e8eae1855645fc32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &1267375144
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12026,21 +12081,6 @@ MonoBehaviour:
   sound_manager: {fileID: 0}
   indexForSoundManager: 0
   changeCmpt: []
---- !u!114 &1267375146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267375138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3ede65cf70ee474d9c40ac4a5243e27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleForEachState:
-  - {fileID: 444056253}
-  - {fileID: 700910957}
 --- !u!1 &1345056458
 GameObject:
   m_ObjectHideFlags: 0
@@ -12840,7 +12880,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.48997912, g: 0.47036314, b: 0.6603774, a: 1}
+  m_Color: {r: 0.49019608, g: 0.47058824, b: 0.65882355, a: 1}
   m_Intensity: 0.17
   m_Range: 10
   m_SpotAngle: 30
