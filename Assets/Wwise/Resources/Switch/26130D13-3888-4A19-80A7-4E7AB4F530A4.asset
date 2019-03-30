@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Synth_Mid_02
   id: 2295844687
   guid: 26130D13-3888-4A19-80A7-4E7AB4F530A4
-  WwiseSwitchGroupReference: {fileID: 0}
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 84810e5f902c26e45a7234a7e550492e,
+    type: 2}
