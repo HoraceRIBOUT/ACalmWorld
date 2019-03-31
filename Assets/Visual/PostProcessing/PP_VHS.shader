@@ -6,6 +6,7 @@
 		_BlurForBlue("BlurForBlue Intensity", Range(0,0.01)) = 0.005
 
 		_MainTex("Texture", 2D) = "white" {}
+		_TextureGlitch("", 2D) = "white" {}
 		_Color("Color", Color) = (1,1,1,1)
 		_OffsetBlue("Decalage du bleu", float) = 0.001
 		_Saturation("Saturation", Range(0,2)) = 0.7
@@ -60,6 +61,7 @@
 				}
 
 			sampler2D _MainTex;
+			sampler2D _TextureGlitch;
 			float4 _Color;
 
 			float _Blur;
@@ -154,6 +156,9 @@
 					col.b * _Saturation, col.a);
 
 				col = colBlueDecal;
+
+				fixed4 rgba = tex2D(_TextureGlitch, i.uv);
+				col = rgba * rgba.a + col * (1 - rgba.a);
 
 				//COLOR PART : Noir et Blanc
 				float greyValue = (col.r + col.g + col.b) / 3;

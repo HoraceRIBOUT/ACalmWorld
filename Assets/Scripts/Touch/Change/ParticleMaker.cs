@@ -19,7 +19,6 @@ public class ParticleMaker : Change
             particleForEachState[previousState].Stop();
         if (on && currentState != 0)
             particleForEachState[currentState - 1].Play();
-        Debug.Log((on && currentState != 0) + "  bool | currentState = " + (currentState - 1));
         previousState = currentState - 1;
     }
 

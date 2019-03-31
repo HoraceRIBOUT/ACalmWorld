@@ -54,6 +54,22 @@ public class Sound_Manager : MonoBehaviour
         return listInstru[index];
     }
 
+    public void UnMute(int indexForSoundManager)
+    {
+        AkSoundEngine.PostEvent(getData(indexForSoundManager).nameEventUnMute.Id, gameObject);
+    }
+    public void Mute(int indexForSoundManager)
+    {
+        AkSoundEngine.PostEvent(getData(indexForSoundManager).nameEventMute.Id, gameObject);
+    }
+    public void Switch(int indexForSoundManager)
+    {
+        Sound_Manager.InstruData instruData = getData(indexForSoundManager);
+        AkSoundEngine.SetSwitch(instruData.switches[instruData.currentState].GroupId, instruData.switches[instruData.currentState].Id, gameObject);
+        instruData.currentState++;
+    }
+
+
     public void UpdateRTPCValue(int index)
     {
         int type = 1;
