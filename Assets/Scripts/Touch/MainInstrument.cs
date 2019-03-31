@@ -45,21 +45,20 @@ public class MainInstrument : MonoBehaviour
         {
             instruData.on = true;
             instruData.currentState = 0;
-            AkSoundEngine.PostEvent(instruData.nameEventUnMute.Id, sound_manager.gameObject);
+            sound_manager.UnMute(indexForSoundManager);
             //Debug.Log("Unmute " + nameEventUnMute.Id);
         }
         else if (instruData.currentState == instruData.switches.Count)
         {
             instruData.on = false;
             instruData.currentState = 0;
-            AkSoundEngine.PostEvent(instruData.nameEventMute.Id, sound_manager.gameObject);
+            sound_manager.Mute(indexForSoundManager);
             //Debug.Log("Mute " + nameEventMute.Id);
         }
 
         if(instruData.switches.Count != 0)
         {
-            AkSoundEngine.SetSwitch(instruData.switches[instruData.currentState].GroupId, instruData.switches[instruData.currentState].Id, sound_manager.gameObject);
-            instruData.currentState++;
+            sound_manager.Switch(indexForSoundManager);
         }
         else
             Debug.Log("Error : did not have any state ", sound_manager.gameObject);
