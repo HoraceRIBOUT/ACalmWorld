@@ -16,6 +16,8 @@ public class ApplyMatToScreen : MonoBehaviour
         texturesGlitch.height = (int)(Screen.currentResolution.height / resolutionDivision);
     }
 
+
+
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
 #if !UNITY_EDITOR

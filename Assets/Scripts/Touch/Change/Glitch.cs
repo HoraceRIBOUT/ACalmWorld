@@ -20,7 +20,7 @@ public class Glitch : Change
         if(timer == 0)
             InverseGlitch();
         //launch a timer to go back after some times. If so, re set the timer if click again
-        ApplyGlitch.instance.IWannaGlitch(0.8f);
+        GameManager.instance.glitchHandler.IWannaGlitch(0.8f);
         timer = duration;
     }
 

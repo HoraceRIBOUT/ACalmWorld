@@ -5,13 +5,6 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ApplyGlitch : MonoBehaviour
 {
-    public static ApplyGlitch instance;
-    public void Awake()
-    {
-        instance = this;
-    }
-
-
     public Material matToApply;
 
     [Range(0,1)]
@@ -45,7 +38,6 @@ public class ApplyGlitch : MonoBehaviour
 
         periodValue = periodOverTrauma.Evaluate(_trauma);
         amplitudeValue = amplitudeOverTrauma.Evaluate(_trauma);
-        Debug.Log("trauma = " + _trauma);
     }
 
 

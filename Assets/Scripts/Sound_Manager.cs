@@ -58,10 +58,12 @@ public class Sound_Manager : MonoBehaviour
     {
         AkSoundEngine.PostEvent(getData(indexForSoundManager).nameEventUnMute.Id, gameObject);
     }
+
     public void Mute(int indexForSoundManager)
     {
         AkSoundEngine.PostEvent(getData(indexForSoundManager).nameEventMute.Id, gameObject);
     }
+
     public void Switch(int indexForSoundManager)
     {
         Sound_Manager.InstruData instruData = getData(indexForSoundManager);

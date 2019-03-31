@@ -488,6 +488,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &172083470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+    type: 3}
+  m_PrefabInstance: {fileID: 2301719244543614983}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e30c9e9d5eb547ba8c786b3c223a553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &261958870
 GameObject:
   m_ObjectHideFlags: 0
@@ -6036,6 +6048,7 @@ GameObject:
   - component: {fileID: 580974030}
   - component: {fileID: 580974034}
   - component: {fileID: 580974035}
+  - component: {fileID: 580974036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6102,7 +6115,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -6176,6 +6189,21 @@ MonoBehaviour:
   matToApply: {fileID: 2100000, guid: 6408bd51e8475014d92ff08790ab35c8, type: 2}
   texturesGlitch: {fileID: 8400000, guid: bac0790441cce1144bdd64bf8e8f934c, type: 2}
   resolutionDivision: 4
+--- !u!114 &580974036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580974029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8512972d5749cd249be15798c69ad2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snd_mng: {fileID: 172083470}
+  shaderHandler: {fileID: 580974035}
+  glitchHandler: {fileID: 1983711334}
 --- !u!1 &583538222
 GameObject:
   m_ObjectHideFlags: 0
@@ -13512,7 +13540,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -13524,11 +13552,11 @@ Camera:
   m_TargetTexture: {fileID: 8400000, guid: bac0790441cce1144bdd64bf8e8f934c, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!114 &1983711334
@@ -13846,5 +13874,10 @@ PrefabInstance:
       propertyPath: listInstru.Array.data[4].gameObjectOfTheInstrument
       value: 
       objectReference: {fileID: 491206886}
+    - target: {fileID: 2301719244556836651, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: isEnvironmentAware
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3aa5adca42125b8479ebf311c1132300, type: 3}
