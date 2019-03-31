@@ -7,7 +7,15 @@ public class ApplyMatToScreen : MonoBehaviour
 {
     public Material matToApply;
     public RenderTexture texturesGlitch;
-    //probably need a creation at Start
+
+    public int resolutionDivision = 2;
+
+    public void Awake()
+    {
+        texturesGlitch.width = (int)(Screen.currentResolution.width / resolutionDivision);
+        texturesGlitch.height = (int)(Screen.currentResolution.height / resolutionDivision);
+    }
+
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
 #if !UNITY_EDITOR

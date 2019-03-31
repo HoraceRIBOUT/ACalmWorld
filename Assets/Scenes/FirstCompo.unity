@@ -535,6 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToChange: {fileID: 0}
   layerWhenClick: 9
+  duration: 3
 --- !u!33 &261958874
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5721,7 +5722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 511987184}
   - component: {fileID: 511987190}
-  - component: {fileID: 511987187}
+  - component: {fileID: 511987185}
   - component: {fileID: 511987186}
   m_Layer: 0
   m_Name: Panneau
@@ -5745,6 +5746,19 @@ Transform:
   m_Father: {fileID: 508678062}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 17, y: 0, z: 0}
+--- !u!65 &511987185
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511987183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &511987186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5786,32 +5800,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   spriteRdr: {fileID: 641297895}
   meshRdr: {fileID: 0}
---- !u!61 &511987187
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511987183}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.24, y: 1.24}
-    newSize: {x: 1.24, y: 1.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.24, y: 1.24}
-  m_EdgeRadius: 0
 --- !u!114 &511987190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6187,6 +6175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   matToApply: {fileID: 2100000, guid: 6408bd51e8475014d92ff08790ab35c8, type: 2}
   texturesGlitch: {fileID: 8400000, guid: bac0790441cce1144bdd64bf8e8f934c, type: 2}
+  resolutionDivision: 8
 --- !u!1 &583538222
 GameObject:
   m_ObjectHideFlags: 0
@@ -6360,6 +6349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToChange: {fileID: 0}
   layerWhenClick: 9
+  duration: 0.3
 --- !u!1 &662347670
 GameObject:
   m_ObjectHideFlags: 0
@@ -12022,9 +12012,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1267375139}
   - component: {fileID: 1267375145}
-  - component: {fileID: 1267375144}
   - component: {fileID: 1267375141}
   - component: {fileID: 1267375142}
+  - component: {fileID: 1267375140}
   m_Layer: 0
   m_Name: Stars
   m_TagString: Untagged
@@ -12046,6 +12036,19 @@ Transform:
   m_Father: {fileID: 1766782326}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1267375140
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267375138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 12, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1267375141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12084,32 +12087,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &1267375144
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267375138}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.58, y: 2.58}
-    newSize: {x: 2.58, y: 2.58}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 16, y: 6}
-  m_EdgeRadius: 0
 --- !u!114 &1267375145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13137,6 +13114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToChange: {fileID: 0}
   layerWhenClick: 9
+  duration: 0.3
 --- !u!1 &1690974551
 GameObject:
   m_ObjectHideFlags: 0

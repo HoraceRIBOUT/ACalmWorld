@@ -7,6 +7,9 @@ public class Glitch : Change
     public GameObject objectToChange;
     public int layerWhenClick;
 
+    public float duration = 0.3f;
+    private float timer = 0.0f;
+
     public override void ChangeOnStart()
     {
        //Do Nothing
@@ -14,7 +17,29 @@ public class Glitch : Change
 
     public override void ChangeOnClick(int currentState, bool on)
     {
-        if(objectToChange == null)
+        if(timer == 0)
+            InverseGlitch();
+        //launch a timer to go back after some times. If so, re set the timer if click again
+        timer = duration;
+    }
+
+    public override void ChangeOnUpdate(float rtpcValue)
+    {
+        if(timer != 0)
+        {
+            //set timer
+            timer -= Time.deltaTime;
+            if (timer < 0)
+            {
+                InverseGlitch();
+                timer = 0;
+            }
+        }
+    }
+
+    private void InverseGlitch()
+    {
+        if (objectToChange == null)
         {
             int layerValue = gameObject.layer;
             gameObject.layer = layerWhenClick;
@@ -26,11 +51,5 @@ public class Glitch : Change
             objectToChange.layer = layerWhenClick;
             layerWhenClick = layerValue;
         }
-        //launch a timer to go back after some times. If so, re set the timer if click again
-    }
-
-    public override void ChangeOnUpdate(float rtpcValue)
-    {
-        //nothing
     }
 }
