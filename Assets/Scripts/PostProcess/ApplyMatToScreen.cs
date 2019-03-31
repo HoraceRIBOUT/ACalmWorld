@@ -30,7 +30,6 @@ public class ApplyMatToScreen : MonoBehaviour
 #endif
             if (texturesGlitch != null)
             {
-                //Debug.Log(Screen.currentResolution.width + " widt | heig " +  Screen.currentResolution.height);
                 matToApply.SetTexture("_TextureGlitch", texturesGlitch);
             }
 #if !UNITY_EDITOR

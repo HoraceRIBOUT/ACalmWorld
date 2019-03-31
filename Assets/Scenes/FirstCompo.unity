@@ -535,7 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToChange: {fileID: 0}
   layerWhenClick: 9
-  duration: 3
+  duration: 1
 --- !u!33 &261958874
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6175,7 +6175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   matToApply: {fileID: 2100000, guid: 6408bd51e8475014d92ff08790ab35c8, type: 2}
   texturesGlitch: {fileID: 8400000, guid: bac0790441cce1144bdd64bf8e8f934c, type: 2}
-  resolutionDivision: 8
+  resolutionDivision: 4
 --- !u!1 &583538222
 GameObject:
   m_ObjectHideFlags: 0
@@ -6349,7 +6349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToChange: {fileID: 0}
   layerWhenClick: 9
-  duration: 0.3
+  duration: 0.6
 --- !u!1 &662347670
 GameObject:
   m_ObjectHideFlags: 0
@@ -13459,6 +13459,7 @@ GameObject:
   - component: {fileID: 1983711331}
   - component: {fileID: 1983711333}
   - component: {fileID: 1983711332}
+  - component: {fileID: 1983711334}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -13530,6 +13531,70 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1983711334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983711330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f1726f0b87a9341bfdec66bb26596f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matToApply: {fileID: 2100000, guid: 0193f6f10c8c2e64db62da7abb211c86, type: 2}
+  _trauma: 0
+  periodValue: 0.01
+  periodOverTrauma:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.01
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 500
+      inSlope: 1523.5568
+      outSlope: 1523.5568
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.013157904
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  amplitudeValue: 0.001
+  amplitudeOverTrauma:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.001
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.02
+      inSlope: 0.05933422
+      outSlope: 0.05933422
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.08458644
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1984420651
 GameObject:
   m_ObjectHideFlags: 0
