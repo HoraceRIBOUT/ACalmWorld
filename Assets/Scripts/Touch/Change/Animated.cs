@@ -7,6 +7,7 @@ public class Animated : Change
     public Animator animator;
     protected int state;
 
+
     public override void ChangeOnStart()
     {
         if (animator == null)
@@ -17,6 +18,7 @@ public class Animated : Change
     {
         animator.SetTrigger("Click");
         state = currentState - 1;
+
     }
 
     public override void ChangeOnUpdate(float rtpcValue)

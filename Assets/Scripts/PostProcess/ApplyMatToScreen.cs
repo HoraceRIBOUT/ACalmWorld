@@ -6,7 +6,8 @@ using UnityEngine;
 public class ApplyMatToScreen : MonoBehaviour
 {
     public Material matToApply;
-
+    public RenderTexture texturesGlitch;
+    //probably need a creation at Start
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
 #if !UNITY_EDITOR
@@ -15,6 +16,18 @@ public class ApplyMatToScreen : MonoBehaviour
 #endif
         if (matToApply != null)
         {
+#if !UNITY_EDITOR
+        //This is a delay for the RenderTexture, to test if the shader don't work or if the Render Text don't work
+        if(Time.fixedTime > 6f) {
+#endif
+            if (texturesGlitch != null)
+            {
+                //Debug.Log(Screen.currentResolution.width + " widt | heig " +  Screen.currentResolution.height);
+                matToApply.SetTexture("_TextureGlitch", texturesGlitch);
+            }
+#if !UNITY_EDITOR
+        }
+#endif
             RenderTexture tmp = destination;
             Graphics.Blit(source, tmp, matToApply);
             Graphics.Blit(tmp, destination);
