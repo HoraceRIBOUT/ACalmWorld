@@ -6232,7 +6232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa551fa11ea95f46bba2b3e0b09ff14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matToApply: {fileID: 2100000, guid: 88ce2e817a7c9714698325ac1c19c137, type: 2}
+  matToApply: {fileID: 2100000, guid: 6408bd51e8475014d92ff08790ab35c8, type: 2}
 --- !u!1 &583538222
 GameObject:
   m_ObjectHideFlags: 0
