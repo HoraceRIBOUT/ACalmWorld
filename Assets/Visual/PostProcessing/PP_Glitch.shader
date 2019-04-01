@@ -62,7 +62,7 @@
 				//I.UV PART :
 				//DECALAGE PART
 				float noise = tex2D(_Noise,i.uv).r;
-				i.uv.x += sin(i.uv.y * _Period * _Time.y * noise) * _Amplitude;
+				i.uv.x += sin(i.uv.y * _Period * _Time.y) * _Amplitude;
 
 				i.uv = float2(frac(i.uv.x), frac(i.uv.y));
 				//END DECALAGE PART

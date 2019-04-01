@@ -8,6 +8,7 @@ public class Glitch : Change
     public int layerWhenClick;
 
     public float duration = 0.3f;
+    public float intensity = 0.5f;
     private float timer = 0.0f;
 
     public override void ChangeOnStart()
@@ -20,7 +21,7 @@ public class Glitch : Change
         if(timer == 0)
             InverseGlitch();
         //launch a timer to go back after some times. If so, re set the timer if click again
-        GameManager.instance.glitchHandler.IWannaGlitch(0.8f);
+        GameManager.instance.glitchHandler.IWannaGlitch(intensity);
         timer = duration;
     }
 
@@ -40,17 +41,12 @@ public class Glitch : Change
 
     private void InverseGlitch()
     {
-        if (objectToChange == null)
-        {
-            int layerValue = gameObject.layer;
-            gameObject.layer = layerWhenClick;
-            layerWhenClick = layerValue;
-        }
-        else
-        {
-            int layerValue = objectToChange.layer;
-            objectToChange.layer = layerWhenClick;
-            layerWhenClick = layerValue;
-        }
+        GameObject tmp_obj = objectToChange;
+        if (tmp_obj == null)
+            tmp_obj = this.gameObject;
+
+        int layerValue = tmp_obj.layer;
+        tmp_obj.layer = layerWhenClick;
+        layerWhenClick = layerValue;
     }
 }

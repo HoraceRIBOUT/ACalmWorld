@@ -70,6 +70,7 @@ Material:
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
+    - _NoiseDivider: 20
     - _OcclusionStrength: 1
     - _OffsetBlueX: 0
     - _OffsetBlueY: 0
