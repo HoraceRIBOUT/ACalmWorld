@@ -59,8 +59,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TextureGlitch:
+        m_Texture: {fileID: 8400000, guid: bac0790441cce1144bdd64bf8e8f934c, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Blur: 0.005
+    - _Blur: 0.002
     - _BlurForBlue: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -77,16 +81,16 @@ Material:
     - _OcclusionStrength: 1
     - _OffsetBlue: 0.003
     - _Parallax: 0.02
-    - _Saturation: 1.12
+    - _Saturation: 1.55
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 1
     - _SrcBlend: 1
     - _Taille: 0
     - _ToleranceBWNoise: 0
-    - _Tram2: -1
-    - _TramIntensity: 0.1
-    - _Tramage: 0.1
+    - _Tram2: 0.1
+    - _TramIntensity: 0
+    - _Tramage: 1
     - _UVSec: 0
     - _ZWrite: 1
     - _typeOfBug: 0
@@ -94,4 +98,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NoiseColor: {r: 0.1445799, g: 0.5377358, b: 0.52133393, a: 1}
-    - _TramColor: {r: 0, g: 0.990566, b: 0.4491641, a: 1}
+    - _OffsetBlue: {r: 0.004, g: 0, b: 0, a: 0}
+    - _TramColor: {r: 0, g: 0.99215686, b: 0.9751649, a: 1}
