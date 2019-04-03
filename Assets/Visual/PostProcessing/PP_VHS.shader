@@ -8,7 +8,7 @@
 		_MainTex("Texture", 2D) = "white" {}
 		_TextureGlitch("", 2D) = "white" {}
 		_Color("Color", Color) = (1,1,1,1)
-		_OffsetBlue("Decalage du bleu", float) = 0.001
+		_OffsetBlue("Decalage du bleu", Vector) = (0.001,0.001,0,0)
 		_Saturation("Saturation", Range(0,2)) = 0.7
 		_NbIntensity("NoirEtBlanc", Range(0,2)) = 0.5
 
@@ -68,7 +68,7 @@
 			float _BlurForBlue;
 
 			//COLOR PART 
-			float _OffsetBlue;
+			float2 _OffsetBlue;
 			float _Saturation;
 			float _NbIntensity;
 
@@ -140,15 +140,15 @@
 
 				blur = _BlurForBlue;
 				//Decal Green;
-				float greenValue = tex2D(_MainTex, i.uv + _OffsetBlue).g;
-				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue - blur, i.uv.y + _OffsetBlue - blur)).g;
-				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue - blur, i.uv.y + _OffsetBlue       )).g;
-				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue - blur, i.uv.y + _OffsetBlue + blur)).g;
-				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue       , i.uv.y + _OffsetBlue - blur)).g;
-				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue       , i.uv.y + _OffsetBlue + blur)).g;
-				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue + blur, i.uv.y + _OffsetBlue - blur)).g;
-				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue + blur, i.uv.y + _OffsetBlue       )).g;
-				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue + blur, i.uv.y + _OffsetBlue + blur)).g;
+				float greenValue = tex2D(_MainTex, float2(i.uv.x + _OffsetBlue.x, i.uv.y + _OffsetBlue.y)).g;
+				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue.x - blur, i.uv.y + _OffsetBlue.y - blur)).g;
+				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue.x - blur, i.uv.y + _OffsetBlue.y)).g;
+				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue.x - blur, i.uv.y + _OffsetBlue.y + blur)).g;
+				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue.x, i.uv.y + _OffsetBlue.y - blur)).g;
+				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue.x, i.uv.y + _OffsetBlue.y + blur)).g;
+				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue.x + blur, i.uv.y + _OffsetBlue.y - blur)).g;
+				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue.x + blur, i.uv.y + _OffsetBlue.y)).g;
+				greenValue += tex2D(_MainTex, float2(i.uv.x + _OffsetBlue.x + blur, i.uv.y + _OffsetBlue.y + blur)).g;
 				greenValue /= 9;
 
 				fixed4 colBlueDecal = fixed4(col.r * _Saturation,
