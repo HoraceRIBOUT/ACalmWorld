@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d402b4939f4ad4d39bff9c6dccd42eb0, type: 3}
+  m_Name: 781848D4-F136-4372-BB2D-42B1B1B9F184
+  m_EditorClassIdentifier: 
+  objectName: Piano_Vintage_Meter
+  id: 926458545
+  guid: 781848D4-F136-4372-BB2D-42B1B1B9F184
