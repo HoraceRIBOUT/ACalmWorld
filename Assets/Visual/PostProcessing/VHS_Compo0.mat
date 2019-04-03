@@ -65,7 +65,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Blur: 0.002
-    - _BlurForBlue: 0
+    - _BlurForBlue: 0.0001
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _Decalage: -0.02
@@ -97,6 +97,6 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NoiseColor: {r: 0.1445799, g: 0.5377358, b: 0.52133393, a: 1}
+    - _NoiseColor: {r: 0, g: 0, b: 0, a: 1}
     - _OffsetBlue: {r: 0.004, g: 0, b: 0, a: 0}
-    - _TramColor: {r: 0, g: 0.99215686, b: 0.9751649, a: 1}
+    - _TramColor: {r: 0, g: 1, b: 0.5446849, a: 1}
