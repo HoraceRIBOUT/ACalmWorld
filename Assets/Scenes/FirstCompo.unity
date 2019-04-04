@@ -7453,6 +7453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snd_mng: {fileID: 172083470}
+  mainCamera: {fileID: 580974032}
   shaderHandler: {fileID: 580974035}
   glitchHandler: {fileID: 1983711334}
 --- !u!95 &580974037
