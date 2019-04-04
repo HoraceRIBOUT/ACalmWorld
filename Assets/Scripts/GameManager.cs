@@ -28,7 +28,10 @@ public class GameManager : MonoBehaviour
             snd_mng = Sound_Manager.instance;
 
     }
-
-
+    
+    public void UpdateShaderIntensity(int numberCurrInstru, int numberMaxInstru)
+    {
+        shaderHandler.lerpValue = (float)numberCurrInstru / (float)numberMaxInstru;
+    }
 
 }

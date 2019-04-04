@@ -59,6 +59,8 @@ public class ApplyMatToScreen : MonoBehaviour
     public RenderTexture texturesGlitch;
     
     public List<VHSShaderValue> targetEffect = new List<VHSShaderValue>();
+    [Range(0,1)]
+    public float lerpValue = 0.2f;
 
     public int resolutionDivision = 2;
 
@@ -90,6 +92,12 @@ public class ApplyMatToScreen : MonoBehaviour
 #if !UNITY_EDITOR
         }
 #endif
+            if (targetEffect.Count > 1)
+            {
+                VHSShaderValue val = Lerp(targetEffect[0], targetEffect[1], lerpValue);
+                ApplyVHSValueOnMat(val, matToApply);
+            }
+
             RenderTexture tmp = destination;
             Graphics.Blit(source, tmp, matToApply);
             Graphics.Blit(tmp, destination);
@@ -131,10 +139,10 @@ public class ApplyMatToScreen : MonoBehaviour
         //Color
         res.tint = Color.Lerp(val1.tint, val2.tint, lerp);
         res.decalageBleu = Vector2.Lerp(val1.decalageBleu, val2.decalageBleu, lerp);
-        res.saturation = Mathf.Lerp(val1.blurBlueIntensity, val2.blurBlueIntensity, lerp);
-        res.noirEtBlanc = Mathf.Lerp(val1.blurBlueIntensity, val2.blurBlueIntensity, lerp);
+        res.saturation = Mathf.Lerp(val1.saturation, val2.saturation, lerp);
+        res.noirEtBlanc = Mathf.Lerp(val1.noirEtBlanc, val2.noirEtBlanc, lerp);
         //Bug
-        res.tailleBug = Mathf.Lerp(val1.blurBlueIntensity, val2.blurBlueIntensity, lerp);
+        res.tailleBug = Mathf.Lerp(val1.tailleBug, val2.tailleBug, lerp);
         res.decalageDansLeBug = Mathf.Lerp(val1.decalageDansLeBug, val2.decalageDansLeBug, lerp);
         res.verticalGlitch = val1.verticalGlitch || val2.verticalGlitch;
         res.vitesseBug = Mathf.Lerp(val1.vitesseBug, val2.vitesseBug, lerp);
