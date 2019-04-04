@@ -89,7 +89,7 @@ Material:
     - _Taille: 0
     - _ToleranceBWNoise: 0
     - _Tram2: 0.1
-    - _TramIntensity: 0
+    - _TramIntensity: 0.1
     - _Tramage: 1
     - _UVSec: 0
     - _ZWrite: 1
