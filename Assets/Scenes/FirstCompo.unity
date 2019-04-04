@@ -7417,11 +7417,11 @@ MonoBehaviour:
     verticalGlitch: 0
     vitesseBug: 0
     tolerance: 0
-    noiseColor: {r: 0, g: 0, b: 0, a: 0}
+    noiseColor: {r: 0, g: 0, b: 0, a: 1}
     tramFrac: 1
     tramRythm: -2
     tramIntensity: 0
-    tramColor: {r: 0, g: 0, b: 0, a: 0}
+    tramColor: {r: 1, g: 0, b: 0, a: 1}
   - blurIntensity: 0.002
     blurBlueIntensity: 0.0001
     tint: {r: 1, g: 1, b: 1, a: 1}
@@ -7438,6 +7438,7 @@ MonoBehaviour:
     tramRythm: 0.1
     tramIntensity: 0.1
     tramColor: {r: 0, g: 1, b: 0.54509807, a: 1}
+  lerpValue: 0
   resolutionDivision: 4
 --- !u!114 &580974036
 MonoBehaviour:
