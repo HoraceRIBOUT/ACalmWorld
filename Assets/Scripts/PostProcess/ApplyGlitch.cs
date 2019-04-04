@@ -5,6 +5,9 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ApplyGlitch : MonoBehaviour
 {
+    
+
+
     public Material matToApply;
 
     [Range(0,1)]
@@ -63,4 +66,5 @@ public class ApplyGlitch : MonoBehaviour
             Graphics.Blit(source, destination);
 #endif
     }
+    
 }
