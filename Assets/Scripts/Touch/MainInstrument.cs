@@ -37,7 +37,8 @@ public class MainInstrument : MonoBehaviour
 
         ChangeOnUpdate();
     }
-    
+
+    [ContextMenu("Next state")]
     public void Touched()
     {
         Sound_Manager.InstruData instruData = sound_manager.getData(indexForSoundManager);
