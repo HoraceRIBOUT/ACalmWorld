@@ -329,7 +329,12 @@ ModelImporter:
     9500000: //RootNode
     13700000: Mesh_FilleAuMasque_corps
     13700002: Plane
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 3aac7eeac0a95ba43ab9724fdb1f16c2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
