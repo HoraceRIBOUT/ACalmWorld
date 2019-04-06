@@ -24,19 +24,38 @@ public class GameManager : MonoBehaviour
     public ApplyMatToScreen shaderHandler;
     public ApplyGlitch glitchHandler;
 
+    private float targetLerpValue = 0;
+    private float currentLerpValue = 0;
+    public float speed = 0.5f;
+    public float animationMaxWeight = 0.3f;
+
     public void Start()
     {
         if (snd_mng != null) 
             snd_mng = Sound_Manager.instance;
 
     }
-    
+
+    public void Update()
+    {
+        if(targetLerpValue != currentLerpValue)
+        {
+            float signBef = Mathf.Sign(targetLerpValue - currentLerpValue);
+            currentLerpValue += Time.deltaTime * speed;
+            if(signBef != Mathf.Sign(targetLerpValue - currentLerpValue))
+            {
+                targetLerpValue = currentLerpValue;
+            }
+            shaderHandler.lerpValue = currentLerpValue;
+            animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
+        }
+    }
+
     public void UpdateShaderIntensity(int numberCurrInstru, int numberMaxInstru)
     {
-        shaderHandler.lerpValue = (float)numberCurrInstru / (float)numberMaxInstru;
         if (animatorMainCam == null)
             animatorMainCam = mainCamera.GetComponent<Animator>();
-        animatorMainCam.SetLayerWeight(1, ((float)numberCurrInstru / (float)numberMaxInstru) * 0.3f);
+        targetLerpValue = (float)numberCurrInstru / (float)numberMaxInstru;
     }
 
 }
