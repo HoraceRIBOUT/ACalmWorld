@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         if(targetLerpValue != currentLerpValue)
         {
             float signBef = Mathf.Sign(targetLerpValue - currentLerpValue);
-            currentLerpValue += Time.deltaTime * speed;
+            currentLerpValue += Time.deltaTime * speed * signBef;
             if(signBef != Mathf.Sign(targetLerpValue - currentLerpValue))
             {
                 targetLerpValue = currentLerpValue;

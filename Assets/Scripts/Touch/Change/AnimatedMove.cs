@@ -18,7 +18,6 @@ public class AnimatedMove : Animated
     public Transform transfToRotate;
     public List<Collider2D> collForEachState = new List<Collider2D>();
 
-    
     public override void ChangeOnClick(int currentState, bool on)
     {
         animator.SetLayerWeight(currentLayer, 0);
@@ -28,16 +27,16 @@ public class AnimatedMove : Animated
         animator.SetLayerWeight(currentLayer, 1);
 
         //Move
-        this.transform.localPosition = posRotScaForEachState[currentState].position;
-        transfToRotate.transform.localRotation = Quaternion.Euler(posRotScaForEachState[currentState].rotation);
-        this.transform.localScale = posRotScaForEachState[currentState].scale;
+        this.transform.localPosition = posRotScaForEachState[currentLayer].position;
+        transfToRotate.transform.localRotation = Quaternion.Euler(posRotScaForEachState[currentLayer].rotation);
+        this.transform.localScale = posRotScaForEachState[currentLayer].scale;
 
         //Collision
-        if (currentState == 0)
+        if (currentLayer == 0)
             collForEachState[collForEachState.Count - 1].enabled = false;
         else
-            collForEachState[currentState - 1].enabled = false;
-        collForEachState[currentState].enabled = true;
+            collForEachState[currentLayer - 1].enabled = false;
+        collForEachState[currentLayer].enabled = true;
     }
 
 
