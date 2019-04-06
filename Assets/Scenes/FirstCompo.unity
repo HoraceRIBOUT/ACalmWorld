@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: e0b5d0e5931eba7409c588541b9c5dd5, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,20 +38,20 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1586802740}
-  m_IndirectSpecularColor: {r: 0.058244012, g: 0.0848125, b: 0.23881027, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 0
+    m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 10
@@ -88,7 +88,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 2a733fa7abfb450488cf62f3b6942a2f,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -7673,7 +7674,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8882318f56f181b46a6b8ae4f1f8839d, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7694,7 +7695,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: da551f21f902b7343bec05acecb5b092, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.47636116, g: 0.46297613, b: 0.6415094, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8015,7 +8016,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8882318f56f181b46a6b8ae4f1f8839d, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13995,7 +13996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400056, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400056, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14027,7 +14028,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1267375139}
   - component: {fileID: 1267375145}
-  - component: {fileID: 1267375141}
   - component: {fileID: 1267375143}
   - component: {fileID: 1267375142}
   - component: {fileID: 1267375140}
@@ -14065,25 +14065,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20, y: 15, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1267375141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267375138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf3e964ca27b524f9b16dcd9fd0cff4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1267375142}
-  skybox: {fileID: 2100000, guid: e0b5d0e5931eba7409c588541b9c5dd5, type: 2}
-  ambientLight: {fileID: 1586802740}
-  skyboxSky: {r: 0.654902, g: 0.63529414, b: 1, a: 1}
-  skyboxEquator: {r: 0.034992695, g: 0.34651065, b: 0.5620039, a: 1}
-  skyboxGround: {r: 0, g: 0.02953239, b: 0.11320752, a: 1}
-  lightColor: {r: 0.4013988, g: 0.35955858, b: 0.754717, a: 1}
 --- !u!95 &1267375142
 Animator:
   serializedVersion: 3
@@ -14118,11 +14099,11 @@ MonoBehaviour:
   animator: {fileID: 1267375142}
   skySprite: {fileID: 733409248}
   ambientLight: {fileID: 1586802740}
-  skyColor: {r: 0.6273585, g: 0.96470857, b: 1, a: 1}
+  skyColor: {r: 0.99624383, g: 0.8313956, b: 0.7203408, a: 1}
   upLight: {r: 0.654902, g: 0.63529414, b: 1, a: 1}
   averageLight: {r: 0.03529412, g: 0.34509805, b: 0.56078434, a: 1}
   downLight: {r: 0, g: 0.03137255, b: 0.1137255, a: 1}
-  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  lightColor: {r: 0.49019608, g: 0.47058824, b: 0.65882355, a: 1}
 --- !u!114 &1267375145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15126,7 +15107,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 08f0172980a9b6447b36307132441c8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15991,7 +15972,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8882318f56f181b46a6b8ae4f1f8839d, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16102,7 +16083,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8882318f56f181b46a6b8ae4f1f8839d, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
