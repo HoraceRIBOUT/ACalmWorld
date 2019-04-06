@@ -109,23 +109,6 @@ public class ApplyMatToScreen : MonoBehaviour
         else
             Graphics.Blit(source, destination);
 #endif
-
-
-        /* 
-        if (matToUse != null && readyToFuse)
-        {
-            matToUse.SetTexture("_MainTex", source);
-            for (int i = 0; i < NBR_
-            ; i++)
-            {
-                matToUse.SetTexture("_Texture0" + (i), textures[i]);
-                matToUse.SetTexture("_Depture0" + (i), dephtTextures[i]);
-            }
-            Graphics.Blit(source, matToUse);
-        }
-        else
-            Graphics.Blit(source, destination);
-        */
     }
 
 
