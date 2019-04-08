@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
-  m_AmbientEquatorColor: {r: 1, g: 1, b: 1, a: 1}
-  m_AmbientGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 0.64705884, g: 0.69803923, b: 1, a: 1}
+  m_AmbientEquatorColor: {r: 0.06666667, g: 0.25882354, b: 0.5568628, a: 1}
+  m_AmbientGroundColor: {r: 0.050980393, g: 0.9254902, b: 1, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -7413,7 +7413,7 @@ MonoBehaviour:
     blurBlueIntensity: 0.0001
     tint: {r: 1, g: 1, b: 1, a: 1}
     decalageBleu: {x: 0.004, y: 0}
-    saturation: 1.55
+    saturation: 1.2
     noirEtBlanc: 0
     tailleBug: 0
     decalageDansLeBug: -0.02
@@ -7424,7 +7424,7 @@ MonoBehaviour:
     tramFrac: 1
     tramRythm: 0.1
     tramIntensity: 0.1
-    tramColor: {r: 0, g: 1, b: 0.54509807, a: 1}
+    tramColor: {r: 0.2783019, g: 0.819942, b: 1, a: 1}
   lerpValue: 0
   resolutionDivision: 4
 --- !u!114 &580974036
@@ -7445,7 +7445,7 @@ MonoBehaviour:
   shaderHandler: {fileID: 580974035}
   glitchHandler: {fileID: 1983711334}
   speed: 0.5
-  animationMaxWeight: 0.3
+  animationMaxWeight: 0.25
 --- !u!95 &580974037
 Animator:
   serializedVersion: 3
@@ -14098,11 +14098,11 @@ MonoBehaviour:
   animator: {fileID: 1267375142}
   skySprite: {fileID: 733409248}
   ambientLight: {fileID: 1586802740}
-  skyColor: {r: 0.99607843, g: 0.83137256, b: 0.72156864, a: 1}
-  upLight: {r: 0.654902, g: 0.63529414, b: 1, a: 1}
-  averageLight: {r: 0.03529412, g: 0.34509805, b: 0.56078434, a: 1}
-  downLight: {r: 0, g: 0.03137255, b: 0.1137255, a: 1}
-  lightColor: {r: 0.9322484, g: 0.9716981, b: 0.56376827, a: 1}
+  skyColor: {r: 0.80784315, g: 0.9401634, b: 1, a: 1}
+  upLight: {r: 0.6462264, g: 0.697327, b: 1, a: 1}
+  averageLight: {r: 0.06563723, g: 0.25853682, b: 0.5566038, a: 1}
+  downLight: {r: 0.05098039, g: 0.9274134, b: 1, a: 1}
+  lightColor: {r: 0.29374334, g: 0.301895, b: 0.38679248, a: 1}
 --- !u!114 &1267375145
 MonoBehaviour:
   m_ObjectHideFlags: 0
