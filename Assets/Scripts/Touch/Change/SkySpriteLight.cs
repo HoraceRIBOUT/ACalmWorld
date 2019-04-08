@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkySpriteLight : Animated
 {
-    public Transform skySprite;
+    public Transform skyFolder;
     private SpriteRenderer[] skySprites;
     public Light ambientLight;
 
@@ -16,7 +16,7 @@ public class SkySpriteLight : Animated
 
     public override void ChangeOnStart()
     {
-        skySprites = skySprite.GetComponentsInChildren<SpriteRenderer>();
+        skySprites = skyFolder.GetComponentsInChildren<SpriteRenderer>();
         base.ChangeOnStart();
     }
 

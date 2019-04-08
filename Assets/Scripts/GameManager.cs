@@ -49,6 +49,12 @@ public class GameManager : MonoBehaviour
             shaderHandler.lerpValue = currentLerpValue;
             animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
         }
+
+#if UNITY_STANDALONE_WIN
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+#endif
+
     }
 
     public void UpdateShaderIntensity(int numberCurrInstru, int numberMaxInstru)
