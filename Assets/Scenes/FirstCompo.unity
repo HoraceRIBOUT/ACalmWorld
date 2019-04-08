@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.654902, g: 0.63529414, b: 1, a: 1}
-  m_AmbientEquatorColor: {r: 0.03529412, g: 0.34509805, b: 0.56078434, a: 1}
-  m_AmbientGroundColor: {r: 0, g: 0.03137255, b: 0.11372549, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientEquatorColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientGroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1586802740}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
@@ -51,7 +51,7 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 10
@@ -88,8 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000000, guid: 2a733fa7abfb450488cf62f3b6942a2f,
-    type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -13852,119 +13851,119 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100056, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100014, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100016, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100018, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100020, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100022, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100024, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100026, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100030, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100032, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100034, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100036, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100038, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100040, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100044, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100046, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100048, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100050, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100052, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100054, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400056, guid: 04e5df94b2ec2c54593ce3d82f2cf9d5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14099,11 +14098,11 @@ MonoBehaviour:
   animator: {fileID: 1267375142}
   skySprite: {fileID: 733409248}
   ambientLight: {fileID: 1586802740}
-  skyColor: {r: 0.99624383, g: 0.8313956, b: 0.7203408, a: 1}
+  skyColor: {r: 0.99607843, g: 0.83137256, b: 0.72156864, a: 1}
   upLight: {r: 0.654902, g: 0.63529414, b: 1, a: 1}
   averageLight: {r: 0.03529412, g: 0.34509805, b: 0.56078434, a: 1}
   downLight: {r: 0, g: 0.03137255, b: 0.1137255, a: 1}
-  lightColor: {r: 0.49019608, g: 0.47058824, b: 0.65882355, a: 1}
+  lightColor: {r: 0.9322484, g: 0.9716981, b: 0.56376827, a: 1}
 --- !u!114 &1267375145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15254,7 +15253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766782325}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.71, y: 2.78, z: 18}
+  m_LocalPosition: {x: -6.4, y: 2.78, z: 18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1267375139}
