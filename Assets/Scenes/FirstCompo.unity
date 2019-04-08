@@ -6799,7 +6799,6 @@ GameObject:
   - component: {fileID: 447632074}
   - component: {fileID: 447632075}
   - component: {fileID: 447632077}
-  - component: {fileID: 447632081}
   m_Layer: 0
   m_Name: Corps
   m_TagString: Untagged
@@ -6976,26 +6975,6 @@ MonoBehaviour:
   layerWhenClick: 9
   duration: 0.3
   intensity: 0.15
---- !u!114 &447632081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447632072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a05ff938ac38334eae8ec01d9092f88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  skySprite: {fileID: 0}
-  ambientLight: {fileID: 0}
-  skyColor: {r: 0.80784315, g: 0.9401634, b: 1, a: 1}
-  upLight: {r: 0.6462264, g: 0.697327, b: 1, a: 1}
-  averageLight: {r: 0.06563723, g: 0.25853682, b: 0.5566038, a: 1}
-  downLight: {r: 0.05098039, g: 0.9274134, b: 1, a: 1}
-  lightColor: {r: 0.29374334, g: 0.301895, b: 0.38679248, a: 1}
 --- !u!114 &447632082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7578,7 +7557,7 @@ MonoBehaviour:
   animatorMainCam: {fileID: 580974037}
   shaderHandler: {fileID: 580974035}
   glitchHandler: {fileID: 1983711334}
-  speed: 0.5
+  speed: 0.1
   animationMaxWeight: 0.25
 --- !u!95 &580974037
 Animator:
@@ -14220,7 +14199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1267375142}
-  skySprite: {fileID: 733409247}
+  skyFolder: {fileID: 733409247}
   ambientLight: {fileID: 1586802740}
   skyColor: {r: 0.80784315, g: 0.9401634, b: 1, a: 1}
   upLight: {r: 0.6462264, g: 0.697327, b: 1, a: 1}

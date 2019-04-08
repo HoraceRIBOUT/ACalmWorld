@@ -177,12 +177,10 @@ public class AkSoundEngineController
 #else
 	public void OnApplicationPause(bool pauseStatus) 
 	{
-		ActivateAudio(!pauseStatus);
 	}
 
 	public void OnApplicationFocus(bool focus)
 	{
-		ActivateAudio(focus);
 	}
 #endif
 
