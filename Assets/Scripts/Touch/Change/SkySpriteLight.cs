@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkySpriteLight : Animated
 {
-    public SpriteRenderer skySprite;
+    public Transform skySprite;
     private SpriteRenderer[] skySprites;
     public Light ambientLight;
 

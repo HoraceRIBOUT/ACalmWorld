@@ -14220,7 +14220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1267375142}
-  skySprite: {fileID: 0}
+  skySprite: {fileID: 733409247}
   ambientLight: {fileID: 1586802740}
   skyColor: {r: 0.80784315, g: 0.9401634, b: 1, a: 1}
   upLight: {r: 0.6462264, g: 0.697327, b: 1, a: 1}
