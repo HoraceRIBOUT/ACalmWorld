@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkySpriteLight : Animated
 {
     public SpriteRenderer skySprite;
+    private SpriteRenderer[] skySprites;
     public Light ambientLight;
 
     public Color skyColor= Color.white;
@@ -13,25 +14,21 @@ public class SkySpriteLight : Animated
     public Color downLight = Color.white;
     public Color lightColor = Color.white;
 
-
-#if UNITY_EDITOR
-    private void Update()
+    public override void ChangeOnStart()
     {
-        if (!UnityEditor.EditorApplication.isPlaying)
-        {
-            ChangeOnUpdate(0.0f);
-            Debug.Log("Change validate");
-        }
+        skySprites = skySprite.GetComponentsInChildren<SpriteRenderer>();
+        base.ChangeOnStart();
     }
-#endif
-
 
     public override void ChangeOnUpdate(float rtpcValue)
     {
-        skySprite.color = skyColor;
+        foreach (SpriteRenderer sprRdr in skySprites)
+        {
+            sprRdr.color = skyColor;
+        }
         ambientLight.color = lightColor;
         RenderSettings.ambientSkyColor = upLight;
         RenderSettings.ambientEquatorColor = averageLight;
-        RenderSettings.ambientGroundColor = lightColor;
+        RenderSettings.ambientGroundColor = downLight;
     }
 }
