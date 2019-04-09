@@ -19,8 +19,15 @@ public class GameManager : MonoBehaviour
     }
 
     public Sound_Manager snd_mng;
+    public Camera mainCamera;
+    public Animator animatorMainCam;
     public ApplyMatToScreen shaderHandler;
     public ApplyGlitch glitchHandler;
+
+    private float targetLerpValue = 0;
+    private float currentLerpValue = 0;
+    public float speed = 0.5f;
+    public float animationMaxWeight = 0.3f;
 
     public void Start()
     {
@@ -29,6 +36,32 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void Update()
+    {
+        if(targetLerpValue != currentLerpValue)
+        {
+            float signBef = Mathf.Sign(targetLerpValue - currentLerpValue);
+            currentLerpValue += Time.deltaTime * speed * signBef;
+            if(signBef != Mathf.Sign(targetLerpValue - currentLerpValue))
+            {
+                targetLerpValue = currentLerpValue;
+            }
+            shaderHandler.lerpValue = currentLerpValue;
+            animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
+        }
 
+#if UNITY_STANDALONE_WIN
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+#endif
+
+    }
+
+    public void UpdateShaderIntensity(int numberCurrInstru, int numberMaxInstru)
+    {
+        if (animatorMainCam == null)
+            animatorMainCam = mainCamera.GetComponent<Animator>();
+        targetLerpValue = (float)numberCurrInstru / (float)numberMaxInstru;
+    }
 
 }

@@ -30,6 +30,11 @@ public class Sound_Manager : MonoBehaviour
 
     [SerializeField]
     public List<InstruData> listInstru = new List<InstruData>();
+    private int numberInstruOn = 0;
+    
+    public AK.Wwise.Event startEvent;
+
+    public AK.Wwise.Event nameEvent;
 
     public void Awake()
     {
@@ -37,6 +42,8 @@ public class Sound_Manager : MonoBehaviour
         {
             instance = this;
             AkSoundEngine.PostEvent(startEvent.Id, instance.gameObject);
+
+            nameEvent.Post(this.gameObject, (uint)AkCallbackType.AK_MusicSyncBeat, CallBackFunction);
 
             for (int i = 0; i < listInstru.Count; i++)
             {
@@ -47,7 +54,10 @@ public class Sound_Manager : MonoBehaviour
             Debug.Log("More than one sound manager");
     }
     
-    public AK.Wwise.Event startEvent;
+    void CallBackFunction(object baseObject, AkCallbackType type, object info)
+    {
+        Debug.Log("Beat ");
+    }
 
     public InstruData getData(int index)
     {
@@ -57,11 +67,17 @@ public class Sound_Manager : MonoBehaviour
     public void UnMute(int indexForSoundManager)
     {
         AkSoundEngine.PostEvent(getData(indexForSoundManager).nameEventUnMute.Id, gameObject);
+
+        //Part for the prog
+        GameManager.instance.UpdateShaderIntensity(++numberInstruOn, listInstru.Count);
     }
 
     public void Mute(int indexForSoundManager)
     {
         AkSoundEngine.PostEvent(getData(indexForSoundManager).nameEventMute.Id, gameObject);
+
+        //Part for the prog
+        GameManager.instance.UpdateShaderIntensity(--numberInstruOn, listInstru.Count);
     }
 
     public void Switch(int indexForSoundManager)
