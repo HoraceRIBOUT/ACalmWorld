@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sound_Manager : MonoBehaviour
 {
     public static Sound_Manager instance;
-    
+
     [System.Serializable]
     public class InstruData
     {
@@ -28,13 +28,41 @@ public class Sound_Manager : MonoBehaviour
         public SpaceFalse __________________________________;
     }
 
+    [System.Serializable]
+    public class CombinaisonGagnante
+    {
+        public AK.Wwise.Event eventToPlay;
+
+        [System.Serializable] public class InstruEtNum
+        {
+            public InstruPossible instru = InstruPossible.pianovintage;
+            [Tooltip("0 = off")]
+            public int stateNeeded = 1;
+        }
+
+        public List<InstruEtNum> instruAndStateNeeded = new List<InstruEtNum>();
+    }
+
+    public enum InstruPossible
+    {
+        pianovintage,
+        low,
+        mid,
+        aeri,
+        kick,
+    }
+
     [SerializeField]
     public List<InstruData> listInstru = new List<InstruData>();
     private int numberInstruOn = 0;
-    
+
+    [SerializeField]
+    public List<CombinaisonGagnante> voiceCombi = new List<CombinaisonGagnante>();
+
     public AK.Wwise.Event startEvent;
 
-    public AK.Wwise.Event nameEvent;
+    public AkCallbackType callBackToSeek = AkCallbackType.AK_MusicSyncBeat;
+    public AK.Wwise.Event callBackEvent;
 
     public void Awake()
     {
@@ -43,7 +71,7 @@ public class Sound_Manager : MonoBehaviour
             instance = this;
             AkSoundEngine.PostEvent(startEvent.Id, instance.gameObject);
 
-            nameEvent.Post(this.gameObject, (uint)AkCallbackType.AK_MusicSyncBeat, CallBackFunction);
+            callBackEvent.Post(this.gameObject, (uint)callBackToSeek, CallBackFunction);
 
             for (int i = 0; i < listInstru.Count; i++)
             {
@@ -53,10 +81,31 @@ public class Sound_Manager : MonoBehaviour
         else
             Debug.Log("More than one sound manager");
     }
-    
+
     void CallBackFunction(object baseObject, AkCallbackType type, object info)
     {
         Debug.Log("Beat ");
+        //Verif
+        VoiceCombinaisonVerification();
+    }
+
+    private void VoiceCombinaisonVerification(){
+        foreach (CombinaisonGagnante combi in voiceCombi)
+        {
+            bool res = true;
+            foreach(CombinaisonGagnante.InstruEtNum data in combi.instruAndStateNeeded)
+            {
+                if (listInstru[(int)data.instru].currentState != data.stateNeeded)
+                {
+                    res = false;
+                }
+            }
+            if (res)
+            {
+                Debug.Log("Post the event !");
+                AkSoundEngine.PostEvent(combi.eventToPlay.Id, gameObject);
+            }
+        }
     }
 
     public InstruData getData(int index)
