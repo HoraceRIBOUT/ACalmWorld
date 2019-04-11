@@ -5,7 +5,7 @@ using UnityEngine;
 public class Glitch : Change
 {
     public GameObject objectToChange;
-    public int layerWhenClick;
+    public int layerWhenClick = 9;
 
     public float duration = 0.3f;
     public float intensity = 0.5f;
