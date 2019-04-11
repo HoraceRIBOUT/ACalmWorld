@@ -7200,8 +7200,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -7209,11 +7209,11 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.22813024
-      outSlope: 0.22813024
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.08270675
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -7510,7 +7510,7 @@ MonoBehaviour:
     blurBlueIntensity: 0
     tint: {r: 1, g: 1, b: 1, a: 1}
     decalageBleu: {x: 0, y: 0}
-    saturation: 1
+    saturation: 2
     noirEtBlanc: 0
     tailleBug: 0
     decalageDansLeBug: 0
@@ -7526,7 +7526,7 @@ MonoBehaviour:
     blurBlueIntensity: 0.0001
     tint: {r: 1, g: 1, b: 1, a: 1}
     decalageBleu: {x: 0.004, y: 0}
-    saturation: 1.2
+    saturation: 2.4
     noirEtBlanc: 0
     tailleBug: 0
     decalageDansLeBug: -0.02
@@ -14133,6 +14133,8 @@ GameObject:
   - component: {fileID: 1267375143}
   - component: {fileID: 1267375142}
   - component: {fileID: 1267375140}
+  - component: {fileID: 1267375144}
+  - component: {fileID: 1267375141}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -14167,6 +14169,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20, y: 15, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1267375141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267375138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToChange: {fileID: 450536492}
+  layerWhenClick: 9
+  duration: 0.3
+  intensity: 0.1
 --- !u!95 &1267375142
 Animator:
   serializedVersion: 3
@@ -14206,6 +14224,22 @@ MonoBehaviour:
   averageLight: {r: 0.06563723, g: 0.25853682, b: 0.5566038, a: 1}
   downLight: {r: 0.05098039, g: 0.9274134, b: 1, a: 1}
   lightColor: {r: 0.29374334, g: 0.301895, b: 0.38679248, a: 1}
+--- !u!114 &1267375144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267375138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToChange: {fileID: 1789862567}
+  layerWhenClick: 9
+  duration: 0.3
+  intensity: 0.1
 --- !u!114 &1267375145
 MonoBehaviour:
   m_ObjectHideFlags: 0

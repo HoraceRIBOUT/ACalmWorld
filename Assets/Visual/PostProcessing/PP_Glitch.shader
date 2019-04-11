@@ -12,6 +12,8 @@
 		_Color("Color", Color) = (1,1,1,1)
 		_OffsetBlueX("Decalage X du bleu", float) = 0.001
 		_OffsetBlueY("Decalage Y du bleu", float) = 0.001
+
+		_Saturation("Saturation", float) = 1
 		
 	}
 		SubShader
@@ -57,6 +59,8 @@
 			float _OffsetBlueX;
 			float _OffsetBlueY;
 
+			float _Saturation;
+
 			fixed4 frag(v2f i) : SV_Target
 			{
 				//I.UV PART :
@@ -71,6 +75,8 @@
 				fixed4 col = tex2D(_MainTex, i.uv);
 				//Final color tint
 				col.rgb *= _Color.rgb;
+				//Saturation
+				col = col * _Saturation;
 				//END COLOR PART
 
 				return col;
