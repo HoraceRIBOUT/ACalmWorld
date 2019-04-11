@@ -62,7 +62,10 @@ public class MainInstrument : MonoBehaviour
             sound_manager.Switch(indexForSoundManager);
         }
         else
+        {
             Debug.Log("Error : did not have any state ", sound_manager.gameObject);
+            instruData.currentState = instruData.on? 1:0;
+        }
 
         ChangeOnClick();
     }
