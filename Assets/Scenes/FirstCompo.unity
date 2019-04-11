@@ -6934,7 +6934,7 @@ MonoBehaviour:
   - position: {x: 2.3, y: -3.9, z: -7.8}
     rotation: {x: 0, y: -40, z: 0}
     scale: {x: 1, y: 1, z: 1}
-  - position: {x: -8, y: -2.5, z: -6}
+  - position: {x: -8, y: -2.5, z: -6.1}
     rotation: {x: 0, y: -210, z: 0}
     scale: {x: 0.7, y: 0.7, z: 0.7}
   transfToRotate: {fileID: 261958871}
@@ -7060,7 +7060,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0dad775f7610cf440938f028aff25d3b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5217604, g: 0.6000713, b: 0.6320754, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14219,7 +14219,7 @@ MonoBehaviour:
   animator: {fileID: 1267375142}
   skyFolder: {fileID: 733409247}
   ambientLight: {fileID: 1586802740}
-  skyColor: {r: 0.44313726, g: 0.5529412, b: 0.6039216, a: 1}
+  skyColor: {r: 0.44143826, g: 0.55407906, b: 0.6037736, a: 1}
   upLight: {r: 0.6462264, g: 0.697327, b: 1, a: 1}
   averageLight: {r: 0.06563723, g: 0.25853682, b: 0.5566038, a: 1}
   downLight: {r: 0.05098039, g: 0.9274134, b: 1, a: 1}
@@ -15617,7 +15617,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0dad775f7610cf440938f028aff25d3b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5217604, g: 0.6000713, b: 0.6320754, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
