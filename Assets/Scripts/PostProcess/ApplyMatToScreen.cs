@@ -66,12 +66,16 @@ public class ApplyMatToScreen : MonoBehaviour
 
     public void Awake()
     {
-        texturesGlitch.width = (int)(Screen.currentResolution.width / resolutionDivision);
-        texturesGlitch.height = (int)(Screen.currentResolution.height / resolutionDivision);
+        texturesGlitch.width = (int)(Camera.main.pixelWidth / resolutionDivision);
+        texturesGlitch.height = (int)(Camera.main.pixelHeight / resolutionDivision);
     }
-    
 
-
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
+    private void Update()
+    {
+        //Test screen size : if it change --> change the texteures Glitch size
+    }
+#endif
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
