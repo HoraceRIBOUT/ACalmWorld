@@ -49,7 +49,7 @@ public class MainInstrument : MonoBehaviour
             sound_manager.UnMute(indexForSoundManager);
             //Debug.Log("Unmute " + nameEventUnMute.Id);
         }
-        else if (instruData.currentState == instruData.switches.Count)
+        else if (instruData.currentState == instruData.switches.Count || instruData.switches.Count == 0)
         {
             instruData.on = false;
             instruData.currentState = 0;

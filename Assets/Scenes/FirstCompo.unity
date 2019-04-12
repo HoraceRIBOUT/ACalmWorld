@@ -1817,11 +1817,6 @@ GameObject:
   - component: {fileID: 303661656}
   - component: {fileID: 303661659}
   - component: {fileID: 303661653}
-  - component: {fileID: 303661657}
-  - component: {fileID: 303661655}
-  - component: {fileID: 303661654}
-  - component: {fileID: 303661661}
-  - component: {fileID: 303661660}
   - component: {fileID: 303661658}
   m_Layer: 0
   m_Name: Cube (3)
@@ -1864,38 +1859,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &303661654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303661651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToChange: {fileID: 0}
-  layerWhenClick: 9
-  duration: 0.3
-  intensity: 0.1
---- !u!114 &303661655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303661651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToChange: {fileID: 0}
-  layerWhenClick: 9
-  duration: 0.3
-  intensity: 0.1
 --- !u!114 &303661656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1911,22 +1874,6 @@ MonoBehaviour:
   sound_manager: {fileID: 0}
   indexForSoundManager: 0
   changeCmpt: []
---- !u!114 &303661657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303661651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToChange: {fileID: 0}
-  layerWhenClick: 9
-  duration: 0.3
-  intensity: 0.1
 --- !u!114 &303661658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1939,10 +1886,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToChange: {fileID: 0}
+  objectToChange:
+  - {fileID: 681391471}
+  - {fileID: 1442501794}
+  - {fileID: 28137284}
   layerWhenClick: 9
   duration: 0.3
-  intensity: 0.1
+  intensity: 0.6
+  glitchOn: 0
 --- !u!114 &303661659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1962,38 +1913,6 @@ MonoBehaviour:
   - {fileID: 714369347}
   delay: 1
   calmDown: 0.4
---- !u!114 &303661660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303661651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToChange: {fileID: 0}
-  layerWhenClick: 9
-  duration: 0.3
-  intensity: 0.1
---- !u!114 &303661661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303661651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToChange: {fileID: 0}
-  layerWhenClick: 9
-  duration: 0.3
-  intensity: 0.1
 --- !u!1 &338127949
 GameObject:
   m_ObjectHideFlags: 0
@@ -6895,8 +6814,6 @@ GameObject:
   - component: {fileID: 447632073}
   - component: {fileID: 447632076}
   - component: {fileID: 447632080}
-  - component: {fileID: 447632079}
-  - component: {fileID: 447632082}
   - component: {fileID: 447632078}
   - component: {fileID: 447632074}
   - component: {fileID: 447632075}
@@ -7045,22 +6962,6 @@ MonoBehaviour:
   - {fileID: 447632074}
   - {fileID: 447632075}
   - {fileID: 447632077}
---- !u!114 &447632079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447632072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToChange: {fileID: 2145011475}
-  layerWhenClick: 9
-  duration: 0.3
-  intensity: 0.15
 --- !u!114 &447632080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7073,26 +6974,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToChange: {fileID: 648336214}
+  objectToChange:
+  - {fileID: 648336214}
+  - {fileID: 2145011475}
+  - {fileID: 1683911635}
   layerWhenClick: 9
   duration: 0.3
-  intensity: 0.15
---- !u!114 &447632082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447632072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToChange: {fileID: 1683911635}
-  layerWhenClick: 0
-  duration: 0.3
-  intensity: 0.5
+  intensity: 0.75
+  glitchOn: 0
 --- !u!1 &450536492
 GameObject:
   m_ObjectHideFlags: 0
@@ -7931,10 +7820,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToChange: {fileID: 0}
+  objectToChange: []
   layerWhenClick: 9
   duration: 0.3
   intensity: 0.5
+  glitchOn: 0
 --- !u!1 &648336214 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100288, guid: d519f5605ae4c284395a0aee62aaa9d8,
@@ -14475,8 +14365,6 @@ GameObject:
   - component: {fileID: 1267375143}
   - component: {fileID: 1267375142}
   - component: {fileID: 1267375144}
-  - component: {fileID: 1267375141}
-  - component: {fileID: 1267375148}
   - component: {fileID: 1267375140}
   - component: {fileID: 1267375146}
   - component: {fileID: 1267375147}
@@ -14514,22 +14402,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.5496893, y: 1.9125137, z: 0.4661541}
   m_Center: {x: -0.6282873, y: -0.23850441, z: -0.010540962}
---- !u!114 &1267375141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267375138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToChange: {fileID: 450536492}
-  layerWhenClick: 9
-  duration: 0.3
-  intensity: 0.1
 --- !u!95 &1267375142
 Animator:
   serializedVersion: 3
@@ -14581,10 +14453,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToChange: {fileID: 1789862567}
+  objectToChange:
+  - {fileID: 1789862567}
+  - {fileID: 672755342}
+  - {fileID: 1186409804}
+  - {fileID: 450536492}
+  - {fileID: 739801228}
   layerWhenClick: 9
   duration: 0.3
   intensity: 0.1
+  glitchOn: 0
 --- !u!114 &1267375145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14626,22 +14504,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.3889246, y: 1.7172318, z: 0.3053913}
   m_Center: {x: -5.8559813, y: -1.6586158, z: 0.8792238}
---- !u!114 &1267375148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267375138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToChange: {fileID: 672755342}
-  layerWhenClick: 9
-  duration: 0.3
-  intensity: 0.1
 --- !u!1 &1313197012
 GameObject:
   m_ObjectHideFlags: 0
@@ -15749,10 +15611,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToChange: {fileID: 0}
+  objectToChange: []
   layerWhenClick: 9
   duration: 0.3
   intensity: 0.6
+  glitchOn: 0
 --- !u!1 &1683911635 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100268, guid: d519f5605ae4c284395a0aee62aaa9d8,
