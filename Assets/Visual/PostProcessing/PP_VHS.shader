@@ -1,4 +1,4 @@
-﻿Shader "ACalmPostProcess/VHS-effect"
+Shader "ACalmPostProcess/VHS-effect"
 {
 	Properties
 	{
@@ -6,7 +6,7 @@
 		_BlurForBlue("BlurForBlue Intensity", Range(0,0.01)) = 0.005
 
 		_MainTex("Texture", 2D) = "white" {}
-		_TextureGlitch("", 2D) = "white" {}
+		_TextureGlitch("Glitch Texture", 2D) = "white" {}
 		_Color("Color", Color) = (1,1,1,1)
 		_OffsetBlue("Decalage du bleu", Vector) = (0.001,0.001,0,0)
 		_Saturation("Saturation", Range(0,2)) = 0.7

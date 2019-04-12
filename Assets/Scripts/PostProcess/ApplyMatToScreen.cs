@@ -68,6 +68,10 @@ public class ApplyMatToScreen : MonoBehaviour
     {
         texturesGlitch.width = (int)(Camera.main.pixelWidth / resolutionDivision);
         texturesGlitch.height = (int)(Camera.main.pixelHeight / resolutionDivision);
+
+
+        GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
+        GetComponentInChildren<ApplyGlitch>().GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
     }
 
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
