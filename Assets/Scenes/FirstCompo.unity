@@ -1887,9 +1887,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToChange:
-  - {fileID: 681391471}
-  - {fileID: 1442501794}
-  - {fileID: 28137284}
+  - {fileID: 108019207}
+  - {fileID: 1628211148}
+  - {fileID: 338127949}
+  - {fileID: 805849020}
+  - {fileID: 787114651}
+  - {fileID: 13188567}
+  - {fileID: 662347670}
   layerWhenClick: 9
   duration: 0.3
   intensity: 0.6
@@ -16686,7 +16690,7 @@ PrefabInstance:
     - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
         type: 3}
       propertyPath: voiceCombi.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
         type: 3}
