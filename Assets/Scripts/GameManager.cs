@@ -56,6 +56,12 @@ public class GameManager : MonoBehaviour
 #endif
 
     }
+    
+    public void VoiceGlitch(int numeroGlitch)
+    {
+        //Yeah ! Let's get fuckedup !
+    }
+
 
     public void UpdateShaderIntensity(int numberCurrInstru, int numberMaxInstru)
     {
