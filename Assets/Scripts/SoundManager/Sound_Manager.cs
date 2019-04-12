@@ -87,6 +87,8 @@ public class Sound_Manager : MonoBehaviour
         //Debug.Log("Bar ");
         //Verif
         VoiceCombinaisonVerification();
+        //Glitch in rythm
+        GameManager.instance.shaderHandler.OnEachBar();
     }
 
     private void VoiceCombinaisonVerification(){

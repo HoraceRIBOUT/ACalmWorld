@@ -8,7 +8,7 @@ Shader "ACalmPostProcess/VHS-effect"
 		_MainTex("Texture", 2D) = "white" {}
 		_TextureGlitch("Glitch Texture", 2D) = "white" {}
 		_Color("Color", Color) = (1,1,1,1)
-		_OffsetBlue("Decalage du bleu", Vector) = (0.001,0.001,0,0)
+		_OffsetBlue("Decalage du bleu", Vector) = (0.001,0.001,0,0) //_OffsetBlue store noise offset in z and w 
 		_Saturation("Saturation", Range(0,2)) = 0.7
 		_NbIntensity("NoirEtBlanc", Range(0,2)) = 0.5
 
@@ -21,6 +21,7 @@ Shader "ACalmPostProcess/VHS-effect"
 		_BlackNoiseTex("Texture", 2D) = "white" {}
 		_ToleranceBWNoise("BW Tolerance", Range(0,1)) = 0.1
 		_NoiseColor("Noise Color", Color) = (0,0,0.15,1)
+		_NoiseBool("If we use offset or time", Range(0,1)) = 0
 
 		_Tramage("Tramage", float) = 2
 		_Tram2("Tram2", float) = 2
@@ -68,7 +69,7 @@ Shader "ACalmPostProcess/VHS-effect"
 			float _BlurForBlue;
 
 			//COLOR PART 
-			float2 _OffsetBlue;
+			float4 _OffsetBlue;
 			float _Saturation;
 			float _NbIntensity;
 
@@ -87,6 +88,7 @@ Shader "ACalmPostProcess/VHS-effect"
 			sampler2D _BlackNoiseTex;
 			float _ToleranceBWNoise;
 			float4 _NoiseColor;
+			half _NoiseBool;
 
 			//TRAME
 			float _Tramage;
@@ -171,7 +173,8 @@ Shader "ACalmPostProcess/VHS-effect"
 				//END COLOR PART
 
 				//BLACK NOISE
-				float4 colBW = tex2D(_BlackNoiseTex, i.uv + float2(20 * _Time.x + _Time.y, 36 * _Time.x - _Time.y));
+				float offsetHere = (float2(20 * _Time.x + _Time.y, 36 * _Time.x - _Time.y) * (1 -_NoiseBool)) + (_NoiseBool * _OffsetBlue.zw);
+				float4 colBW = tex2D(_BlackNoiseTex, i.uv + offsetHere);
 				float blackNoiseVal = max(sign(colBW - _ToleranceBWNoise), 0);
 				float tram = frac(fmod(frac(i.uv.y + _Time.x) * pow(10, _Tram2), _Tramage));
 				colResultat.rgb = blackNoiseVal * colResultat + (1 - blackNoiseVal) * (float4(_NoiseColor.r, _NoiseColor.g, _NoiseColor.b, colBW.r));

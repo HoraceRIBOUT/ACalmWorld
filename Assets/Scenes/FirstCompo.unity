@@ -7500,7 +7500,7 @@ MonoBehaviour:
   - blurIntensity: 0
     blurBlueIntensity: 0
     tint: {r: 1, g: 1, b: 1, a: 1}
-    decalageBleu: {x: 0, y: 0}
+    decalageBleu: {x: 0, y: 0, z: 0, w: 0}
     saturation: 2
     noirEtBlanc: 0
     tailleBug: 0
@@ -7516,7 +7516,7 @@ MonoBehaviour:
   - blurIntensity: 0.002
     blurBlueIntensity: 0.0001
     tint: {r: 1, g: 1, b: 1, a: 1}
-    decalageBleu: {x: 0.004, y: 0}
+    decalageBleu: {x: 0.004, y: 0, z: 0, w: 0}
     saturation: 2.4
     noirEtBlanc: 0
     tailleBug: 0

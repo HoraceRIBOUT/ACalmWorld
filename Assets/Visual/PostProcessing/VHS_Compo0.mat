@@ -78,6 +78,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _NbIntensity: 0
+    - _NoiseBool: 1
     - _OcclusionStrength: 1
     - _OffsetBlue: 0.003
     - _Parallax: 0.02
