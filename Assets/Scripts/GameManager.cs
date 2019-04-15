@@ -97,7 +97,12 @@ public class GameManager : MonoBehaviour
 
     void DarkenMaterial()
     {
-        if (colorSave.matColor.Count == 0)
+        if (colorSave == null)
+        {
+            colorSave = ScriptableObject.CreateInstance<ListColorData>();
+            colorSave.matColor = new List<Color>();
+        }
+        if (toDarken.Count != 0)
         {
             foreach (Material mat in toDarken)
             {
@@ -109,9 +114,14 @@ public class GameManager : MonoBehaviour
 
     void UpdateMaterialColor()
     {
-        for (int i = 0; i < toDarken.Count; i++)
+        if (colorSave == null)
+            Debug.Log("No color save");
+        if (colorSave.matColor == null)
+            Debug.Log("No colorSave matColor ");
+        for (int i = 0; i < Mathf.Min(toDarken.Count, colorSave.matColor.Count); i++)
         {
-            toDarken[i].color = Color.Lerp(Color.black, colorSave.matColor[i], lerpMatColor);
+            Color col = colorSave.matColor[i];
+            toDarken[i].color = Color.Lerp(Color.black, col, lerpMatColor);
         }
 
     }
