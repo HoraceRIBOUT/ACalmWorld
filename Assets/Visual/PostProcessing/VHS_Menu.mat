@@ -64,11 +64,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Blur: 0.00221
-    - _BlurForBlue: 0.00178
+    - _Blur: 0.00235
+    - _BlurForBlue: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Decalage: 0.12
+    - _Decalage: 0.02
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -81,22 +81,22 @@ Material:
     - _NoiseBool: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Saturation: 1.07
+    - _Saturation: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 1
+    - _Speed: 2
     - _SrcBlend: 1
-    - _Taille: 0.2
+    - _Taille: 0.009
     - _ToleranceBWNoise: 0.133
     - _Tram2: 2
-    - _TramIntensity: 1
+    - _TramIntensity: 1.04
     - _Tramage: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _typeOfBug: 0
+    - _typeOfBug: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NoiseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OffsetBlue: {r: -0.08, g: 0, b: 0, a: 0}
+    - _OffsetBlue: {r: -0.00064252503, g: 0.0030797992, b: 0.2546125, a: 0.26973373}
     - _TramColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}

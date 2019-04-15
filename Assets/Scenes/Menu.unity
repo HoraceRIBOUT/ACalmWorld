@@ -749,7 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacfc89ea706eb0418ac4654690fd82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matToApply: {fileID: 2100000, guid: b3bdfc94bfae49b40978e214cbc301da, type: 2}
+  matToApply: {fileID: 2100000, guid: e8f342ecb616b7f45b90812b7cd9de3f, type: 2}
   xPos:
     serializedVersion: 2
     m_Curve:
