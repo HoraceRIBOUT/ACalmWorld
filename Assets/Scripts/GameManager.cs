@@ -35,16 +35,23 @@ public class GameManager : MonoBehaviour
     public float speed = 0.5f;
     public float animationMaxWeight = 0.3f;
 
+    //Depreciated
     public List<Material> toDarken;
     public ListColorData colorSave;
 
     public float lerpMatColor = -3f;
+    public List<GameObject> allVisualInteractibleObject;
 
     public void Start()
     {
         if (snd_mng != null) 
             snd_mng = Sound_Manager.instance;
-        DarkenMaterial();
+        //Depreciated//DarkenMaterial();
+        glitchHandler.PutObjectInRender(allVisualInteractibleObject);
+        foreach (GameObject gO in allVisualInteractibleObject)
+        {
+            gO.SetActive(false);
+        }
     }
 
     public void Update()
@@ -62,16 +69,28 @@ public class GameManager : MonoBehaviour
             shaderHandler.lerpValue = currentLerpValue;
             animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
         }
-
-        //Material
+        
         if (lerpMatColor < 0)
+        {
             lerpMatColor += Time.deltaTime;
-        if(lerpMatColor != 1)
+            if(lerpMatColor >= 0)
+            {
+                glitchHandler.on = true;
+                foreach(GameObject gO in allVisualInteractibleObject)
+                {
+                    gO.SetActive(true);
+                }
+            }
+        }
+        else if(lerpMatColor != 1)
         {
             lerpMatColor += Time.deltaTime;
             if (lerpMatColor > 1)
+            {
                 lerpMatColor = 1;
-            UpdateMaterialColor();
+                glitchHandler.ReleaseThem();
+            }
+            //Depreciated//UpdateMaterialColor();
         }
 
 #if UNITY_STANDALONE_WIN
@@ -94,7 +113,9 @@ public class GameManager : MonoBehaviour
         targetLerpValue = (float)numberCurrInstru / (float)numberMaxInstru;
     }
 
-
+    //Depreciated
+#region MaterialDarkToClear
+    //Depreciated
     void DarkenMaterial()
     {
         if (colorSave == null)
@@ -123,7 +144,7 @@ public class GameManager : MonoBehaviour
             Color col = colorSave.matColor[i];
             toDarken[i].color = Color.Lerp(Color.black, col, lerpMatColor);
         }
-
     }
+#endregion
 
 }

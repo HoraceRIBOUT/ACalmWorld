@@ -7561,6 +7561,42 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 8882318f56f181b46a6b8ae4f1f8839d, type: 2}
   colorSave: {fileID: 11400000, guid: 03a1511f4379fcf439b36cb7e449d44e, type: 2}
   lerpMatColor: -2
+  allVisualInteractibleObject:
+  - {fileID: 1456760181}
+  - {fileID: 641297893}
+  - {fileID: 648336214}
+  - {fileID: 2145011475}
+  - {fileID: 1683911635}
+  - {fileID: 1789862567}
+  - {fileID: 672755342}
+  - {fileID: 1186409804}
+  - {fileID: 450536492}
+  - {fileID: 739801228}
+  - {fileID: 1690974551}
+  - {fileID: 434415002}
+  - {fileID: 573940706}
+  - {fileID: 1525487677}
+  - {fileID: 1394111146}
+  - {fileID: 108019207}
+  - {fileID: 1245612224}
+  - {fileID: 1884981783}
+  - {fileID: 1570265950}
+  - {fileID: 13188567}
+  - {fileID: 583538222}
+  - {fileID: 1819568352}
+  - {fileID: 1439922718}
+  - {fileID: 805849020}
+  - {fileID: 1628211148}
+  - {fileID: 1441895540}
+  - {fileID: 787114651}
+  - {fileID: 1408426133}
+  - {fileID: 1473057627}
+  - {fileID: 338127949}
+  - {fileID: 1242151984}
+  - {fileID: 1002226859}
+  - {fileID: 902123570}
+  - {fileID: 662347670}
+  - {fileID: 1121445049}
 --- !u!95 &580974037
 Animator:
   serializedVersion: 3
@@ -13860,6 +13896,12 @@ Transform:
   m_Father: {fileID: 370668993}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1121445049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100270, guid: d519f5605ae4c284395a0aee62aaa9d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 143927322}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1146223929
 GameObject:
   m_ObjectHideFlags: 0
@@ -15312,6 +15354,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1456760179}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1456760181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100102, guid: 7f1f579570e78444c8e7c555e0da93e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1456760179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1468092311
 GameObject:
   m_ObjectHideFlags: 0
@@ -16406,6 +16454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f1726f0b87a9341bfdec66bb26596f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  on: 0
   matToApply: {fileID: 2100000, guid: 0193f6f10c8c2e64db62da7abb211c86, type: 2}
   _trauma: 0
   periodValue: 0.01
@@ -16430,6 +16479,15 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0.013157904
       outWeight: 0
+    - serializedVersion: 3
+      time: 2
+      value: 1000
+      inSlope: 8.805949
+      outSlope: 8.805949
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.19838274
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -16455,6 +16513,15 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0.062030077
       outWeight: 0
+    - serializedVersion: 3
+      time: 2
+      value: 0.2
+      inSlope: 0.010456047
+      outSlope: 0.010456047
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1353383
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

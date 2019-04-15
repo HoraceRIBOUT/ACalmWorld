@@ -18,7 +18,6 @@ public class Glitch : Change
     {
         if (objectToChange.Count == 0)
             objectToChange.Add(this.gameObject);
-        layerWhenDefault = objectToChange[0].layer;
     }
 
     public override void ChangeOnClick(int currentState, bool on)
