@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "MatColor", menuName = "MidnightW/Save", order = 1)]
+public class ListColorData : ScriptableObject
+{
+    public List<Color> matColor;
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
@@ -29,15 +35,22 @@ public class GameManager : MonoBehaviour
     public float speed = 0.5f;
     public float animationMaxWeight = 0.3f;
 
+    public List<Material> toDarken;
+    public ListColorData colorSave;
+
+    public float lerpMatColor = -3f;
+
     public void Start()
     {
         if (snd_mng != null) 
             snd_mng = Sound_Manager.instance;
-
+        DarkenMaterial();
     }
 
     public void Update()
     {
+
+        //Camera
         if(targetLerpValue != currentLerpValue)
         {
             float signBef = Mathf.Sign(targetLerpValue - currentLerpValue);
@@ -48,6 +61,17 @@ public class GameManager : MonoBehaviour
             }
             shaderHandler.lerpValue = currentLerpValue;
             animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
+        }
+
+        //Material
+        if (lerpMatColor < 0)
+            lerpMatColor += Time.deltaTime;
+        if(lerpMatColor != 1)
+        {
+            lerpMatColor += Time.deltaTime;
+            if (lerpMatColor > 1)
+                lerpMatColor = 1;
+            UpdateMaterialColor();
         }
 
 #if UNITY_STANDALONE_WIN
@@ -68,6 +92,28 @@ public class GameManager : MonoBehaviour
         if (animatorMainCam == null)
             animatorMainCam = mainCamera.GetComponent<Animator>();
         targetLerpValue = (float)numberCurrInstru / (float)numberMaxInstru;
+    }
+
+
+    void DarkenMaterial()
+    {
+        if (colorSave.matColor.Count == 0)
+        {
+            foreach (Material mat in toDarken)
+            {
+                colorSave.matColor.Add(mat.color);
+                mat.color = Color.black;
+            }
+        }
+    }
+
+    void UpdateMaterialColor()
+    {
+        for (int i = 0; i < toDarken.Count; i++)
+        {
+            toDarken[i].color = Color.Lerp(Color.black, colorSave.matColor[i], lerpMatColor);
+        }
+
     }
 
 }
