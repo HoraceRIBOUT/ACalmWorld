@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
         }
         else if(lerpMatColor != 1)
         {
-            lerpMatColor += Time.deltaTime;
+            lerpMatColor += Time.deltaTime * 0.5f; //because trauma is set at 2
             if (lerpMatColor > 1)
             {
                 lerpMatColor = 1;

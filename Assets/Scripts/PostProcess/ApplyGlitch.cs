@@ -19,6 +19,8 @@ public class ApplyGlitch : MonoBehaviour
     public float amplitudeValue = 0.1f;
     public AnimationCurve amplitudeOverTrauma = AnimationCurve.Linear(0, 0.001f, 1, 0.02f);
 
+    private bool canExceedOne = true;
+
     public void IWannaGlitch(float traumaValue)
     {
         _trauma += traumaValue;
@@ -44,6 +46,7 @@ public class ApplyGlitch : MonoBehaviour
         {
             objectInGlitchMode[i].layer = objectLayerInt[i];
         }
+        canExceedOne = false;
     }
 
     public void Update()
@@ -58,7 +61,7 @@ public class ApplyGlitch : MonoBehaviour
 
     private void CheckTrauma()
     {
-        if (_trauma > 1)
+        if (_trauma > 1 && !canExceedOne)
             _trauma = 1;
         else if (_trauma < 0)
             _trauma = 0;
@@ -66,7 +69,6 @@ public class ApplyGlitch : MonoBehaviour
         periodValue = periodOverTrauma.Evaluate(_trauma);
         amplitudeValue = amplitudeOverTrauma.Evaluate(_trauma);
     }
-
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {

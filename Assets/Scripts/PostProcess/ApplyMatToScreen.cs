@@ -63,12 +63,14 @@ public class ApplyMatToScreen : MonoBehaviour
     public float lerpValue = 0.2f;
 
     public int resolutionDivision = 2;
+    private Vector2 size;
 
     public void Awake()
     {
         texturesGlitch.width = (int)(Camera.main.pixelWidth / resolutionDivision);
         texturesGlitch.height = (int)(Camera.main.pixelHeight / resolutionDivision);
-
+        size.x = texturesGlitch.width;
+        size.y = texturesGlitch.height;
 
         GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
         GetComponentInChildren<ApplyGlitch>().GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
@@ -78,6 +80,15 @@ public class ApplyMatToScreen : MonoBehaviour
     private void Update()
     {
         //Test screen size : if it change --> change the texteures Glitch size
+        if (size.x != (int)(Camera.main.pixelWidth / resolutionDivision) || size.y != (int)(Camera.main.pixelHeight / resolutionDivision))
+        {
+            Debug.Log("Resize");
+            //Create new buffer and delete old one ?
+            /*texturesGlitch.width = (int)(Camera.main.pixelWidth / resolutionDivision);
+            texturesGlitch.height = (int)(Camera.main.pixelHeight / resolutionDivision);
+            size.x = texturesGlitch.width;
+            size.y = texturesGlitch.height;*/
+        }
     }
 #endif
 
