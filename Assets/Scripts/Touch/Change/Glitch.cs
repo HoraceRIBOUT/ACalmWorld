@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class Glitch : Change
 {
-    public GameObject objectToChange;
+    public List<GameObject> objectToChange = new List<GameObject>();
     public int layerWhenClick = 9;
+    private int layerWhenDefault = 0;
 
     public float duration = 0.3f;
     public float intensity = 0.5f;
     private float timer = 0.0f;
 
+    public bool glitchOn = false;
+
     public override void ChangeOnStart()
     {
-       //Do Nothing
+        if (objectToChange.Count == 0)
+            objectToChange.Add(this.gameObject);
+        layerWhenDefault = objectToChange[0].layer;
     }
 
     public override void ChangeOnClick(int currentState, bool on)
     {
-        if(timer == 0)
-            InverseGlitch();
+        glitchOn = true;
+        ReSetGlitch();
         //launch a timer to go back after some times. If so, re set the timer if click again
         GameManager.instance.glitchHandler.IWannaGlitch(intensity);
         timer = duration;
@@ -33,20 +38,21 @@ public class Glitch : Change
             timer -= Time.deltaTime;
             if (timer < 0)
             {
-                InverseGlitch();
+                glitchOn = false;
+                ReSetGlitch();
                 timer = 0;
             }
         }
     }
 
-    private void InverseGlitch()
+    private void ReSetGlitch()
     {
-        GameObject tmp_obj = objectToChange;
-        if (tmp_obj == null)
-            tmp_obj = this.gameObject;
-
-        int layerValue = tmp_obj.layer;
-        tmp_obj.layer = layerWhenClick;
-        layerWhenClick = layerValue;
+        foreach(GameObject glitchObj in objectToChange)
+        {
+            if (glitchOn)
+                glitchObj.layer = layerWhenClick;
+            else
+                glitchObj.layer = layerWhenDefault;
+        }
     }
 }

@@ -84,7 +84,7 @@ public class Sound_Manager : MonoBehaviour
 
     void CallBackFunction(object baseObject, AkCallbackType type, object info)
     {
-        Debug.Log("Beat ");
+        //Debug.Log("Bar ");
         //Verif
         VoiceCombinaisonVerification();
     }

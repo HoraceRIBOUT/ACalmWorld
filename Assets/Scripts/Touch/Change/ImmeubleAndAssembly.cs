@@ -11,7 +11,6 @@ public class ImmeubleAndAssembly : Change
     }
     public List<Transform> floorsTransform = new List<Transform>();
     private List<Floor> floors = new List<Floor>();
-    private Glitch[] glitchForWindow;
     
     private int offset;
     private float lastTime;
@@ -28,17 +27,11 @@ public class ImmeubleAndAssembly : Change
             floor.startColor = floor.window[0].color;
             floors.Add(floor);
         }
-
-        glitchForWindow = GetComponents<Glitch>();
     }
 
     public override void ChangeOnClick(int currentState, bool on)
     {
-        foreach(Glitch glit in glitchForWindow)
-        {
-            Floor randomFloor = floors[Random.Range(0, floors.Count)];
-            glit.objectToChange = randomFloor.window[Random.Range(0, randomFloor.window.Length)].gameObject;
-        }
+        //Do nothing
     }
 
     public override void ChangeOnUpdate(float rtpcValue)
