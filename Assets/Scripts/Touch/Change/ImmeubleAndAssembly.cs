@@ -23,7 +23,7 @@ public class ImmeubleAndAssembly : Change
         foreach(Transform floorTransfom in floorsTransform)
         {
             Floor floor = new Floor();
-            floor.window = floorTransfom.GetComponentsInChildren<SpriteRenderer>();
+            floor.window = floorTransfom.GetComponentsInChildren<SpriteRenderer>(true);
             floor.startColor = floor.window[0].color;
             floors.Add(floor);
         }

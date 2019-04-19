@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -149,8 +149,8 @@ public class ApplyMatToScreen : MonoBehaviour
 
     public VHSShaderValue GetCurrentVHSEffect()
     {
-        VHSShaderValue res = Lerp(targetEffect[0], targetEffect[1], lerpForTarget[0] + lerpForTarget[1]);
-        for (int i = 0; i < targetEffect.Count; i++)
+        VHSShaderValue res = Lerp(targetEffect[0], targetEffect[1], (lerpForTarget[0] + lerpForTarget[1]));
+        for (int i = 2; i < targetEffect.Count; i++)
         {
             res = Lerp(res, targetEffect[i], lerpForTarget[i]);
         }
@@ -199,7 +199,7 @@ public class ApplyMatToScreen : MonoBehaviour
         mat.SetFloat("_Taille", val.tailleBug);
         mat.SetFloat("_Decalage", val.decalageDansLeBug);
         mat.SetFloat("_typeOfBug", val.verticalGlitch ? 1 : 0);
-        mat.SetFloat("_Speed", val.blurIntensity);
+        mat.SetFloat("_Speed", val.vitesseBug);
 
         mat.SetFloat("_ToleranceBWNoise", val.tolerance);
         mat.SetColor("_NoiseColor", val.noiseColor);

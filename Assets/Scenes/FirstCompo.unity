@@ -16809,5 +16809,10 @@ PrefabInstance:
       propertyPath: allVisualInteractibleObject.Array.data[34]
       value: 
       objectReference: {fileID: 1121445049}
+    - target: {fileID: 5689864512667794888, guid: b01ea2424f24f2043b938fa778bf4811,
+        type: 3}
+      propertyPath: targetEffect.Array.data[0].vitesseBug
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b01ea2424f24f2043b938fa778bf4811, type: 3}

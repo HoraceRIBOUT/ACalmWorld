@@ -58,13 +58,13 @@ public class GameManager : MonoBehaviour
     {
 
         //Camera
-        if(targetLerpValue != currentLerpValue)
+        if(currentLerpValue != targetLerpValue)
         {
             float signBef = Mathf.Sign(targetLerpValue - currentLerpValue);
             currentLerpValue += Time.deltaTime * speed * signBef;
             if(signBef != Mathf.Sign(targetLerpValue - currentLerpValue))
             {
-                targetLerpValue = currentLerpValue;
+                currentLerpValue = targetLerpValue;
             }
             shaderHandler.lerpForTarget[0] = currentLerpValue;
             animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
@@ -110,7 +110,10 @@ public class GameManager : MonoBehaviour
     {
         if (animatorMainCam == null)
             animatorMainCam = mainCamera.GetComponent<Animator>();
-        targetLerpValue = (float)numberCurrInstru / (float)numberMaxInstru;
+        if (numberCurrInstru == 0)
+            numberCurrInstru = 0;
+        else
+            targetLerpValue = 0.25f + 0.75f * ((float)numberCurrInstru / (float)numberMaxInstru);
     }
 
     //Depreciated
