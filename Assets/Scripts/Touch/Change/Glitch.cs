@@ -6,7 +6,7 @@ public class Glitch : Change
 {
     public List<GameObject> objectToChange = new List<GameObject>();
     public int layerWhenClick = 9;
-    private int layerWhenDefault = 0;
+    public int layerWhenDefault = 0;
 
     public float duration = 0.3f;
     public float intensity = 0.5f;
@@ -18,7 +18,6 @@ public class Glitch : Change
     {
         if (objectToChange.Count == 0)
             objectToChange.Add(this.gameObject);
-        layerWhenDefault = objectToChange[0].layer;
     }
 
     public override void ChangeOnClick(int currentState, bool on)

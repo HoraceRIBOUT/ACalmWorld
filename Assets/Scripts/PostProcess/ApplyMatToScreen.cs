@@ -12,7 +12,7 @@ public class ApplyMatToScreen : MonoBehaviour
         public float blurBlueIntensity = 0;
         //Couleur
         public Color tint = Color.white;
-        public Vector2 decalageBleu = Vector2.zero;
+        public Vector4 decalageBleu = Vector4.zero;
         public float saturation = 1;
         public float noirEtBlanc = 0;
         //Bug
@@ -35,7 +35,7 @@ public class ApplyMatToScreen : MonoBehaviour
             blurBlueIntensity = 0;
             //Couleur
             tint = Color.white;
-            decalageBleu = Vector2.zero;
+            decalageBleu = Vector4.zero;
             saturation = 1;
             noirEtBlanc = 0;
             //Bug
@@ -63,12 +63,14 @@ public class ApplyMatToScreen : MonoBehaviour
     public float lerpValue = 0.2f;
 
     public int resolutionDivision = 2;
+    private Vector2 size;
 
     public void Awake()
     {
         texturesGlitch.width = (int)(Camera.main.pixelWidth / resolutionDivision);
         texturesGlitch.height = (int)(Camera.main.pixelHeight / resolutionDivision);
-
+        size.x = texturesGlitch.width;
+        size.y = texturesGlitch.height;
 
         GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
         GetComponentInChildren<ApplyGlitch>().GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
@@ -78,6 +80,15 @@ public class ApplyMatToScreen : MonoBehaviour
     private void Update()
     {
         //Test screen size : if it change --> change the texteures Glitch size
+        if (size.x != (int)(Camera.main.pixelWidth / resolutionDivision) || size.y != (int)(Camera.main.pixelHeight / resolutionDivision))
+        {
+            Debug.Log("Resize");
+            //Create new buffer and delete old one ?
+            /*texturesGlitch.width = (int)(Camera.main.pixelWidth / resolutionDivision);
+            texturesGlitch.height = (int)(Camera.main.pixelHeight / resolutionDivision);
+            size.x = texturesGlitch.width;
+            size.y = texturesGlitch.height;*/
+        }
     }
 #endif
 
@@ -85,13 +96,13 @@ public class ApplyMatToScreen : MonoBehaviour
     {
 #if !UNITY_EDITOR
         //This is a delay for when the shader cannot load (it's then backbuffer to the previous (so last) Render. 
-        if(Time.fixedTime > 3f) {
+        if(Time.fixedTime > 1f) {
 #endif
         if (matToApply != null)
         {
 #if !UNITY_EDITOR
         //This is a delay for the RenderTexture, to test if the shader don't work or if the Render Text don't work
-        if(Time.fixedTime > 6f) {
+        if(Time.fixedTime > 2f) {
 #endif
             if (texturesGlitch != null)
             {
@@ -130,7 +141,7 @@ public class ApplyMatToScreen : MonoBehaviour
         res.blurBlueIntensity = Mathf.Lerp(val1.blurBlueIntensity, val2.blurBlueIntensity, lerp);
         //Color
         res.tint = Color.Lerp(val1.tint, val2.tint, lerp);
-        res.decalageBleu = Vector2.Lerp(val1.decalageBleu, val2.decalageBleu, lerp);
+        res.decalageBleu = Vector4.Lerp(val1.decalageBleu, val2.decalageBleu, lerp);
         res.saturation = Mathf.Lerp(val1.saturation, val2.saturation, lerp);
         res.noirEtBlanc = Mathf.Lerp(val1.noirEtBlanc, val2.noirEtBlanc, lerp);
         //Bug
@@ -172,5 +183,18 @@ public class ApplyMatToScreen : MonoBehaviour
         mat.SetFloat("_Tram2", val.tramRythm);
         mat.SetFloat("_TramIntensity", val.tramIntensity);
         mat.SetColor("_TramColor", val.tramColor);
+    }
+
+    public void OnEachBeat()
+    {
+        Vector4 vec = targetEffect[1].decalageBleu;
+        vec.z = Random.Range(-1.0f,1.0f);
+        vec.w = Random.Range(-1.0f, 1.0f);
+        targetEffect[1].decalageBleu = vec;
+        print("Update !");
+    }
+    public void OnEachBar()
+    {
+        //Do something
     }
 }
