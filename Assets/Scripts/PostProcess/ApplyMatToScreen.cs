@@ -59,8 +59,8 @@ public class ApplyMatToScreen : MonoBehaviour
     public RenderTexture texturesGlitch;
     
     public List<VHSShaderValue> targetEffect = new List<VHSShaderValue>();
-    [Range(0,1)]
-    public float lerpValue = 0.2f;
+    [Range(0, 1)]
+    public List<float> lerpForTarget = new List<float>();
 
     public int resolutionDivision = 2;
     private Vector2 size;
@@ -74,6 +74,18 @@ public class ApplyMatToScreen : MonoBehaviour
 
         GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
         GetComponentInChildren<ApplyGlitch>().GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
+
+        CreateLerpValue();
+    }
+
+    public void CreateLerpValue()
+    {
+        lerpForTarget.Clear();
+        foreach (VHSShaderValue vs in targetEffect)
+        {
+            lerpForTarget.Add(0);
+        }
+        lerpForTarget[0] = 0.2f;
     }
 
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
@@ -88,6 +100,11 @@ public class ApplyMatToScreen : MonoBehaviour
             texturesGlitch.height = (int)(Camera.main.pixelHeight / resolutionDivision);
             size.x = texturesGlitch.width;
             size.y = texturesGlitch.height;*/
+        }
+
+        if(targetEffect.Count != lerpForTarget.Count)
+        {
+            CreateLerpValue();
         }
     }
 #endif
@@ -113,7 +130,7 @@ public class ApplyMatToScreen : MonoBehaviour
 #endif
             if (targetEffect.Count > 1)
             {
-                VHSShaderValue val = Lerp(targetEffect[0], targetEffect[1], lerpValue);
+                VHSShaderValue val = GetCurrentVHSEffect();
                 ApplyVHSValueOnMat(val, matToApply);
             }
 
@@ -130,7 +147,15 @@ public class ApplyMatToScreen : MonoBehaviour
 #endif
     }
 
-
+    public VHSShaderValue GetCurrentVHSEffect()
+    {
+        VHSShaderValue res = Lerp(targetEffect[0], targetEffect[1], lerpForTarget[0] + lerpForTarget[1]);
+        for (int i = 0; i < targetEffect.Count; i++)
+        {
+            res = Lerp(res, targetEffect[i], lerpForTarget[i]);
+        }
+        return res;
+    }
 
     public VHSShaderValue Lerp(VHSShaderValue val1, VHSShaderValue val2, float lerp)
     {

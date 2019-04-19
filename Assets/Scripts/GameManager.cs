@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
             {
                 targetLerpValue = currentLerpValue;
             }
-            shaderHandler.lerpValue = currentLerpValue;
+            shaderHandler.lerpForTarget[0] = currentLerpValue;
             animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
         }
         
