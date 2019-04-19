@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca1ac9d683dec4c26a451f551a21b37b, type: 3}
-  m_Name: 3D128A97-708A-496F-A07E-D0A9426D670C
+  m_Name: C06022B8-0D5F-487D-98BD-41C4BAC27268
   m_EditorClassIdentifier: 
-  objectName: Synth_Mid_03
-  id: 2295844686
-  guid: 3D128A97-708A-496F-A07E-D0A9426D670C
-  WwiseSwitchGroupReference: {fileID: 11400000, guid: 84810e5f902c26e45a7234a7e550492e,
+  objectName: Synth_Low_03
+  id: 938059158
+  guid: C06022B8-0D5F-487D-98BD-41C4BAC27268
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 733bac595dada6e4080e2c8b701d1b20,
     type: 2}
