@@ -53,7 +53,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8b3b7fd60fe434469f67fb15c866b032
     GuidInternal: 
-    m_lastTime: -8586466139594775808
+    m_lastTime: -8586459187614775808
     List:
     - name: Mute_ACW_Lofi_Musique_Percus_01_Lp
       guid: 35403a9dbef26746833ef0121cea4cc5
@@ -558,10 +558,9 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /ACalmWorld_WwiseProject
-  - /ACalmWorld_WwiseProject/Events
-  - /ACalmWorld_WwiseProject/Events/Musique
-  - /ACalmWorld_WwiseProject/Events/Musique/Musique_01_V1
-  - /ACalmWorld_WwiseProject/Events/Musique/Musique_01_V1/Play_Innit
-  - /ACalmWorld_WwiseProject/Events/Musique/Musique_01_V1/UnMute
+  - /ACalmWorld_WwiseProject/Switches
+  - /ACalmWorld_WwiseProject/Switches/Default Work Unit
+  - /ACalmWorld_WwiseProject/Switches/Default Work Unit/Lofi_Musique01
+  - /ACalmWorld_WwiseProject/Switches/Default Work Unit/Lofi_Musique01/Music1_Synth_Aerie
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

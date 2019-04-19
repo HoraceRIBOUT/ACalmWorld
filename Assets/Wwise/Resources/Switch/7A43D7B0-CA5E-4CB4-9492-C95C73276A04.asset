@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Drums_02
   id: 2901449309
   guid: 7A43D7B0-CA5E-4CB4-9492-C95C73276A04
-  WwiseSwitchGroupReference: {fileID: 0}
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 881cb476fdc8e4bdaa4720f56a817dd5,
+    type: 2}

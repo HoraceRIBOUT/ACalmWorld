@@ -133,6 +133,7 @@ public class Sound_Manager : MonoBehaviour
     {
         Sound_Manager.InstruData instruData = getData(indexForSoundManager);
         AkSoundEngine.SetSwitch(instruData.switches[instruData.currentState].GroupId, instruData.switches[instruData.currentState].Id, gameObject);
+        Debug.Log(instruData.switches[instruData.currentState].ToString() + " State == "+ instruData.currentState);
         instruData.currentState++;
     }
 

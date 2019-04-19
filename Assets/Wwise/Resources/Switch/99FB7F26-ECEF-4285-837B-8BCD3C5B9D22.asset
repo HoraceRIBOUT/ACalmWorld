@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca1ac9d683dec4c26a451f551a21b37b, type: 3}
-  m_Name: C0A6C20D-20FB-473A-9858-DD1BE2D76931
+  m_Name: 99FB7F26-ECEF-4285-837B-8BCD3C5B9D22
   m_EditorClassIdentifier: 
-  objectName: Drums_03
-  id: 2901449308
-  guid: C0A6C20D-20FB-473A-9858-DD1BE2D76931
-  WwiseSwitchGroupReference: {fileID: 11400000, guid: 881cb476fdc8e4bdaa4720f56a817dd5,
-    type: 2}
+  objectName: Aerie_01
+  id: 162589045
+  guid: 99FB7F26-ECEF-4285-837B-8BCD3C5B9D22
+  WwiseSwitchGroupReference: {fileID: 0}

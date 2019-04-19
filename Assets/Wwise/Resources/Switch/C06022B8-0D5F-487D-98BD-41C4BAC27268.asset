@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca1ac9d683dec4c26a451f551a21b37b, type: 3}
-  m_Name: C0A6C20D-20FB-473A-9858-DD1BE2D76931
+  m_Name: C06022B8-0D5F-487D-98BD-41C4BAC27268
   m_EditorClassIdentifier: 
-  objectName: Drums_03
-  id: 2901449308
-  guid: C0A6C20D-20FB-473A-9858-DD1BE2D76931
-  WwiseSwitchGroupReference: {fileID: 11400000, guid: 881cb476fdc8e4bdaa4720f56a817dd5,
+  objectName: Synth_Low_03
+  id: 938059158
+  guid: C06022B8-0D5F-487D-98BD-41C4BAC27268
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 733bac595dada6e4080e2c8b701d1b20,
     type: 2}
