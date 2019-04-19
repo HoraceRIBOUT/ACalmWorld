@@ -7593,7 +7593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b17db036a43744d97419e124fac9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToChange: []
+  objectToChange:
+  - {fileID: 641297893}
   layerWhenClick: 9
   layerWhenDefault: 0
   duration: 0.3
@@ -13229,6 +13230,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &809795462
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 200
+  m_Height: 120
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &881025940
 GameObject:
   m_ObjectHideFlags: 0
@@ -16880,5 +16913,10 @@ PrefabInstance:
       propertyPath: lerpForTarget.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5689864511922094206, guid: b01ea2424f24f2043b938fa778bf4811,
+        type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 809795462}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b01ea2424f24f2043b938fa778bf4811, type: 3}

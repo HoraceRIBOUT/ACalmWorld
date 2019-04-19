@@ -16,7 +16,7 @@ public class MainInstrument : MonoBehaviour
 
         if (changeCmpt.Count == 0)
         {
-            foreach(Change ch in GetComponentsInChildren<Change>())
+            foreach(Change ch in GetComponentsInChildren<Change>(true))
             {
                 changeCmpt.Add(ch);
             }

@@ -57,7 +57,7 @@ public class ApplyMatToScreen : MonoBehaviour
 
     public Material matToApply;
     public RenderTexture texturesGlitch;
-    
+
     public List<VHSShaderValue> targetEffect = new List<VHSShaderValue>();
     [Range(0, 1)]
     public List<float> lerpForTarget = new List<float>();
@@ -67,11 +67,7 @@ public class ApplyMatToScreen : MonoBehaviour
 
     public void Awake()
     {
-        texturesGlitch.width = (int)(Camera.main.pixelWidth / resolutionDivision);
-        texturesGlitch.height = (int)(Camera.main.pixelHeight / resolutionDivision);
-        size.x = texturesGlitch.width;
-        size.y = texturesGlitch.height;
-
+        CreateRenderTexture();
         GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
         GetComponentInChildren<ApplyGlitch>().GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
 
@@ -88,6 +84,17 @@ public class ApplyMatToScreen : MonoBehaviour
         lerpForTarget[0] = 0.2f;
     }
 
+    public void CreateRenderTexture()
+    {
+        RenderTexture rT = new RenderTexture((int)(Camera.main.pixelWidth / resolutionDivision),
+                                                         (int)(Camera.main.pixelHeight / resolutionDivision), texturesGlitch.depth);
+        size.x = texturesGlitch.width;
+        size.y = texturesGlitch.height;
+        rT.name = "TextSize" + rT.width + "_" + rT.height;
+        texturesGlitch = rT;
+        GetComponentInChildren<ApplyGlitch>().GetComponent<Camera>().targetTexture = texturesGlitch;
+    }
+
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
     private void Update()
     {
@@ -96,10 +103,7 @@ public class ApplyMatToScreen : MonoBehaviour
         {
             Debug.Log("Resize");
             //Create new buffer and delete old one ?
-            /*texturesGlitch.width = (int)(Camera.main.pixelWidth / resolutionDivision);
-            texturesGlitch.height = (int)(Camera.main.pixelHeight / resolutionDivision);
-            size.x = texturesGlitch.width;
-            size.y = texturesGlitch.height;*/
+            CreateRenderTexture();
         }
 
         if(targetEffect.Count != lerpForTarget.Count)
