@@ -16,7 +16,7 @@ public class SkySpriteLight : Animated
 
     public override void ChangeOnStart()
     {
-        skySprites = skyFolder.GetComponentsInChildren<SpriteRenderer>();
+        skySprites = skyFolder.GetComponentsInChildren<SpriteRenderer>(true);
         base.ChangeOnStart();
     }
 

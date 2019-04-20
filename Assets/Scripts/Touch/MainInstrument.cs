@@ -16,7 +16,7 @@ public class MainInstrument : MonoBehaviour
 
         if (changeCmpt.Count == 0)
         {
-            foreach(Change ch in GetComponentsInChildren<Change>())
+            foreach(Change ch in GetComponentsInChildren<Change>(true))
             {
                 changeCmpt.Add(ch);
             }
@@ -27,8 +27,11 @@ public class MainInstrument : MonoBehaviour
     
     private void OnMouseDown()
     {
-        //call the function of the child 
-        Touched();
+        if (GameManager.instance.lerpMatColor == 1)
+        {
+            //call the function of the child 
+            Touched();
+        }
     }
 
     public void Update()
@@ -49,7 +52,7 @@ public class MainInstrument : MonoBehaviour
             sound_manager.UnMute(indexForSoundManager);
             //Debug.Log("Unmute " + nameEventUnMute.Id);
         }
-        else if (instruData.currentState == instruData.switches.Count)
+        else if (instruData.currentState == instruData.switches.Count || instruData.switches.Count == 0)
         {
             instruData.on = false;
             instruData.currentState = 0;
@@ -60,9 +63,14 @@ public class MainInstrument : MonoBehaviour
         if(instruData.switches.Count != 0)
         {
             sound_manager.Switch(indexForSoundManager);
+            if(!instruData.on)
+                instruData.currentState = 0;
         }
         else
+        {
             Debug.Log("Error : did not have any state ", sound_manager.gameObject);
+            instruData.currentState = instruData.on? 1:0;
+        }
 
         ChangeOnClick();
     }

@@ -30,7 +30,8 @@ public class ColorChange : Change
 
     public override void ChangeOnUpdate(float rtpcValue)
     {
-        ChangeColor(rtpcValue);
+        if (state >= 0)
+            ChangeColor(rtpcValue);
     }
 
     public void ChangeColor(float rtpcValue)

@@ -1,0 +1,322 @@
+fileFormatVersion: 2
+guid: 7f1f579570e78444c8e7c555e0da93e5
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature_Doggo
+    100002: B_BackLegD_01
+    100004: B_BackLegD_02
+    100006: B_BackLegD_03
+    100008: B_BackLegD_IK
+    100010: B_BackLegD_IK_end
+    100012: B_BackLegL_01
+    100014: B_BackLegL_02
+    100016: B_BackLegL_03
+    100018: B_BackLegL_IK
+    100020: B_BackLegL_IK_end
+    100022: B_backShoulderD
+    100024: B_backshoulderL
+    100026: B_ear_L
+    100028: B_ear_L_end
+    100030: B_ear_R
+    100032: B_ear_R_end
+    100034: B_footD_back
+    100036: B_footD_back_end
+    100038: B_footD_front
+    100040: B_footD_front_end
+    100042: B_footL_back
+    100044: B_footL_back_end
+    100046: B_footL_front
+    100048: B_footL_front_end
+    100050: B_front_legD_01
+    100052: B_front_legD_02
+    100054: B_front_legD_03
+    100056: B_front_legL_01
+    100058: B_front_legL_02
+    100060: B_front_legL_03
+    100062: B_frontLegD_IK
+    100064: B_frontLegD_IK_end
+    100066: B_frontLegL_IK
+    100068: B_frontLegL_IK_end
+    100070: B_frontShoudlerL
+    100072: B_frontShoulderD
+    100074: B_head
+    100076: B_hips
+    100078: B_neck_01
+    100080: B_neck_02
+    100082: B_root
+    100084: B_spine_01
+    100086: B_spine_02
+    100088: B_spine_03
+    100090: B_tail_01
+    100092: B_tail_02
+    100094: B_tail_03
+    100096: B_tail_04
+    100098: B_tail_05_end
+    100100: B_tail_05_end_end
+    100102: Cylinder
+    100104: //RootNode
+    400000: Armature_Doggo
+    400002: B_BackLegD_01
+    400004: B_BackLegD_02
+    400006: B_BackLegD_03
+    400008: B_BackLegD_IK
+    400010: B_BackLegD_IK_end
+    400012: B_BackLegL_01
+    400014: B_BackLegL_02
+    400016: B_BackLegL_03
+    400018: B_BackLegL_IK
+    400020: B_BackLegL_IK_end
+    400022: B_backShoulderD
+    400024: B_backshoulderL
+    400026: B_ear_L
+    400028: B_ear_L_end
+    400030: B_ear_R
+    400032: B_ear_R_end
+    400034: B_footD_back
+    400036: B_footD_back_end
+    400038: B_footD_front
+    400040: B_footD_front_end
+    400042: B_footL_back
+    400044: B_footL_back_end
+    400046: B_footL_front
+    400048: B_footL_front_end
+    400050: B_front_legD_01
+    400052: B_front_legD_02
+    400054: B_front_legD_03
+    400056: B_front_legL_01
+    400058: B_front_legL_02
+    400060: B_front_legL_03
+    400062: B_frontLegD_IK
+    400064: B_frontLegD_IK_end
+    400066: B_frontLegL_IK
+    400068: B_frontLegL_IK_end
+    400070: B_frontShoudlerL
+    400072: B_frontShoulderD
+    400074: B_head
+    400076: B_hips
+    400078: B_neck_01
+    400080: B_neck_02
+    400082: B_root
+    400084: B_spine_01
+    400086: B_spine_02
+    400088: B_spine_03
+    400090: B_tail_01
+    400092: B_tail_02
+    400094: B_tail_03
+    400096: B_tail_04
+    400098: B_tail_05_end
+    400100: B_tail_05_end_end
+    400102: Cylinder
+    400104: //RootNode
+    2100000: Material
+    4300000: Cylinder
+    7400000: Armature_Doggo|Doggo_Anim01
+    7400002: Armature_Doggo|Doggo_Anim02
+    7400004: Armature_Doggo|Doggo_Anim03
+    7400006: Armature_Doggo|Doggo_Idle
+    9500000: //RootNode
+    13700000: Cylinder
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 07ffa5d9cbc617c4f855af7eb215a0fa, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature_Doggo|Doggo_Anim01
+      takeName: Armature_Doggo|Doggo_Anim01
+      firstFrame: 0
+      lastFrame: 360
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature_Doggo|Doggo_Anim02
+      takeName: Armature_Doggo|Doggo_Anim02
+      firstFrame: 0
+      lastFrame: 359
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature_Doggo|Doggo_Anim03
+      takeName: Armature_Doggo|Doggo_Anim03
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature_Doggo|Doggo_Idle
+      takeName: Armature_Doggo|Doggo_Idle
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
