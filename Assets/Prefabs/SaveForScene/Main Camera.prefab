@@ -354,22 +354,22 @@ MonoBehaviour:
     tramRythm: 0.1
     tramIntensity: 0.1
     tramColor: {r: 0.2783019, g: 0.819942, b: 1, a: 1}
-  - blurIntensity: 0.005
-    blurBlueIntensity: 0.0001
-    tint: {r: 1, g: 0.89063895, b: 0.4292453, a: 1}
-    decalageBleu: {x: 0.008, y: -0.016, z: 0, w: 0}
-    saturation: 2
-    noirEtBlanc: 0.2
-    tailleBug: 0
+  - blurIntensity: 0.003
+    blurBlueIntensity: 0.001
+    tint: {r: 1, g: 1, b: 1, a: 1}
+    decalageBleu: {x: 0.003, y: 0, z: 0, w: 0}
+    saturation: 1.6
+    noirEtBlanc: 0.5
+    tailleBug: 0.03
     decalageDansLeBug: -0.02
     verticalGlitch: 0
-    vitesseBug: 1
-    tolerance: 0.27
-    noiseColor: {r: 0.3490566, g: 0.2385326, b: 0.11031505, a: 1}
-    tramFrac: 1
+    vitesseBug: 2
+    tolerance: 0.13
+    noiseColor: {r: 0.3018868, g: 0.3018868, b: 0.1882353, a: 1}
+    tramFrac: 0.02
     tramRythm: 0.1
-    tramIntensity: 0.1
-    tramColor: {r: 0.7075472, g: 0.14233658, b: 0, a: 1}
+    tramIntensity: 4
+    tramColor: {r: 0.8773585, g: 0.72381663, b: 0.3600481, a: 1}
   - blurIntensity: 0
     blurBlueIntensity: 0
     tint: {r: 0.6556604, g: 0.77584165, b: 1, a: 1}
@@ -402,12 +402,63 @@ MonoBehaviour:
     tramRythm: 0.1
     tramIntensity: 0.1
     tramColor: {r: 0.7058824, g: 0.14117648, b: 0, a: 1}
+  forTramIntensityTransition:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5997838
+      value: 0.04346776
+      inSlope: 0.15559065
+      outSlope: 0.15559065
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.28183937
+    - serializedVersion: 3
+      time: 0.8993401
+      value: 0.15482776
+      inSlope: 0.9591264
+      outSlope: 0.9591264
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.98725015
+      value: 0.36305067
+      inSlope: 4.019439
+      outSlope: 4.019439
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.21254429
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0
+      outSlope: -0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   lerpForTarget:
   - 0.2
   - 0
-  - 1
   - 0
-  - 1
+  - 0
+  - 0
   resolutionDivision: 4
 --- !u!114 &5689864512667794895
 MonoBehaviour:

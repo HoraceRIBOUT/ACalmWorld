@@ -59,11 +59,14 @@ public class ApplyMatToScreen : MonoBehaviour
     public RenderTexture texturesGlitch;
 
     public List<VHSShaderValue> targetEffect = new List<VHSShaderValue>();
+    public AnimationCurve forTramIntensityTransition = AnimationCurve.Linear(0, 0, 1, 1);
     [Range(0, 1)]
     public List<float> lerpForTarget = new List<float>();
 
     public int resolutionDivision = 2;
     private Vector2 size;
+
+
 
     public void Awake()
     {
@@ -184,7 +187,7 @@ public class ApplyMatToScreen : MonoBehaviour
         //Tram
         res.tramFrac = Mathf.Lerp(val1.tramFrac, val2.tramFrac, lerp);
         res.tramRythm = Mathf.Lerp(val1.tramRythm, val2.tramRythm, lerp);
-        res.tramIntensity = Mathf.Lerp(val1.tramIntensity, val2.tramIntensity, lerp);
+        res.tramIntensity = Mathf.Lerp(val1.tramIntensity, val2.tramIntensity, forTramIntensityTransition.Evaluate(lerp));
         res.tramColor = Color.Lerp(val1.tramColor, val2.tramColor, lerp);
 
         return res;
