@@ -7108,7 +7108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 508678062}
   m_Layer: 0
-  m_Name: Neon-Mid
+  m_Name: Neon-Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7189,9 +7189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeToColor:
-  - {r: 0.6, g: 1, b: 0.92580557, a: 1}
-  - {r: 0.990566, g: 0.5550398, b: 0.4532307, a: 1}
-  - {r: 0.45490193, g: 0.99215686, b: 0.6080815, a: 1}
+  - {r: 0.454902, g: 0.9921569, b: 0.60784316, a: 1}
+  - {r: 1, g: 0.6666667, b: 0.30588236, a: 1}
   colorIntensityFunction:
     serializedVersion: 2
     m_Curve:
@@ -13635,38 +13634,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 143927322}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1129369013
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: TextSize480_270
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 480
-  m_Height: 270
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1146223929
 GameObject:
   m_ObjectHideFlags: 0
@@ -13797,6 +13764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleForEachState:
   - {fileID: 444056253}
+  - {fileID: 700910957}
   - {fileID: 700910957}
 --- !u!1 &1186409804
 GameObject:
@@ -15657,6 +15625,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &1700503163
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TextSize480_270
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 480
+  m_Height: 270
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1766782325
 GameObject:
   m_ObjectHideFlags: 0
@@ -15702,7 +15702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1772749154}
   m_Layer: 0
-  m_Name: Doggo-Low
+  m_Name: Doggo-Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16494,6 +16494,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
         type: 3}
+      propertyPath: listInstru.Array.data[1].switches.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[2].switches.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
       propertyPath: listInstru.Array.data[0].gameObjectOfTheInstrument
       value: 
       objectReference: {fileID: 1777550658}
@@ -16517,6 +16527,98 @@ PrefabInstance:
       propertyPath: listInstru.Array.data[4].gameObjectOfTheInstrument
       value: 
       objectReference: {fileID: 491206886}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[1].nameEventUnMute.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 72fbff7e49721a647a0a5c7d1268ceed,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[1].nameEventMute.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f187c4fb6eeb154c892a616188f5838,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[1].switches.Array.data[0].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 751cf508bf8d11444aae4718ae1cdc59,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[1].switches.Array.data[1].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: a46baf4bce2369c449632f7a05308271,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[1].switches.Array.data[2].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: dca4ddb88352fb642b2882cc38e61f49,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[1].rtpcId.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: ae6a503ed47e48c4fa10ab3d2bec1262,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[1].id
+      value: Doggo-Mid
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[2].id
+      value: Neon-Low
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[2].nameEventUnMute.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: cac8fcbf23c095644b4a9283b921b5dc,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[2].nameEventMute.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 06761a723daf9a145b0bdecbd635fad8,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[2].switches.Array.data[0].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: d4e7c6a1d3231f14fbf1c43e2d31454b,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[2].switches.Array.data[1].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: e18b2a688044f174fb2c6505735159ce,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[2].switches.Array.data[2].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 58e86c06f845e4fdc9ae7a481e853994,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: listInstru.Array.data[2].rtpcId.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 91b42222e925c3744986813b6af5a2dd,
+        type: 2}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: voiceCombi.Array.data[0].instruAndStateNeeded.Array.data[1].instru
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301719244556836654, guid: 3aa5adca42125b8479ebf311c1132300,
+        type: 3}
+      propertyPath: voiceCombi.Array.data[0].instruAndStateNeeded.Array.data[3].instru
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2301719244556836653, guid: 3aa5adca42125b8479ebf311c1132300,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16840,6 +16942,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 1129369013}
+      objectReference: {fileID: 1700503163}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b01ea2424f24f2043b938fa778bf4811, type: 3}

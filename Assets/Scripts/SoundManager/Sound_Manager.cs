@@ -46,8 +46,8 @@ public class Sound_Manager : MonoBehaviour
     public enum InstruPossible
     {
         pianovintage,
-        low,
         mid,
+        low,
         aeri,
         kick,
     }
@@ -113,7 +113,6 @@ public class Sound_Manager : MonoBehaviour
     public void PlayVoice(CombinaisonGagnante combinaison, int currentIndex)
     {
         Debug.Log("Post the event !");
-
         AkSoundEngine.PostEvent(combinaison.eventToPlay.Id, gameObject);
     }
 
@@ -147,7 +146,6 @@ public class Sound_Manager : MonoBehaviour
     {
         Sound_Manager.InstruData instruData = getData(indexForSoundManager);
         AkSoundEngine.SetSwitch(instruData.switches[instruData.currentState].GroupId, instruData.switches[instruData.currentState].Id, gameObject);
-        Debug.Log(instruData.switches[instruData.currentState].ToString() + " State == "+ instruData.currentState);
         instruData.currentState++;
     }
 
