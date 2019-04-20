@@ -84,40 +84,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: -48
-  - id: Doggo-Low
-    gameObjectOfTheInstrument: {fileID: 0}
-    nameEventUnMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: cac8fcbf23c095644b4a9283b921b5dc,
-        type: 2}
-    nameEventMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 06761a723daf9a145b0bdecbd635fad8,
-        type: 2}
-    switches:
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: d4e7c6a1d3231f14fbf1c43e2d31454b,
-        type: 2}
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: e18b2a688044f174fb2c6505735159ce,
-        type: 2}
-    rtpcId:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 91b42222e925c3744986813b6af5a2dd,
-        type: 2}
-    on: 0
-    currentState: 0
-    rtpcValue: -48
-  - id: Neon-Mid
+  - id: Doggo-Mid
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -152,6 +119,39 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: ae6a503ed47e48c4fa10ab3d2bec1262,
+        type: 2}
+    on: 0
+    currentState: 0
+    rtpcValue: -48
+  - id: Neon-Low
+    gameObjectOfTheInstrument: {fileID: 0}
+    nameEventUnMute:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: cac8fcbf23c095644b4a9283b921b5dc,
+        type: 2}
+    nameEventMute:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 06761a723daf9a145b0bdecbd635fad8,
+        type: 2}
+    switches:
+    - idInternal: 0
+      valueGuidInternal: 
+      groupIdInternal: 0
+      groupGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: d4e7c6a1d3231f14fbf1c43e2d31454b,
+        type: 2}
+    - idInternal: 0
+      valueGuidInternal: 
+      groupIdInternal: 0
+      groupGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: e18b2a688044f174fb2c6505735159ce,
+        type: 2}
+    rtpcId:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 91b42222e925c3744986813b6af5a2dd,
         type: 2}
     on: 0
     currentState: 0
@@ -229,7 +229,8 @@ MonoBehaviour:
     currentState: 0
     rtpcValue: -48
   voiceCombi:
-  - eventToPlay:
+  - onPlay: 0
+    eventToPlay:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 8cbe7617c898c41ceb75a3a8365de251,
@@ -237,11 +238,11 @@ MonoBehaviour:
     instruAndStateNeeded:
     - instru: 0
       stateNeeded: 2
-    - instru: 2
+    - instru: 1
       stateNeeded: 2
     - instru: 4
       stateNeeded: 1
-    - instru: 1
+    - instru: 2
       stateNeeded: 1
   startEvent:
     idInternal: 0
@@ -249,11 +250,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 6d5a55b04bebf45a48322a9562e7982a,
       type: 2}
   callBackToSeek: 512
-  callBackEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6d5a55b04bebf45a48322a9562e7982a,
-      type: 2}
+  callBackForVoiceEnd: 1
 --- !u!114 &2301719244556836651
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -63,6 +63,8 @@ public class MainInstrument : MonoBehaviour
         if(instruData.switches.Count != 0)
         {
             sound_manager.Switch(indexForSoundManager);
+            if(!instruData.on)
+                instruData.currentState = 0;
         }
         else
         {

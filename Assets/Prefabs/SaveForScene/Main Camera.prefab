@@ -65,7 +65,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 512
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 8400000, guid: bac0790441cce1144bdd64bf8e8f934c, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   matToApply: {fileID: 2100000, guid: 88ce2e817a7c9714698325ac1c19c137, type: 2}
-  texturesGlitch: {fileID: 8400000, guid: bac0790441cce1144bdd64bf8e8f934c, type: 2}
+  texturesGlitch: {fileID: 0}
   targetEffect:
   - blurIntensity: 0
     blurBlueIntensity: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
     tailleBug: 0
     decalageDansLeBug: 0
     verticalGlitch: 0
-    vitesseBug: 0
+    vitesseBug: 1
     tolerance: 0
     noiseColor: {r: 0, g: 0, b: 0, a: 1}
     tramFrac: 1
@@ -358,9 +358,9 @@ MonoBehaviour:
     blurBlueIntensity: 0.0001
     tint: {r: 1, g: 0.89063895, b: 0.4292453, a: 1}
     decalageBleu: {x: 0.008, y: -0.016, z: 0, w: 0}
-    saturation: 3
+    saturation: 2
     noirEtBlanc: 0.2
-    tailleBug: 0.2
+    tailleBug: 0
     decalageDansLeBug: -0.02
     verticalGlitch: 0
     vitesseBug: 1
@@ -386,11 +386,28 @@ MonoBehaviour:
     tramRythm: 3
     tramIntensity: 0.3
     tramColor: {r: 0.5377358, g: 0.0076094554, b: 0.4747949, a: 1}
+  - blurIntensity: 0.005
+    blurBlueIntensity: 0.0001
+    tint: {r: 1, g: 0.89019614, b: 0.427451, a: 1}
+    decalageBleu: {x: 0.008, y: -0.016, z: 0, w: 0}
+    saturation: 2
+    noirEtBlanc: 0.2
+    tailleBug: 0
+    decalageDansLeBug: -0.02
+    verticalGlitch: 0
+    vitesseBug: 1
+    tolerance: 0.27
+    noiseColor: {r: 0.34901962, g: 0.2392157, b: 0.10980393, a: 1}
+    tramFrac: 1
+    tramRythm: 0.1
+    tramIntensity: 0.1
+    tramColor: {r: 0.7058824, g: 0.14117648, b: 0, a: 1}
   lerpForTarget:
   - 0.2
   - 0
+  - 1
   - 0
-  - 0
+  - 1
   resolutionDivision: 4
 --- !u!114 &5689864512667794895
 MonoBehaviour:

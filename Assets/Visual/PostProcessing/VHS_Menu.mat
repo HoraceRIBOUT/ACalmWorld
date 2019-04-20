@@ -98,5 +98,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NoiseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OffsetBlue: {r: -0.0036674747, g: 0, b: 0.85565317, a: 0.19673717}
+    - _OffsetBlue: {r: 0.0000005725209, g: 0, b: 0.6233317, a: 0.33175594}
     - _TramColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
