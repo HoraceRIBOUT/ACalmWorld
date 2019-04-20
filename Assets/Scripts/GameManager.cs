@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     private float targetLerpValue = 0;
     private float currentLerpValue = 0;
+    private float speedForVoiceEffect = 0.5f;
     public float speed = 0.5f;
     public float animationMaxWeight = 0.3f;
 
@@ -100,9 +101,37 @@ public class GameManager : MonoBehaviour
 
     }
     
-    public void VoiceGlitch(int numeroGlitch)
+    public void VoiceGlitch(int numeroGlitch, bool on)
     {
         //Yeah ! Let's get fuckedup !
+        if (on)
+        {
+            StartCoroutine(goUp(numeroGlitch + 2));
+        }
+        else
+        {
+            StartCoroutine(goDown(numeroGlitch + 2));
+        }
+    }
+
+    public IEnumerator goUp(int index)
+    {
+        while (shaderHandler.lerpForTarget[index] <= 1) 
+        {
+            shaderHandler.lerpForTarget[index] += Time.deltaTime * speedForVoiceEffect;
+            yield return new WaitForSeconds(0.01f);
+        }
+        shaderHandler.lerpForTarget[index] = 1;
+    }
+
+    public IEnumerator goDown(int index)
+    {
+        while (shaderHandler.lerpForTarget[index] >= 0)
+        {
+            shaderHandler.lerpForTarget[index] -= Time.deltaTime * speedForVoiceEffect;
+            yield return new WaitForSeconds(0.01f);
+        }
+        shaderHandler.lerpForTarget[index] = 0;
     }
 
 

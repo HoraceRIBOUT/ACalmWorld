@@ -31,6 +31,7 @@ public class Sound_Manager : MonoBehaviour
     [System.Serializable]
     public class CombinaisonGagnante
     {
+        public bool onPlay = false;
         public AK.Wwise.Event eventToPlay;
 
         [System.Serializable] public class InstruEtNum
@@ -58,11 +59,12 @@ public class Sound_Manager : MonoBehaviour
 
     [SerializeField]
     public List<CombinaisonGagnante> voiceCombi = new List<CombinaisonGagnante>();
+    private List<int> playingIndex = new List<int>();
 
     public AK.Wwise.Event startEvent;
 
     public AkCallbackType callBackToSeek = AkCallbackType.AK_MusicSyncBeat;
-    public AK.Wwise.Event callBackEvent;
+    public AkCallbackType callBackForVoiceEnd = AkCallbackType.AK_EndOfEvent;
 
     public void Awake()
     {
@@ -71,7 +73,7 @@ public class Sound_Manager : MonoBehaviour
             instance = this;
             AkSoundEngine.PostEvent(startEvent.Id, instance.gameObject);
 
-            callBackEvent.Post(this.gameObject, (uint)callBackToSeek, CallBackFunction);
+            startEvent.Post(this.gameObject, (uint)callBackToSeek, CallBackFunction);
 
             for (int i = 0; i < listInstru.Count; i++)
             {
@@ -95,30 +97,54 @@ public class Sound_Manager : MonoBehaviour
         int currentIndex = 0;
         foreach (CombinaisonGagnante combi in voiceCombi)
         {
-            bool res = true;
-            foreach(CombinaisonGagnante.InstruEtNum data in combi.instruAndStateNeeded)
+            if (!combi.onPlay)
             {
-                if (listInstru[(int)data.instru].currentState != data.stateNeeded)
+                bool res = true;
+                foreach (CombinaisonGagnante.InstruEtNum data in combi.instruAndStateNeeded)
                 {
-                    res = false;
+                    if (listInstru[(int)data.instru].currentState != data.stateNeeded)
+                    {
+                        res = false;
+                    }
+                }
+                if (res)
+                {
+                    PlayVoice(combi, currentIndex);
                 }
             }
-            if (res)
-            {
-                PlayVoice(combi, currentIndex);
-            }
+            //end of if
         }
+        //end of foreach
     }
 
     public void PlayVoice(CombinaisonGagnante combinaison, int currentIndex)
     {
         Debug.Log("Post the event !");
         AkSoundEngine.PostEvent(combinaison.eventToPlay.Id, gameObject);
+        combinaison.eventToPlay.Post(this.gameObject, (uint)callBackForVoiceEnd, FinishVoice);
+        combinaison.onPlay = true;
+        playingIndex.Add(currentIndex);
+
+        GameManager.instance.VoiceGlitch(currentIndex, true);
+
     }
 
     private void FinishVoice(object baseObject, AkCallbackType type, object info)
     {
-        Debug.Log("Voice Finish");
+        if (playingIndex.Count == 0)
+        {
+            Debug.LogError("On demande d'arrêtez une voix mais aucune n'est lance !");
+        }
+        else
+        {
+            int index = playingIndex[0];
+            playingIndex.Remove(index);
+            voiceCombi[index].onPlay = false;
+
+            GameManager.instance.VoiceGlitch(index, false);
+
+            Debug.Log("Finish voice");
+        }
     }
 
     public InstruData getData(int index)

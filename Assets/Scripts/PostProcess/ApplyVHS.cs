@@ -11,6 +11,7 @@ public class ApplyVHS : MonoBehaviour
 
     public float speed = 0.1f;
 
+#if !UNITY_ANDROID
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
         if (matToApply != null)
@@ -30,4 +31,5 @@ public class ApplyVHS : MonoBehaviour
         vec.w = Random.Range(0f, 1f);
         matToApply.SetVector("_OffsetBlue", vec);
     }
+#endif
 }
