@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,8 +46,8 @@ public class Sound_Manager : MonoBehaviour
     public enum InstruPossible
     {
         pianovintage,
-        low,
         mid,
+        low,
         aeri,
         kick,
     }
@@ -92,6 +92,7 @@ public class Sound_Manager : MonoBehaviour
     }
 
     private void VoiceCombinaisonVerification(){
+        int currentIndex = 0;
         foreach (CombinaisonGagnante combi in voiceCombi)
         {
             bool res = true;
@@ -104,10 +105,20 @@ public class Sound_Manager : MonoBehaviour
             }
             if (res)
             {
-                Debug.Log("Post the event !");
-                AkSoundEngine.PostEvent(combi.eventToPlay.Id, gameObject);
+                PlayVoice(combi, currentIndex);
             }
         }
+    }
+
+    public void PlayVoice(CombinaisonGagnante combinaison, int currentIndex)
+    {
+        Debug.Log("Post the event !");
+        AkSoundEngine.PostEvent(combinaison.eventToPlay.Id, gameObject);
+    }
+
+    private void FinishVoice(object baseObject, AkCallbackType type, object info)
+    {
+        Debug.Log("Voice Finish");
     }
 
     public InstruData getData(int index)
@@ -135,7 +146,6 @@ public class Sound_Manager : MonoBehaviour
     {
         Sound_Manager.InstruData instruData = getData(indexForSoundManager);
         AkSoundEngine.SetSwitch(instruData.switches[instruData.currentState].GroupId, instruData.switches[instruData.currentState].Id, gameObject);
-        Debug.Log(instruData.switches[instruData.currentState].ToString() + " State == "+ instruData.currentState);
         instruData.currentState++;
     }
 

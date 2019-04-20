@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Aerie_01
   id: 162589045
   guid: 99FB7F26-ECEF-4285-837B-8BCD3C5B9D22
-  WwiseSwitchGroupReference: {fileID: 0}
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: a3479919601ba43c8b7ba63a556edd92,
+    type: 2}

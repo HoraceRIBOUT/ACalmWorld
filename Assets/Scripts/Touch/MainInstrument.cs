@@ -16,7 +16,7 @@ public class MainInstrument : MonoBehaviour
 
         if (changeCmpt.Count == 0)
         {
-            foreach(Change ch in GetComponentsInChildren<Change>())
+            foreach(Change ch in GetComponentsInChildren<Change>(true))
             {
                 changeCmpt.Add(ch);
             }
@@ -27,8 +27,11 @@ public class MainInstrument : MonoBehaviour
     
     private void OnMouseDown()
     {
-        //call the function of the child 
-        Touched();
+        if (GameManager.instance.lerpMatColor == 1)
+        {
+            //call the function of the child 
+            Touched();
+        }
     }
 
     public void Update()

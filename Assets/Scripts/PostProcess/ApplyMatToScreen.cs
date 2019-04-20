@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -57,23 +57,42 @@ public class ApplyMatToScreen : MonoBehaviour
 
     public Material matToApply;
     public RenderTexture texturesGlitch;
-    
+
     public List<VHSShaderValue> targetEffect = new List<VHSShaderValue>();
-    [Range(0,1)]
-    public float lerpValue = 0.2f;
+    [Range(0, 1)]
+    public List<float> lerpForTarget = new List<float>();
 
     public int resolutionDivision = 2;
     private Vector2 size;
 
     public void Awake()
     {
-        texturesGlitch.width = (int)(Camera.main.pixelWidth / resolutionDivision);
-        texturesGlitch.height = (int)(Camera.main.pixelHeight / resolutionDivision);
-        size.x = texturesGlitch.width;
-        size.y = texturesGlitch.height;
-
+        CreateRenderTexture();
         GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
         GetComponentInChildren<ApplyGlitch>().GetComponent<Camera>().depthTextureMode = DepthTextureMode.None;
+
+        CreateLerpValue();
+    }
+
+    public void CreateLerpValue()
+    {
+        lerpForTarget.Clear();
+        foreach (VHSShaderValue vs in targetEffect)
+        {
+            lerpForTarget.Add(0);
+        }
+        lerpForTarget[0] = 0.2f;
+    }
+
+    public void CreateRenderTexture()
+    {
+        RenderTexture rT = new RenderTexture((int)(Camera.main.pixelWidth / resolutionDivision),
+                                                         (int)(Camera.main.pixelHeight / resolutionDivision), texturesGlitch.depth);
+        size.x = texturesGlitch.width;
+        size.y = texturesGlitch.height;
+        rT.name = "TextSize" + rT.width + "_" + rT.height;
+        texturesGlitch = rT;
+        GetComponentInChildren<ApplyGlitch>().GetComponent<Camera>().targetTexture = texturesGlitch;
     }
 
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
@@ -84,10 +103,12 @@ public class ApplyMatToScreen : MonoBehaviour
         {
             Debug.Log("Resize");
             //Create new buffer and delete old one ?
-            /*texturesGlitch.width = (int)(Camera.main.pixelWidth / resolutionDivision);
-            texturesGlitch.height = (int)(Camera.main.pixelHeight / resolutionDivision);
-            size.x = texturesGlitch.width;
-            size.y = texturesGlitch.height;*/
+            CreateRenderTexture();
+        }
+
+        if(targetEffect.Count != lerpForTarget.Count)
+        {
+            CreateLerpValue();
         }
     }
 #endif
@@ -113,7 +134,7 @@ public class ApplyMatToScreen : MonoBehaviour
 #endif
             if (targetEffect.Count > 1)
             {
-                VHSShaderValue val = Lerp(targetEffect[0], targetEffect[1], lerpValue);
+                VHSShaderValue val = GetCurrentVHSEffect();
                 ApplyVHSValueOnMat(val, matToApply);
             }
 
@@ -130,7 +151,15 @@ public class ApplyMatToScreen : MonoBehaviour
 #endif
     }
 
-
+    public VHSShaderValue GetCurrentVHSEffect()
+    {
+        VHSShaderValue res = Lerp(targetEffect[0], targetEffect[1], (lerpForTarget[0] + lerpForTarget[1]));
+        for (int i = 2; i < targetEffect.Count; i++)
+        {
+            res = Lerp(res, targetEffect[i], lerpForTarget[i]);
+        }
+        return res;
+    }
 
     public VHSShaderValue Lerp(VHSShaderValue val1, VHSShaderValue val2, float lerp)
     {
@@ -174,7 +203,7 @@ public class ApplyMatToScreen : MonoBehaviour
         mat.SetFloat("_Taille", val.tailleBug);
         mat.SetFloat("_Decalage", val.decalageDansLeBug);
         mat.SetFloat("_typeOfBug", val.verticalGlitch ? 1 : 0);
-        mat.SetFloat("_Speed", val.blurIntensity);
+        mat.SetFloat("_Speed", val.vitesseBug);
 
         mat.SetFloat("_ToleranceBWNoise", val.tolerance);
         mat.SetColor("_NoiseColor", val.noiseColor);
