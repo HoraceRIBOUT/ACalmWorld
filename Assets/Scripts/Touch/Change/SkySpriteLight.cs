@@ -14,6 +14,8 @@ public class SkySpriteLight : Animated
     public Color downLight = Color.white;
     public Color lightColor = Color.white;
 
+    public float transitionSpeed = 0.5f;
+
     public override void AddEventOnListener(MainInstrument mI)
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
@@ -30,13 +32,9 @@ public class SkySpriteLight : Animated
 
     public override void ChangeOnClick()
     {
-
-        //transformer ça en transition via un lerp qui va s'echanger
-        animator.SetLayerWeight(currentLayer, 0);
         currentLayer++;
         if (currentLayer >= animator.layerCount || mainInstrument.instruData.currentState == 0)
             currentLayer = 0;
-        animator.SetLayerWeight(currentLayer, 1);
     }
 
     public void ChangeOnUpdate()
@@ -49,6 +47,26 @@ public class SkySpriteLight : Animated
         RenderSettings.ambientSkyColor = upLight;
         RenderSettings.ambientEquatorColor = averageLight;
         RenderSettings.ambientGroundColor = downLight;
+
+        //Lerp for animator layer
+        for (int i = 0; i < animator.layerCount; i++)
+        {
+            if (currentLayer == i)
+            {
+                float weight = animator.GetLayerWeight(i);
+                if (weight < 1)
+                {
+                    animator.SetLayerWeight(i, weight + Time.deltaTime * transitionSpeed);
+                }
+            }
+            else {
+                float weight = animator.GetLayerWeight(i);
+                if (weight > 0)
+                {
+                    animator.SetLayerWeight(i, weight - Time.deltaTime * transitionSpeed * 1.5f);
+                }
+            }
+        }
     }
 
 }
