@@ -16,7 +16,7 @@ public class AnimatedMove : Animated
 
     public List<PosRotSca> posRotScaForEachState;
     public Transform transfToRotate;
-    public List<Collider2D> collForEachState = new List<Collider2D>();
+    public List<GameObject> collForEachState = new List<GameObject>();
 
     public override void ChangeOnClick(int currentState, bool on)
     {
@@ -33,10 +33,10 @@ public class AnimatedMove : Animated
 
         //Collision
         if (currentLayer == 0)
-            collForEachState[collForEachState.Count - 1].enabled = false;
+            collForEachState[collForEachState.Count - 1].SetActive(false);
         else
-            collForEachState[currentLayer - 1].enabled = false;
-        collForEachState[currentLayer].enabled = true;
+            collForEachState[currentLayer - 1].SetActive(false);
+        collForEachState[currentLayer].SetActive(true);
     }
 
 
