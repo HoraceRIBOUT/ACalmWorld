@@ -477,18 +477,9 @@ MonoBehaviour:
   animatorMainCam: {fileID: 5689864512667794894}
   shaderHandler: {fileID: 5689864512667794888}
   glitchHandler: {fileID: 5689864511922094205}
-  speed: 0.1
+  speed: 0.05
   animationMaxWeight: 0.25
-  toDarken:
-  - {fileID: 2100000, guid: 4cae502fea2aa7548a0f25cc0c24d35e, type: 2}
-  - {fileID: 2100000, guid: 169b325a2c0d8c5408a819df38a3e80f, type: 2}
-  - {fileID: 2100000, guid: 19b1aec8515949240973b254b91990fe, type: 2}
-  - {fileID: 2100000, guid: 8970741ddd73d9e4886fbcd4b935cb91, type: 2}
-  - {fileID: 2100000, guid: 2f75aa921d1aef84e849796d13f83155, type: 2}
-  - {fileID: 2100000, guid: dd54c11a76a67ab48b0f3d7dcd44d86e, type: 2}
-  - {fileID: 2100000, guid: 8882318f56f181b46a6b8ae4f1f8839d, type: 2}
-  colorSave: {fileID: 11400000, guid: 03a1511f4379fcf439b36cb7e449d44e, type: 2}
-  lerpMatColor: -2
+  timerAtBeginning: -3
   allVisualInteractibleObject:
   - {fileID: 0}
   - {fileID: 0}

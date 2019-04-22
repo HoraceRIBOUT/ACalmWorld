@@ -28,7 +28,7 @@ public class MainInstrument : MonoBehaviour
     
     private void OnMouseDown()
     {
-        if (GameManager.instance.lerpMatColor == 1)
+        if (GameManager.instance.timerAtBeginning == 1)
         {
             //call the function of the child 
             Touched();

@@ -10,7 +10,7 @@ public class TouchToMainInst : MonoBehaviour
     {
         if (mainInst == null)
             mainInst = GetComponentInParent<MainInstrument>();
-        if (GameManager.instance.lerpMatColor == 1)
+        if (GameManager.instance.timerAtBeginning == 1)
         {
             //call the function of the child 
             mainInst.Touched();
