@@ -5,7 +5,7 @@ using UnityEngine;
 public class Animated : Change
 {
     public Animator animator;
-    protected int state;
+    public int currentLayer = 0;
 
     public override void AddEventOnListener(MainInstrument mI)
     {
@@ -22,7 +22,10 @@ public class Animated : Change
 
     public virtual void ChangeOnClick()
     {
-        animator.SetTrigger("Click");
-        state = mainInstrument.instruData.currentState - 1;
+        animator.SetLayerWeight(currentLayer, 0);
+        currentLayer++;
+        if (currentLayer >= animator.layerCount && currentLayer >= mainInstrument.instruData.currentState)
+            currentLayer = 0;
+        animator.SetLayerWeight(currentLayer, 1);
     }
 }

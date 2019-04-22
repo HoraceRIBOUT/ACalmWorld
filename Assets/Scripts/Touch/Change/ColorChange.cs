@@ -38,8 +38,7 @@ public class ColorChange : Change
 
     public void ChangeOnUpdate()
     {
-        if (state >= 0)
-            ChangeColor(mainInstrument.instruData.rtpcValue);
+        ChangeColor(mainInstrument.instruData.rtpcValue);
     }
 
     public void ChangeColor(float rtpcValue)
@@ -47,14 +46,18 @@ public class ColorChange : Change
         float valueZerOne = (rtpcValue + 48) / 48;
         valueZerOne = colorIntensityFunction.Evaluate(valueZerOne);
         //change the color to the right one
+
+        int colState = state;
+        if (colState < 0)
+            colState = 0;
         if (spriteRdr != null)
         {
-            spriteRdr.color = Color.Lerp(startColor, changeToColor[state], valueZerOne);
+            spriteRdr.color = Color.Lerp(startColor, changeToColor[colState], valueZerOne);
 
         }
         else if (meshRdr != null)
         {
-            meshRdr.material.color = Color.Lerp(startColor, changeToColor[state], valueZerOne);
+            meshRdr.material.color = Color.Lerp(startColor, changeToColor[colState], valueZerOne);
         }
     }
 }

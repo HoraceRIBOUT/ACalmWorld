@@ -17,7 +17,7 @@ public class SkySpriteLight : Animated
     public override void AddEventOnListener(MainInstrument mI)
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
-        mI.onClickEvent.AddListener(base.ChangeOnClick);
+        mI.onClickEvent.AddListener(ChangeOnClick);
         mI.onUpdatEvent.AddListener(ChangeOnUpdate);
         mainInstrument = mI;
     }
@@ -26,6 +26,17 @@ public class SkySpriteLight : Animated
     {
         skySprites = skyFolder.GetComponentsInChildren<SpriteRenderer>(true);
         base.ChangeOnStart();
+    }
+
+    public override void ChangeOnClick()
+    {
+
+        //transformer ça en transition via un lerp qui va s'echanger
+        animator.SetLayerWeight(currentLayer, 0);
+        currentLayer++;
+        if (currentLayer >= animator.layerCount || mainInstrument.instruData.currentState == 0)
+            currentLayer = 0;
+        animator.SetLayerWeight(currentLayer, 1);
     }
 
     public void ChangeOnUpdate()
@@ -39,4 +50,5 @@ public class SkySpriteLight : Animated
         RenderSettings.ambientEquatorColor = averageLight;
         RenderSettings.ambientGroundColor = downLight;
     }
+
 }

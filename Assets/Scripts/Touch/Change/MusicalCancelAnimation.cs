@@ -17,7 +17,7 @@ public class MusicalCancelAnimation : Animated
     {
         if (canDoIt)
         {
-            if(mainInstrument.instruData.rtpcValue > seuilPerState[state])
+            if(mainInstrument.instruData.rtpcValue > seuilPerState[currentLayer])
             {
                 canDoIt = false;
                 ActionAtSeuil();
@@ -25,7 +25,7 @@ public class MusicalCancelAnimation : Animated
         }
         else
         {
-            if (mainInstrument.instruData.rtpcValue < seuilPerState[state])
+            if (mainInstrument.instruData.rtpcValue < seuilPerState[currentLayer])
             {
                 canDoIt = true;
                 ActionAfterSeuil();

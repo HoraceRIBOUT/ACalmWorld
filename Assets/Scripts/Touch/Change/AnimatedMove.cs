@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AnimatedMove : Animated
 {
-    public int currentLayer = 0;
 
     [System.Serializable]
     public class PosRotSca
@@ -27,11 +26,7 @@ public class AnimatedMove : Animated
 
     public override void ChangeOnClick()
     {
-        animator.SetLayerWeight(currentLayer, 0);
-        currentLayer++;
-        if (currentLayer >= animator.layerCount)
-            currentLayer = 0;
-        animator.SetLayerWeight(currentLayer, 1);
+        base.ChangeOnClick();
 
         //Move
         this.transform.localPosition = posRotScaForEachState[currentLayer].position;
