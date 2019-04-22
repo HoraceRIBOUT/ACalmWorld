@@ -11,7 +11,6 @@ public class ParticleMaker : Change
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
         mI.onClickEvent.AddListener(ChangeOnClick);
-        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
         mainInstrument = mI;
     }
 
@@ -27,10 +26,5 @@ public class ParticleMaker : Change
         if (mainInstrument.instruData.on && mainInstrument.instruData.currentState != 0)
             particleForEachState[mainInstrument.instruData.currentState - 1].Play();
         previousState = mainInstrument.instruData.currentState - 1;
-    }
-
-    public void ChangeOnUpdate()
-    {
-
     }
 }

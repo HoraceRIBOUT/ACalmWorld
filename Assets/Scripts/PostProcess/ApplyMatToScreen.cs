@@ -159,7 +159,8 @@ public class ApplyMatToScreen : MonoBehaviour
         VHSShaderValue res = Lerp(targetEffect[0], targetEffect[1], (lerpForTarget[0] + lerpForTarget[1]));
         for (int i = 2; i < targetEffect.Count; i++)
         {
-            res = Lerp(res, targetEffect[i], lerpForTarget[i]);
+            if(lerpForTarget[i] != 0)
+                res = Lerp(res, targetEffect[i], lerpForTarget[i]);
         }
         return res;
     }

@@ -18,12 +18,10 @@ public class ImmeubleAndAssembly : Change
     public float calmDown = 0.4f;
 
     public List<Color> colorByState = new List<Color>();
-    private int state = 0;
 
     public override void AddEventOnListener(MainInstrument mI)
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
-        mI.onClickEvent.AddListener(ChangeOnClick);
         mI.onUpdatEvent.AddListener(ChangeOnUpdate);
         mainInstrument = mI;
     }
@@ -37,11 +35,6 @@ public class ImmeubleAndAssembly : Change
             floor.startColor = floor.window[0].color;
             floors.Add(floor);
         }
-    }
-
-    public void ChangeOnClick()
-    {
-        state = mainInstrument.instruData.currentState;
     }
 
     public void ChangeOnUpdate()
@@ -63,7 +56,7 @@ public class ImmeubleAndAssembly : Change
             {
                 float heightPlusNumber = number == offset ? 1 : Mathf.Abs(number - offset);
                 heightPlusNumber *= height;
-                sR.color = floor.startColor + colorByState[state] * valueZerOne * heightPlusNumber * calmDown;
+                sR.color = floor.startColor + colorByState[mainInstrument.instruData.currentState] * valueZerOne * heightPlusNumber * calmDown;
                 number++;
             }
             height /= 2.0f;

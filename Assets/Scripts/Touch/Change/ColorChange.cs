@@ -9,12 +9,10 @@ public class ColorChange : Change
     public SpriteRenderer spriteRdr;
     public MeshRenderer meshRdr;
     private Color startColor;
-    private int state = 0;
 
     public override void AddEventOnListener(MainInstrument mI)
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
-        mI.onClickEvent.AddListener(ChangeOnClick);
         mI.onUpdatEvent.AddListener(ChangeOnUpdate);
         mainInstrument = mI;
     }
@@ -30,12 +28,7 @@ public class ColorChange : Change
             startColor = meshRdr.material.color;
         }
     }
-
-    public void ChangeOnClick()
-    {
-        state = mainInstrument.instruData.currentState - 1;
-    }
-
+    
     public void ChangeOnUpdate()
     {
         ChangeColor(mainInstrument.instruData.rtpcValue);
@@ -47,7 +40,7 @@ public class ColorChange : Change
         valueZerOne = colorIntensityFunction.Evaluate(valueZerOne);
         //change the color to the right one
 
-        int colState = state;
+        int colState = mainInstrument.instruData.currentState - 1;
         if (colState < 0)
             colState = 0;
         if (spriteRdr != null)
