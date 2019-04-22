@@ -18,14 +18,20 @@ public class SkyAndLight : Animated
     {
         if (!UnityEditor.EditorApplication.isPlaying)
         {
-            ChangeOnUpdate(0.0f);
+            ChangeOnUpdate();
             Debug.Log("Change validate");
         }
     }
 #endif 
-    
 
-    public override void ChangeOnUpdate(float rtpcValue)
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        base.AddEventOnListener(mI);
+        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+    }
+
+
+    public void ChangeOnUpdate()
     {
         skybox.SetColor("_SkyTint", skyboxSky);
         skybox.SetColor("_GroundColor", skyboxGround);

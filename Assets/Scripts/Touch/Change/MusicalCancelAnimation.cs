@@ -7,11 +7,17 @@ public class MusicalCancelAnimation : Animated
     public bool canDoIt = true;
     public List<float> seuilPerState = new List<float>();
 
-    public override void ChangeOnUpdate(float rtpcValue)
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        base.AddEventOnListener(mI);
+        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+    }
+
+    public void ChangeOnUpdate()
     {
         if (canDoIt)
         {
-            if(rtpcValue > seuilPerState[state])
+            if(mainInstrument.instruData.rtpcValue > seuilPerState[state])
             {
                 canDoIt = false;
                 ActionAtSeuil();
@@ -19,7 +25,7 @@ public class MusicalCancelAnimation : Animated
         }
         else
         {
-            if (rtpcValue < seuilPerState[state])
+            if (mainInstrument.instruData.rtpcValue < seuilPerState[state])
             {
                 canDoIt = true;
                 ActionAfterSeuil();

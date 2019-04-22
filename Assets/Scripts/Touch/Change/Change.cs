@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Change : MonoBehaviour
 {
-    public abstract void ChangeOnStart();
-    public abstract void ChangeOnClick(int currentState, bool on);
-    public abstract void ChangeOnUpdate(float rtpcValue);
+    protected MainInstrument mainInstrument = null;
+
+    public abstract void AddEventOnListener(MainInstrument mI);
 }
