@@ -1,25 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MainInstrument : MonoBehaviour
 {
     public Sound_Manager sound_manager;
     [HideInInspector] public int indexForSoundManager;
+    
+    [HideInInspector] public UnityEvent onStartEvent;
+    [HideInInspector] public UnityEvent onClickEvent;
+    [HideInInspector] public UnityEvent onUpdatEvent;
 
-    [Header("Change")]
-    public List<Change> changeCmpt = new List<Change>();
+    public Sound_Manager.InstruData instruData;
 
     public void Start()
     {
         sound_manager = Sound_Manager.instance;
 
-        if (changeCmpt.Count == 0)
+        foreach (Change ch in GetComponentsInChildren<Change>(true))
         {
-            foreach(Change ch in GetComponentsInChildren<Change>(true))
-            {
-                changeCmpt.Add(ch);
-            }
+            ch.AddEventOnListener(this);
         }
 
         ChangeOnStart();
@@ -44,7 +45,7 @@ public class MainInstrument : MonoBehaviour
     [ContextMenu("Next state")]
     public void Touched()
     {
-        Sound_Manager.InstruData instruData = sound_manager.getData(indexForSoundManager);
+        instruData = sound_manager.getData(indexForSoundManager);
         if (!instruData.on)
         {
             instruData.on = true;
@@ -82,21 +83,16 @@ public class MainInstrument : MonoBehaviour
 
     protected void ChangeOnStart()
     {
-        Sound_Manager.InstruData instruData = sound_manager.getData(indexForSoundManager);
-        foreach (Change ch in changeCmpt)
-            ch.ChangeOnStart();
+        onStartEvent.Invoke();
     }
     protected void ChangeOnClick()
     {
-        Sound_Manager.InstruData instruData = sound_manager.getData(indexForSoundManager);
-        foreach (Change ch in changeCmpt)
-            ch.ChangeOnClick(instruData.currentState, instruData.on);
+        onClickEvent.Invoke();
     }
     protected void ChangeOnUpdate()
     {
-        Sound_Manager.InstruData instruData = sound_manager.getData(indexForSoundManager);
-        foreach (Change ch in changeCmpt)
-            ch.ChangeOnUpdate(instruData.rtpcValue);
+        instruData = sound_manager.getData(indexForSoundManager);
+        onUpdatEvent.Invoke();
     }
 
 }

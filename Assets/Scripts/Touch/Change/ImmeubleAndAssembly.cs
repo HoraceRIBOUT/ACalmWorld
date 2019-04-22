@@ -20,8 +20,15 @@ public class ImmeubleAndAssembly : Change
     public List<Color> colorByState = new List<Color>();
     private int state = 0;
 
-    // Start is called before the first frame update
-    public override void ChangeOnStart()
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        mI.onStartEvent.AddListener(ChangeOnStart);
+        mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+        mainInstrument = mI;
+    }
+    
+    public void ChangeOnStart()
     {
         foreach(Transform floorTransfom in floorsTransform)
         {
@@ -32,14 +39,14 @@ public class ImmeubleAndAssembly : Change
         }
     }
 
-    public override void ChangeOnClick(int currentState, bool on)
+    public void ChangeOnClick()
     {
-        state = currentState;
+        state = mainInstrument.instruData.currentState;
     }
 
-    public override void ChangeOnUpdate(float rtpcValue)
+    public void ChangeOnUpdate()
     {
-        float valueZerOne = (rtpcValue + 48) / 48;
+        float valueZerOne = (mainInstrument.instruData.rtpcValue + 48) / 48;
 
         float height = 1.0f;
 

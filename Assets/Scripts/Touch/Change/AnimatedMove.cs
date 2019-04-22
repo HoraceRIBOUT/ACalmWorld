@@ -18,7 +18,14 @@ public class AnimatedMove : Animated
     public Transform transfToRotate;
     public List<GameObject> collForEachState = new List<GameObject>();
 
-    public override void ChangeOnClick(int currentState, bool on)
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        mI.onStartEvent.AddListener(base.ChangeOnStart);
+        mI.onClickEvent.AddListener(ChangeOnClick);
+        mainInstrument = mI;
+    }
+
+    public override void ChangeOnClick()
     {
         animator.SetLayerWeight(currentLayer, 0);
         currentLayer++;

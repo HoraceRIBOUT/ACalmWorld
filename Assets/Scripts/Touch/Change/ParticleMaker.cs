@@ -4,25 +4,32 @@ using UnityEngine;
 
 public class ParticleMaker : Change
 {
-
     public List<ParticleSystem> particleForEachState = new List<ParticleSystem>();
     private int previousState = -1;
 
-    public override void ChangeOnStart()
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        mI.onStartEvent.AddListener(ChangeOnStart);
+        mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+        mainInstrument = mI;
+    }
+
+    public void ChangeOnStart()
     {
         previousState = -1;
     }
 
-    public override void ChangeOnClick(int currentState, bool on)
+    public void ChangeOnClick()
     {
         if(previousState != -1 )
             particleForEachState[previousState].Stop();
-        if (on && currentState != 0)
-            particleForEachState[currentState - 1].Play();
-        previousState = currentState - 1;
+        if (mainInstrument.instruData.on && mainInstrument.instruData.currentState != 0)
+            particleForEachState[mainInstrument.instruData.currentState - 1].Play();
+        previousState = mainInstrument.instruData.currentState - 1;
     }
 
-    public override void ChangeOnUpdate(float rtpcValue)
+    public void ChangeOnUpdate()
     {
 
     }

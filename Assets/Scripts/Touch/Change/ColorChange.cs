@@ -11,7 +11,15 @@ public class ColorChange : Change
     private Color startColor;
     private int state = 0;
 
-    public override void ChangeOnStart()
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        mI.onStartEvent.AddListener(ChangeOnStart);
+        mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+        mainInstrument = mI;
+    }
+
+    public void ChangeOnStart()
     {
         if (spriteRdr != null)
         {
@@ -23,15 +31,15 @@ public class ColorChange : Change
         }
     }
 
-    public override void ChangeOnClick(int currentState, bool on)
+    public void ChangeOnClick()
     {
-        state = currentState - 1;
+        state = mainInstrument.instruData.currentState - 1;
     }
 
-    public override void ChangeOnUpdate(float rtpcValue)
+    public void ChangeOnUpdate()
     {
         if (state >= 0)
-            ChangeColor(rtpcValue);
+            ChangeColor(mainInstrument.instruData.rtpcValue);
     }
 
     public void ChangeColor(float rtpcValue)

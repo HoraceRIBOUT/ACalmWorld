@@ -14,13 +14,21 @@ public class Glitch : Change
 
     public bool glitchOn = false;
 
-    public override void ChangeOnStart()
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        mI.onStartEvent.AddListener(ChangeOnStart);
+        mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+        mainInstrument = mI;
+    }
+
+    public void ChangeOnStart()
     {
         if (objectToChange.Count == 0)
             objectToChange.Add(this.gameObject);
     }
 
-    public override void ChangeOnClick(int currentState, bool on)
+    public void ChangeOnClick()
     {
         glitchOn = true;
         ReSetGlitch();
@@ -29,7 +37,7 @@ public class Glitch : Change
         timer = duration;
     }
 
-    public override void ChangeOnUpdate(float rtpcValue)
+    public void ChangeOnUpdate()
     {
         if(timer != 0)
         {
