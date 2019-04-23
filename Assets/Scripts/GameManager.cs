@@ -2,12 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MatColor", menuName = "MidnightW/Save", order = 1)]
-public class ListColorData : ScriptableObject
-{
-    public List<Color> matColor;
-}
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;

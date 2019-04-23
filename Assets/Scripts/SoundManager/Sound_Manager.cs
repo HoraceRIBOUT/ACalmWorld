@@ -59,7 +59,8 @@ public class Sound_Manager : MonoBehaviour
 
     [SerializeField]
     public List<CombinaisonGagnante> voiceCombi = new List<CombinaisonGagnante>();
-    private List<int> playingIndex = new List<int>();
+    private int currentVoice = -1;
+    private int numberOfEndToIgnore = 0;
 
     public AK.Wwise.Event startEvent;
 
@@ -124,28 +125,29 @@ public class Sound_Manager : MonoBehaviour
         AkSoundEngine.PostEvent(combinaison.eventToPlay.Id, gameObject);
         combinaison.eventToPlay.Post(this.gameObject, (uint)callBackForVoiceEnd, FinishVoice);
         combinaison.onPlay = true;
-        playingIndex.Add(currentIndex);
-
+        if (currentVoice != -1)
+        {
+            numberOfEndToIgnore++;
+            FinishVoice();
+        }
+        currentVoice = currentIndex;
         GameManager.instance.VoiceGlitch(currentIndex, true);
-
     }
 
     private void FinishVoice(object baseObject, AkCallbackType type, object info)
     {
-        if (playingIndex.Count == 0)
-        {
-            Debug.LogError("On demande d'arrêtez une voix mais aucune n'est lance !");
-        }
+        if (numberOfEndToIgnore == 0)
+            FinishVoice();
         else
-        {
-            int index = playingIndex[0];
-            playingIndex.Remove(index);
-            voiceCombi[index].onPlay = false;
+            numberOfEndToIgnore--;
+    }
 
-            GameManager.instance.VoiceGlitch(index, false);
-
-            Debug.Log("Finish voice");
-        }
+    private void FinishVoice()
+    {
+        voiceCombi[currentVoice].onPlay = false;
+        GameManager.instance.VoiceGlitch(currentVoice, false);
+        currentVoice = -1;
+        Debug.Log("Finish voice");
     }
 
     public InstruData getData(int index)
