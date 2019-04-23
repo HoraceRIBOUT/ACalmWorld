@@ -113,6 +113,7 @@ public class Sound_Manager : MonoBehaviour
                 }
             }
             //end of if
+            currentIndex++;
         }
         //end of foreach
     }

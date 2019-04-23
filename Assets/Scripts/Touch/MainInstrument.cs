@@ -12,7 +12,7 @@ public class MainInstrument : MonoBehaviour
     [HideInInspector] public UnityEvent onClickEvent;
     [HideInInspector] public UnityEvent onUpdatEvent;
 
-    public Sound_Manager.InstruData instruData;
+    [HideInInspector]public Sound_Manager.InstruData instruData;
 
     public void Start()
     {
