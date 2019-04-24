@@ -373,7 +373,7 @@ MonoBehaviour:
   - blurIntensity: 0
     blurBlueIntensity: 0
     tint: {r: 0.6556604, g: 0.77584165, b: 1, a: 1}
-    decalageBleu: {x: -0.05, y: -0.05, z: 0, w: 0}
+    decalageBleu: {x: 0.02, y: 0.02, z: 0, w: 0}
     saturation: 2
     noirEtBlanc: 0.2
     tailleBug: 0
@@ -472,6 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8512972d5749cd249be15798c69ad2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: 0
   snd_mng: {fileID: 0}
   mainCamera: {fileID: 5689864512667794891}
   animatorMainCam: {fileID: 5689864512667794894}

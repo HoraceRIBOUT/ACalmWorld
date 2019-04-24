@@ -35,6 +35,8 @@ public class MenuController : MonoBehaviour
         //need to have a little animation / glitch here before launching (load in a dark screen would be perfect)
         if (launchGameEvent.IsValid())
             AkSoundEngine.PostEvent(launchGameEvent.Id, this.gameObject);
+        //TO DO : suppr ça ! 
+        AkSoundEngine.StopAll();
         SceneManager.LoadScene("FirstCompo");
     }
 

@@ -12,9 +12,12 @@ public class SkySpriteLight : Animated
     public Color upLight = Color.white;
     public Color averageLight = Color.white;
     public Color downLight = Color.white;
+    public Color lightBasic = Color.white;
     public Color lightColor = Color.white;
 
     public float transitionSpeed = 0.5f;
+
+    public AnimationCurve lightIntensityCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
     public override void AddEventOnListener(MainInstrument mI)
     {
@@ -43,7 +46,9 @@ public class SkySpriteLight : Animated
         {
             sprRdr.color = skyColor;
         }
-        ambientLight.color = lightColor;
+        float valueZerOne = (mainInstrument.instruData.rtpcValue + 48) / 48;
+        valueZerOne = lightIntensityCurve.Evaluate(valueZerOne);
+        ambientLight.color = Color.Lerp(lightBasic, lightColor, valueZerOne);
         RenderSettings.ambientSkyColor = upLight;
         RenderSettings.ambientEquatorColor = averageLight;
         RenderSettings.ambientGroundColor = downLight;

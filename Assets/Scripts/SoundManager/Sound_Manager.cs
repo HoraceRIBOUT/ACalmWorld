@@ -198,9 +198,11 @@ public class Sound_Manager : MonoBehaviour
                 AkSoundEngine.PostEvent(rainEvent.Id, gameObject);
                 break;
             case 2:
+                AkSoundEngine.PostEvent(stopEffet.Id, gameObject);
                 AkSoundEngine.PostEvent(snowEvent.Id, gameObject);
                 break;
             case 3:
+                AkSoundEngine.PostEvent(stopEffet.Id, gameObject);
                 AkSoundEngine.PostEvent(reverseEvent.Id, gameObject);
                 break;
             default:

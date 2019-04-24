@@ -31,7 +31,7 @@ public class ParticleMaker : Change
     {
         if(state == 0)
         {
-            particleForEachState[particleForEachState.Count - 1].Stop();
+            particleForEachState[particleForEachState.Count - 2/*well, TO DO , normaly : 1 */].Stop();
         }
         else
         {

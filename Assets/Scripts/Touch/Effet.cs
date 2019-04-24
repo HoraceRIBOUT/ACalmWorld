@@ -27,7 +27,7 @@ public class Effet : MonoBehaviour
     public void Touched()
     {
         sound_manager.stateEffect++;
-        if(sound_manager.stateEffect > 3)
+        if(sound_manager.stateEffect > 2)
             sound_manager.stateEffect = 0;
         sound_manager.Effet();
         //add : particleMaker !
