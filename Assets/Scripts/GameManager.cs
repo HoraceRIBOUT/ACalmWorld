@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public bool pause = false;
+
     private void Awake()
     {
         if(instance == null)
@@ -133,5 +135,12 @@ public class GameManager : MonoBehaviour
             targetLerpValue = 0;
         else
             targetLerpValue = 0.25f + 0.75f * ((float)numberCurrInstru / (float)numberMaxInstru);
+    }
+
+    public void Pause()
+    {
+        pause = !pause;
+        snd_mng.Pause(pause);
+        Time.timeScale = pause ? 0 : 1;
     }
 }

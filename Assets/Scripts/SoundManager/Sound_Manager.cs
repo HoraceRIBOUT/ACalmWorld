@@ -64,6 +64,9 @@ public class Sound_Manager : MonoBehaviour
 
     public AK.Wwise.Event startEvent;
 
+    public AK.Wwise.Event pauseEvent;
+    public AK.Wwise.Event resumeEvent;
+
     public AkCallbackType callBackToSeek = AkCallbackType.AK_MusicSyncBeat;
     public AkCallbackType callBackForVoiceEnd = AkCallbackType.AK_EndOfEvent;
 
@@ -173,7 +176,7 @@ public class Sound_Manager : MonoBehaviour
 
     public void Switch(int indexForSoundManager)
     {
-        Sound_Manager.InstruData instruData = getData(indexForSoundManager);
+        InstruData instruData = getData(indexForSoundManager);
         AkSoundEngine.SetSwitch(instruData.switches[instruData.currentState].GroupId, instruData.switches[instruData.currentState].Id, gameObject);
         instruData.currentState++;
     }
@@ -185,5 +188,37 @@ public class Sound_Manager : MonoBehaviour
         AkSoundEngine.GetRTPCValue(listInstru[index].rtpcId.Id, gameObject, 0, out listInstru[index].rtpcValue, ref type);
     }
 
+
+    public void Pause(bool pause)
+    {
+        if (pauseEvent.IsValid() && resumeEvent.IsValid())
+        {
+            if (pause)
+            {
+                AkSoundEngine.PostEvent(pauseEvent.Id, gameObject);
+            }
+            else
+            {
+                AkSoundEngine.PostEvent(resumeEvent.Id, gameObject);
+            }
+        }
+        else
+        {
+            Debug.LogError((!pauseEvent.IsValid() ? "Pause event not valid" : "" )+ (!resumeEvent.IsValid() ? "Resume event not valid" : "") + " fallback technique : mute all instr");
+            foreach (InstruData instr in listInstru)
+            {
+                if (pause)
+                {
+                    AkSoundEngine.PostEvent(instr.nameEventMute.Id, gameObject);
+                }
+                else
+                {
+                    if(instr.on)
+                        AkSoundEngine.PostEvent(instr.nameEventUnMute.Id, gameObject);
+                }
+            }
+        }
+        
+    }
 
 }

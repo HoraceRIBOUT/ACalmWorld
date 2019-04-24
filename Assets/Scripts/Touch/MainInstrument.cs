@@ -28,7 +28,7 @@ public class MainInstrument : MonoBehaviour
     
     private void OnMouseDown()
     {
-        if (GameManager.instance.timerAtBeginning == 1)
+        if (GameManager.instance.timerAtBeginning == 1 && !GameManager.instance.pause)
         {
             //call the function of the child 
             Touched();
@@ -37,9 +37,12 @@ public class MainInstrument : MonoBehaviour
 
     public void Update()
     {
-        UpdateRTPCValue();
+        if (!GameManager.instance.pause)
+        {
+            UpdateRTPCValue();
 
-        ChangeOnUpdate();
+            ChangeOnUpdate();
+        }
     }
 
     [ContextMenu("Next state")]
