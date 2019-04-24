@@ -7,6 +7,9 @@ public class Effet : MonoBehaviour
     public Sound_Manager sound_manager;
     public ParticleMaker particleMaker;
 
+    public List<SpriteRenderer> sprites;
+    public List<Color> colorForEachEffect;
+
     public void Start()
     {
         sound_manager = Sound_Manager.instance;
@@ -29,6 +32,11 @@ public class Effet : MonoBehaviour
         sound_manager.Effet();
         //add : particleMaker !
         particleMaker.ChangeOnClick(sound_manager.stateEffect);
+
+        foreach(SpriteRenderer sR in sprites)
+        {
+            sR.color = colorForEachEffect[sound_manager.stateEffect];
+        }
     }
 
 }
