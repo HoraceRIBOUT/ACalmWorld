@@ -27,4 +27,18 @@ public class ParticleMaker : Change
             particleForEachState[mainInstrument.instruData.currentState - 1].Play();
         previousState = mainInstrument.instruData.currentState - 1;
     }
+    public void ChangeOnClick(int state)
+    {
+        if(state == 0)
+        {
+            particleForEachState[particleForEachState.Count - 1].Stop();
+        }
+        else
+        {
+            if (state - 2 != -1)
+                particleForEachState[state - 2].Stop();
+            particleForEachState[state - 1].Play();
+
+        }
+    }
 }

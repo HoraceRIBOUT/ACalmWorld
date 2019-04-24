@@ -57,6 +57,12 @@ public class Sound_Manager : MonoBehaviour
     public List<InstruData> listInstru = new List<InstruData>();
     private int numberInstruOn = 0;
 
+    public AK.Wwise.Event stopEffet;
+    public AK.Wwise.Event rainEvent;
+    public AK.Wwise.Event snowEvent;
+    public AK.Wwise.Event reverseEvent;
+    [HideInInspector] public int stateEffect = 0;
+
     [SerializeField]
     public List<CombinaisonGagnante> voiceCombi = new List<CombinaisonGagnante>();
     private int currentVoice = -1;
@@ -181,6 +187,27 @@ public class Sound_Manager : MonoBehaviour
         instruData.currentState++;
     }
 
+    public void Effet()
+    {
+        switch (stateEffect)
+        {
+            case 0:
+                AkSoundEngine.PostEvent(stopEffet.Id, gameObject);
+                break;
+            case 1:
+                AkSoundEngine.PostEvent(rainEvent.Id, gameObject);
+                break;
+            case 2:
+                AkSoundEngine.PostEvent(snowEvent.Id, gameObject);
+                break;
+            case 3:
+                AkSoundEngine.PostEvent(reverseEvent.Id, gameObject);
+                break;
+            default:
+                Debug.Log("Wath?");
+                break;
+        }
+    }
 
     public void UpdateRTPCValue(int index)
     {
