@@ -10,7 +10,11 @@ public class MenuController : MonoBehaviour
     public Text timeText;
     public Text dateText;
     public GameObject panelOption;
-
+    public Text yes;
+    public Text no;
+    public Color colorOn = Color.white;
+    public Color colorOff = Color.white;
+    
     public AK.Wwise.Event startEvent;
     public AK.Wwise.Event clickEvent;
     public AK.Wwise.Event launchGameEvent;
@@ -22,6 +26,8 @@ public class MenuController : MonoBehaviour
 
         if(startEvent.IsValid())
             AkSoundEngine.PostEvent(startEvent.Id, this.gameObject);
+
+        ChangeYesNo();
     }
 
     // Update is called once per frame
@@ -47,7 +53,30 @@ public class MenuController : MonoBehaviour
 
     public void OnPushOption()
     {
-        panelOption.SetActive(true);
+        panelOption.SetActive(!panelOption.activeSelf);
+    }
+
+    public void OnKeepPlaying()
+    {
+        //change PlayerSave
+
+        PlayerPrefs.SetInt("AlwaysPlaying", PlayerPrefs.GetInt("AlwaysPlaying") == 0 ? 1 : 0);
+        //call for the change
+        ChangeYesNo();
+    }
+
+    public void ChangeYesNo()
+    {
+        if(PlayerPrefs.GetInt("AlwaysPlaying", 0) == 0)
+        {
+            yes.color = colorOff;
+            no.color = colorOn;
+        }
+        else
+        {
+            yes.color = colorOn;
+            no.color = colorOff;
+        }
     }
 
     public void PlayButtonSound()

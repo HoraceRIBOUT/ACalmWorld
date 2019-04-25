@@ -34,8 +34,14 @@ public class GameManager : MonoBehaviour
     public float speed = 0.5f;
     public float animationMaxWeight = 0.3f;
     
+    [Header("Apparition at start")]
     public float timerAtBeginning = -3f;
     public List<GameObject> allVisualInteractibleObject;
+
+    [Header("Pause")]
+    public UnityEngine.UI.Button pauseBtn;
+    public UnityEngine.UI.Button resumeBtn;
+    public UnityEngine.UI.Image darkenScreen;
 
     public void Start()
     {
@@ -141,6 +147,11 @@ public class GameManager : MonoBehaviour
     {
         pause = !pause;
         snd_mng.Pause(pause);
+
+        pauseBtn.gameObject.SetActive(!pause);
+        resumeBtn.gameObject.SetActive(pause);
+        darkenScreen.gameObject.SetActive(pause);
+
         Time.timeScale = pause ? 0 : 1;
     }
 }

@@ -120,13 +120,14 @@ public class ApplyMatToScreen : MonoBehaviour
     {
 #if !UNITY_EDITOR
         //This is a delay for when the shader cannot load (it's then backbuffer to the previous (so last) Render. 
-        if(Time.fixedTime > 1f) {
+        if(Time.fixedTime > 1f  || !Debug.isDebugBuild) {
 #endif
         if (matToApply != null)
         {
 #if !UNITY_EDITOR
+
         //This is a delay for the RenderTexture, to test if the shader don't work or if the Render Text don't work
-        if(Time.fixedTime > 2f) {
+        if(Time.fixedTime > 2f || !Debug.isDebugBuild) {
 #endif
             if (texturesGlitch != null)
             {
