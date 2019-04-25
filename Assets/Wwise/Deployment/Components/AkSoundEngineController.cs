@@ -168,24 +168,30 @@ public class AkSoundEngineController
 	// On iOS, application interruptions are handled in the sound engine already.
 #if UNITY_EDITOR || UNITY_IOS
 	public void OnApplicationPause(bool pauseStatus)
-	{
-	}
+    {
+    }
 
 	public void OnApplicationFocus(bool focus)
 	{
-	}
+    }
 #else
 	public void OnApplicationPause(bool pauseStatus) 
 	{
+        if ((GameManager.KeepPlaying() && !GameManager.instance.pause) || !pauseStatus)
+            ActivateAudio(!pauseStatus);
+        
 	}
 
 	public void OnApplicationFocus(bool focus)
 	{
+        if ((GameManager.KeepPlaying() && !GameManager.instance.pause ) || focus)
+            ActivateAudio(focus);
+        
 	}
 #endif
 
 #if UNITY_EDITOR
-	public bool IsSoundEngineLoaded { get; set; }
+    public bool IsSoundEngineLoaded { get; set; }
 
 	// Enable/Disable the audio when pressing play/pause in the editor.
 #if UNITY_2017_2_OR_NEWER

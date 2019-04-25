@@ -98,6 +98,11 @@ public class GameManager : MonoBehaviour
 #endif
 
     }
+
+    public static bool KeepPlaying()
+    {
+        return (PlayerPrefs.GetInt("AlwaysPlaying") == 0);
+    }
     
     public void VoiceGlitch(int numeroGlitch, bool on)
     {
@@ -145,6 +150,7 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
+        FindObjectOfType<NotifController>().debugText.text += "GM do pause " + Time.realtimeSinceStartup + "";
         pause = !pause;
         snd_mng.Pause(pause);
 

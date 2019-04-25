@@ -8,7 +8,7 @@ public class NotifController : MonoBehaviour
 
     private void OnApplicationFocus(bool focus)
     {
-//#if !UNITY_EDITOR
+#if !UNITY_EDITOR
         if (!focus)
         {
             LockOrBackground();
@@ -17,26 +17,14 @@ public class NotifController : MonoBehaviour
         {
             ComeBack();
         }
-//#endif
+#endif
     }
-
-   /* private void OnApplicationPause(bool pause)
-    {
-        if (pause)
-        {
-            LockOrBackground();
-        }
-        else
-        {
-            ComeBack();
-        }
-    }*/
+    
 
     public void LockOrBackground()
     {
-        if(PlayerPrefs.GetInt("AlwaysPlaying") == 0 && !GameManager.instance.pause)
+        if(GameManager.KeepPlaying() && !GameManager.instance.pause)
         {
-            debugText.text += "Pause " + Time.realtimeSinceStartup + "\n";
             Debug.Log("Pause " + Time.realtimeSinceStartup);
             GameManager.instance.Pause();
         }
@@ -44,7 +32,6 @@ public class NotifController : MonoBehaviour
 
     public void ComeBack()
     {
-        debugText.text += "Resume " + Time.realtimeSinceStartup + "\n";
         Debug.Log("Resume " + Time.realtimeSinceStartup);
     }
 
