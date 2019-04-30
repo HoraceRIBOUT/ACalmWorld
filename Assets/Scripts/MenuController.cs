@@ -67,7 +67,11 @@ public class MenuController : MonoBehaviour
 
     public void ChangeYesNo()
     {
+#if UNITY_ANDROID
         if(PlayerPrefs.GetInt("AlwaysPlaying", 0) == 0)
+#else
+        if(PlayerPrefs.GetInt("AlwaysPlaying", 1) == 0)
+#endif
         {
             yes.color = colorOff;
             no.color = colorOn;
