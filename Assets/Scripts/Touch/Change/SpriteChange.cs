@@ -10,7 +10,7 @@ public class SpriteChange : Change
 
     public override void AddEventOnListener(MainInstrument mI)
     {
-        mI.onStartEvent.AddListener(ChangeOnClick);
+        mI.onClickEvent.AddListener(ChangeOnClick);
         mainInstrument = mI;
     }
 
