@@ -25,3 +25,5 @@ sysinfo.txt
 \.DS_Store
 
 Assets/WwiseSettings\.xml
+
+Assets/StreamingAssets/
