@@ -14,7 +14,7 @@ public class MenuController : MonoBehaviour
     public Text no;
     public Color colorOn = Color.white;
     public Color colorOff = Color.white;
-    
+
     public AK.Wwise.Event startEvent;
     public AK.Wwise.Event clickEvent;
     public AK.Wwise.Event launchGameEvent;
@@ -22,9 +22,9 @@ public class MenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dateText.text = DateTime.Now.ToString().Substring(0, 6)+"19??";
+        dateText.text = DateTime.Now.ToString().Substring(0, 6) + "19??";
 
-        if(startEvent.IsValid())
+        if (startEvent.IsValid())
             AkSoundEngine.PostEvent(startEvent.Id, this.gameObject);
 
         ChangeYesNo();
@@ -34,6 +34,47 @@ public class MenuController : MonoBehaviour
     void Update()
     {
         timeText.text = System.DateTime.Now.TimeOfDay.ToString().Substring(0, 5);
+        /*if (Input.touchCount> 0 && panelOption.activeInHierarchy)
+        {
+             float height = Camera.main.orthographicSize * 2.0f;
+             float width = height * Screen.width / Screen.height;
+
+            if (Input.GetTouch(0).position.x > (width-(panelOption.transform.localScale.x)/2) )
+            {
+                Debug.Log("test");
+            }
+        }*/
+        if (panelOption.activeInHierarchy)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector3 pos = Input.mousePosition;
+                if (pos.x > Camera.main.pixelWidth - (Camera.main.pixelWidth - panelOption.GetComponent<RectTransform>().rect.width) / 2 || pos.x < (Camera.main.pixelWidth - panelOption.GetComponent<RectTransform>().rect.width) / 2)
+                {
+                    panelOption.SetActive(false);
+                }
+                else if (pos.y > Camera.main.pixelHeight - (Camera.main.pixelHeight - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y < (Camera.main.pixelHeight - panelOption.GetComponent<RectTransform>().rect.height) / 2)
+                {
+                    panelOption.SetActive(false);
+                }
+            }
+
+            if (Input.touchCount > 0)
+            {
+                Vector3 pos = Input.GetTouch(0).position;
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    if (pos.x > Camera.main.pixelWidth - (Camera.main.pixelWidth - panelOption.GetComponent<RectTransform>().rect.width) / 2 || pos.x < (Camera.main.pixelWidth - panelOption.GetComponent<RectTransform>().rect.width) / 2)
+                    {
+                        panelOption.SetActive(false);
+                    }
+                    else if (pos.y > Camera.main.pixelHeight - (Camera.main.pixelHeight - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y < (Camera.main.pixelHeight - panelOption.GetComponent<RectTransform>().rect.height) / 2)
+                    {
+                        panelOption.SetActive(false);
+                    }
+                }
+            }
+        }
     }
 
     public void OnPushPlay()
@@ -67,11 +108,7 @@ public class MenuController : MonoBehaviour
 
     public void ChangeYesNo()
     {
-#if UNITY_ANDROID
-        if(PlayerPrefs.GetInt("AlwaysPlaying", 0) == 0)
-#else
-        if(PlayerPrefs.GetInt("AlwaysPlaying", 1) == 0)
-#endif
+        if (PlayerPrefs.GetInt("AlwaysPlaying", 0) == 0)
         {
             yes.color = colorOff;
             no.color = colorOn;
