@@ -217,6 +217,16 @@ public class Sound_Manager : MonoBehaviour
         transitionInstrument.SetActive(true);
     }
 
+    public void LaunchTransition()
+    {
+        //deactivate other instr 
+        foreach(InstruData instr in listInstru)
+        {
+            //instr.gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().active = false;
+            //deactivate all instr 
+        }
+    }
+
     public void Effet()
     {
         switch (stateEffect)
