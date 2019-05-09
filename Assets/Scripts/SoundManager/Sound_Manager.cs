@@ -76,6 +76,9 @@ public class Sound_Manager : MonoBehaviour
     public AkCallbackType callBackToSeek = AkCallbackType.AK_MusicSyncBeat;
     public AkCallbackType callBackForVoiceEnd = AkCallbackType.AK_EndOfEvent;
 
+    public GameObject transitionInstrument;
+    public CombinaisonGagnante combiForTransition;
+
     public void Awake()
     {
         if (instance == null)
@@ -185,6 +188,33 @@ public class Sound_Manager : MonoBehaviour
         InstruData instruData = getData(indexForSoundManager);
         AkSoundEngine.SetSwitch(instruData.switches[instruData.currentState].GroupId, instruData.switches[instruData.currentState].Id, gameObject);
         instruData.currentState++;
+
+        VerificationCompoTransition();
+    }
+
+    public void VerificationCompoTransition()
+    {
+        if (combiForTransition.onPlay)
+            return;
+
+        bool result = true;
+        foreach(CombinaisonGagnante.InstruEtNum instrNum in combiForTransition.instruAndStateNeeded)
+        {
+            if (listInstru[(int)instrNum.instru].currentState != instrNum.stateNeeded)
+            {
+                result = false;
+            }
+        }
+        if (result)
+        {
+            ActivateTransitionInstru();
+            combiForTransition.onPlay = true;
+        }
+    }
+
+    public void ActivateTransitionInstru()
+    {
+        transitionInstrument.SetActive(true);
     }
 
     public void Effet()
