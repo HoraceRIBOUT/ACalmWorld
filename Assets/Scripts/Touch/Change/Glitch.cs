@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,13 +14,21 @@ public class Glitch : Change
 
     public bool glitchOn = false;
 
-    public override void ChangeOnStart()
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        mI.onStartEvent.AddListener(ChangeOnStart);
+        mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+        mainInstrument = mI;
+    }
+
+    public void ChangeOnStart()
     {
         if (objectToChange.Count == 0)
             objectToChange.Add(this.gameObject);
     }
 
-    public override void ChangeOnClick(int currentState, bool on)
+    public void ChangeOnClick()
     {
         glitchOn = true;
         ReSetGlitch();
@@ -29,7 +37,9 @@ public class Glitch : Change
         timer = duration;
     }
 
-    public override void ChangeOnUpdate(float rtpcValue)
+    //TO DO : handle all  glitch timer on one script only (manager ?) 
+    //To kept : - if you click again, it reset the timer
+    public void ChangeOnUpdate()
     {
         if(timer != 0)
         {
@@ -43,15 +53,14 @@ public class Glitch : Change
             }
         }
     }
-
+    
     private void ReSetGlitch()
     {
-        foreach(GameObject glitchObj in objectToChange)
+        int goodLayer = glitchOn ? layerWhenClick : layerWhenDefault;
+
+        foreach (GameObject glitchObj in objectToChange)
         {
-            if (glitchOn)
-                glitchObj.layer = layerWhenClick;
-            else
-                glitchObj.layer = layerWhenDefault;
+            glitchObj.layer = goodLayer;
         }
     }
 }

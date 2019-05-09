@@ -9,9 +9,15 @@ public class ColorChange : Change
     public SpriteRenderer spriteRdr;
     public MeshRenderer meshRdr;
     private Color startColor;
-    private int state = 0;
 
-    public override void ChangeOnStart()
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        mI.onStartEvent.AddListener(ChangeOnStart);
+        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+        mainInstrument = mI;
+    }
+
+    public void ChangeOnStart()
     {
         if (spriteRdr != null)
         {
@@ -22,16 +28,10 @@ public class ColorChange : Change
             startColor = meshRdr.material.color;
         }
     }
-
-    public override void ChangeOnClick(int currentState, bool on)
+    
+    public void ChangeOnUpdate()
     {
-        state = currentState - 1;
-    }
-
-    public override void ChangeOnUpdate(float rtpcValue)
-    {
-        if (state >= 0)
-            ChangeColor(rtpcValue);
+        ChangeColor(mainInstrument.instruData.rtpcValue);
     }
 
     public void ChangeColor(float rtpcValue)
@@ -39,14 +39,18 @@ public class ColorChange : Change
         float valueZerOne = (rtpcValue + 48) / 48;
         valueZerOne = colorIntensityFunction.Evaluate(valueZerOne);
         //change the color to the right one
+
+        int colState = mainInstrument.instruData.currentState - 1;
+        if (colState < 0)
+            colState = 0;
         if (spriteRdr != null)
         {
-            spriteRdr.color = Color.Lerp(startColor, changeToColor[state], valueZerOne);
+            spriteRdr.color = Color.Lerp(startColor, changeToColor[colState], valueZerOne);
 
         }
         else if (meshRdr != null)
         {
-            meshRdr.material.color = Color.Lerp(startColor, changeToColor[state], valueZerOne);
+            meshRdr.material.color = Color.Lerp(startColor, changeToColor[colState], valueZerOne);
         }
     }
 }

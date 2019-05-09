@@ -57,14 +57,27 @@ public class Sound_Manager : MonoBehaviour
     public List<InstruData> listInstru = new List<InstruData>();
     private int numberInstruOn = 0;
 
+    public AK.Wwise.Event stopEffet;
+    public AK.Wwise.Event rainEvent;
+    public AK.Wwise.Event snowEvent;
+    public AK.Wwise.Event reverseEvent;
+    [HideInInspector] public int stateEffect = 0;
+
     [SerializeField]
     public List<CombinaisonGagnante> voiceCombi = new List<CombinaisonGagnante>();
-    private List<int> playingIndex = new List<int>();
+    private int currentVoice = -1;
+    private int numberOfEndToIgnore = 0;
 
     public AK.Wwise.Event startEvent;
 
+    public AK.Wwise.Event pauseEvent;
+    public AK.Wwise.Event resumeEvent;
+
     public AkCallbackType callBackToSeek = AkCallbackType.AK_MusicSyncBeat;
     public AkCallbackType callBackForVoiceEnd = AkCallbackType.AK_EndOfEvent;
+
+    public GameObject transitionInstrument;
+    public CombinaisonGagnante combiForTransition;
 
     public void Awake()
     {
@@ -113,6 +126,7 @@ public class Sound_Manager : MonoBehaviour
                 }
             }
             //end of if
+            currentIndex++;
         }
         //end of foreach
     }
@@ -123,28 +137,29 @@ public class Sound_Manager : MonoBehaviour
         AkSoundEngine.PostEvent(combinaison.eventToPlay.Id, gameObject);
         combinaison.eventToPlay.Post(this.gameObject, (uint)callBackForVoiceEnd, FinishVoice);
         combinaison.onPlay = true;
-        playingIndex.Add(currentIndex);
-
+        if (currentVoice != -1)
+        {
+            numberOfEndToIgnore++;
+            FinishVoice();
+        }
+        currentVoice = currentIndex;
         GameManager.instance.VoiceGlitch(currentIndex, true);
-
     }
 
     private void FinishVoice(object baseObject, AkCallbackType type, object info)
     {
-        if (playingIndex.Count == 0)
-        {
-            Debug.LogError("On demande d'arrêtez une voix mais aucune n'est lance !");
-        }
+        if (numberOfEndToIgnore == 0)
+            FinishVoice();
         else
-        {
-            int index = playingIndex[0];
-            playingIndex.Remove(index);
-            voiceCombi[index].onPlay = false;
+            numberOfEndToIgnore--;
+    }
 
-            GameManager.instance.VoiceGlitch(index, false);
-
-            Debug.Log("Finish voice");
-        }
+    private void FinishVoice()
+    {
+        voiceCombi[currentVoice].onPlay = false;
+        GameManager.instance.VoiceGlitch(currentVoice, false);
+        currentVoice = -1;
+        Debug.Log("Finish voice");
     }
 
     public InstruData getData(int index)
@@ -170,11 +185,61 @@ public class Sound_Manager : MonoBehaviour
 
     public void Switch(int indexForSoundManager)
     {
-        Sound_Manager.InstruData instruData = getData(indexForSoundManager);
+        InstruData instruData = getData(indexForSoundManager);
         AkSoundEngine.SetSwitch(instruData.switches[instruData.currentState].GroupId, instruData.switches[instruData.currentState].Id, gameObject);
         instruData.currentState++;
+
+        VerificationCompoTransition();
     }
 
+    public void VerificationCompoTransition()
+    {
+        if (combiForTransition.onPlay)
+            return;
+
+        bool result = true;
+        foreach(CombinaisonGagnante.InstruEtNum instrNum in combiForTransition.instruAndStateNeeded)
+        {
+            if (listInstru[(int)instrNum.instru].currentState != instrNum.stateNeeded)
+            {
+                result = false;
+            }
+        }
+        if (result)
+        {
+            ActivateTransitionInstru();
+            combiForTransition.onPlay = true;
+        }
+    }
+
+    public void ActivateTransitionInstru()
+    {
+        transitionInstrument.SetActive(true);
+    }
+
+    public void Effet()
+    {
+        switch (stateEffect)
+        {
+            case 0:
+                AkSoundEngine.PostEvent(stopEffet.Id, gameObject);
+                break;
+            case 1:
+                AkSoundEngine.PostEvent(rainEvent.Id, gameObject);
+                break;
+            case 2:
+                AkSoundEngine.PostEvent(stopEffet.Id, gameObject);
+                AkSoundEngine.PostEvent(snowEvent.Id, gameObject);
+                break;
+            case 3:
+                AkSoundEngine.PostEvent(stopEffet.Id, gameObject);
+                AkSoundEngine.PostEvent(reverseEvent.Id, gameObject);
+                break;
+            default:
+                Debug.Log("Wath?");
+                break;
+        }
+    }
 
     public void UpdateRTPCValue(int index)
     {
@@ -182,5 +247,37 @@ public class Sound_Manager : MonoBehaviour
         AkSoundEngine.GetRTPCValue(listInstru[index].rtpcId.Id, gameObject, 0, out listInstru[index].rtpcValue, ref type);
     }
 
+
+    public void Pause(bool pause)
+    {
+        if (pauseEvent.IsValid() && resumeEvent.IsValid())
+        {
+            if (pause)
+            {
+                AkSoundEngine.PostEvent(pauseEvent.Id, gameObject);
+            }
+            else
+            {
+                AkSoundEngine.PostEvent(resumeEvent.Id, gameObject);
+            }
+        }
+        else
+        {
+            Debug.LogError((!pauseEvent.IsValid() ? "Pause event not valid" : "" )+ (!resumeEvent.IsValid() ? "Resume event not valid" : "") + " fallback technique : mute all instr");
+            foreach (InstruData instr in listInstru)
+            {
+                if (pause)
+                {
+                    AkSoundEngine.PostEvent(instr.nameEventMute.Id, gameObject);
+                }
+                else
+                {
+                    if(instr.on)
+                        AkSoundEngine.PostEvent(instr.nameEventUnMute.Id, gameObject);
+                }
+            }
+        }
+        
+    }
 
 }

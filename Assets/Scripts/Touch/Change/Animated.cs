@@ -5,24 +5,27 @@ using UnityEngine;
 public class Animated : Change
 {
     public Animator animator;
-    protected int state;
+    public int currentLayer = 0;
 
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        mI.onStartEvent.AddListener(ChangeOnStart);
+        mI.onClickEvent.AddListener(ChangeOnClick);
+        mainInstrument = mI;
+    }
 
-    public override void ChangeOnStart()
+    public virtual void ChangeOnStart()
     {
         if (animator == null)
             animator = this.GetComponent<Animator>();
     }
 
-    public override void ChangeOnClick(int currentState, bool on)
+    public virtual void ChangeOnClick()
     {
-        animator.SetTrigger("Click");
-        state = currentState - 1;
-
-    }
-
-    public override void ChangeOnUpdate(float rtpcValue)
-    {
-        //nothing
+        animator.SetLayerWeight(currentLayer, 0);
+        currentLayer++;
+        if (currentLayer >= animator.layerCount && currentLayer >= mainInstrument.instruData.currentState)
+            currentLayer = 0;
+        animator.SetLayerWeight(currentLayer, 1);
     }
 }

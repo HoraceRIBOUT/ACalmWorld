@@ -18,10 +18,15 @@ public class ImmeubleAndAssembly : Change
     public float calmDown = 0.4f;
 
     public List<Color> colorByState = new List<Color>();
-    private int state = 0;
 
-    // Start is called before the first frame update
-    public override void ChangeOnStart()
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        mI.onStartEvent.AddListener(ChangeOnStart);
+        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+        mainInstrument = mI;
+    }
+    
+    public void ChangeOnStart()
     {
         foreach(Transform floorTransfom in floorsTransform)
         {
@@ -32,14 +37,9 @@ public class ImmeubleAndAssembly : Change
         }
     }
 
-    public override void ChangeOnClick(int currentState, bool on)
+    public void ChangeOnUpdate()
     {
-        state = currentState;
-    }
-
-    public override void ChangeOnUpdate(float rtpcValue)
-    {
-        float valueZerOne = (rtpcValue + 48) / 48;
+        float valueZerOne = (mainInstrument.instruData.rtpcValue + 48) / 48;
 
         float height = 1.0f;
 
@@ -56,7 +56,7 @@ public class ImmeubleAndAssembly : Change
             {
                 float heightPlusNumber = number == offset ? 1 : Mathf.Abs(number - offset);
                 heightPlusNumber *= height;
-                sR.color = floor.startColor + colorByState[state] * valueZerOne * heightPlusNumber * calmDown;
+                sR.color = floor.startColor + colorByState[mainInstrument.instruData.currentState] * valueZerOne * heightPlusNumber * calmDown;
                 number++;
             }
             height /= 2.0f;

@@ -1,0 +1,42 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Effet : MonoBehaviour
+{
+    public Sound_Manager sound_manager;
+    public ParticleMaker particleMaker;
+
+    public List<SpriteRenderer> sprites;
+    public List<Color> colorForEachEffect;
+
+    public void Start()
+    {
+        sound_manager = Sound_Manager.instance;
+    }
+
+    private void OnMouseDown()
+    {
+        if (GameManager.instance.timerAtBeginning == 1 && !GameManager.instance.pause)
+        {
+            //call the function of the child 
+            Touched();
+        }
+    }
+
+    public void Touched()
+    {
+        sound_manager.stateEffect++;
+        if(sound_manager.stateEffect > 2)
+            sound_manager.stateEffect = 0;
+        sound_manager.Effet();
+        //add : particleMaker !
+        particleMaker.ChangeOnClick(sound_manager.stateEffect);
+
+        foreach(SpriteRenderer sR in sprites)
+        {
+            sR.color = colorForEachEffect[sound_manager.stateEffect];
+        }
+    }
+
+}

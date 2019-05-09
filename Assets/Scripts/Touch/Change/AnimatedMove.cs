@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AnimatedMove : Animated
 {
-    public int currentLayer = 0;
 
     [System.Serializable]
     public class PosRotSca
@@ -16,15 +15,18 @@ public class AnimatedMove : Animated
 
     public List<PosRotSca> posRotScaForEachState;
     public Transform transfToRotate;
-    public List<Collider2D> collForEachState = new List<Collider2D>();
+    public List<GameObject> collForEachState = new List<GameObject>();
 
-    public override void ChangeOnClick(int currentState, bool on)
+    public override void AddEventOnListener(MainInstrument mI)
     {
-        animator.SetLayerWeight(currentLayer, 0);
-        currentLayer++;
-        if (currentLayer >= animator.layerCount)
-            currentLayer = 0;
-        animator.SetLayerWeight(currentLayer, 1);
+        mI.onStartEvent.AddListener(base.ChangeOnStart);
+        mI.onClickEvent.AddListener(ChangeOnClick);
+        mainInstrument = mI;
+    }
+
+    public override void ChangeOnClick()
+    {
+        base.ChangeOnClick();
 
         //Move
         this.transform.localPosition = posRotScaForEachState[currentLayer].position;
@@ -33,10 +35,10 @@ public class AnimatedMove : Animated
 
         //Collision
         if (currentLayer == 0)
-            collForEachState[collForEachState.Count - 1].enabled = false;
+            collForEachState[collForEachState.Count - 1].SetActive(false);
         else
-            collForEachState[currentLayer - 1].enabled = false;
-        collForEachState[currentLayer].enabled = true;
+            collForEachState[currentLayer - 1].SetActive(false);
+        collForEachState[currentLayer].SetActive(true);
     }
 
 

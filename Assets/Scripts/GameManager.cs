@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MatColor", menuName = "MidnightW/Save", order = 1)]
-public class ListColorData : ScriptableObject
-{
-    public List<Color> matColor;
-}
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+
+    public bool pause = false;
 
     private void Awake()
     {
         if(instance == null)
         {
             instance = this;
+            Physics.autoSimulation = false;
         }
         else
         {
@@ -33,21 +30,23 @@ public class GameManager : MonoBehaviour
     private float targetLerpValue = 0;
     private float currentLerpValue = 0;
     private float speedForVoiceEffect = 0.5f;
+    [Header("Camera movement")]
     public float speed = 0.5f;
     public float animationMaxWeight = 0.3f;
-
-    //Depreciated
-    public List<Material> toDarken;
-    public ListColorData colorSave;
-
-    public float lerpMatColor = -3f;
+    
+    [Header("Apparition at start")]
+    public float timerAtBeginning = -3f;
     public List<GameObject> allVisualInteractibleObject;
+
+    [Header("Pause")]
+    public UnityEngine.UI.Button pauseBtn;
+    public UnityEngine.UI.Button resumeBtn;
+    public UnityEngine.UI.Image darkenScreen;
 
     public void Start()
     {
         if (snd_mng != null) 
             snd_mng = Sound_Manager.instance;
-        //Depreciated//DarkenMaterial();
         glitchHandler.PutObjectInRender(allVisualInteractibleObject);
         foreach (GameObject gO in allVisualInteractibleObject)
         {
@@ -71,10 +70,10 @@ public class GameManager : MonoBehaviour
             animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
         }
         
-        if (lerpMatColor < 0)
+        if (timerAtBeginning < 0)
         {
-            lerpMatColor += Time.deltaTime;
-            if(lerpMatColor >= 0)
+            timerAtBeginning += Time.deltaTime;
+            if(timerAtBeginning >= 0)
             {
                 glitchHandler.on = true;
                 foreach(GameObject gO in allVisualInteractibleObject)
@@ -83,15 +82,14 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        else if(lerpMatColor != 1)
+        else if(timerAtBeginning != 1)
         {
-            lerpMatColor += Time.deltaTime * 0.5f; //because trauma is set at 2
-            if (lerpMatColor > 1)
+            timerAtBeginning += Time.deltaTime * 0.5f; //because trauma is set at 2
+            if (timerAtBeginning > 1)
             {
-                lerpMatColor = 1;
+                timerAtBeginning = 1;
                 glitchHandler.ReleaseThem();
             }
-            //Depreciated//UpdateMaterialColor();
         }
 
 #if UNITY_STANDALONE_WIN
@@ -99,6 +97,11 @@ public class GameManager : MonoBehaviour
             Application.Quit();
 #endif
 
+    }
+
+    public static bool KeepPlaying()
+    {
+        return (PlayerPrefs.GetInt("AlwaysPlaying") == 0);
     }
     
     public void VoiceGlitch(int numeroGlitch, bool on)
@@ -140,43 +143,21 @@ public class GameManager : MonoBehaviour
         if (animatorMainCam == null)
             animatorMainCam = mainCamera.GetComponent<Animator>();
         if (numberCurrInstru == 0)
-            numberCurrInstru = 0;
+            targetLerpValue = 0;
         else
             targetLerpValue = 0.25f + 0.75f * ((float)numberCurrInstru / (float)numberMaxInstru);
     }
 
-    //Depreciated
-#region MaterialDarkToClear
-    //Depreciated
-    void DarkenMaterial()
+    public void Pause()
     {
-        if (colorSave == null)
-        {
-            colorSave = ScriptableObject.CreateInstance<ListColorData>();
-            colorSave.matColor = new List<Color>();
-        }
-        if (toDarken.Count != 0)
-        {
-            foreach (Material mat in toDarken)
-            {
-                colorSave.matColor.Add(mat.color);
-                mat.color = Color.black;
-            }
-        }
-    }
+        FindObjectOfType<NotifController>().debugText.text += "GM do pause " + Time.realtimeSinceStartup + "";
+        pause = !pause;
+        snd_mng.Pause(pause);
 
-    void UpdateMaterialColor()
-    {
-        if (colorSave == null)
-            Debug.Log("No color save");
-        if (colorSave.matColor == null)
-            Debug.Log("No colorSave matColor ");
-        for (int i = 0; i < Mathf.Min(toDarken.Count, colorSave.matColor.Count); i++)
-        {
-            Color col = colorSave.matColor[i];
-            toDarken[i].color = Color.Lerp(Color.black, col, lerpMatColor);
-        }
-    }
-#endregion
+        pauseBtn.gameObject.SetActive(!pause);
+        resumeBtn.gameObject.SetActive(pause);
+        darkenScreen.gameObject.SetActive(pause);
 
+        Time.timeScale = pause ? 0 : 1;
+    }
 }

@@ -12,7 +12,20 @@ public class SkySpriteLight : Animated
     public Color upLight = Color.white;
     public Color averageLight = Color.white;
     public Color downLight = Color.white;
+    public Color lightBasic = Color.white;
     public Color lightColor = Color.white;
+
+    public float transitionSpeed = 0.5f;
+
+    public AnimationCurve lightIntensityCurve = AnimationCurve.Linear(0, 0, 1, 1);
+
+    public override void AddEventOnListener(MainInstrument mI)
+    {
+        mI.onStartEvent.AddListener(ChangeOnStart);
+        mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+        mainInstrument = mI;
+    }
 
     public override void ChangeOnStart()
     {
@@ -20,15 +33,45 @@ public class SkySpriteLight : Animated
         base.ChangeOnStart();
     }
 
-    public override void ChangeOnUpdate(float rtpcValue)
+    public override void ChangeOnClick()
+    {
+        currentLayer++;
+        if (currentLayer >= animator.layerCount || mainInstrument.instruData.currentState == 0)
+            currentLayer = 0;
+    }
+
+    public void ChangeOnUpdate()
     {
         foreach (SpriteRenderer sprRdr in skySprites)
         {
             sprRdr.color = skyColor;
         }
-        ambientLight.color = lightColor;
+        float valueZerOne = (mainInstrument.instruData.rtpcValue + 48) / 48;
+        valueZerOne = lightIntensityCurve.Evaluate(valueZerOne);
+        ambientLight.color = Color.Lerp(lightBasic, lightColor, valueZerOne);
         RenderSettings.ambientSkyColor = upLight;
         RenderSettings.ambientEquatorColor = averageLight;
         RenderSettings.ambientGroundColor = downLight;
+
+        //Lerp for animator layer
+        for (int i = 0; i < animator.layerCount; i++)
+        {
+            if (currentLayer == i)
+            {
+                float weight = animator.GetLayerWeight(i);
+                if (weight < 1)
+                {
+                    animator.SetLayerWeight(i, weight + Time.deltaTime * transitionSpeed);
+                }
+            }
+            else {
+                float weight = animator.GetLayerWeight(i);
+                if (weight > 0)
+                {
+                    animator.SetLayerWeight(i, weight - Time.deltaTime * transitionSpeed * 1.5f);
+                }
+            }
+        }
     }
+
 }
