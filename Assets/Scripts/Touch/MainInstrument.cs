@@ -14,6 +14,8 @@ public class MainInstrument : MonoBehaviour
 
     [HideInInspector]public Sound_Manager.InstruData instruData;
 
+    public bool active = true;
+
     public void Start()
     {
         sound_manager = Sound_Manager.instance;
@@ -28,7 +30,7 @@ public class MainInstrument : MonoBehaviour
     
     private void OnMouseDown()
     {
-        if (GameManager.instance.timerAtBeginning == 1 && !GameManager.instance.pause)
+        if (GameManager.instance.timerAtBeginning == 1 && !GameManager.instance.pause && active)
         {
             //call the function of the child 
             Touched();

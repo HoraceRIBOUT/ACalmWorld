@@ -2277,6 +2277,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: -48
+  active: 1
 --- !u!114 &303661658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7366,6 +7367,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: -48
+  active: 1
 --- !u!114 &447632078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7717,6 +7719,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: -48
+  active: 1
 --- !u!1 &551402672
 GameObject:
   m_ObjectHideFlags: 0
@@ -8000,6 +8003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 613777104}
+  - component: {fileID: 613777106}
   - component: {fileID: 613777105}
   m_Layer: 0
   m_Name: Plante
@@ -8036,6 +8040,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.708529, y: 1.8515949, z: 0.13607216}
   m_Center: {x: 0.16576552, y: 1.0521269, z: -0.005299568}
+--- !u!114 &613777106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613777103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2092bfb0deacfc44997d001b1ec122ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &641297893
 GameObject:
   m_ObjectHideFlags: 0
@@ -14663,6 +14679,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: -48
+  active: 1
 --- !u!1 &1186409804
 GameObject:
   m_ObjectHideFlags: 0
@@ -15406,6 +15423,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: -48
+  active: 1
 --- !u!65 &1267375146
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20130,6 +20148,38 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!84 &1315804312
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TextSize640_360
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 640
+  m_Height: 360
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1324430681
 GameObject:
   m_ObjectHideFlags: 0
@@ -22566,38 +22616,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &1835096583
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: TextSize640_360
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 640
-  m_Height: 360
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1863159835
 GameObject:
   m_ObjectHideFlags: 0
@@ -23776,7 +23794,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 1835096583}
+      objectReference: {fileID: 1315804312}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b01ea2424f24f2043b938fa778bf4811, type: 3}
 --- !u!1 &5689864513227769884 stripped
