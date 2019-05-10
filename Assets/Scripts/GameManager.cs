@@ -150,7 +150,9 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        FindObjectOfType<NotifController>().debugText.text += "GM do pause " + Time.realtimeSinceStartup + "";
+        NotifController notif = FindObjectOfType<NotifController>();
+        if (notif != null)
+            notif.debugText.text += "GM do pause " + Time.realtimeSinceStartup + "";
         pause = !pause;
         snd_mng.Pause(pause);
 
