@@ -83,6 +83,7 @@ public class Sound_Manager : MonoBehaviour
     public CombinaisonGagnante combiForTransition;
     public AK.Wwise.Event startTransition;
     public AK.Wwise.Event endTransition;
+    public bool onTransition = false;
 
     public void Awake()
     {
@@ -100,8 +101,7 @@ public class Sound_Manager : MonoBehaviour
         }
         else
         {
-            Debug.Log("More than one sound manager");
-
+            instance = this;
         }
     }
 
@@ -110,8 +110,13 @@ public class Sound_Manager : MonoBehaviour
         //Debug.Log("Bar ");
         //Verif
         VoiceCombinaisonVerification();
-        //Glitch in rythm
-        GameManager.instance.shaderHandler.OnEachBar();
+        ////Glitch in rythm
+        //GameManager.instance.shaderHandler.OnEachBar();
+
+        if (onTransition)
+        {
+            MuteNextInstr();
+        }
     }
 
     private void VoiceCombinaisonVerification(){
@@ -233,10 +238,11 @@ public class Sound_Manager : MonoBehaviour
             instr.gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().active = false;
             //deactivate all instr 
         }
-
         AkSoundEngine.PostEvent(startTransition.Id, gameObject);
 
-        GameManager.instance.TransitionStart();
+        onTransition = true;
+        GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
+        GameManager.instance.LaunchTransition();
     }
 
     public void MuteNextInstr()
@@ -250,6 +256,7 @@ public class Sound_Manager : MonoBehaviour
                 Mute(listInstru.IndexOf(instr));
                 instr.on = false;
                 instr.currentState = 0;
+                GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
             }
         }
         if (allOff)
@@ -260,8 +267,8 @@ public class Sound_Manager : MonoBehaviour
 
     public void TransitionFinish()
     {
-        GameManager.instance.TransitionEnd();
         AkSoundEngine.PostEvent(endTransition.Id, gameObject);
+        onTransition = false;
     }
 
 
