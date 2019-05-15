@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            instance.mainCamera.enabled = false;
+            instance.decorFolder.gameObject.SetActive(false);
+            instance.interactiveFolder.gameObject.SetActive(false);
             instance = this;
             StartTransition();
         }

@@ -54,6 +54,8 @@ public class ApplyMatToScreen : MonoBehaviour
         }
     }
 
+    public Material onVHS;
+    public Material forTransition;
 
     public Material matToApply;
     public RenderTexture texturesGlitch;
@@ -66,6 +68,8 @@ public class ApplyMatToScreen : MonoBehaviour
     public int resolutionDivision = 2;
     private Vector2 size;
 
+    public bool doOnce = false;
+    public bool onTransition = false;
 
 
     public void Awake()
@@ -118,41 +122,46 @@ public class ApplyMatToScreen : MonoBehaviour
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-#if !UNITY_EDITOR
-        //This is a delay for when the shader cannot load (it's then backbuffer to the previous (so last) Render. 
-        if(Time.fixedTime > 1f  || !Debug.isDebugBuild) {
-#endif
+        if(matToApply != null)
+        {
+            if (!onTransition)
+            {
+                //matToApply = onVHS if not onTransition
+                if (texturesGlitch != null)
+                {
+                    matToApply.SetTexture("_TextureGlitch", texturesGlitch);
+                }
+                if (targetEffect.Count > 1)
+                {
+                    VHSShaderValue val = GetCurrentVHSEffect();
+                    ApplyVHSValueOnMat(val, matToApply);
+                }
+            }
+            else
+            {
+                matToApply.SetFloat("_LerpVal", lerpForTarget[0]);
+            }
+        }
+
+
         if (matToApply != null)
         {
-#if !UNITY_EDITOR
-
-        //This is a delay for the RenderTexture, to test if the shader don't work or if the Render Text don't work
-        if(Time.fixedTime > 2f || !Debug.isDebugBuild) {
-#endif
-            if (texturesGlitch != null)
-            {
-                matToApply.SetTexture("_TextureGlitch", texturesGlitch);
-            }
-#if !UNITY_EDITOR
-        }
-#endif
-            if (targetEffect.Count > 1)
-            {
-                VHSShaderValue val = GetCurrentVHSEffect();
-                ApplyVHSValueOnMat(val, matToApply);
-            }
-
             RenderTexture tmp = destination;
             Graphics.Blit(source, tmp, matToApply);
             Graphics.Blit(tmp, destination);
+            //for transition
+            if (doOnce)
+            {
+                doOnce = false;
+                forTransition.SetTexture("_LastFrame", tmp);
+                //destination and put it on the mat : forTransition
+                matToApply = forTransition;
+                onTransition = true;
+            }
+            //For transition
         }
         else
             Graphics.Blit(source, destination);
-#if !UNITY_EDITOR
-        }
-        else
-            Graphics.Blit(source, destination);
-#endif
     }
 
     public VHSShaderValue GetCurrentVHSEffect()
@@ -230,5 +239,18 @@ public class ApplyMatToScreen : MonoBehaviour
     public void OnEachBar()
     {
         //Do something
+    }
+
+    [ContextMenu("StartTransition")]
+    public void StartTransitionGlitch()
+    {
+        doOnce = true;
+    }
+
+    [ContextMenu("EndTransition")]
+    public void EndTransitionGlitch()
+    {
+        onTransition = false;
+        matToApply = onVHS;
     }
 }
