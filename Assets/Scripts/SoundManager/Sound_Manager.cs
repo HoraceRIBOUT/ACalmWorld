@@ -36,7 +36,7 @@ public class Sound_Manager : MonoBehaviour
 
         [System.Serializable] public class InstruEtNum
         {
-            public InstruPossible instru = InstruPossible.pianovintage;
+            public InstruPossible instru = InstruPossible.instr1;
             [Tooltip("0 = off")]
             public int stateNeeded = 1;
         }
@@ -45,6 +45,14 @@ public class Sound_Manager : MonoBehaviour
     }
 
     public enum InstruPossible
+    {
+        instr1,
+        instr2,
+        instr3,
+        instr4,
+        instr5,
+    }
+    public enum InstruCompo1
     {
         pianovintage,
         mid,

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FirstCompo.unity
     guid: 46aa157a130fa8a44a912cf7f9eca93e
+  - enabled: 1
+    path: Assets/Scenes/SecondCompo.unity
+    guid: cf4db53ed9a90bb498777428e5365a52
   m_configObjects: {}
