@@ -25,6 +25,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public enum SceneName
+    {
+        FirstCompo,
+        SecondCompo,
+    }
+
     private GameManager nextGameManager = null;
 
     public Sound_Manager snd_mng;
@@ -46,6 +52,7 @@ public class GameManager : MonoBehaviour
     public float animationMaxWeight = 0.3f;
 
     [Header("Transition")]
+    public SceneName nextScene = SceneName.SecondCompo;
     public float transitionDuration = 5;
 
     [Header("Apparition at start")]
@@ -227,10 +234,12 @@ public class GameManager : MonoBehaviour
     public IEnumerator LoadNextScene()
     {
         //screen current 
+        Debug.Log("wait for snd_mng.onTransition");
         yield return new WaitWhile(() => snd_mng.onTransition);
         UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-         AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("SecondCompo", UnityEngine.SceneManagement.LoadSceneMode.Additive);
+        AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nextScene.ToString(), UnityEngine.SceneManagement.LoadSceneMode.Additive);
 
+        Debug.Log("start operation (load second scene) = "+ nextScene.ToString());
         while (!operation.isDone)
         {
 

@@ -255,6 +255,7 @@ public class Sound_Manager : MonoBehaviour
 
     public void MuteNextInstr()
     {
+        Debug.Log("I'm call ! in sound manager");
         bool allOff = true;
         foreach (InstruData instr in listInstru)
         {
@@ -275,6 +276,7 @@ public class Sound_Manager : MonoBehaviour
 
     public void TransitionFinish()
     {
+        Debug.Log("Finish trnasition in sound manager !");
         AkSoundEngine.PostEvent(endTransition.Id, gameObject);
         onTransition = false;
     }
