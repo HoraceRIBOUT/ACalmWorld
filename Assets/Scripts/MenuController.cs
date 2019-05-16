@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuController : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class MenuController : MonoBehaviour
                 Debug.Log("test");
             }
         }*/
+
         if (panelOption.activeInHierarchy)
         {
             if (Input.GetMouseButtonDown(0))
