@@ -10,6 +10,8 @@ public class ColorChange : Change
     public MeshRenderer meshRdr;
     private Color startColor;
 
+    public bool debug = false;
+
     public override void AddEventOnListener(MainInstrument mI)
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
@@ -31,12 +33,13 @@ public class ColorChange : Change
     
     public void ChangeOnUpdate()
     {
-        ChangeColor(mainInstrument.instruData.rtpcValue);
+        ChangeColor(debug ? (mainInstrument.instruData.currentState != 0 ? 0 : -48) : mainInstrument.instruData.rtpcValue);
     }
 
     public void ChangeColor(float rtpcValue)
     {
         float valueZerOne = (rtpcValue + 48) / 48;
+
         valueZerOne = colorIntensityFunction.Evaluate(valueZerOne);
         //change the color to the right one
 
@@ -46,7 +49,6 @@ public class ColorChange : Change
         if (spriteRdr != null)
         {
             spriteRdr.color = Color.Lerp(startColor, changeToColor[colState], valueZerOne);
-
         }
         else if (meshRdr != null)
         {

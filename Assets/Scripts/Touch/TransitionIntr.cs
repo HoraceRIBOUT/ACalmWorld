@@ -12,6 +12,7 @@ public class TransitionIntr : MonoBehaviour
         }
     }
 
+    [ContextMenu("Touch")]
     private void Touched()
     {
         Debug.Log("here go the transition !");
