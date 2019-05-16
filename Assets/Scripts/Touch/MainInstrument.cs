@@ -30,11 +30,8 @@ public class MainInstrument : MonoBehaviour
     
     private void OnMouseDown()
     {
-        if (GameManager.instance.timerAtBeginning == 1 && !GameManager.instance.pause && active)
-        {
-            //call the function of the child 
-            Touched();
-        }
+        //call the function of the child 
+        Touched();
     }
 
     public void Update()
@@ -50,6 +47,9 @@ public class MainInstrument : MonoBehaviour
     [ContextMenu("Next state")]
     public void Touched()
     {
+        if (GameManager.instance.timerAtBeginning != 1 || GameManager.instance.pause || !active)
+            return;
+
         instruData = sound_manager.getData(indexForSoundManager);
         if (!instruData.on)
         {

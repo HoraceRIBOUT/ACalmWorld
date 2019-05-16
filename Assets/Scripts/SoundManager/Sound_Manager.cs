@@ -36,7 +36,7 @@ public class Sound_Manager : MonoBehaviour
 
         [System.Serializable] public class InstruEtNum
         {
-            public InstruPossible instru = InstruPossible.pianovintage;
+            public InstruPossible instru = InstruPossible.instr1;
             [Tooltip("0 = off")]
             public int stateNeeded = 1;
         }
@@ -46,6 +46,14 @@ public class Sound_Manager : MonoBehaviour
 
     public enum InstruPossible
     {
+        instr1,
+        instr2,
+        instr3,
+        instr4,
+        instr5,
+    }
+    public enum InstruCompo1
+    {
         pianovintage,
         mid,
         low,
@@ -53,31 +61,37 @@ public class Sound_Manager : MonoBehaviour
         kick,
     }
 
+    public AK.Wwise.Event startEvent;
+
     [SerializeField]
     public List<InstruData> listInstru = new List<InstruData>();
     private int numberInstruOn = 0;
+    
+    [Header("Pause")]
+    public AK.Wwise.Event pauseEvent;
+    public AK.Wwise.Event resumeEvent;
 
+    [Header("Voice")]
+    [SerializeField]
+    public List<CombinaisonGagnante> voiceCombi = new List<CombinaisonGagnante>();
+    private int currentVoice = -1;
+    private int numberOfEndToIgnore = 0;
+    public AkCallbackType callBackToSeek = AkCallbackType.AK_MusicSyncBeat;
+    public AkCallbackType callBackForVoiceEnd = AkCallbackType.AK_EndOfEvent;
+
+    [Header("Effect list")]
     public AK.Wwise.Event stopEffet;
     public AK.Wwise.Event rainEvent;
     public AK.Wwise.Event snowEvent;
     public AK.Wwise.Event reverseEvent;
     [HideInInspector] public int stateEffect = 0;
 
-    [SerializeField]
-    public List<CombinaisonGagnante> voiceCombi = new List<CombinaisonGagnante>();
-    private int currentVoice = -1;
-    private int numberOfEndToIgnore = 0;
-
-    public AK.Wwise.Event startEvent;
-
-    public AK.Wwise.Event pauseEvent;
-    public AK.Wwise.Event resumeEvent;
-
-    public AkCallbackType callBackToSeek = AkCallbackType.AK_MusicSyncBeat;
-    public AkCallbackType callBackForVoiceEnd = AkCallbackType.AK_EndOfEvent;
-
+    [Header("Transition")]
     public GameObject transitionInstrument;
     public CombinaisonGagnante combiForTransition;
+    public AK.Wwise.Event startTransition;
+    public AK.Wwise.Event endTransition;
+    public bool onTransition = false;
 
     public void Awake()
     {
@@ -94,7 +108,9 @@ public class Sound_Manager : MonoBehaviour
             }
         }
         else
-            Debug.Log("More than one sound manager");
+        {
+            instance = this;
+        }
     }
 
     void CallBackFunction(object baseObject, AkCallbackType type, object info)
@@ -102,8 +118,13 @@ public class Sound_Manager : MonoBehaviour
         //Debug.Log("Bar ");
         //Verif
         VoiceCombinaisonVerification();
-        //Glitch in rythm
-        GameManager.instance.shaderHandler.OnEachBar();
+        ////Glitch in rythm
+        //GameManager.instance.shaderHandler.OnEachBar();
+
+        if (onTransition)
+        {
+            MuteNextInstr();
+        }
     }
 
     private void VoiceCombinaisonVerification(){
@@ -222,10 +243,44 @@ public class Sound_Manager : MonoBehaviour
         //deactivate other instr 
         foreach(InstruData instr in listInstru)
         {
-            //instr.gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().active = false;
+            instr.gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().active = false;
             //deactivate all instr 
         }
+        AkSoundEngine.PostEvent(startTransition.Id, gameObject);
+
+        onTransition = true;
+        GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
+        GameManager.instance.LaunchTransition();
     }
+
+    public void MuteNextInstr()
+    {
+        Debug.Log("I'm call ! in sound manager");
+        bool allOff = true;
+        foreach (InstruData instr in listInstru)
+        {
+            if (instr.on && allOff)
+            {
+                allOff = false;
+                Mute(listInstru.IndexOf(instr));
+                instr.on = false;
+                instr.currentState = 0;
+                GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
+            }
+        }
+        if (allOff)
+        {
+            TransitionFinish();
+        }
+    }
+
+    public void TransitionFinish()
+    {
+        Debug.Log("Finish trnasition in sound manager !");
+        AkSoundEngine.PostEvent(endTransition.Id, gameObject);
+        onTransition = false;
+    }
+
 
     public void Effet()
     {

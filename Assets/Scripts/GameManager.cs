@@ -17,26 +17,50 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            instance.mainCamera.enabled = false;
+            instance.decorFolder.gameObject.SetActive(false);
+            instance.interactiveFolder.gameObject.SetActive(false);
+            instance = this;
+            StartTransition();
         }
     }
+
+    public enum SceneName
+    {
+        FirstCompo,
+        SecondCompo,
+    }
+
+    private GameManager nextGameManager = null;
 
     public Sound_Manager snd_mng;
     public Camera mainCamera;
     public Animator animatorMainCam;
     public ApplyMatToScreen shaderHandler;
     public ApplyGlitch glitchHandler;
+    public Transform interactiveFolder;
+    public Transform decorFolder;
+
+
 
     private float targetLerpValue = 0;
     private float currentLerpValue = 0;
     private float speedForVoiceEffect = 0.5f;
+
     [Header("Camera movement")]
     public float speed = 0.5f;
     public float animationMaxWeight = 0.3f;
-    
+
+    [Header("Transition")]
+    public SceneName nextScene = SceneName.SecondCompo;
+    public float transitionDuration = 5;
+
     [Header("Apparition at start")]
     public float timerAtBeginning = -3f;
     public List<GameObject> allVisualInteractibleObject;
+
+    [Header("Camera movement")]
+    public bool onTransition = false;
 
     [Header("Pause")]
     public UnityEngine.UI.Button pauseBtn;
@@ -53,6 +77,22 @@ public class GameManager : MonoBehaviour
             gO.SetActive(false);
         }
     }
+    
+    private void StartTransition()
+    {
+        onTransition = true;
+        timerAtBeginning -= transitionDuration;
+        //Move block to far away
+
+        //start moving them back (in "transitionDuration" seconds)
+    }
+
+    public void TransitionFinish()
+    {
+        onTransition = false;
+        //
+    }
+
 
     public void Update()
     {
@@ -150,7 +190,9 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        FindObjectOfType<NotifController>().debugText.text += "GM do pause " + Time.realtimeSinceStartup + "";
+        NotifController notif = FindObjectOfType<NotifController>();
+        if (notif != null)
+            notif.debugText.text += "GM do pause " + Time.realtimeSinceStartup + "";
         pause = !pause;
         snd_mng.Pause(pause);
 
@@ -159,5 +201,51 @@ public class GameManager : MonoBehaviour
         darkenScreen.gameObject.SetActive(pause);
 
         Time.timeScale = pause ? 0 : 1;
+    }
+    
+    public void LaunchTransition()
+    {
+        onTransition = true;
+        StartCoroutine(LoadNextScene());
+        //effectttttttttt !
+        //Mute all instr
+        //wait ? Animation ?
+        /////change directionnal light to good one 
+        /////make the skies go transparency
+        //the whole "decor" have to glitch out before being replace by the new one 
+
+        //(how to do it? 
+
+        ////
+        /// First : screen the camera before the deactivation of all element (light already change and gradient already made)
+        /// First TWO : deactivate so all element
+        /// Second : activate all other element (they have to deactivate themself if there are with a previous gameManager)
+        /// Third : make them come by glitching ON the current last frame of the camera 
+        /// (3 texture : real camera, last frame, prevous frame)
+        /// - if real == previous : take last frame OR previous ?
+        /// - if real != previous : take the real frame
+        /// - put on previous frame the effective one 
+        /// - Condition of the OR : 
+        /// 
+        /// Finally : destroy the old scene. we only need one
+        ////
+    }
+
+    public IEnumerator LoadNextScene()
+    {
+        //screen current 
+        Debug.Log("wait for snd_mng.onTransition");
+        yield return new WaitWhile(() => snd_mng.onTransition);
+        UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+        AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nextScene.ToString(), UnityEngine.SceneManagement.LoadSceneMode.Additive);
+
+        Debug.Log("start operation (load second scene) = "+ nextScene.ToString());
+        while (!operation.isDone)
+        {
+
+            yield return new WaitForSeconds(0.1f);
+        }
+        Debug.Log("Done !");
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(scene);
     }
 }
