@@ -2,8 +2,8 @@
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
-		_LastFrame("Texture", 2D) = "white" {}
+        _MainTex ("Screen frame", 2D) = "white" {}
+		_LastFrame("Last Frame", 2D) = "white" {}
 
 		_LerpVal("Lerp val", float) = 0
     }

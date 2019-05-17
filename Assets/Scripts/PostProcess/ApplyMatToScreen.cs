@@ -59,6 +59,7 @@ public class ApplyMatToScreen : MonoBehaviour
 
     public Material matToApply;
     public RenderTexture texturesGlitch;
+    public Texture texturesLastFrame;
 
     public List<VHSShaderValue> targetEffect = new List<VHSShaderValue>();
     public AnimationCurve forTramIntensityTransition = AnimationCurve.Linear(0, 0, 1, 1);
@@ -146,19 +147,34 @@ public class ApplyMatToScreen : MonoBehaviour
 
         if (matToApply != null)
         {
-            RenderTexture tmp = destination;
-            Graphics.Blit(source, tmp, matToApply);
-            Graphics.Blit(tmp, destination);
             //for transition
             if (doOnce)
             {
+                RenderTexture tmp = new RenderTexture(source);
+                Graphics.Blit(source, tmp, matToApply);
                 doOnce = false;
-                forTransition.SetTexture("_LastFrame", tmp);
+                if (tmp == null)
+                    Debug.Log("Null");
+                else
+                    Debug.Log(tmp.name + " source" + tmp.width);
+                texturesLastFrame = new RenderTexture(tmp);
+                forTransition.SetTexture("_LastFrame", texturesLastFrame);
                 //destination and put it on the mat : forTransition
                 matToApply = forTransition;
                 onTransition = true;
+                Graphics.Blit(tmp, (RenderTexture)null);
+                Debug.Break();
             }
-            //For transition
+            //End of "for transition"
+            else
+            {
+                RenderTexture tmp = destination;
+                Graphics.Blit(source, tmp, matToApply);
+
+                texturesLastFrame = new RenderTexture(source);
+                forTransition.SetTexture("_LastFrame", texturesLastFrame);
+            }
+            //Graphics.Blit(tmp, destination); //doesn't seem usefull (only one blit, so less calcul)
         }
         else
             Graphics.Blit(source, destination);

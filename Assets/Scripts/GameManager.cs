@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
             timerAtBeginning += Time.deltaTime;
             if(timerAtBeginning >= 0)
             {
+                shaderHandler.EndTransitionGlitch();
                 glitchHandler.on = true;
                 foreach(GameObject gO in allVisualInteractibleObject)
                 {
@@ -207,28 +208,6 @@ public class GameManager : MonoBehaviour
     {
         onTransition = true;
         StartCoroutine(LoadNextScene());
-        //effectttttttttt !
-        //Mute all instr
-        //wait ? Animation ?
-        /////change directionnal light to good one 
-        /////make the skies go transparency
-        //the whole "decor" have to glitch out before being replace by the new one 
-
-        //(how to do it? 
-
-        ////
-        /// First : screen the camera before the deactivation of all element (light already change and gradient already made)
-        /// First TWO : deactivate so all element
-        /// Second : activate all other element (they have to deactivate themself if there are with a previous gameManager)
-        /// Third : make them come by glitching ON the current last frame of the camera 
-        /// (3 texture : real camera, last frame, prevous frame)
-        /// - if real == previous : take last frame OR previous ?
-        /// - if real != previous : take the real frame
-        /// - put on previous frame the effective one 
-        /// - Condition of the OR : 
-        /// 
-        /// Finally : destroy the old scene. we only need one
-        ////
     }
 
     public IEnumerator LoadNextScene()
@@ -236,7 +215,9 @@ public class GameManager : MonoBehaviour
         //screen current 
         Debug.Log("wait for snd_mng.onTransition");
         yield return new WaitWhile(() => snd_mng.onTransition);
+        shaderHandler.StartTransitionGlitch();
         UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+        yield return new WaitForSeconds(0.1f);
         AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nextScene.ToString(), UnityEngine.SceneManagement.LoadSceneMode.Additive);
 
         Debug.Log("start operation (load second scene) = "+ nextScene.ToString());
