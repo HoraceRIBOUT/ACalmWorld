@@ -49,13 +49,16 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 colRealFrame = tex2D(_MainTex, i.uv);
 				fixed4 col2 = tex2D(_LastFrame, i.uv);
+				//real frame
+				colRealFrame = half4(colRealFrame.rgb * _Saturation, colRealFrame.a);
 
-				col = half4(col.rgb * _Saturation, col.a);
+				//glitchframe from previous
 
-                col.rgb = lerp(col.rgb, col2.rgb, _LerpVal);
-                return col;
+
+				colRealFrame.rgb = lerp(colRealFrame.rgb, col2.rgb, _LerpVal);
+                return colRealFrame;
             }
             ENDCG
         }

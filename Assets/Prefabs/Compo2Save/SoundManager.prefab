@@ -207,6 +207,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   onTransition: 0
+  bankToLoad:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6ded76b92c6b0473abdd953c90501ace,
+      type: 2}
 --- !u!114 &8237344637757833358
 MonoBehaviour:
   m_ObjectHideFlags: 0

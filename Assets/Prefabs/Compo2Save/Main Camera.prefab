@@ -65,7 +65,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 1536
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: bac0790441cce1144bdd64bf8e8f934c, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
   VHS_Mat: {fileID: 2100000, guid: 43b84bf78c7a5054ab46349d9ab8a844, type: 2}
   Transition_Mat: {fileID: 2100000, guid: 7ab42e878d2d06848b9e20f37c9a0b9e, type: 2}
   matToApply: {fileID: 2100000, guid: 43b84bf78c7a5054ab46349d9ab8a844, type: 2}
-  texturesGlitch: {fileID: 8400000, guid: bac0790441cce1144bdd64bf8e8f934c, type: 2}
+  texturesGlitch: {fileID: 0}
   targetEffect:
   - blurIntensity: 0.002
     blurBlueIntensity: 0
@@ -420,6 +420,7 @@ MonoBehaviour:
   transitionDuration: 5
   timerAtBeginning: -2
   allVisualInteractibleObject:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
