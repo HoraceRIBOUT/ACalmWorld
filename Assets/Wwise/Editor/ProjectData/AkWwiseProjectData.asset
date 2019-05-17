@@ -31,17 +31,35 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2dbab81db74f9c47b960c9262200ba39
     GuidInternal: 
-    m_lastTime: -8586486720224775808
+    m_lastTime: -8586435189474775808
     List:
-    - name: Prototype
-      guid: dc58634407e912408ecc6828eb7b30f6
-      id: 3565403361
+    - name: Menu
+      guid: 64a99a69f942b948ba4efb44c5701b21
+      id: 2607556080
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Prototype
+      - ElementName: Menu
         ObjectType: 7
-      Path: Default Work Unit/Prototype
+      Path: Default Work Unit/Menu
+    - name: Musique_01
+      guid: dc58634407e912408ecc6828eb7b30f6
+      id: 2859994988
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Musique_01
+        ObjectType: 7
+      Path: Default Work Unit/Musique_01
+    - name: Musique_02
+      guid: 51657e9043551547802c3f750a3c0489
+      id: 2859994991
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 7
+      Path: Default Work Unit/Musique_02
   EventWwu:
   - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -53,7 +71,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8b3b7fd60fe434469f67fb15c866b032
     GuidInternal: 
-    m_lastTime: -8586459187614775808
+    m_lastTime: -8586435611264775808
     List:
     - name: Mute_ACW_Lofi_Musique_Percus_01_Lp
       guid: 35403a9dbef26746833ef0121cea4cc5
@@ -135,6 +153,118 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Mute_Musique_02_Chant
+      guid: 12898175e2e94c44af7446252deee439
+      id: 2940882054
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: Mute
+        ObjectType: 4
+      - ElementName: Mute_Musique_02_Chant
+        ObjectType: 3
+      Path: Musique/Musique_02/Mute/Mute_Musique_02_Chant
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Mute_Musique_02_Drums
+      guid: 0f0fb82b8a4b494ca9c7837a03ca5495
+      id: 3940463981
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: Mute
+        ObjectType: 4
+      - ElementName: Mute_Musique_02_Drums
+        ObjectType: 3
+      Path: Musique/Musique_02/Mute/Mute_Musique_02_Drums
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Mute_Musique_02_Guit
+      guid: 7fbf6823ffd22e47849d20442fc85e08
+      id: 1956376329
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: Mute
+        ObjectType: 4
+      - ElementName: Mute_Musique_02_Guit
+        ObjectType: 3
+      Path: Musique/Musique_02/Mute/Mute_Musique_02_Guit
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Mute_Musique_02_Piano
+      guid: 4a2ed9cdca091744bf5c7ccd2272618a
+      id: 3957153065
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: Mute
+        ObjectType: 4
+      - ElementName: Mute_Musique_02_Piano
+        ObjectType: 3
+      Path: Musique/Musique_02/Mute/Mute_Musique_02_Piano
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Pause_ACW_Lofi_Musique_01
+      guid: af7ec243712cd144876274d1c1965346
+      id: 3381148652
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_01_V1
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Pause_ACW_Lofi_Musique_01
+        ObjectType: 3
+      Path: Musique/Musique_01_V1/Play_Innit/Pause_ACW_Lofi_Musique_01
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Pause_ACW_Lofi_Musique_02
+      guid: 5627784454f9094baa3ac8093dd3ad20
+      id: 3381148655
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Pause_ACW_Lofi_Musique_02
+        ObjectType: 3
+      Path: Musique/Musique_02/Play_Innit/Pause_ACW_Lofi_Musique_02
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_ACW_Lofi_Amb_Neige_Lp
+      guid: 49ed22dc79facf4b9a448a9b10c10a88
+      id: 1130487551
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_01_V1
+        ObjectType: 4
+      - ElementName: Ambianceq
+        ObjectType: 4
+      - ElementName: Play_ACW_Lofi_Amb_Neige_Lp
+        ObjectType: 3
+      Path: Musique/Musique_01_V1/Ambianceq/Play_ACW_Lofi_Amb_Neige_Lp
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Acw_Lofi_Musique_Innit_02
       guid: 875330d5f3afc74083e1dd126409a3bf
       id: 3922558540
@@ -151,6 +281,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_ACW_Noise_Lp
+      guid: 7c40ce211abef94c817d2131426025a3
+      id: 715231681
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_01_V1
+        ObjectType: 4
+      - ElementName: Play_ACW_Noise_Lp
+        ObjectType: 3
+      Path: Musique/Musique_01_V1/Play_ACW_Noise_Lp
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_ACW_Voice_System
       guid: b950aa13565fad41950861417aabd3bb
       id: 2716696314
@@ -164,6 +308,118 @@ MonoBehaviour:
       - ElementName: Play_ACW_Voice_System
         ObjectType: 3
       Path: Musique/Musique_01_V1/Play_Innit/Play_ACW_Voice_System
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_ACW_Voice_System_01
+      guid: 4ff7e86b4dc41448aa85e6d4416d7345
+      id: 1134515832
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_01_V1
+        ObjectType: 4
+      - ElementName: Voices
+        ObjectType: 4
+      - ElementName: Play_ACW_Voice_System_01
+        ObjectType: 3
+      Path: Musique/Musique_01_V1/Voices/Play_ACW_Voice_System_01
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Musique_02_Innit
+      guid: fd5d9e5d2b4a774b92f9fa884f435c6e
+      id: 3777834939
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Play_Musique_02_Innit
+        ObjectType: 3
+      Path: Musique/Musique_02/Play_Innit/Play_Musique_02_Innit
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Pluie
+      guid: 1c28a152de81b647842e440f9ddba02e
+      id: 3241332153
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_01_V1
+        ObjectType: 4
+      - ElementName: Ambianceq
+        ObjectType: 4
+      - ElementName: Play_Pluie
+        ObjectType: 3
+      Path: Musique/Musique_01_V1/Ambianceq/Play_Pluie
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Resume_ACW_Lofi_Musique_01
+      guid: 5db9759cefc5b14e825921071ad6fccf
+      id: 1584214029
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_01_V1
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Resume_ACW_Lofi_Musique_01
+        ObjectType: 3
+      Path: Musique/Musique_01_V1/Play_Innit/Resume_ACW_Lofi_Musique_01
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Resume_ACW_Lofi_Musique_02
+      guid: d96dee17c95a104aa78011ce16ded644
+      id: 1584214030
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Resume_ACW_Lofi_Musique_02
+        ObjectType: 3
+      Path: Musique/Musique_02/Play_Innit/Resume_ACW_Lofi_Musique_02
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_ACW_Voice_System
+      guid: 8010014eac178a48a759fc62fa9779a4
+      id: 3723634884
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_01_V1
+        ObjectType: 4
+      - ElementName: Voices
+        ObjectType: 4
+      - ElementName: Stop_ACW_Voice_System
+        ObjectType: 3
+      Path: Musique/Musique_01_V1/Voices/Stop_ACW_Voice_System
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_Pluie
+      guid: db8d3276953d3948b615782e3fb8cecd
+      id: 2909095507
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_01_V1
+        ObjectType: 4
+      - ElementName: Ambianceq
+        ObjectType: 4
+      - ElementName: Stop_Pluie
+        ObjectType: 3
+      Path: Musique/Musique_01_V1/Ambianceq/Stop_Pluie
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -244,6 +500,70 @@ MonoBehaviour:
       - ElementName: UnMute_ACW_Lofi_Musique1_Synth_Mid
         ObjectType: 3
       Path: Musique/Musique_01_V1/UnMute/UnMute_ACW_Lofi_Musique1_Synth_Mid
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UnMute_Musique_02_Chant
+      guid: 201bae65cebe7740a1cd305b13be64d4
+      id: 3823445829
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: UnMute
+        ObjectType: 4
+      - ElementName: UnMute_Musique_02_Chant
+        ObjectType: 3
+      Path: Musique/Musique_02/UnMute/UnMute_Musique_02_Chant
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UnMute_Musique_02_Drums
+      guid: b1dae2a3c786cf4cb52d0e0d534cf2bf
+      id: 1233297878
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: UnMute
+        ObjectType: 4
+      - ElementName: UnMute_Musique_02_Drums
+        ObjectType: 3
+      Path: Musique/Musique_02/UnMute/UnMute_Musique_02_Drums
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UnMute_Musique_02_Guit
+      guid: a0b54c1b1bbc4746b83108c3463436a4
+      id: 1260961212
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: UnMute
+        ObjectType: 4
+      - ElementName: UnMute_Musique_02_Guit
+        ObjectType: 3
+      Path: Musique/Musique_02/UnMute/UnMute_Musique_02_Guit
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UnMute_Musique_02_Piano
+      guid: d2ef815652cdfa44b025c2d1a7dc4625
+      id: 4211648642
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: UnMute
+        ObjectType: 4
+      - ElementName: UnMute_Musique_02_Piano
+        ObjectType: 3
+      Path: Musique/Musique_02/UnMute/UnMute_Musique_02_Piano
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -376,7 +696,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 4089d2fa6f52c44eac8a8c9d1394d133
     GuidInternal: 
-    m_lastTime: -8586480031014775808
+    m_lastTime: -8586435624684775808
     List:
     - name: Music1_Drums
       guid: 8a08d38db744734faebdfc84fd9b38c4
@@ -558,9 +878,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /ACalmWorld_WwiseProject
-  - /ACalmWorld_WwiseProject/Switches
-  - /ACalmWorld_WwiseProject/Switches/Default Work Unit
-  - /ACalmWorld_WwiseProject/Switches/Default Work Unit/Lofi_Musique01
-  - /ACalmWorld_WwiseProject/Switches/Default Work Unit/Lofi_Musique01/Music1_Synth_Aerie
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

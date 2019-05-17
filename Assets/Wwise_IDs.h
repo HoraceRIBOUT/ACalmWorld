@@ -18,13 +18,32 @@ namespace AK
         static const AkUniqueID MUTE_ACW_LOFI_MUSIQUE_PIANOVINTAGE_01_LP = 2267308724U;
         static const AkUniqueID MUTE_ACW_LOFI_MUSIQUE_SYNTH_AERIE_01_LP = 137050274U;
         static const AkUniqueID MUTE_ACW_LOFI_MUSIQUE_SYNTH_LOW_01_LP = 1865460946U;
+        static const AkUniqueID MUTE_MUSIQUE_02_CHANT = 2940882054U;
+        static const AkUniqueID MUTE_MUSIQUE_02_DRUMS = 3940463981U;
+        static const AkUniqueID MUTE_MUSIQUE_02_GUIT = 1956376329U;
+        static const AkUniqueID MUTE_MUSIQUE_02_PIANO = 3957153065U;
+        static const AkUniqueID PAUSE_ACW_LOFI_MUSIQUE_01 = 3381148652U;
+        static const AkUniqueID PAUSE_ACW_LOFI_MUSIQUE_02 = 3381148655U;
+        static const AkUniqueID PLAY_ACW_LOFI_AMB_NEIGE_LP = 1130487551U;
         static const AkUniqueID PLAY_ACW_LOFI_MUSIQUE_INNIT_02 = 3922558540U;
+        static const AkUniqueID PLAY_ACW_NOISE_LP = 715231681U;
         static const AkUniqueID PLAY_ACW_VOICE_SYSTEM = 2716696314U;
+        static const AkUniqueID PLAY_ACW_VOICE_SYSTEM_01 = 1134515832U;
+        static const AkUniqueID PLAY_MUSIQUE_02_INNIT = 3777834939U;
+        static const AkUniqueID PLAY_PLUIE = 3241332153U;
+        static const AkUniqueID RESUME_ACW_LOFI_MUSIQUE_01 = 1584214029U;
+        static const AkUniqueID RESUME_ACW_LOFI_MUSIQUE_02 = 1584214030U;
+        static const AkUniqueID STOP_ACW_VOICE_SYSTEM = 3723634884U;
+        static const AkUniqueID STOP_PLUIE = 2909095507U;
         static const AkUniqueID UNMUTE_ACW_LOFI_MUSIQUE1_DRUMS = 2603562247U;
         static const AkUniqueID UNMUTE_ACW_LOFI_MUSIQUE1_PIANOVINTAGE = 3232013003U;
         static const AkUniqueID UNMUTE_ACW_LOFI_MUSIQUE1_SYNTH_AERIE = 3032933881U;
         static const AkUniqueID UNMUTE_ACW_LOFI_MUSIQUE1_SYNTH_LOW = 3318802773U;
         static const AkUniqueID UNMUTE_ACW_LOFI_MUSIQUE1_SYNTH_MID = 2882437625U;
+        static const AkUniqueID UNMUTE_MUSIQUE_02_CHANT = 3823445829U;
+        static const AkUniqueID UNMUTE_MUSIQUE_02_DRUMS = 1233297878U;
+        static const AkUniqueID UNMUTE_MUSIQUE_02_GUIT = 1260961212U;
+        static const AkUniqueID UNMUTE_MUSIQUE_02_PIANO = 4211648642U;
     } // namespace EVENTS
 
     namespace SWITCHES
@@ -109,11 +128,14 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID PROTOTYPE = 3565403361U;
+        static const AkUniqueID MENU = 2607556080U;
+        static const AkUniqueID MUSIQUE_01 = 2859994988U;
+        static const AkUniqueID MUSIQUE_02 = 2859994991U;
     } // namespace BANKS
 
     namespace BUSSES
     {
+        static const AkUniqueID AMBIANCE = 2981377429U;
         static const AkUniqueID KICK = 2181839183U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIQUE_01 = 2859994988U;
@@ -121,6 +143,7 @@ namespace AK
         static const AkUniqueID SYNT_MID = 2429747100U;
         static const AkUniqueID SYNTH_AERIE = 18049790U;
         static const AkUniqueID SYNTH_LOW = 2478286086U;
+        static const AkUniqueID VOICES = 3313685232U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES
