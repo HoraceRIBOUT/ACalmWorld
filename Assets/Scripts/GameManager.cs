@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Apparition at start")]
     public float timerAtBeginning = -3f;
+    private float saveTimerAtBeginning;
     public List<GameObject> allVisualInteractibleObject;
 
     [Header("Camera movement")]
@@ -76,12 +77,15 @@ public class GameManager : MonoBehaviour
         {
             gO.SetActive(false);
         }
+        saveTimerAtBeginning = timerAtBeginning;
     }
     
     private void StartTransition()
     {
         onTransition = true;
         timerAtBeginning -= transitionDuration;
+        shaderHandler.lerpForTarget[0] = 1;
+        shaderHandler.StartTransitionGlitch();
         //Move block to far away
 
         //start moving them back (in "transitionDuration" seconds)
@@ -90,7 +94,7 @@ public class GameManager : MonoBehaviour
     public void TransitionFinish()
     {
         onTransition = false;
-        //
+        shaderHandler.EndTransitionGlitch();
     }
 
 
@@ -115,12 +119,20 @@ public class GameManager : MonoBehaviour
             timerAtBeginning += Time.deltaTime;
             if(timerAtBeginning >= 0)
             {
-                shaderHandler.EndTransitionGlitch();
+                if (onTransition)
+                {
+                    TransitionFinish();
+                    shaderHandler.lerpForTarget[0] = 0;
+                }
                 glitchHandler.on = true;
                 foreach(GameObject gO in allVisualInteractibleObject)
                 {
                     gO.SetActive(true);
                 }
+            }
+            else if (onTransition)
+            {
+                shaderHandler.lerpForTarget[0] = Mathf.Clamp01(-(timerAtBeginning + 1.0f) / (transitionDuration));
             }
         }
         else if(timerAtBeginning != 1)
@@ -213,11 +225,14 @@ public class GameManager : MonoBehaviour
     public IEnumerator LoadNextScene()
     {
         //screen current 
-        Debug.Log("wait for snd_mng.onTransition");
+        //Debug.Log("wait for snd_mng.onTransition");
         yield return new WaitWhile(() => snd_mng.onTransition);
-        shaderHandler.StartTransitionGlitch();
+
+        yield return new WaitForEndOfFrame();
+        shaderHandler.Transition_Mat.SetTexture("_LastFrame", ScreenCapture.CaptureScreenshotAsTexture());
+        
+        //
         UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-        yield return new WaitForSeconds(0.1f);
         AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nextScene.ToString(), UnityEngine.SceneManagement.LoadSceneMode.Additive);
 
         Debug.Log("start operation (load second scene) = "+ nextScene.ToString());

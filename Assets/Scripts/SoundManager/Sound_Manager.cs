@@ -255,7 +255,7 @@ public class Sound_Manager : MonoBehaviour
 
     public void MuteNextInstr()
     {
-        Debug.Log("I'm call ! in sound manager");
+        //Debug.Log("I'm call ! in sound manager");
         bool allOff = true;
         foreach (InstruData instr in listInstru)
         {
