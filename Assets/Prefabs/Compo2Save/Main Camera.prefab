@@ -65,7 +65,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 1536
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: bac0790441cce1144bdd64bf8e8f934c, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 3863417158849205292}
   - component: {fileID: 3863417158849205294}
   - component: {fileID: 3863417158849205283}
+  - component: {fileID: 6436931343751657421}
   - component: {fileID: 3863417158849205295}
   - component: {fileID: 3863417158849205288}
   - component: {fileID: 3863417158849205289}
@@ -281,6 +282,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDefaultListener: 1
   listenerId: 0
+--- !u!114 &6436931343751657421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863417158849205282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb916c39ecce64d468aa109eb1fae3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6ded76b92c6b0473abdd953c90501ace,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!114 &3863417158849205295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +322,7 @@ MonoBehaviour:
   VHS_Mat: {fileID: 2100000, guid: 43b84bf78c7a5054ab46349d9ab8a844, type: 2}
   Transition_Mat: {fileID: 2100000, guid: 7ab42e878d2d06848b9e20f37c9a0b9e, type: 2}
   matToApply: {fileID: 2100000, guid: 43b84bf78c7a5054ab46349d9ab8a844, type: 2}
-  texturesGlitch: {fileID: 0}
+  texturesGlitch: {fileID: 8400000, guid: bac0790441cce1144bdd64bf8e8f934c, type: 2}
   targetEffect:
   - blurIntensity: 0.002
     blurBlueIntensity: 0

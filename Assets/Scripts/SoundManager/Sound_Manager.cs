@@ -97,6 +97,7 @@ public class Sound_Manager : MonoBehaviour
     {
         if (instance == null)
         {
+            //premier appel
             instance = this;
             AkSoundEngine.PostEvent(startEvent.Id, instance.gameObject);
 
@@ -109,7 +110,16 @@ public class Sound_Manager : MonoBehaviour
         }
         else
         {
+            //wait... that the same call ?
             instance = this;
+            AkSoundEngine.PostEvent(startEvent.Id, instance.gameObject);
+
+            startEvent.Post(this.gameObject, (uint)callBackToSeek, CallBackFunction);
+
+            for (int i = 0; i < listInstru.Count; i++)
+            {
+                listInstru[i].gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().indexForSoundManager = i;
+            }
         }
     }
 
@@ -246,7 +256,8 @@ public class Sound_Manager : MonoBehaviour
             instr.gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().active = false;
             //deactivate all instr 
         }
-        AkSoundEngine.PostEvent(startTransition.Id, gameObject);
+        if(startTransition.IsValid())
+            AkSoundEngine.PostEvent(startTransition.Id, gameObject);
 
         onTransition = true;
         GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
@@ -277,7 +288,8 @@ public class Sound_Manager : MonoBehaviour
     public void TransitionFinish()
     {
         Debug.Log("Finish trnasition in sound manager !");
-        AkSoundEngine.PostEvent(endTransition.Id, gameObject);
+        if (endTransition.IsValid())
+            AkSoundEngine.PostEvent(endTransition.Id, gameObject);
         onTransition = false;
     }
 

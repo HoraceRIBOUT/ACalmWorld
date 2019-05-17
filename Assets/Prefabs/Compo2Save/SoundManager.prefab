@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8237344639397026891}
   - component: {fileID: 8237344639397026890}
+  - component: {fileID: 8237344637757833358}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -46,29 +47,28 @@ MonoBehaviour:
   startEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 3f50841bd2cd6409980d730dd976b070,
+      type: 2}
   listInstru:
   - id: Cosmonaut
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: e6f8aa199b6944fb0a2f07744cfe1059,
+        type: 2}
     nameEventMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: debf0d5d61da44e629e2ebdb040cd0fa,
+        type: 2}
     switches:
     - idInternal: 0
       valueGuidInternal: 
       groupIdInternal: 0
       groupGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: 9f2e292362672457eb5b8f7378a6c0a0,
+        type: 2}
     rtpcId:
       idInternal: 0
       valueGuidInternal: 
@@ -81,27 +81,26 @@ MonoBehaviour:
     nameEventUnMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: 5aa1d1105ee1e4f90b9b1bcf284a1b04,
+        type: 2}
     nameEventMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: d00bd27f0dfcc4051bc9ffea242e7b61,
+        type: 2}
     switches:
     - idInternal: 0
       valueGuidInternal: 
       groupIdInternal: 0
       groupGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: 751cf508bf8d11444aae4718ae1cdc59,
+        type: 2}
     - idInternal: 0
       valueGuidInternal: 
       groupIdInternal: 0
       groupGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: a46baf4bce2369c449632f7a05308271,
+        type: 2}
     rtpcId:
       idInternal: 0
       valueGuidInternal: 
@@ -114,22 +113,20 @@ MonoBehaviour:
     nameEventUnMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: 8ae2462d26d4a45138d96ec365e4176f,
+        type: 2}
     nameEventMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: 18e06f7e33960418c864e2093b6474c5,
+        type: 2}
     switches:
     - idInternal: 0
       valueGuidInternal: 
       groupIdInternal: 0
       groupGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: 9c847fd9fa4604822b6271432fd0079b,
+        type: 2}
     rtpcId:
       idInternal: 0
       valueGuidInternal: 
@@ -142,22 +139,20 @@ MonoBehaviour:
     nameEventUnMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: dbbe2f367c6084353871dc14e13b5567,
+        type: 2}
     nameEventMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: 4ef707d203f724f1e8d1749cf54dcd7f,
+        type: 2}
     switches:
     - idInternal: 0
       valueGuidInternal: 
       groupIdInternal: 0
       groupGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: 1aee03f9205154c8f98b7c11becee102,
+        type: 2}
     rtpcId:
       idInternal: 0
       valueGuidInternal: 
@@ -168,11 +163,13 @@ MonoBehaviour:
   pauseEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c90704ec651d44dcdabaf03181735783,
+      type: 2}
   resumeEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: edf00798a94184d35a727c57e02b3e38,
+      type: 2}
   voiceCombi: []
   callBackToSeek: 512
   callBackForVoiceEnd: 1
@@ -210,3 +207,25 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   onTransition: 0
+--- !u!114 &8237344637757833358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237344639397026889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 741e9e0343ca04644a5a816b896e3065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
