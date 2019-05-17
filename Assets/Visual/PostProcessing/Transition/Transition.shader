@@ -5,7 +5,8 @@
         _MainTex ("Screen frame", 2D) = "white" {}
 		_LastFrame("Last Frame", 2D) = "white" {}
 
-		_LerpVal("Lerp val", float) = 0
+		_LerpVal("Lerp val", Range(0,1)) = 0
+		_Saturation("Saturation", float) = 1
     }
     SubShader
     {
@@ -44,11 +45,15 @@
 			sampler2D _LastFrame;
 			float _LerpVal;
 
+			float _Saturation;
+
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
 				fixed4 col2 = tex2D(_LastFrame, i.uv);
-                // just invert the colors
+
+				col = half4(col.rgb * _Saturation, col.a);
+
                 col.rgb = lerp(col.rgb, col2.rgb, _LerpVal);
                 return col;
             }

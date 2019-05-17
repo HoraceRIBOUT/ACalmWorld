@@ -100,6 +100,7 @@ public class Sound_Manager : MonoBehaviour
             //premier appel
             instance = this;
             AkSoundEngine.PostEvent(startEvent.Id, instance.gameObject);
+            Debug.Log("One every : " + callBackToSeek.ToString());
 
             startEvent.Post(this.gameObject, (uint)callBackToSeek, CallBackFunction);
 
@@ -123,18 +124,31 @@ public class Sound_Manager : MonoBehaviour
         }
     }
 
+    private bool callBackDone = false;
+
     void CallBackFunction(object baseObject, AkCallbackType type, object info)
     {
-        //Debug.Log("Bar ");
-        //Verif
-        VoiceCombinaisonVerification();
-        ////Glitch in rythm
-        //GameManager.instance.shaderHandler.OnEachBar();
-
-        if (onTransition)
+        if (!callBackDone)
         {
-            MuteNextInstr();
+            callBackDone = true;
+            //Verif
+            VoiceCombinaisonVerification();
+            ////Glitch in rythm
+            //GameManager.instance.shaderHandler.OnEachBar();
+
+            bool ifSoundManagerIsDestroy = false;
+            if (onTransition)
+            {
+                ifSoundManagerIsDestroy = MuteNextInstr();
+            }
+            if(!ifSoundManagerIsDestroy)
+                Invoke("CallBackUnDone", 0.5f);
         }
+    }
+
+    void CallBackUnDone()
+    {
+        callBackDone = false;
     }
 
     private void VoiceCombinaisonVerification(){
@@ -264,9 +278,8 @@ public class Sound_Manager : MonoBehaviour
         GameManager.instance.LaunchTransition();
     }
 
-    public void MuteNextInstr()
+    public bool MuteNextInstr()
     {
-        //Debug.Log("I'm call ! in sound manager");
         bool allOff = true;
         foreach (InstruData instr in listInstru)
         {
@@ -279,10 +292,12 @@ public class Sound_Manager : MonoBehaviour
                 GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
             }
         }
+        Debug.Log("I'm call ! in sound manager " + allOff);
         if (allOff)
         {
             TransitionFinish();
         }
+        return allOff;
     }
 
     public void TransitionFinish()

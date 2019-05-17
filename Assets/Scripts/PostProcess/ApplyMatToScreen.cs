@@ -138,7 +138,9 @@ public class ApplyMatToScreen : MonoBehaviour
             }
             else
             {
+                VHSShaderValue val = GetCurrentVHSEffect();
                 matToApply.SetFloat("_LerpVal", lerpForTarget[0]);
+                matToApply.SetFloat("_Saturation", val.saturation);
             }
         }
 

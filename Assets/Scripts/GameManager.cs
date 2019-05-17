@@ -218,6 +218,7 @@ public class GameManager : MonoBehaviour
     {
         onTransition = true;
         StartCoroutine(LoadNextScene());
+        targetLerpValue = 0;
     }
 
     public IEnumerator LoadNextScene()
