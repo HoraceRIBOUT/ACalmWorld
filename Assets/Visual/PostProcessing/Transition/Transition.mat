@@ -79,14 +79,14 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Hauteur: 0.5
-    - _LerpVal: 0
+    - _LerpVal: 1
     - _Metallic: 0
     - _Mode: 0
     - _NbIntensity: 0
     - _NoiseBool: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Saturation: 2
+    - _Saturation: 2.4
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 1
