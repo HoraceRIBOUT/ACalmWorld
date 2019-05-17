@@ -147,8 +147,9 @@ public class ApplyMatToScreen : MonoBehaviour
 
         if (matToApply != null)
         {
-                RenderTexture tmp = destination;
-                Graphics.Blit(source, tmp, matToApply);
+            RenderTexture tmp = destination;
+            Graphics.Blit(source, tmp, matToApply);
+            //Graphics.Blit(tmp, destination);
             //Graphics.Blit(tmp, destination); //doesn't seem usefull (only one blit, so less calcul)
         }
         else

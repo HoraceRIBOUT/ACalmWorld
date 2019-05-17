@@ -86,6 +86,8 @@ public class Sound_Manager : MonoBehaviour
     public AK.Wwise.Event reverseEvent;
     [HideInInspector] public int stateEffect = 0;
 
+    public AK.Wwise.Event firstClickEvent;
+
     [Header("Transition")]
     public GameObject transitionInstrument;
     public CombinaisonGagnante combiForTransition;
@@ -226,11 +228,16 @@ public class Sound_Manager : MonoBehaviour
         return listInstru[index];
     }
 
+
     public void UnMute(int indexForSoundManager)
     {
         if (firstClick )
         {
             firstClick = false;
+            if (firstClickEvent.IsValid())
+            {
+                AkSoundEngine.PostEvent(firstClickEvent.Id, gameObject);
+            }
             if(bankToUnload != null)
             {
                 System.IntPtr intPtr = new System.IntPtr();
