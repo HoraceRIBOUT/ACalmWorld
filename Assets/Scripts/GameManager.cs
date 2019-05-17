@@ -31,8 +31,6 @@ public class GameManager : MonoBehaviour
         SecondCompo,
     }
 
-    private GameManager nextGameManager = null;
-
     public Sound_Manager snd_mng;
     public Camera mainCamera;
     public Animator animatorMainCam;

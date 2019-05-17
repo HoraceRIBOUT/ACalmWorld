@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2c5b7e0f5392624d8fa47ddf70bbb28d
     GuidInternal: 
-    m_lastTime: -8586486720224775808
+    m_lastTime: -8586447109273373844
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 0ff6def33c40d34caed71a7661ebbde4
     GuidInternal: 
-    m_lastTime: -8586485104094775808
+    m_lastTime: -8586447109278360513
     List: []
   BankWwu:
-  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2dbab81db74f9c47b960c9262200ba39
     GuidInternal: 
-    m_lastTime: -8586435189474775808
+    m_lastTime: -8586435180510366347
     List:
     - name: Menu
       guid: 64a99a69f942b948ba4efb44c5701b21
@@ -41,7 +41,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Menu
         ObjectType: 7
-      Path: Default Work Unit/Menu
+      Path: Default Work Unit\Menu
     - name: Musique_01
       guid: dc58634407e912408ecc6828eb7b30f6
       id: 2859994988
@@ -50,7 +50,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Musique_01
         ObjectType: 7
-      Path: Default Work Unit/Musique_01
+      Path: Default Work Unit\Musique_01
     - name: Musique_02
       guid: 51657e9043551547802c3f750a3c0489
       id: 2859994991
@@ -59,19 +59,19 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Musique_02
         ObjectType: 7
-      Path: Default Work Unit/Musique_02
+      Path: Default Work Unit\Musique_02
   EventWwu:
-  - PhysicalPath: Events/Default Work Unit.wwu
+  - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: d462de141e6c514394705aab8fc2359b
     GuidInternal: 
-    m_lastTime: -8586466139594775808
+    m_lastTime: -8586447109278629786
     List: []
-  - PhysicalPath: Events/Musique.wwu
+  - PhysicalPath: Events\Musique.wwu
     ParentPhysicalPath: 
     guid: 8b3b7fd60fe434469f67fb15c866b032
     GuidInternal: 
-    m_lastTime: -8586435611264775808
+    m_lastTime: -8586435180511360916
     List:
     - name: Mute_ACW_Lofi_Musique_Percus_01_Lp
       guid: 35403a9dbef26746833ef0121cea4cc5
@@ -85,7 +85,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Mute_ACW_Lofi_Musique_Percus_01_Lp
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Mute/Mute_ACW_Lofi_Musique_Percus_01_Lp
+      Path: Musique\Musique_01_V1\Mute\Mute_ACW_Lofi_Musique_Percus_01_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Mute_ACW_Lofi_Musique_PianoVintage_01_Lp
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Mute/Mute_ACW_Lofi_Musique_PianoVintage_01_Lp
+      Path: Musique\Musique_01_V1\Mute\Mute_ACW_Lofi_Musique_PianoVintage_01_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Mute_ACW_Lofi_Musique_Synth_Aerie_01_Lp
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Mute/Mute_ACW_Lofi_Musique_Synth_Aerie_01_Lp
+      Path: Musique\Musique_01_V1\Mute\Mute_ACW_Lofi_Musique_Synth_Aerie_01_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Mute_ACW_Lofi_Musique_Synth_Low_01_Lp
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Mute/Mute_ACW_Lofi_Musique_Synth_Low_01_Lp
+      Path: Musique\Musique_01_V1\Mute\Mute_ACW_Lofi_Musique_Synth_Low_01_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Mute_ACW_Lofi_Musique1_Synth_Mid
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Mute/Mute_ACW_Lofi_Musique1_Synth_Mid
+      Path: Musique\Musique_01_V1\Mute\Mute_ACW_Lofi_Musique1_Synth_Mid
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Mute_Musique_02_Chant
         ObjectType: 3
-      Path: Musique/Musique_02/Mute/Mute_Musique_02_Chant
+      Path: Musique\Musique_02\Mute\Mute_Musique_02_Chant
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Mute_Musique_02_Drums
         ObjectType: 3
-      Path: Musique/Musique_02/Mute/Mute_Musique_02_Drums
+      Path: Musique\Musique_02\Mute\Mute_Musique_02_Drums
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Mute_Musique_02_Guit
         ObjectType: 3
-      Path: Musique/Musique_02/Mute/Mute_Musique_02_Guit
+      Path: Musique\Musique_02\Mute\Mute_Musique_02_Guit
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Mute_Musique_02_Piano
         ObjectType: 3
-      Path: Musique/Musique_02/Mute/Mute_Musique_02_Piano
+      Path: Musique\Musique_02\Mute\Mute_Musique_02_Piano
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Pause_ACW_Lofi_Musique_01
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Play_Innit/Pause_ACW_Lofi_Musique_01
+      Path: Musique\Musique_01_V1\Play_Innit\Pause_ACW_Lofi_Musique_01
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Pause_ACW_Lofi_Musique_02
         ObjectType: 3
-      Path: Musique/Musique_02/Play_Innit/Pause_ACW_Lofi_Musique_02
+      Path: Musique\Musique_02\Play_Innit\Pause_ACW_Lofi_Musique_02
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Play_ACW_Lofi_Amb_Neige_Lp
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Ambianceq/Play_ACW_Lofi_Amb_Neige_Lp
+      Path: Musique\Musique_01_V1\Ambianceq\Play_ACW_Lofi_Amb_Neige_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Play_Acw_Lofi_Musique_Innit_02
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Play_Innit/Play_Acw_Lofi_Musique_Innit_02
+      Path: Musique\Musique_01_V1\Play_Innit\Play_Acw_Lofi_Musique_Innit_02
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -291,7 +291,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Play_ACW_Noise_Lp
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Play_ACW_Noise_Lp
+      Path: Musique\Musique_01_V1\Play_ACW_Noise_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -303,11 +303,11 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Musique_01_V1
         ObjectType: 4
-      - ElementName: Play_Innit
+      - ElementName: Voices
         ObjectType: 4
       - ElementName: Play_ACW_Voice_System
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Play_Innit/Play_ACW_Voice_System
+      Path: Musique\Musique_01_V1\Voices\Play_ACW_Voice_System
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -323,7 +323,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Play_ACW_Voice_System_01
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Voices/Play_ACW_Voice_System_01
+      Path: Musique\Musique_01_V1\Voices\Play_ACW_Voice_System_01
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Play_Musique_02_Innit
         ObjectType: 3
-      Path: Musique/Musique_02/Play_Innit/Play_Musique_02_Innit
+      Path: Musique\Musique_02\Play_Innit\Play_Musique_02_Innit
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Play_Pluie
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Ambianceq/Play_Pluie
+      Path: Musique\Musique_01_V1\Ambianceq\Play_Pluie
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -371,7 +371,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Resume_ACW_Lofi_Musique_01
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Play_Innit/Resume_ACW_Lofi_Musique_01
+      Path: Musique\Musique_01_V1\Play_Innit\Resume_ACW_Lofi_Musique_01
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -387,7 +387,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Resume_ACW_Lofi_Musique_02
         ObjectType: 3
-      Path: Musique/Musique_02/Play_Innit/Resume_ACW_Lofi_Musique_02
+      Path: Musique\Musique_02\Play_Innit\Resume_ACW_Lofi_Musique_02
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -403,7 +403,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Stop_ACW_Voice_System
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Voices/Stop_ACW_Voice_System
+      Path: Musique\Musique_01_V1\Voices\Stop_ACW_Voice_System
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -419,7 +419,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Stop_Pluie
         ObjectType: 3
-      Path: Musique/Musique_01_V1/Ambianceq/Stop_Pluie
+      Path: Musique\Musique_01_V1\Ambianceq\Stop_Pluie
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -435,7 +435,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UnMute_ACW_Lofi_Musique1_Drums
         ObjectType: 3
-      Path: Musique/Musique_01_V1/UnMute/UnMute_ACW_Lofi_Musique1_Drums
+      Path: Musique\Musique_01_V1\UnMute\UnMute_ACW_Lofi_Musique1_Drums
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UnMute_ACW_Lofi_Musique1_PianoVintage
         ObjectType: 3
-      Path: Musique/Musique_01_V1/UnMute/UnMute_ACW_Lofi_Musique1_PianoVintage
+      Path: Musique\Musique_01_V1\UnMute\UnMute_ACW_Lofi_Musique1_PianoVintage
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -467,7 +467,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UnMute_ACW_Lofi_Musique1_Synth_Aerie
         ObjectType: 3
-      Path: Musique/Musique_01_V1/UnMute/UnMute_ACW_Lofi_Musique1_Synth_Aerie
+      Path: Musique\Musique_01_V1\UnMute\UnMute_ACW_Lofi_Musique1_Synth_Aerie
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -483,7 +483,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UnMute_ACW_Lofi_Musique1_Synth_Low
         ObjectType: 3
-      Path: Musique/Musique_01_V1/UnMute/UnMute_ACW_Lofi_Musique1_Synth_Low
+      Path: Musique\Musique_01_V1\UnMute\UnMute_ACW_Lofi_Musique1_Synth_Low
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -499,7 +499,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UnMute_ACW_Lofi_Musique1_Synth_Mid
         ObjectType: 3
-      Path: Musique/Musique_01_V1/UnMute/UnMute_ACW_Lofi_Musique1_Synth_Mid
+      Path: Musique\Musique_01_V1\UnMute\UnMute_ACW_Lofi_Musique1_Synth_Mid
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -515,7 +515,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UnMute_Musique_02_Chant
         ObjectType: 3
-      Path: Musique/Musique_02/UnMute/UnMute_Musique_02_Chant
+      Path: Musique\Musique_02\UnMute\UnMute_Musique_02_Chant
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -531,7 +531,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UnMute_Musique_02_Drums
         ObjectType: 3
-      Path: Musique/Musique_02/UnMute/UnMute_Musique_02_Drums
+      Path: Musique\Musique_02\UnMute\UnMute_Musique_02_Drums
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -547,7 +547,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UnMute_Musique_02_Guit
         ObjectType: 3
-      Path: Musique/Musique_02/UnMute/UnMute_Musique_02_Guit
+      Path: Musique\Musique_02\UnMute\UnMute_Musique_02_Guit
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -563,16 +563,16 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UnMute_Musique_02_Piano
         ObjectType: 3
-      Path: Musique/Musique_02/UnMute/UnMute_Musique_02_Piano
+      Path: Musique\Musique_02\UnMute\UnMute_Musique_02_Piano
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
   RtpcWwu:
-  - PhysicalPath: Game Parameters/Default Work Unit.wwu
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 05c1c6b07a958446a3d6bd4d76f94476
     GuidInternal: 
-    m_lastTime: -8586485223884775808
+    m_lastTime: -8586447109278609825
     List:
     - name: Kick_Meter
       guid: 58530fa645fa094d8f3840b80c0b22f9
@@ -584,7 +584,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Kick_Meter
         ObjectType: 13
-      Path: Default Work Unit/Wwise_Meters/Kick_Meter
+      Path: Default Work Unit\Wwise_Meters\Kick_Meter
     - name: Piano_Vintage_Meter
       guid: d448187836f17243bb2d42b1b1b9f184
       id: 926458545
@@ -595,7 +595,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Piano_Vintage_Meter
         ObjectType: 13
-      Path: Default Work Unit/Wwise_Meters/Piano_Vintage_Meter
+      Path: Default Work Unit\Wwise_Meters\Piano_Vintage_Meter
     - name: Synth_Aerie_Offset
       guid: a6d34d7f20495447a307fc782ff2ff54
       id: 3853040844
@@ -606,7 +606,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Synth_Aerie_Offset
         ObjectType: 13
-      Path: Default Work Unit/GP_Offset/Synth_Aerie_Offset
+      Path: Default Work Unit\GP_Offset\Synth_Aerie_Offset
     - name: Synth_Drums_Offset
       guid: 323efb4227bb8948b1263f7171f40dda
       id: 292738071
@@ -617,7 +617,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Synth_Drums_Offset
         ObjectType: 13
-      Path: Default Work Unit/GP_Offset/Synth_Drums_Offset
+      Path: Default Work Unit\GP_Offset\Synth_Drums_Offset
     - name: Synth_Low_Meter
       guid: 6d23e8c87a85ed4280d76df5a9f1cbad
       id: 711224572
@@ -628,7 +628,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Synth_Low_Meter
         ObjectType: 13
-      Path: Default Work Unit/Wwise_Meters/Synth_Low_Meter
+      Path: Default Work Unit\Wwise_Meters\Synth_Low_Meter
     - name: Synth_Low_Offset
       guid: d45012be6c69d743a7c703257f98c177
       id: 978722724
@@ -639,7 +639,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Synth_Low_Offset
         ObjectType: 13
-      Path: Default Work Unit/GP_Offset/Synth_Low_Offset
+      Path: Default Work Unit\GP_Offset\Synth_Low_Offset
     - name: Synth_Mid_Meter
       guid: fbf0839c40865243b3d385d0b521b069
       id: 675098388
@@ -650,7 +650,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Synth_Mid_Meter
         ObjectType: 13
-      Path: Default Work Unit/Wwise_Meters/Synth_Mid_Meter
+      Path: Default Work Unit\Wwise_Meters\Synth_Mid_Meter
     - name: Synth_Mid_Offset
       guid: c359f7f53a3d9143b01b3ef23f6da248
       id: 946663820
@@ -661,7 +661,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Synth_Mid_Offset
         ObjectType: 13
-      Path: Default Work Unit/GP_Offset/Synth_Mid_Offset
+      Path: Default Work Unit\GP_Offset\Synth_Mid_Offset
     - name: Synth_PianoVintage_Offset
       guid: 289b282d8ad36147a059127c4d3e6737
       id: 2832888443
@@ -672,7 +672,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Synth_PianoVintage_Offset
         ObjectType: 13
-      Path: Default Work Unit/GP_Offset/Synth_PianoVintage_Offset
+      Path: Default Work Unit\GP_Offset\Synth_PianoVintage_Offset
     - name: Sytnh_Aerie_Meter
       guid: 735d26e6952cee44ac3b9c9567d42766
       id: 4207567004
@@ -683,20 +683,20 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Sytnh_Aerie_Meter
         ObjectType: 13
-      Path: Default Work Unit/Wwise_Meters/Sytnh_Aerie_Meter
+      Path: Default Work Unit\Wwise_Meters\Sytnh_Aerie_Meter
   StateWwu:
-  - PhysicalPath: States/Default Work Unit.wwu
+  - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7a2691cf65a679439ca95d450aab9be0
     GuidInternal: 
-    m_lastTime: -8586485223884775808
+    m_lastTime: -8586447109273393790
     List: []
   SwitchWwu:
-  - PhysicalPath: Switches/Default Work Unit.wwu
+  - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 4089d2fa6f52c44eac8a8c9d1394d133
     GuidInternal: 
-    m_lastTime: -8586435624684775808
+    m_lastTime: -8586447109273423708
     List:
     - name: Music1_Drums
       guid: 8a08d38db744734faebdfc84fd9b38c4
@@ -708,7 +708,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Music1_Drums
         ObjectType: 11
-      Path: Default Work Unit/Lofi_Musique01/Music1_Drums
+      Path: Default Work Unit\Lofi_Musique01\Music1_Drums
       values:
       - name: Drums_01
         guid: e6820ee5664d214896f35c6ae6b8b1df
@@ -747,7 +747,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Music1_Synth_Aerie
         ObjectType: 11
-      Path: Default Work Unit/Lofi_Musique01/Music1_Synth_Aerie
+      Path: Default Work Unit\Lofi_Musique01\Music1_Synth_Aerie
       values:
       - name: Aerie_01
         guid: 267ffb99efec8542837b8bcd3c5b9d22
@@ -780,7 +780,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Music1_Synth_Low
         ObjectType: 11
-      Path: Default Work Unit/Lofi_Musique01/Music1_Synth_Low
+      Path: Default Work Unit\Lofi_Musique01\Music1_Synth_Low
       values:
       - name: Synth_Low_01
         guid: ce271af3d2cd2a4a8511a6cde6236dff
@@ -813,7 +813,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Music1_Synth_Mid
         ObjectType: 11
-      Path: Default Work Unit/Lofi_Musique01/Music1_Synth_Mid
+      Path: Default Work Unit\Lofi_Musique01\Music1_Synth_Mid
       values:
       - name: Synth_Mid_01
         guid: b4e7c127128f39469af93b91009aef42
@@ -846,7 +846,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Music1_Synth_PianoVintage
         ObjectType: 11
-      Path: Default Work Unit/Lofi_Musique01/Music1_Synth_PianoVintage
+      Path: Default Work Unit\Lofi_Musique01\Music1_Synth_PianoVintage
       values:
       - name: Piano_Vintage_01
         guid: 57507a051ac9594d8e427f3bb35db9ed
@@ -870,13 +870,17 @@ MonoBehaviour:
       ValueIcons: []
       valuesInternal: []
   TriggerWwu:
-  - PhysicalPath: Triggers/Default Work Unit.wwu
+  - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: cfc3182b04a73347a78c464a022294a7
     GuidInternal: 
-    m_lastTime: -8586486720224775808
+    m_lastTime: -8586447109273363868
     List: []
   ExpandedItems:
   - /ACalmWorld_WwiseProject
+  - /ACalmWorld_WwiseProject/Switches
+  - /ACalmWorld_WwiseProject/Switches/Default Work Unit
+  - /ACalmWorld_WwiseProject/Switches/Default Work Unit/Lofi_Musique01
+  - /ACalmWorld_WwiseProject/Switches/Default Work Unit/Lofi_Musique01/Music1_Synth_Aerie
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
