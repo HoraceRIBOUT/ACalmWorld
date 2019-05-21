@@ -86,6 +86,8 @@ public class Sound_Manager : MonoBehaviour
     public AK.Wwise.Event reverseEvent;
     [HideInInspector] public int stateEffect = 0;
 
+    public AK.Wwise.Event firstClickEvent;
+
     [Header("Transition")]
     public GameObject transitionInstrument;
     public CombinaisonGagnante combiForTransition;
@@ -93,38 +95,76 @@ public class Sound_Manager : MonoBehaviour
     public AK.Wwise.Event endTransition;
     public bool onTransition = false;
 
+    [Header("Bank")]
+    public AK.Wwise.Bank bankToLoad;
+    private AK.Wwise.Bank bankToUnload = null;
+    private bool firstClick = true;
+
+
     public void Awake()
     {
         if (instance == null)
         {
-            instance = this;
-            AkSoundEngine.PostEvent(startEvent.Id, instance.gameObject);
-
-            startEvent.Post(this.gameObject, (uint)callBackToSeek, CallBackFunction);
-
-            for (int i = 0; i < listInstru.Count; i++)
-            {
-                listInstru[i].gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().indexForSoundManager = i;
-            }
+            //premier appel
+            AwakeCall();
         }
         else
         {
-            instance = this;
+            //wait... that the same call ?
+            bankToUnload = instance.bankToLoad;
+            AwakeCall();
         }
     }
 
+
+    private void AwakeCall()
+    {
+        instance = this;
+        
+        AKRESULT eResult = AkSoundEngine.LoadBank(
+            bankToLoad.Id,       // Identifier of the bank to be loaded.
+            AkSoundEngine.AK_DEFAULT_POOL_ID      // Memory pool ID (data is written in the default sound engine memory pool when AK_DEFAULT_POOL_ID is passed).
+        );
+        if (eResult != AKRESULT.AK_Success)
+        {
+            Debug.LogError("Bank didn't load " + eResult.ToString());
+        }
+
+        AkSoundEngine.PostEvent(startEvent.Id, instance.gameObject);
+
+        startEvent.Post(this.gameObject, (uint)callBackToSeek, CallBackFunction);
+
+        for (int i = 0; i < listInstru.Count; i++)
+        {
+            listInstru[i].gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().indexForSoundManager = i;
+        }
+    }
+
+    private bool callBackDone = false;
+
     void CallBackFunction(object baseObject, AkCallbackType type, object info)
     {
-        //Debug.Log("Bar ");
-        //Verif
-        VoiceCombinaisonVerification();
-        ////Glitch in rythm
-        //GameManager.instance.shaderHandler.OnEachBar();
-
-        if (onTransition)
+        if (!callBackDone)
         {
-            MuteNextInstr();
+            callBackDone = true;
+            //Verif
+            VoiceCombinaisonVerification();
+            ////Glitch in rythm
+            //GameManager.instance.shaderHandler.OnEachBar();
+
+            bool ifSoundManagerIsDestroy = false;
+            if (onTransition)
+            {
+                ifSoundManagerIsDestroy = MuteNextInstr();
+            }
+            if(!ifSoundManagerIsDestroy)
+                Invoke("CallBackUnDone", 0.5f);
         }
+    }
+
+    void CallBackUnDone()
+    {
+        callBackDone = false;
     }
 
     private void VoiceCombinaisonVerification(){
@@ -188,8 +228,24 @@ public class Sound_Manager : MonoBehaviour
         return listInstru[index];
     }
 
+
     public void UnMute(int indexForSoundManager)
     {
+        if (firstClick )
+        {
+            firstClick = false;
+            if (firstClickEvent.IsValid())
+            {
+                AkSoundEngine.PostEvent(firstClickEvent.Id, gameObject);
+            }
+            if(bankToUnload != null)
+            {
+                System.IntPtr intPtr = new System.IntPtr();
+                AKRESULT eResult = AkSoundEngine.UnloadBank(bankToUnload.Id, intPtr);
+
+                Debug.Log("Unload !" + eResult.ToString());
+            }
+        }
         AkSoundEngine.PostEvent(getData(indexForSoundManager).nameEventUnMute.Id, gameObject);
 
         //Part for the prog
@@ -246,16 +302,16 @@ public class Sound_Manager : MonoBehaviour
             instr.gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().active = false;
             //deactivate all instr 
         }
-        AkSoundEngine.PostEvent(startTransition.Id, gameObject);
+        if(startTransition.IsValid())
+            AkSoundEngine.PostEvent(startTransition.Id, gameObject);
 
         onTransition = true;
         GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
         GameManager.instance.LaunchTransition();
     }
 
-    public void MuteNextInstr()
+    public bool MuteNextInstr()
     {
-        Debug.Log("I'm call ! in sound manager");
         bool allOff = true;
         foreach (InstruData instr in listInstru)
         {
@@ -268,16 +324,19 @@ public class Sound_Manager : MonoBehaviour
                 GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
             }
         }
+        Debug.Log("I'm call ! in sound manager " + allOff);
         if (allOff)
         {
             TransitionFinish();
         }
+        return allOff;
     }
 
     public void TransitionFinish()
     {
         Debug.Log("Finish trnasition in sound manager !");
-        AkSoundEngine.PostEvent(endTransition.Id, gameObject);
+        if (endTransition.IsValid())
+            AkSoundEngine.PostEvent(endTransition.Id, gameObject);
         onTransition = false;
     }
 

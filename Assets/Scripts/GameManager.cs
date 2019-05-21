@@ -31,8 +31,6 @@ public class GameManager : MonoBehaviour
         SecondCompo,
     }
 
-    private GameManager nextGameManager = null;
-
     public Sound_Manager snd_mng;
     public Camera mainCamera;
     public Animator animatorMainCam;
@@ -57,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Apparition at start")]
     public float timerAtBeginning = -3f;
+    private float saveTimerAtBeginning;
     public List<GameObject> allVisualInteractibleObject;
 
     [Header("Camera movement")]
@@ -76,12 +75,15 @@ public class GameManager : MonoBehaviour
         {
             gO.SetActive(false);
         }
+        saveTimerAtBeginning = timerAtBeginning;
     }
     
     private void StartTransition()
     {
         onTransition = true;
         timerAtBeginning -= transitionDuration;
+        shaderHandler.lerpForTarget[0] = 1;
+        shaderHandler.StartTransitionGlitch();
         //Move block to far away
 
         //start moving them back (in "transitionDuration" seconds)
@@ -90,7 +92,7 @@ public class GameManager : MonoBehaviour
     public void TransitionFinish()
     {
         onTransition = false;
-        //
+        shaderHandler.EndTransitionGlitch();
     }
 
 
@@ -115,11 +117,20 @@ public class GameManager : MonoBehaviour
             timerAtBeginning += Time.deltaTime;
             if(timerAtBeginning >= 0)
             {
+                if (onTransition)
+                {
+                    TransitionFinish();
+                    shaderHandler.lerpForTarget[0] = 0;
+                }
                 glitchHandler.on = true;
                 foreach(GameObject gO in allVisualInteractibleObject)
                 {
                     gO.SetActive(true);
                 }
+            }
+            else if (onTransition)
+            {
+                shaderHandler.lerpForTarget[0] = Mathf.Clamp01(-(timerAtBeginning + 1.0f) / (transitionDuration));
             }
         }
         else if(timerAtBeginning != 1)
@@ -207,35 +218,19 @@ public class GameManager : MonoBehaviour
     {
         onTransition = true;
         StartCoroutine(LoadNextScene());
-        //effectttttttttt !
-        //Mute all instr
-        //wait ? Animation ?
-        /////change directionnal light to good one 
-        /////make the skies go transparency
-        //the whole "decor" have to glitch out before being replace by the new one 
-
-        //(how to do it? 
-
-        ////
-        /// First : screen the camera before the deactivation of all element (light already change and gradient already made)
-        /// First TWO : deactivate so all element
-        /// Second : activate all other element (they have to deactivate themself if there are with a previous gameManager)
-        /// Third : make them come by glitching ON the current last frame of the camera 
-        /// (3 texture : real camera, last frame, prevous frame)
-        /// - if real == previous : take last frame OR previous ?
-        /// - if real != previous : take the real frame
-        /// - put on previous frame the effective one 
-        /// - Condition of the OR : 
-        /// 
-        /// Finally : destroy the old scene. we only need one
-        ////
+        targetLerpValue = 0;
     }
 
     public IEnumerator LoadNextScene()
     {
         //screen current 
-        Debug.Log("wait for snd_mng.onTransition");
+        //Debug.Log("wait for snd_mng.onTransition");
         yield return new WaitWhile(() => snd_mng.onTransition);
+
+        yield return new WaitForEndOfFrame();
+        shaderHandler.Transition_Mat.SetTexture("_LastFrame", ScreenCapture.CaptureScreenshotAsTexture());
+        
+        //
         UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nextScene.ToString(), UnityEngine.SceneManagement.LoadSceneMode.Additive);
 

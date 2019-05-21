@@ -238,27 +238,6 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: -48
-  stopEffet:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 85c3336a1fd0f774c9e4080faeee4f2b,
-      type: 2}
-  rainEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 28d015691c6b28243aeb4552f3d6aa04,
-      type: 2}
-  snowEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e189b6cd758276941a50641e059645e6,
-      type: 2}
-  reverseEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e189b6cd758276941a50641e059645e6,
-      type: 2}
-  stateEffect: 0
   pauseEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -302,6 +281,27 @@ MonoBehaviour:
       stateNeeded: 1
   callBackToSeek: 512
   callBackForVoiceEnd: 1
+  stopEffet:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 85c3336a1fd0f774c9e4080faeee4f2b,
+      type: 2}
+  rainEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 28d015691c6b28243aeb4552f3d6aa04,
+      type: 2}
+  snowEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e189b6cd758276941a50641e059645e6,
+      type: 2}
+  reverseEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e189b6cd758276941a50641e059645e6,
+      type: 2}
+  stateEffect: 0
   transitionInstrument: {fileID: 0}
   combiForTransition:
     onPlay: 0
@@ -322,6 +322,12 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  onTransition: 0
+  bankToLoad:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7a1a76f4754d1447a858baab508d0563,
+      type: 2}
 --- !u!114 &2301719244556836651
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -54,8 +54,8 @@ public class ApplyMatToScreen : MonoBehaviour
         }
     }
 
-    public Material onVHS;
-    public Material forTransition;
+    public Material VHS_Mat;
+    public Material Transition_Mat;
 
     public Material matToApply;
     public RenderTexture texturesGlitch;
@@ -67,9 +67,8 @@ public class ApplyMatToScreen : MonoBehaviour
 
     public int resolutionDivision = 2;
     private Vector2 size;
-
-    public bool doOnce = false;
-    public bool onTransition = false;
+    
+    public bool isOnTransition = false;
 
 
     public void Awake()
@@ -88,7 +87,7 @@ public class ApplyMatToScreen : MonoBehaviour
         {
             lerpForTarget.Add(0);
         }
-        lerpForTarget[0] = 0.2f;
+        lerpForTarget[0] = 0f;
     }
 
     public void CreateRenderTexture()
@@ -124,7 +123,7 @@ public class ApplyMatToScreen : MonoBehaviour
     {
         if(matToApply != null)
         {
-            if (!onTransition)
+            if (!isOnTransition)
             {
                 //matToApply = onVHS if not onTransition
                 if (texturesGlitch != null)
@@ -139,7 +138,9 @@ public class ApplyMatToScreen : MonoBehaviour
             }
             else
             {
+                VHSShaderValue val = GetCurrentVHSEffect();
                 matToApply.SetFloat("_LerpVal", lerpForTarget[0]);
+                matToApply.SetFloat("_Saturation", val.saturation);
             }
         }
 
@@ -148,17 +149,8 @@ public class ApplyMatToScreen : MonoBehaviour
         {
             RenderTexture tmp = destination;
             Graphics.Blit(source, tmp, matToApply);
-            Graphics.Blit(tmp, destination);
-            //for transition
-            if (doOnce)
-            {
-                doOnce = false;
-                forTransition.SetTexture("_LastFrame", tmp);
-                //destination and put it on the mat : forTransition
-                matToApply = forTransition;
-                onTransition = true;
-            }
-            //For transition
+            //Graphics.Blit(tmp, destination);
+            //Graphics.Blit(tmp, destination); //doesn't seem usefull (only one blit, so less calcul)
         }
         else
             Graphics.Blit(source, destination);
@@ -244,13 +236,14 @@ public class ApplyMatToScreen : MonoBehaviour
     [ContextMenu("StartTransition")]
     public void StartTransitionGlitch()
     {
-        doOnce = true;
+        isOnTransition = true;
+        matToApply = Transition_Mat;
     }
 
     [ContextMenu("EndTransition")]
     public void EndTransitionGlitch()
     {
-        onTransition = false;
-        matToApply = onVHS;
+        isOnTransition = false;
+        matToApply = VHS_Mat;
     }
 }

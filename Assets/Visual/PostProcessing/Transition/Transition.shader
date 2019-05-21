@@ -2,10 +2,11 @@
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
-		_LastFrame("Texture", 2D) = "white" {}
+        _MainTex ("Screen frame", 2D) = "white" {}
+		_LastFrame("Last Frame", 2D) = "white" {}
 
-		_LerpVal("Lerp val", float) = 0
+		_LerpVal("Lerp val", Range(0,1)) = 0
+		_Saturation("Saturation", float) = 1
     }
     SubShader
     {
@@ -44,13 +45,20 @@
 			sampler2D _LastFrame;
 			float _LerpVal;
 
+			float _Saturation;
+
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 colRealFrame = tex2D(_MainTex, i.uv);
 				fixed4 col2 = tex2D(_LastFrame, i.uv);
-                // just invert the colors
-                col.rgb = lerp(col.rgb, col2.rgb, _LerpVal);
-                return col;
+				//real frame
+				colRealFrame = half4(colRealFrame.rgb * _Saturation, colRealFrame.a);
+
+				//glitchframe from previous
+
+
+				colRealFrame.rgb = lerp(colRealFrame.rgb, col2.rgb, _LerpVal);
+                return colRealFrame;
             }
             ENDCG
         }
