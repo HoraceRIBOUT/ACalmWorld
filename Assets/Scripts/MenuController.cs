@@ -11,8 +11,8 @@ public class MenuController : MonoBehaviour
     public Text timeText;
     public Text dateText;
     public GameObject panelOption;
-    public Text yes;
-    public Text no;
+    public TextMeshProUGUI yes;
+    public TextMeshProUGUI no;
     public Color colorOn = Color.white;
     public Color colorOff = Color.white;
 
@@ -112,13 +112,13 @@ public class MenuController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("AlwaysPlaying", 0) == 0)
         {
-            yes.color = colorOff;
-            no.color = colorOn;
+            yes.fontStyle &= ~FontStyles.Underline;
+            no.fontStyle = FontStyles.Underline;
         }
         else
         {
-            yes.color = colorOn;
-            no.color = colorOff;
+            yes.fontStyle = FontStyles.Underline;
+            no.fontStyle &= ~FontStyles.Underline;
         }
     }
 
