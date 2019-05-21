@@ -55,19 +55,19 @@ MonoBehaviour:
     nameEventUnMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: e6f8aa199b6944fb0a2f07744cfe1059,
+      WwiseObjectReference: {fileID: 11400000, guid: 8ae2462d26d4a45138d96ec365e4176f,
         type: 2}
     nameEventMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: debf0d5d61da44e629e2ebdb040cd0fa,
+      WwiseObjectReference: {fileID: 11400000, guid: 18e06f7e33960418c864e2093b6474c5,
         type: 2}
     switches:
     - idInternal: 0
       valueGuidInternal: 
       groupIdInternal: 0
       groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 9f2e292362672457eb5b8f7378a6c0a0,
+      WwiseObjectReference: {fileID: 11400000, guid: 9c847fd9fa4604822b6271432fd0079b,
         type: 2}
     rtpcId:
       idInternal: 0
@@ -113,19 +113,19 @@ MonoBehaviour:
     nameEventUnMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 8ae2462d26d4a45138d96ec365e4176f,
+      WwiseObjectReference: {fileID: 11400000, guid: e6f8aa199b6944fb0a2f07744cfe1059,
         type: 2}
     nameEventMute:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 18e06f7e33960418c864e2093b6474c5,
+      WwiseObjectReference: {fileID: 11400000, guid: debf0d5d61da44e629e2ebdb040cd0fa,
         type: 2}
     switches:
     - idInternal: 0
       valueGuidInternal: 
       groupIdInternal: 0
       groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 9c847fd9fa4604822b6271432fd0079b,
+      WwiseObjectReference: {fileID: 11400000, guid: 9f2e292362672457eb5b8f7378a6c0a0,
         type: 2}
     rtpcId:
       idInternal: 0
@@ -190,6 +190,10 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   stateEffect: 0
+  firstClickEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   transitionInstrument: {fileID: 0}
   combiForTransition:
     onPlay: 0
@@ -197,7 +201,13 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 0}
-    instruAndStateNeeded: []
+    instruAndStateNeeded:
+    - instru: 0
+      stateNeeded: 1
+    - instru: 2
+      stateNeeded: 0
+    - instru: 3
+      stateNeeded: 1
   startTransition:
     idInternal: 0
     valueGuidInternal: 
