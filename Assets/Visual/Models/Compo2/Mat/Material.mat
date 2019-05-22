@@ -114,5 +114,5 @@ Material:
     - _NoiseColor: {r: 0, g: 0, b: 0.15, a: 1}
     - _OffsetBlue: {r: 0.001, g: 0.001, b: 0, a: 0}
     - _SourceCol: {r: 0, g: 0.37950426, b: 0.4339623, a: 1}
-    - _SourcePos: {r: 0.47273356, g: 1.9046383, b: -0.030890752, a: 0}
+    - _SourcePos: {r: 12.119528, g: 14.741005, b: 52.666725, a: 0}
     - _TramColor: {r: 1, g: 1, b: 1, a: 1}
