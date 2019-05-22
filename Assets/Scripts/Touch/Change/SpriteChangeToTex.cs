@@ -28,7 +28,7 @@ public class SpriteChangeToTex : Change
 
     public void ChangeOnUpdate()
     {
-        tillingAndOffset += movement * Time.deltaTime;
+        tillingAndOffset += movement * Time.deltaTime * GameManager.instance.transitionOnSlowMo; // TO DO : rtpc value cuurve
         targetMaterial.SetVector("_SecondTex_ST", tillingAndOffset);
     }
 

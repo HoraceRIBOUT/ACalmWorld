@@ -11,6 +11,7 @@ public class Animated : Change
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
         mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onSloMoEvent.AddListener(ChangeOnSlowMo);
         mainInstrument = mI;
     }
 
@@ -27,5 +28,10 @@ public class Animated : Change
         if (currentLayer >= animator.layerCount && currentLayer >= mainInstrument.instruData.currentState)
             currentLayer = 0;
         animator.SetLayerWeight(currentLayer, 1);
+    }
+
+    public void ChangeOnSlowMo()
+    {
+        animator.speed = GameManager.instance.transitionOnSlowMo;
     }
 }

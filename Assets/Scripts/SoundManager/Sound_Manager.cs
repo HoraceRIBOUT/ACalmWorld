@@ -264,12 +264,15 @@ public class Sound_Manager : MonoBehaviour
         GameManager.instance.UpdateShaderIntensity(++numberInstruOn, listInstru.Count);
     }
 
-    public void Mute(int indexForSoundManager)
+    public void Mute(int indexForSoundManager, bool updateShader = true)
     {
         AkSoundEngine.PostEvent(getData(indexForSoundManager).nameEventMute.Id, gameObject);
-
-        //Part for the prog
-        GameManager.instance.UpdateShaderIntensity(--numberInstruOn, listInstru.Count);
+        --numberInstruOn;
+        if (updateShader)
+        {
+            //Part for the prog
+            GameManager.instance.UpdateShaderIntensity(numberInstruOn, listInstru.Count);
+        }
     }
 
     public void Switch(int indexForSoundManager)
@@ -330,7 +333,7 @@ public class Sound_Manager : MonoBehaviour
             if (instr.on && allOff)
             {
                 allOff = false;
-                Mute(listInstru.IndexOf(instr));
+                Mute(listInstru.IndexOf(instr), false);
                 instr.on = false;
                 instr.currentState = 0;
                 GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class SkySpriteLight : Animated
 {
     public Transform skyFolder;
@@ -25,6 +24,7 @@ public class SkySpriteLight : Animated
         mI.onStartEvent.AddListener(ChangeOnStart);
         mI.onClickEvent.AddListener(ChangeOnClick);
         mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+        mI.onSloMoEvent.AddListener(base.ChangeOnSlowMo);
         mainInstrument = mI;
     }
 
@@ -40,16 +40,7 @@ public class SkySpriteLight : Animated
         if (currentLayer >= animator.layerCount || mainInstrument.instruData.currentState == 0)
             currentLayer = 0;
     }
-
-#if UNITY_EDITOR
-    private void Update()
-    {
-        if(skySprites == null)
-            skySprites = skyFolder.GetComponentsInChildren<SpriteRenderer>(true);
-        ChangeOnUpdate();
-    }
-#endif
-
+    
     public void ChangeOnUpdate()
     {
         foreach (SpriteRenderer sprRdr in skySprites)

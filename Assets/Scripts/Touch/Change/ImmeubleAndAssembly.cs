@@ -19,6 +19,9 @@ public class ImmeubleAndAssembly : Change
 
     public List<Color> colorByState = new List<Color>();
 
+
+    public AnimationCurve slowMoRTPCurve;
+
     public override void AddEventOnListener(MainInstrument mI)
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
@@ -41,9 +44,14 @@ public class ImmeubleAndAssembly : Change
     {
         float valueZerOne = (mainInstrument.instruData.rtpcValue + 48) / 48;
 
+        if (GameManager.instance.transitionOnSlowMo != 1)
+        {
+            valueZerOne = slowMoRTPCurve.Evaluate(GameManager.instance.transitionOnSlowMo);
+        }
+
         float height = 1.0f;
 
-        if(Time.timeSinceLevelLoad - lastTime > delay)
+        if((Time.timeSinceLevelLoad * GameManager.instance.transitionOnSlowMo) - lastTime > delay)
         {
             offset = Random.Range(0, 6);
             lastTime = Time.timeSinceLevelLoad;

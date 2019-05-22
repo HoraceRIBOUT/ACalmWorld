@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
     [Header("Transition : On")]
     public SceneName nextScene = SceneName.SecondCompo;
     public float transitionOnDuration = 1.5f;
+    [Range(0,1)]
+    public float transitionOnSlowMo = 1;
 
     [Header("Transition : Receive")]
     public float transitionRecDuration = 5;
@@ -230,12 +232,21 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator LoadNextScene()
     {
+        //The transition on (transition on is the transition that start when you click on the plant. 
+        //                  (transition receive is the one when you start the scene but are coming from an other scene)
+        while (transitionOnSlowMo > 0)
+        {
+            transitionOnSlowMo -= Time.deltaTime / transitionOnDuration;
+            if (transitionOnSlowMo < 0)
+                transitionOnSlowMo = 0;
+            yield return new WaitForSeconds(0.1f);
+        }
         //screen current 
-        yield return new WaitWhile(() => snd_mng.onTransition);
-
         yield return new WaitForEndOfFrame();
         shaderHandler.Transition_Mat.SetTexture("_LastFrame", ScreenCapture.CaptureScreenshotAsTexture());
-        
+
+        //security
+        yield return new WaitWhile(() => snd_mng.onTransition);
         //
         UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nextScene.ToString(), UnityEngine.SceneManagement.LoadSceneMode.Additive);
@@ -255,7 +266,7 @@ public class GameManager : MonoBehaviour
     {
         for (int index = 0; index < shaderHandler.lerpForTarget.Count; index++)
         {
-            shaderHandler.lerpForTarget[index] = 0;
+            //shaderHandler.lerpForTarget[index] = 0;
         }
     }
 }
