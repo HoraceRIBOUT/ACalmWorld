@@ -178,7 +178,6 @@ GameObject:
   - component: {fileID: 3863417158849205292}
   - component: {fileID: 3863417158849205294}
   - component: {fileID: 3863417158849205283}
-  - component: {fileID: 6436931343751657421}
   - component: {fileID: 3863417158849205295}
   - component: {fileID: 3863417158849205288}
   - component: {fileID: 3863417158849205289}
@@ -282,31 +281,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDefaultListener: 1
   listenerId: 0
---- !u!114 &6436931343751657421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3863417158849205282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb916c39ecce64d468aa109eb1fae3c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: ae8d9d44
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6ded76b92c6b0473abdd953c90501ace,
-      type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!114 &3863417158849205295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +321,7 @@ MonoBehaviour:
     saturation: 1.3
     noirEtBlanc: 0
     tailleBug: 0.01
-    decalageDansLeBug: 0.5
+    decalageDansLeBug: 0.04
     verticalGlitch: 0
     vitesseBug: 1
     tolerance: 0.192
@@ -356,6 +330,22 @@ MonoBehaviour:
     tramRythm: 2
     tramIntensity: 0.02
     tramColor: {r: 1, g: 0.9333334, b: 0, a: 0}
+  - blurIntensity: 0
+    blurBlueIntensity: 0.1
+    tint: {r: 0.91582006, g: 0.8632076, b: 1, a: 0}
+    decalageBleu: {x: 0.1, y: 20, z: 0, w: 0}
+    saturation: 1.76
+    noirEtBlanc: 0.44
+    tailleBug: 0.2
+    decalageDansLeBug: 0.5
+    verticalGlitch: 0
+    vitesseBug: 0
+    tolerance: 0
+    noiseColor: {r: 1, g: 0.25490198, b: 0, a: 0}
+    tramFrac: 1
+    tramRythm: 0
+    tramIntensity: 0
+    tramColor: {r: 1, g: 0.9462535, b: 0, a: 0}
   forTramIntensityTransition:
     serializedVersion: 2
     m_Curve:
@@ -390,6 +380,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   lerpForTarget:
+  - 0
   - 0
   - 0
   resolutionDivision: 4

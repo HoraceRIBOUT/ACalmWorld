@@ -178,7 +178,6 @@ GameObject:
   - component: {fileID: 5689864512667794891}
   - component: {fileID: 5689864512667794900}
   - component: {fileID: 5689864512667794901}
-  - component: {fileID: 5689864512667794889}
   - component: {fileID: 5689864512667794888}
   - component: {fileID: 5689864512667794895}
   - component: {fileID: 5689864512667794894}
@@ -283,31 +282,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDefaultListener: 1
   listenerId: 0
---- !u!114 &5689864512667794889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5689864512667794902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb916c39ecce64d468aa109eb1fae3c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: ae8d9d44
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 7a1a76f4754d1447a858baab508d0563,
-      type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!114 &5689864512667794888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +389,7 @@ MonoBehaviour:
     decalageDansLeBug: -0.02
     verticalGlitch: 0
     vitesseBug: 1
-    tolerance: 0.27
+    tolerance: 0
     noiseColor: {r: 0.38679248, g: 0.18427378, b: 0.38004187, a: 1}
     tramFrac: 1
     tramRythm: 1.94
@@ -473,7 +447,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   lerpForTarget:
-  - 0.2
+  - 0
   - 0
   - 0
   - 0

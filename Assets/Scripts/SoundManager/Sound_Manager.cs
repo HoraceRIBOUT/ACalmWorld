@@ -112,18 +112,24 @@ public class Sound_Manager : MonoBehaviour
         {
             //wait... that the same call ?
             bankToUnload = instance.bankToLoad;
+            instance.Unload();
             AwakeCall();
         }
     }
 
+    public void Unload()
+    {
+        //nothing for now
+    }
 
     private void AwakeCall()
     {
         instance = this;
-        
+        uint bankId;
         AKRESULT eResult = AkSoundEngine.LoadBank(
-            bankToLoad.Id,       // Identifier of the bank to be loaded.
-            AkSoundEngine.AK_DEFAULT_POOL_ID      // Memory pool ID (data is written in the default sound engine memory pool when AK_DEFAULT_POOL_ID is passed).
+            bankToLoad.Name,       // Identifier of the bank to be loaded.
+            AkSoundEngine.AK_DEFAULT_POOL_ID,      // Memory pool ID (data is written in the default sound engine memory pool when AK_DEFAULT_POOL_ID is passed).
+            out bankId
         );
         if (eResult != AKRESULT.AK_Success)
         {
@@ -242,7 +248,6 @@ public class Sound_Manager : MonoBehaviour
             {
                 System.IntPtr intPtr = new System.IntPtr();
                 AKRESULT eResult = AkSoundEngine.UnloadBank(bankToUnload.Id, intPtr);
-
                 Debug.Log("Unload !" + eResult.ToString());
             }
         }
