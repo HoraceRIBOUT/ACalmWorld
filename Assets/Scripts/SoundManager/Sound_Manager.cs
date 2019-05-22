@@ -62,6 +62,7 @@ public class Sound_Manager : MonoBehaviour
     }
 
     public AK.Wwise.Event startEvent;
+    public AK.Wwise.Event glitchAppearEvent;
 
     [SerializeField]
     public List<InstruData> listInstru = new List<InstruData>();
@@ -227,6 +228,12 @@ public class Sound_Manager : MonoBehaviour
         GameManager.instance.VoiceGlitch(currentVoice, false);
         currentVoice = -1;
         Debug.Log("Finish voice");
+    }
+
+    public void StartGlitchAppear()
+    {
+        if(glitchAppearEvent.IsValid())
+        AkSoundEngine.PostEvent(glitchAppearEvent.Id, gameObject);
     }
 
     public InstruData getData(int index)

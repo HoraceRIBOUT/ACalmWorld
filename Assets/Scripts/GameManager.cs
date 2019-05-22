@@ -49,9 +49,12 @@ public class GameManager : MonoBehaviour
     public float speed = 0.5f;
     public float animationMaxWeight = 0.3f;
 
-    [Header("Transition")]
+    [Header("Transition : On")]
     public SceneName nextScene = SceneName.SecondCompo;
-    public float transitionDuration = 5;
+    public float transitionOnDuration = 1.5f;
+
+    [Header("Transition : Receive")]
+    public float transitionRecDuration = 5;
 
     [Header("Apparition at start")]
     public float timerAtBeginning = -3f;
@@ -81,12 +84,12 @@ public class GameManager : MonoBehaviour
     private void StartTransition()
     {
         onTransition = true;
-        timerAtBeginning -= transitionDuration;
+        timerAtBeginning -= transitionRecDuration;
         shaderHandler.lerpForTarget[0] = 1;
         shaderHandler.StartTransitionGlitch();
         //Move block to far away
 
-        //start moving them back (in "transitionDuration" seconds)
+        //start moving them back (in "transitionRecDuration" seconds)
     }
 
     public void TransitionFinish()
@@ -127,10 +130,12 @@ public class GameManager : MonoBehaviour
                 {
                     gO.SetActive(true);
                 }
+
+                snd_mng.StartGlitchAppear();
             }
             else if (onTransition)
             {
-                shaderHandler.lerpForTarget[0] = Mathf.Clamp01(-(timerAtBeginning + 1.0f) / (transitionDuration));
+                shaderHandler.lerpForTarget[0] = Mathf.Clamp01(-(timerAtBeginning + 1.0f) / (transitionRecDuration));
             }
         }
         else if(timerAtBeginning != 1)
@@ -217,14 +222,15 @@ public class GameManager : MonoBehaviour
     public void LaunchTransition()
     {
         onTransition = true;
+        //TO DO : a starting effect so people know that it's lock ???
         StartCoroutine(LoadNextScene());
         targetLerpValue = 0;
+        speed = 2;
     }
 
     public IEnumerator LoadNextScene()
     {
         //screen current 
-        //Debug.Log("wait for snd_mng.onTransition");
         yield return new WaitWhile(() => snd_mng.onTransition);
 
         yield return new WaitForEndOfFrame();
