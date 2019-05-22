@@ -302,6 +302,10 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: e189b6cd758276941a50641e059645e6,
       type: 2}
   stateEffect: 0
+  firstClickEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   transitionInstrument: {fileID: 0}
   combiForTransition:
     onPlay: 0
