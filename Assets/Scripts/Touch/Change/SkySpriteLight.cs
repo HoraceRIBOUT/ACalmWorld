@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class SkySpriteLight : Animated
 {
     public Transform skyFolder;
@@ -40,15 +41,27 @@ public class SkySpriteLight : Animated
             currentLayer = 0;
     }
 
+#if UNITY_EDITOR
+    private void Update()
+    {
+        if(skySprites == null)
+            skySprites = skyFolder.GetComponentsInChildren<SpriteRenderer>(true);
+        ChangeOnUpdate();
+    }
+#endif
+
     public void ChangeOnUpdate()
     {
         foreach (SpriteRenderer sprRdr in skySprites)
         {
             sprRdr.color = skyColor;
         }
-        float valueZerOne = (mainInstrument.instruData.rtpcValue + 48) / 48;
-        valueZerOne = lightIntensityCurve.Evaluate(valueZerOne);
-        ambientLight.color = Color.Lerp(lightBasic, lightColor, valueZerOne);
+        if(mainInstrument != null)
+        {
+            float valueZerOne = (mainInstrument.instruData.rtpcValue + 48) / 48;
+            valueZerOne = lightIntensityCurve.Evaluate(valueZerOne);
+            ambientLight.color = Color.Lerp(lightBasic, lightColor, valueZerOne);
+        }
         RenderSettings.ambientSkyColor = upLight;
         RenderSettings.ambientEquatorColor = averageLight;
         RenderSettings.ambientGroundColor = downLight;
