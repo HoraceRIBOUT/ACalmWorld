@@ -74,7 +74,7 @@ Material:
     - _OffsetBlueX: 0.001
     - _OffsetBlueY: 0.001
     - _Parallax: 0.02
-    - _Period: 0.1
+    - _Period: 0.01
     - _Saturation: 1.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

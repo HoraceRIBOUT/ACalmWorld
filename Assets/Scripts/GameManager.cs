@@ -243,4 +243,13 @@ public class GameManager : MonoBehaviour
         Debug.Log("Done !");
         UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(scene);
     }
+
+
+    public void OnDestroy()
+    {
+        for (int index = 0; index < shaderHandler.lerpForTarget.Count; index++)
+        {
+            shaderHandler.lerpForTarget[index] = 0;
+        }
+    }
 }

@@ -389,7 +389,7 @@ MonoBehaviour:
     decalageDansLeBug: -0.02
     verticalGlitch: 0
     vitesseBug: 1
-    tolerance: 0.27
+    tolerance: 0
     noiseColor: {r: 0.38679248, g: 0.18427378, b: 0.38004187, a: 1}
     tramFrac: 1
     tramRythm: 1.94
