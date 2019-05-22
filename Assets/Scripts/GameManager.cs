@@ -114,7 +114,8 @@ public class GameManager : MonoBehaviour
                 currentLerpValue = targetLerpValue;
             }
             shaderHandler.lerpForTarget[0] = currentLerpValue;
-            animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
+            if(transitionOnSlowMo == 1)
+                animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
         }
         
         if (timerAtBeginning < 0)
@@ -227,7 +228,6 @@ public class GameManager : MonoBehaviour
         //TO DO : a starting effect so people know that it's lock ???
         StartCoroutine(LoadNextScene());
         targetLerpValue = 0;
-        speed = 2;
     }
 
     public IEnumerator LoadNextScene()
@@ -239,6 +239,9 @@ public class GameManager : MonoBehaviour
             transitionOnSlowMo -= Time.deltaTime / transitionOnDuration;
             if (transitionOnSlowMo < 0)
                 transitionOnSlowMo = 0;
+
+            animatorMainCam.speed = transitionOnSlowMo;
+            shaderHandler.lerpForTarget[shaderHandler.lerpForTarget.Count - 1] = 1 - transitionOnSlowMo;
             yield return new WaitForSeconds(0.1f);
         }
         //screen current 

@@ -336,7 +336,7 @@ public class Sound_Manager : MonoBehaviour
                 Mute(listInstru.IndexOf(instr), false);
                 instr.on = false;
                 instr.currentState = 0;
-                GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
+                //GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
             }
         }
         Debug.Log("I'm call ! in sound manager " + allOff);
