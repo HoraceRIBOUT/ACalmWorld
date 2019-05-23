@@ -7,10 +7,13 @@ public class ParticleMaker : Change
     public List<ParticleSystem> particleForEachState = new List<ParticleSystem>();
     private int previousState = -1;
 
+    private ParticleSystem.MainModule currentParticule = new ParticleSystem.MainModule();
+
     public override void AddEventOnListener(MainInstrument mI)
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
         mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onSloMoEvent.AddListener(ChangeOnSlowMo);
         mainInstrument = mI;
     }
 
@@ -32,13 +35,20 @@ public class ParticleMaker : Change
         if(state == 0)
         {
             particleForEachState[particleForEachState.Count - 2/*well, TO DO , normaly : 1 */].Stop();
+            currentParticule = new ParticleSystem.MainModule();
         }
         else
         {
             if (state - 2 != -1)
                 particleForEachState[state - 2].Stop();
             particleForEachState[state - 1].Play();
+            currentParticule = particleForEachState[state - 1].main;
 
         }
+    }
+
+    public void ChangeOnSlowMo()
+    {
+        currentParticule.simulationSpeed = GameManager.instance.transitionOnSlowMo;
     }
 }

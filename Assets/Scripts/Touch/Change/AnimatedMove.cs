@@ -21,6 +21,7 @@ public class AnimatedMove : Animated
     {
         mI.onStartEvent.AddListener(base.ChangeOnStart);
         mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onSloMoEvent.AddListener(base.ChangeOnSlowMo);
         mainInstrument = mI;
     }
 

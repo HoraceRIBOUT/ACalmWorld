@@ -9,6 +9,8 @@ public class ColorChange : Change
     public SpriteRenderer spriteRdr;
     public MeshRenderer meshRdr;
     private Color startColor;
+    
+    public AnimationCurve slowMoRTPCurve;
 
     public bool debug = false;
 
@@ -39,6 +41,11 @@ public class ColorChange : Change
     public void ChangeColor(float rtpcValue)
     {
         float valueZerOne = (rtpcValue + 48) / 48;
+
+        if (GameManager.instance.transitionOnSlowMo != 1)
+        {
+            valueZerOne = slowMoRTPCurve.Evaluate(GameManager.instance.transitionOnSlowMo);
+        }
 
         valueZerOne = colorIntensityFunction.Evaluate(valueZerOne);
         //change the color to the right one

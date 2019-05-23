@@ -11,6 +11,7 @@ public class MainInstrument : MonoBehaviour
     [HideInInspector] public UnityEvent onStartEvent;
     [HideInInspector] public UnityEvent onClickEvent;
     [HideInInspector] public UnityEvent onUpdatEvent;
+    [HideInInspector] public UnityEvent onSloMoEvent;
 
     [HideInInspector]public Sound_Manager.InstruData instruData;
 
@@ -42,6 +43,9 @@ public class MainInstrument : MonoBehaviour
 
             ChangeOnUpdate();
         }
+
+        if (GameManager.instance.transitionOnSlowMo != 1)
+            ChangeOnSlowMo();
     }
 
     [ContextMenu("Next state")]
@@ -98,6 +102,11 @@ public class MainInstrument : MonoBehaviour
     {
         instruData = sound_manager.getData(indexForSoundManager);
         onUpdatEvent.Invoke();
+    }
+
+    protected void ChangeOnSlowMo()
+    {
+        onSloMoEvent.Invoke();
     }
 
 }

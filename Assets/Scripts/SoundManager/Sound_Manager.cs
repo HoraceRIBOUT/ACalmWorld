@@ -62,6 +62,7 @@ public class Sound_Manager : MonoBehaviour
     }
 
     public AK.Wwise.Event startEvent;
+    public AK.Wwise.Event glitchAppearEvent;
 
     [SerializeField]
     public List<InstruData> listInstru = new List<InstruData>();
@@ -229,6 +230,12 @@ public class Sound_Manager : MonoBehaviour
         Debug.Log("Finish voice");
     }
 
+    public void StartGlitchAppear()
+    {
+        if(glitchAppearEvent.IsValid())
+        AkSoundEngine.PostEvent(glitchAppearEvent.Id, gameObject);
+    }
+
     public InstruData getData(int index)
     {
         return listInstru[index];
@@ -257,12 +264,15 @@ public class Sound_Manager : MonoBehaviour
         GameManager.instance.UpdateShaderIntensity(++numberInstruOn, listInstru.Count);
     }
 
-    public void Mute(int indexForSoundManager)
+    public void Mute(int indexForSoundManager, bool updateShader = true)
     {
         AkSoundEngine.PostEvent(getData(indexForSoundManager).nameEventMute.Id, gameObject);
-
-        //Part for the prog
-        GameManager.instance.UpdateShaderIntensity(--numberInstruOn, listInstru.Count);
+        --numberInstruOn;
+        if (updateShader)
+        {
+            //Part for the prog
+            GameManager.instance.UpdateShaderIntensity(numberInstruOn, listInstru.Count);
+        }
     }
 
     public void Switch(int indexForSoundManager)
@@ -323,10 +333,10 @@ public class Sound_Manager : MonoBehaviour
             if (instr.on && allOff)
             {
                 allOff = false;
-                Mute(listInstru.IndexOf(instr));
+                Mute(listInstru.IndexOf(instr), false);
                 instr.on = false;
                 instr.currentState = 0;
-                GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
+                //GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
             }
         }
         Debug.Log("I'm call ! in sound manager " + allOff);

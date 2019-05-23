@@ -49,9 +49,14 @@ public class GameManager : MonoBehaviour
     public float speed = 0.5f;
     public float animationMaxWeight = 0.3f;
 
-    [Header("Transition")]
+    [Header("Transition : On")]
     public SceneName nextScene = SceneName.SecondCompo;
-    public float transitionDuration = 5;
+    public float transitionOnDuration = 1.5f;
+    [Range(0,1)]
+    public float transitionOnSlowMo = 1;
+
+    [Header("Transition : Receive")]
+    public float transitionRecDuration = 5;
 
     [Header("Apparition at start")]
     public float timerAtBeginning = -3f;
@@ -81,12 +86,12 @@ public class GameManager : MonoBehaviour
     private void StartTransition()
     {
         onTransition = true;
-        timerAtBeginning -= transitionDuration;
+        timerAtBeginning -= transitionRecDuration;
         shaderHandler.lerpForTarget[0] = 1;
         shaderHandler.StartTransitionGlitch();
         //Move block to far away
 
-        //start moving them back (in "transitionDuration" seconds)
+        //start moving them back (in "transitionRecDuration" seconds)
     }
 
     public void TransitionFinish()
@@ -109,7 +114,8 @@ public class GameManager : MonoBehaviour
                 currentLerpValue = targetLerpValue;
             }
             shaderHandler.lerpForTarget[0] = currentLerpValue;
-            animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
+            if(transitionOnSlowMo == 1)
+                animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
         }
         
         if (timerAtBeginning < 0)
@@ -127,10 +133,12 @@ public class GameManager : MonoBehaviour
                 {
                     gO.SetActive(true);
                 }
+
+                snd_mng.StartGlitchAppear();
             }
             else if (onTransition)
             {
-                shaderHandler.lerpForTarget[0] = Mathf.Clamp01(-(timerAtBeginning + 1.0f) / (transitionDuration));
+                shaderHandler.lerpForTarget[0] = Mathf.Clamp01(-(timerAtBeginning + 1.0f) / (transitionRecDuration));
             }
         }
         else if(timerAtBeginning != 1)
@@ -217,19 +225,31 @@ public class GameManager : MonoBehaviour
     public void LaunchTransition()
     {
         onTransition = true;
+        //TO DO : a starting effect so people know that it's lock ???
         StartCoroutine(LoadNextScene());
         targetLerpValue = 0;
     }
 
     public IEnumerator LoadNextScene()
     {
-        //screen current 
-        //Debug.Log("wait for snd_mng.onTransition");
-        yield return new WaitWhile(() => snd_mng.onTransition);
+        //The transition on (transition on is the transition that start when you click on the plant. 
+        //                  (transition receive is the one when you start the scene but are coming from an other scene)
+        while (transitionOnSlowMo > 0)
+        {
+            transitionOnSlowMo -= Time.deltaTime / transitionOnDuration;
+            if (transitionOnSlowMo < 0)
+                transitionOnSlowMo = 0;
 
+            animatorMainCam.speed = transitionOnSlowMo;
+            shaderHandler.lerpForTarget[shaderHandler.lerpForTarget.Count - 1] = 1 - transitionOnSlowMo;
+            yield return new WaitForSeconds(0.1f);
+        }
+        //screen current 
         yield return new WaitForEndOfFrame();
         shaderHandler.Transition_Mat.SetTexture("_LastFrame", ScreenCapture.CaptureScreenshotAsTexture());
-        
+
+        //security
+        yield return new WaitWhile(() => snd_mng.onTransition);
         //
         UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nextScene.ToString(), UnityEngine.SceneManagement.LoadSceneMode.Additive);
@@ -249,7 +269,7 @@ public class GameManager : MonoBehaviour
     {
         for (int index = 0; index < shaderHandler.lerpForTarget.Count; index++)
         {
-            shaderHandler.lerpForTarget[index] = 0;
+            //shaderHandler.lerpForTarget[index] = 0;
         }
     }
 }

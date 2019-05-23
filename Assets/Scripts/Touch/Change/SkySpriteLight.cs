@@ -24,6 +24,7 @@ public class SkySpriteLight : Animated
         mI.onStartEvent.AddListener(ChangeOnStart);
         mI.onClickEvent.AddListener(ChangeOnClick);
         mI.onUpdatEvent.AddListener(ChangeOnUpdate);
+        mI.onSloMoEvent.AddListener(base.ChangeOnSlowMo);
         mainInstrument = mI;
     }
 
@@ -39,16 +40,19 @@ public class SkySpriteLight : Animated
         if (currentLayer >= animator.layerCount || mainInstrument.instruData.currentState == 0)
             currentLayer = 0;
     }
-
+    
     public void ChangeOnUpdate()
     {
         foreach (SpriteRenderer sprRdr in skySprites)
         {
             sprRdr.color = skyColor;
         }
-        float valueZerOne = (mainInstrument.instruData.rtpcValue + 48) / 48;
-        valueZerOne = lightIntensityCurve.Evaluate(valueZerOne);
-        ambientLight.color = Color.Lerp(lightBasic, lightColor, valueZerOne);
+        if(mainInstrument != null)
+        {
+            float valueZerOne = (mainInstrument.instruData.rtpcValue + 48) / 48;
+            valueZerOne = lightIntensityCurve.Evaluate(valueZerOne);
+            ambientLight.color = Color.Lerp(lightBasic, lightColor, valueZerOne);
+        }
         RenderSettings.ambientSkyColor = upLight;
         RenderSettings.ambientEquatorColor = averageLight;
         RenderSettings.ambientGroundColor = downLight;
