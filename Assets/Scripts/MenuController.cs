@@ -20,6 +20,9 @@ public class MenuController : MonoBehaviour
     public AK.Wwise.Event clickEvent;
     public AK.Wwise.Event launchGameEvent;
 
+    private float heightScreenRatio;
+    private float widthScreenRatio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +32,14 @@ public class MenuController : MonoBehaviour
             AkSoundEngine.PostEvent(startEvent.Id, this.gameObject);
 
         ChangeYesNo();
+        widthScreenRatio = 1920f / Camera.main.pixelWidth;
+        heightScreenRatio = 1080f / Camera.main.pixelHeight;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         timeText.text = System.DateTime.Now.TimeOfDay.ToString().Substring(0, 5);
         /*if (Input.touchCount> 0 && panelOption.activeInHierarchy)
         {
@@ -51,11 +57,12 @@ public class MenuController : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 Vector3 pos = Input.mousePosition;
-                if (pos.x > Camera.main.pixelWidth - (Camera.main.pixelWidth - panelOption.GetComponent<RectTransform>().rect.width) / 2 || pos.x < (Camera.main.pixelWidth - panelOption.GetComponent<RectTransform>().rect.width) / 2)
+                if (pos.x * widthScreenRatio > Camera.main.pixelWidth* widthScreenRatio - (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2 || pos.x * widthScreenRatio < (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2)
                 {
+                    
                     panelOption.SetActive(false);
                 }
-                else if (pos.y > Camera.main.pixelHeight - (Camera.main.pixelHeight - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y < (Camera.main.pixelHeight - panelOption.GetComponent<RectTransform>().rect.height) / 2)
+                else if (pos.y * heightScreenRatio > Camera.main.pixelHeight* heightScreenRatio - (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y * heightScreenRatio < (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2)
                 {
                     panelOption.SetActive(false);
                 }
@@ -66,11 +73,11 @@ public class MenuController : MonoBehaviour
                 Vector3 pos = Input.GetTouch(0).position;
                 if (Input.GetTouch(0).phase == TouchPhase.Began)
                 {
-                    if (pos.x > Camera.main.pixelWidth - (Camera.main.pixelWidth - panelOption.GetComponent<RectTransform>().rect.width) / 2 || pos.x < (Camera.main.pixelWidth - panelOption.GetComponent<RectTransform>().rect.width) / 2)
+                    if (pos.x * widthScreenRatio > Camera.main.pixelWidth * widthScreenRatio - (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2 || pos.x * widthScreenRatio < (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2)
                     {
                         panelOption.SetActive(false);
                     }
-                    else if (pos.y > Camera.main.pixelHeight - (Camera.main.pixelHeight - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y < (Camera.main.pixelHeight - panelOption.GetComponent<RectTransform>().rect.height) / 2)
+                    else if (pos.y* heightScreenRatio > Camera.main.pixelHeight * heightScreenRatio - (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y * heightScreenRatio < (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2)
                     {
                         panelOption.SetActive(false);
                     }

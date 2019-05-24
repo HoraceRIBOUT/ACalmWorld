@@ -12,6 +12,7 @@ public class OptionController : MonoBehaviour
 
     public void pressYesButton()
     {
+        Debug.Log("test");
         if (PlayerPrefs.GetInt("AlwaysPlaying",0) == 0 )
         {
             PlayerPrefs.SetInt("AlwaysPlaying", 1 );
