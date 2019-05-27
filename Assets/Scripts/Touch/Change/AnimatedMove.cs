@@ -21,6 +21,7 @@ public class AnimatedMove : Animated
     {
         mI.onStartEvent.AddListener(base.ChangeOnStart);
         mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onSwitchEvent.AddListener(ChangeOnSwitch);
         mI.onSloMoEvent.AddListener(base.ChangeOnSlowMo);
         mainInstrument = mI;
     }
@@ -40,6 +41,22 @@ public class AnimatedMove : Animated
         else
             collForEachState[currentLayer - 1].SetActive(false);
         collForEachState[currentLayer].SetActive(true);
+    }
+    public override void ChangeOnSwitch()
+    {
+        base.ChangeOnSwitch();
+
+        //Move
+        this.transform.localPosition = posRotScaForEachState[mainInstrument.instruData.currentState].position;
+        transfToRotate.transform.localRotation = Quaternion.Euler(posRotScaForEachState[mainInstrument.instruData.currentState].rotation);
+        this.transform.localScale = posRotScaForEachState[mainInstrument.instruData.currentState].scale;
+
+        //Collision
+        if (mainInstrument.instruData.currentState == 0)
+            collForEachState[collForEachState.Count - 1].SetActive(false);
+        else
+            collForEachState[mainInstrument.instruData.currentState - 1].SetActive(false);
+        collForEachState[mainInstrument.instruData.currentState].SetActive(true);
     }
 
 

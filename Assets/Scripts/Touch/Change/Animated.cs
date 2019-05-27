@@ -11,6 +11,7 @@ public class Animated : Change
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
         mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onSwitchEvent.AddListener(ChangeOnSwitch);
         mI.onSloMoEvent.AddListener(ChangeOnSlowMo);
         mainInstrument = mI;
     }
@@ -27,6 +28,12 @@ public class Animated : Change
         currentLayer++;
         if (currentLayer >= animator.layerCount && currentLayer >= mainInstrument.instruData.currentState)
             currentLayer = 0;
+        animator.SetLayerWeight(currentLayer, 1);
+    }
+    public virtual void ChangeOnSwitch()
+    {
+        animator.SetLayerWeight(currentLayer, 0);
+        currentLayer = mainInstrument.instruData.currentState;
         animator.SetLayerWeight(currentLayer, 1);
     }
 

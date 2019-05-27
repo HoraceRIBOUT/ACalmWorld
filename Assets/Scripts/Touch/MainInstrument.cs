@@ -10,6 +10,7 @@ public class MainInstrument : MonoBehaviour
     
     [HideInInspector] public UnityEvent onStartEvent;
     [HideInInspector] public UnityEvent onClickEvent;
+    [HideInInspector] public UnityEvent onSwitchEvent;
     [HideInInspector] public UnityEvent onUpdatEvent;
     [HideInInspector] public UnityEvent onSloMoEvent;
 
@@ -97,6 +98,10 @@ public class MainInstrument : MonoBehaviour
     protected void ChangeOnClick()
     {
         onClickEvent.Invoke();
+    }
+    public void ChangeOnSwitch()
+    {
+        onSwitchEvent.Invoke();
     }
     protected void ChangeOnUpdate()
     {

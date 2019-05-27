@@ -14,6 +14,7 @@ public class SpriteChangeToTex : Change
     public override void AddEventOnListener(MainInstrument mI)
     {
         mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onSwitchEvent.AddListener(ChangeOnClick);
         mI.onUpdatEvent.AddListener(ChangeOnUpdate);
         mainInstrument = mI;
     }
@@ -23,7 +24,6 @@ public class SpriteChangeToTex : Change
         targetMaterial.SetFloat("_Activate", mainInstrument.instruData.on ? 1 : 0);
 
         targetMaterial.SetTexture("_SecondTex", spritePerState[mainInstrument.instruData.currentState]);
-
     }
 
     public void ChangeOnUpdate()

@@ -23,6 +23,7 @@ public class SkySpriteLight : Animated
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
         mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onSwitchEvent.AddListener(ChangeOnSwitch);
         mI.onUpdatEvent.AddListener(ChangeOnUpdate);
         mI.onSloMoEvent.AddListener(base.ChangeOnSlowMo);
         mainInstrument = mI;
@@ -40,7 +41,11 @@ public class SkySpriteLight : Animated
         if (currentLayer >= animator.layerCount || mainInstrument.instruData.currentState == 0)
             currentLayer = 0;
     }
-    
+    public override void ChangeOnSwitch()
+    {
+        currentLayer = mainInstrument.instruData.currentState;
+    }
+
     public void ChangeOnUpdate()
     {
         foreach (SpriteRenderer sprRdr in skySprites)

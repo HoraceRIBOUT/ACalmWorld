@@ -13,6 +13,7 @@ public class ParticleMaker : Change
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
         mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onSwitchEvent.AddListener(ChangeOnSwitch);
         mI.onSloMoEvent.AddListener(ChangeOnSlowMo);
         mainInstrument = mI;
     }
@@ -45,6 +46,10 @@ public class ParticleMaker : Change
             currentParticule = particleForEachState[state - 1].main;
 
         }
+    }
+    public void ChangeOnSwitch()
+    {
+        ChangeOnClick(mainInstrument.instruData.currentState);
     }
 
     public void ChangeOnSlowMo()

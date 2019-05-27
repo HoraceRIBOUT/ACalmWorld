@@ -11,15 +11,15 @@ public class SpriteChange : Change
     public override void AddEventOnListener(MainInstrument mI)
     {
         mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onSwitchEvent.AddListener(ChangeOnClick);
         mainInstrument = mI;
     }
 
     public void ChangeOnClick()
     {
-        int currState = mainInstrument.instruData.currentState;
         if (spriteRdr != null)
         {
-            spriteRdr.sprite = spritePerState[currState];
+            spriteRdr.sprite = spritePerState[mainInstrument.instruData.currentState];
         }
     }
 }

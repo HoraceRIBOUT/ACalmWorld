@@ -18,6 +18,7 @@ public class Glitch : Change
     {
         mI.onStartEvent.AddListener(ChangeOnStart);
         mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onSwitchEvent.AddListener(ChangeOnClick);
         mI.onUpdatEvent.AddListener(ChangeOnUpdate);
         mainInstrument = mI;
     }

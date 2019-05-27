@@ -101,6 +101,9 @@ public class Sound_Manager : MonoBehaviour
     private AK.Wwise.Bank bankToUnload = null;
     private bool firstClick = true;
 
+    [Header("Autoplay")]
+    public bool autoPlaying = false;
+    public AutoPlay autoPlay;
 
     public void Awake()
     {
@@ -164,8 +167,12 @@ public class Sound_Manager : MonoBehaviour
             {
                 ifSoundManagerIsDestroy = MuteNextInstr();
             }
+
+            if(autoPlaying)
+                autoPlay.BarCall(listInstru);
+
             if(!ifSoundManagerIsDestroy)
-                Invoke("CallBackUnDone", 0.5f);
+                Invoke("CallBackUnDone", 0.1f);
         }
     }
 
@@ -280,6 +287,15 @@ public class Sound_Manager : MonoBehaviour
         InstruData instruData = getData(indexForSoundManager);
         AkSoundEngine.SetSwitch(instruData.switches[instruData.currentState].GroupId, instruData.switches[instruData.currentState].Id, gameObject);
         instruData.currentState++;
+
+        VerificationCompoTransition();
+    }
+
+    public void Switch(int instrumentIndexForSoundManager, int variationIndex)
+    {
+        InstruData instruData = getData(instrumentIndexForSoundManager);
+        AkSoundEngine.SetSwitch(instruData.switches[variationIndex].GroupId, instruData.switches[variationIndex].Id, gameObject);
+        instruData.currentState = variationIndex + 1;
 
         VerificationCompoTransition();
     }
