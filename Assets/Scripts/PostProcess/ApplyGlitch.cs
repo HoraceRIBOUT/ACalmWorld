@@ -92,5 +92,11 @@ public class ApplyGlitch : MonoBehaviour
             Graphics.Blit(source, destination);
 #endif
     }
-    
+
+    public void OnDestroy()
+    {
+        periodValue = 0.01f;
+        amplitudeValue = 0.001f;
+    }
+
 }

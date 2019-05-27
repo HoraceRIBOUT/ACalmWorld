@@ -246,4 +246,14 @@ public class ApplyMatToScreen : MonoBehaviour
         isOnTransition = false;
         matToApply = VHS_Mat;
     }
+
+    public void OnDestroy()
+    {
+        for (int index = 0; index < lerpForTarget.Count; index++)
+        {
+            lerpForTarget[index] = 0;
+        }
+        matToApply.SetFloat("_LerpVal", 0);
+        matToApply.SetFloat("_Saturation", 1);
+    }
 }

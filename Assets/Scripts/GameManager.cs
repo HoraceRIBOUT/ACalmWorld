@@ -254,22 +254,13 @@ public class GameManager : MonoBehaviour
         UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nextScene.ToString(), UnityEngine.SceneManagement.LoadSceneMode.Additive);
 
-        Debug.Log("start operation (load second scene) = "+ nextScene.ToString());
+        //Debug.Log("start operation (load second scene) = "+ nextScene.ToString());
         while (!operation.isDone)
         {
 
             yield return new WaitForSeconds(0.1f);
         }
-        Debug.Log("Done !");
+        //Debug.Log("Done !");
         UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(scene);
-    }
-
-
-    public void OnDestroy()
-    {
-        for (int index = 0; index < shaderHandler.lerpForTarget.Count; index++)
-        {
-            //shaderHandler.lerpForTarget[index] = 0;
-        }
     }
 }
