@@ -408,7 +408,9 @@ MonoBehaviour:
   speed: 0.1
   animationMaxWeight: 0.3
   nextScene: 0
-  transitionDuration: 5
+  transitionOnDuration: 1.5
+  transitionOnSlowMo: 1
+  transitionRecDuration: 5
   timerAtBeginning: -2
   allVisualInteractibleObject:
   - {fileID: 0}
