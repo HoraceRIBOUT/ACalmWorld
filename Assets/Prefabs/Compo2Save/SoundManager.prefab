@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8237344639397026891}
   - component: {fileID: 8237344639397026890}
   - component: {fileID: 8237344637757833358}
+  - component: {fileID: 799289535}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -49,6 +50,10 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 3f50841bd2cd6409980d730dd976b070,
       type: 2}
+  glitchAppearEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   listInstru:
   - id: Cosmonaut
     gameObjectOfTheInstrument: {fileID: 0}
@@ -222,6 +227,8 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 6ded76b92c6b0473abdd953c90501ace,
       type: 2}
+  autoPlaying: 0
+  autoPlay: {fileID: 799289535}
 --- !u!114 &8237344637757833358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,3 +251,17 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &799289535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237344639397026889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e524fdafa516334cbd4dd3d0fcee9ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetBeatweenChange: 1
+  randomMargeValue: {x: 0, y: 0}

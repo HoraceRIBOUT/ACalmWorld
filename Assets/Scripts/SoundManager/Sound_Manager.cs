@@ -169,7 +169,7 @@ public class Sound_Manager : MonoBehaviour
             }
 
             if(autoPlaying)
-                autoPlay.BarCall(listInstru);
+                autoPlay.BarCall(listInstru, numberInstruOn);
 
             if(!ifSoundManagerIsDestroy)
                 Invoke("CallBackUnDone", 0.1f);
