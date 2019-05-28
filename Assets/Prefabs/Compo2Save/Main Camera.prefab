@@ -331,6 +331,22 @@ MonoBehaviour:
     tramIntensity: 0.02
     tramColor: {r: 1, g: 0.9333334, b: 0, a: 0}
   - blurIntensity: 0
+    blurBlueIntensity: 0.001
+    tint: {r: 0.91582006, g: 0.8632076, b: 1, a: 0}
+    decalageBleu: {x: 0.001, y: 0.001, z: 0, w: 0}
+    saturation: 1.5
+    noirEtBlanc: 2
+    tailleBug: 0
+    decalageDansLeBug: 0
+    verticalGlitch: 0
+    vitesseBug: 0
+    tolerance: 0
+    noiseColor: {r: 1, g: 0.25490198, b: 0, a: 0}
+    tramFrac: 1
+    tramRythm: 0.2
+    tramIntensity: 0
+    tramColor: {r: 1, g: 0.4914296, b: 0, a: 0}
+  - blurIntensity: 0
     blurBlueIntensity: 0.1
     tint: {r: 0.91582006, g: 0.8632076, b: 1, a: 0}
     decalageBleu: {x: 0.1, y: 20, z: 0, w: 0}
@@ -383,6 +399,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
   resolutionDivision: 4
   isOnTransition: 0
 --- !u!114 &3863417158849205288
@@ -425,6 +442,13 @@ MonoBehaviour:
   pauseBtn: {fileID: 0}
   resumeBtn: {fileID: 0}
   darkenScreen: {fileID: 0}
+  autoPlayBtn: {fileID: 0}
+  autoPlayAnimation: {fileID: 0}
+  autoPlayText: {fileID: 0}
+  autoplayActivate: AUTOPLAY_ACTIVATED
+  autoplayDeactivate: AUTOPLAY_DEACTIVATED
+  durationAtScreenOfText: 2.5
+  shaderIndex: 2
 --- !u!95 &3863417158849205289
 Animator:
   serializedVersion: 3

@@ -478,7 +478,9 @@ MonoBehaviour:
   speed: 0.05
   animationMaxWeight: 0.25
   nextScene: 1
-  transitionDuration: 5
+  transitionOnDuration: 1
+  transitionOnSlowMo: 1
+  transitionRecDuration: 3
   timerAtBeginning: -3
   allVisualInteractibleObject:
   - {fileID: 0}
@@ -520,6 +522,8 @@ MonoBehaviour:
   pauseBtn: {fileID: 0}
   resumeBtn: {fileID: 0}
   darkenScreen: {fileID: 0}
+  autoPlayBtn: {fileID: 0}
+  autoPlayAnimation: {fileID: 0}
 --- !u!95 &5689864512667794894
 Animator:
   serializedVersion: 3

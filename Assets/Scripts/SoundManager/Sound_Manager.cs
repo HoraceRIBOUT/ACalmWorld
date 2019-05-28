@@ -117,6 +117,10 @@ public class Sound_Manager : MonoBehaviour
             //wait... that the same call ?
             bankToUnload = instance.bankToLoad;
             instance.Unload();
+            //not anymore !
+            autoPlaying = instance.autoPlaying;
+            GameManager.instance.UpdateAutoPlayButton(false);
+
             AwakeCall();
         }
     }

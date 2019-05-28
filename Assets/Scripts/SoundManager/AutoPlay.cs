@@ -85,7 +85,7 @@ public class AutoPlay : MonoBehaviour
         int randInstr = Random.Range(0, listInstrData.Count);
 
         //            if all instr turn on, stop one (randVar = 0) else, random.   if none instr on, no turn off.                                       + 1 because 0 == off 
-        int randVar = (numberInstruOn == listInstrData.Count) ? 0 : Random.Range(numberInstruOn == 0 ? 1 : 0, listInstrData[randInstr].switches.Count + 1);
+        int randVar = (numberInstruOn == listInstrData.Count) ? 0 : Random.Range(numberInstruOn <= 1 ? 1 : 0, listInstrData[randInstr].switches.Count + 1);
         
         if(listInstrData[randInstr].currentState != randVar)
             ChangeInstr(listInstrData, randInstr, randVar);

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             Physics.autoSimulation = false;
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     [Header("Transition : On")]
     public SceneName nextScene = SceneName.SecondCompo;
     public float transitionOnDuration = 1.5f;
-    [Range(0,1)]
+    [Range(0, 1)]
     public float transitionOnSlowMo = 1;
 
     [Header("Transition : Receive")]
@@ -66,14 +66,25 @@ public class GameManager : MonoBehaviour
     [Header("Camera movement")]
     public bool onTransition = false;
 
-    [Header("Pause")]
+    [Header("UI : Pause")]
     public UnityEngine.UI.Button pauseBtn;
     public UnityEngine.UI.Button resumeBtn;
     public UnityEngine.UI.Image darkenScreen;
 
+    [Header("UI : AutoPlay")]
+    public UnityEngine.UI.Button autoPlayBtn;
+    public Animator autoPlayAnimation;
+    public UnityEngine.UI.Text autoPlayText;
+    public string autoplayActivate = "AUTOPLAY_ACTIVATED";
+    public string autoplayDeactivate = "AUTOPLAY_DEACTIVATED";
+    public float durationAtScreenOfText = 2.5f;
+    private float timerForAutoPlayText = -1;
+    public int shaderIndex = 4;
+
+
     public void Start()
     {
-        if (snd_mng != null) 
+        if (snd_mng != null)
             snd_mng = Sound_Manager.instance;
         glitchHandler.PutObjectInRender(allVisualInteractibleObject);
         foreach (GameObject gO in allVisualInteractibleObject)
@@ -82,7 +93,7 @@ public class GameManager : MonoBehaviour
         }
         saveTimerAtBeginning = timerAtBeginning;
     }
-    
+
     private void StartTransition()
     {
         onTransition = true;
@@ -105,23 +116,23 @@ public class GameManager : MonoBehaviour
     {
 
         //Camera
-        if(currentLerpValue != targetLerpValue)
+        if (currentLerpValue != targetLerpValue)
         {
             float signBef = Mathf.Sign(targetLerpValue - currentLerpValue);
             currentLerpValue += Time.deltaTime * speed * signBef;
-            if(signBef != Mathf.Sign(targetLerpValue - currentLerpValue))
+            if (signBef != Mathf.Sign(targetLerpValue - currentLerpValue))
             {
                 currentLerpValue = targetLerpValue;
             }
             shaderHandler.lerpForTarget[0] = currentLerpValue;
-            if(transitionOnSlowMo == 1)
+            if (transitionOnSlowMo == 1)
                 animatorMainCam.SetLayerWeight(1, currentLerpValue * animationMaxWeight);
         }
-        
+
         if (timerAtBeginning < 0)
         {
             timerAtBeginning += Time.deltaTime;
-            if(timerAtBeginning >= 0)
+            if (timerAtBeginning >= 0)
             {
                 if (onTransition)
                 {
@@ -129,7 +140,7 @@ public class GameManager : MonoBehaviour
                     shaderHandler.lerpForTarget[0] = 0;
                 }
                 glitchHandler.on = true;
-                foreach(GameObject gO in allVisualInteractibleObject)
+                foreach (GameObject gO in allVisualInteractibleObject)
                 {
                     gO.SetActive(true);
                 }
@@ -141,7 +152,7 @@ public class GameManager : MonoBehaviour
                 shaderHandler.lerpForTarget[0] = Mathf.Clamp01(-(timerAtBeginning + 1.0f) / (transitionRecDuration));
             }
         }
-        else if(timerAtBeginning != 1)
+        else if (timerAtBeginning != 1)
         {
             timerAtBeginning += Time.deltaTime * 0.5f; //because trauma is set at 2
             if (timerAtBeginning > 1)
@@ -149,6 +160,15 @@ public class GameManager : MonoBehaviour
                 timerAtBeginning = 1;
                 glitchHandler.ReleaseThem();
             }
+        }
+
+        //For Autoplay Text
+
+        if(timerForAutoPlayText > 0)
+        {
+            timerForAutoPlayText -= Time.deltaTime;
+            if (timerForAutoPlayText < 0)
+                DisableAutoPlayText();
         }
 
 #if UNITY_STANDALONE_WIN
@@ -162,7 +182,7 @@ public class GameManager : MonoBehaviour
     {
         return (PlayerPrefs.GetInt("AlwaysPlaying") == 0);
     }
-    
+
     public void VoiceGlitch(int numeroGlitch, bool on)
     {
         //Yeah ! Let's get fuckedup !
@@ -178,7 +198,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator goUp(int index)
     {
-        while (shaderHandler.lerpForTarget[index] <= 1) 
+        while (shaderHandler.lerpForTarget[index] <= 1)
         {
             shaderHandler.lerpForTarget[index] += Time.deltaTime * speedForVoiceEffect;
             yield return new WaitForSeconds(0.01f);
@@ -207,6 +227,7 @@ public class GameManager : MonoBehaviour
             targetLerpValue = 0.25f + 0.75f * ((float)numberCurrInstru / (float)numberMaxInstru);
     }
 
+    //UI !
     public void Pause()
     {
         NotifController notif = FindObjectOfType<NotifController>();
@@ -220,6 +241,30 @@ public class GameManager : MonoBehaviour
         darkenScreen.gameObject.SetActive(pause);
 
         Time.timeScale = pause ? 0 : 1;
+    }
+
+    public void AutoPlayButtonClick()
+    {
+        snd_mng.autoPlaying = !snd_mng.autoPlaying;
+        UpdateAutoPlayButton();
+    }
+    public void UpdateAutoPlayButton(bool show = true)
+    {
+        autoPlayAnimation.SetBool("AutoPlay", snd_mng.autoPlaying);
+        if (show)
+        {
+            autoPlayText.text = snd_mng.autoPlaying ? autoplayActivate : autoplayDeactivate;
+            autoPlayText.enabled = true;
+            timerForAutoPlayText = 3;
+            //shader effect 
+            shaderHandler.lerpForTarget[shaderIndex] = 1;
+            VoiceGlitch(shaderIndex - 2, false);
+        }
+    }
+
+    public void DisableAutoPlayText()
+    {
+        autoPlayText.enabled = false;
     }
     
     public void LaunchTransition()
