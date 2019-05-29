@@ -13,19 +13,22 @@ public class SliderController : MonoBehaviour
     private int barNumber;
     public GameObject SliderMaster;
 
+    public string namePlayerPrefs = "VolumeMaster";
+    public AK.Wwise.RTPC rtpcId;
+
     private void Start()
     {
-        barNumber = PlayerPrefs.GetInt("VolumeMaster");
-        SliderMaster.GetComponent<Slider>().value = PlayerPrefs.GetInt("VolumeMaster");
+        barNumber = PlayerPrefs.GetInt(namePlayerPrefs);
+        SliderMaster.GetComponent<Slider>().value = barNumber;
         onClickSlider();
     }
 
     public void onClickSlider()
     {
-        if (SliderMaster.GetComponent<Slider>().value != PlayerPrefs.GetInt("VolumeMaster") || !isInitiate)
+        if (SliderMaster.GetComponent<Slider>().value != PlayerPrefs.GetInt(namePlayerPrefs) || !isInitiate)
         {
             barNumber = (int)SliderMaster.GetComponent<Slider>().value;
-            PlayerPrefs.SetInt("VolumeMaster", barNumber);
+            PlayerPrefs.SetInt(namePlayerPrefs, barNumber);
             if ((int)SliderMaster.GetComponent<Slider>().value == 0)
             {
                 foreach (GameObject bar in BarList)
@@ -47,6 +50,8 @@ public class SliderController : MonoBehaviour
             }
            
             isInitiate = true;
+
+            AkSoundEngine.SetRTPCValue(rtpcId.Id, PlayerPrefs.GetInt(namePlayerPrefs) * 10);
         }
     }
 }

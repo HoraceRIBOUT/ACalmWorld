@@ -173,16 +173,10 @@ public class Sound_Manager : MonoBehaviour
             ////Glitch in rythm
             //GameManager.instance.shaderHandler.OnEachBar();
 
-            bool ifSoundManagerIsDestroy = false;
-            if (onTransition)
-            {
-                ifSoundManagerIsDestroy = MuteNextInstr();
-            }
-
             if(autoPlaying)
                 autoPlay.BarCall(listInstru, numberInstruOn);
 
-            if(!ifSoundManagerIsDestroy)
+            if(GameManager.instance.transitionOnSlowMo == 1)
                 Invoke("CallBackUnDone", 0.1f);
 
 
@@ -365,34 +359,12 @@ public class Sound_Manager : MonoBehaviour
         GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
         GameManager.instance.LaunchTransition();
     }
-
-    public bool MuteNextInstr()
-    {
-        bool allOff = true;
-        foreach (InstruData instr in listInstru)
-        {
-            if (instr.on && allOff)
-            {
-                allOff = false;
-                Mute(listInstru.IndexOf(instr), false);
-                instr.on = false;
-                instr.currentState = 0;
-                //GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
-            }
-        }
-        //Debug.Log("I'm call ! in sound manager " + allOff);
-        if (allOff)
-        {
-            TransitionFinish();
-        }
-        return allOff;
-    }
-
+    
     public void TransitionFinish()
     {
         Debug.Log("Finish trnasition in sound manager !");
-        if (endTransition.IsValid())
-            AkSoundEngine.PostEvent(endTransition.Id, gameObject);
+
+        AkSoundEngine.PostEvent(endTransition.Id, gameObject);
         onTransition = false;
     }
 
