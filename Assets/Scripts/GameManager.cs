@@ -275,6 +275,8 @@ public class GameManager : MonoBehaviour
         targetLerpValue = 0;
     }
 
+    public AK.Wwise.RTPC playbackSpeed;
+
     public IEnumerator LoadNextScene()
     {
         //The transition on (transition on is the transition that start when you click on the plant. 
@@ -287,15 +289,17 @@ public class GameManager : MonoBehaviour
 
             animatorMainCam.speed = transitionOnSlowMo;
             shaderHandler.lerpForTarget[shaderHandler.lerpForTarget.Count - 1] = 1 - transitionOnSlowMo;
+
+            AkSoundEngine.SetRTPCValue(playbackSpeed.Id, transitionOnSlowMo);
+
             yield return new WaitForSeconds(0.1f);
         }
+        snd_mng.TransitionFinish();
         //screen current 
         yield return new WaitForEndOfFrame();
         shaderHandler.Transition_Mat.SetTexture("_LastFrame", ScreenCapture.CaptureScreenshotAsTexture());
 
-        //security
-        yield return new WaitWhile(() => snd_mng.onTransition);
-        //
+
         UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nextScene.ToString(), UnityEngine.SceneManagement.LoadSceneMode.Additive);
 

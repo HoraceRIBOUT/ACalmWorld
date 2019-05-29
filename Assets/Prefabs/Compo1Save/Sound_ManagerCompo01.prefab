@@ -55,7 +55,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   listInstru:
-  - id: Personnage-pianoVintage
+  - id: NO LINK TO GAME OBJECT
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: -48
-  - id: Doggo-Mid
+  - id: NO LINK TO GAME OBJECT
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: -48
-  - id: Neon-Low
+  - id: NO LINK TO GAME OBJECT
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: -48
-  - id: Sky-aerie
+  - id: NO LINK TO GAME OBJECT
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: -48
-  - id: Immeuble-kick
+  - id: NO LINK TO GAME OBJECT
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -330,8 +330,15 @@ MonoBehaviour:
   endTransition:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 4bc3d259e5aefe54d8be2a2ae6b95be8,
+      type: 2}
   onTransition: 0
+  regularBeatEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  averageDelayBetweenEvent: 4
+  possibleOffset: {x: 0, y: 0}
   bankToLoad:
     idInternal: 0
     valueGuidInternal: 

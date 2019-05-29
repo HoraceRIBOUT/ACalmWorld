@@ -23,18 +23,18 @@ public class SourceOfMat : MonoBehaviour
         }
     }
 
-    void ChangeColor(Color newCol)
+
+    public void ChangeColor(Color newCol)
     {
         mat.SetColor("_SourceCol", newCol);
     }
 
-
-    void ChangeIntensity(float newIntensity)
+    public void ChangeIntensity(float newIntensity)
     {
         mat.SetFloat("_SoucePow", newIntensity);
     }
 
-    void ChangeRange(float newSize)
+    public void ChangeRange(float newSize)
     {
         mat.SetFloat("_SouceSiz", newSize);
     }

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material
+  m_Name: Material 1
   m_Shader: {fileID: 4800000, guid: ebf70e8bd6e3f0546a6e310969f25412, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,10 +19,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BlackNoiseTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -44,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7018049055d6f5f45aa154ea1aaacf25, type: 3}
+        m_Texture: {fileID: 2800000, guid: 01be1165c08f5a049bba777a150c1b08, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -53,7 +49,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Noise:
         m_Texture: {fileID: 2800000, guid: 2957f928f7414334f888c755de5e0d2d, type: 3}
-        m_Scale: {x: 20, y: 20}
+        m_Scale: {x: 10, y: 10}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
@@ -63,57 +59,30 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _TextureGlitch:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Amplitude: 1
-    - _Blend: 0.5
-    - _Blur: 0.005
-    - _BlurForBlue: 0.005
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Debug: 0.07
-    - _Decalage: 0.005
+    - _Debug: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Hauteur: 0.5
     - _Metallic: 0
     - _Mode: 0
-    - _NbIntensity: 0.5
-    - _NoiseBool: 0
     - _OcclusionStrength: 1
-    - _OffsetBlueX: 0.001
-    - _OffsetBlueY: 0.001
     - _Parallax: 0.02
-    - _Period: 1
-    - _Saturation: 1
     - _Shininess: 0.078125
     - _SmoothnessTextureChannel: 0
-    - _SourceInt: 1
-    - _SourcePow: 0.698
-    - _SourceSiz: 1.28
+    - _SourceInt: 0.3
+    - _SourceSiz: 1
     - _SpecularHighlights: 1
-    - _Speed: 1
     - _SrcBlend: 1
-    - _Taille: 0.02
-    - _ToleranceBWNoise: 0.1
-    - _Tram2: 2
-    - _TramIntensity: 1
-    - _Tramage: 2
     - _UVSec: 0
     - _ZWrite: 1
-    - _typeOfBug: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorDebug: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    - _ColorDebug: {r: 0.5566038, g: 0.52772343, b: 0.52772343, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _NoiseColor: {r: 0, g: 0, b: 0.15, a: 1}
-    - _OffsetBlue: {r: 0.001, g: 0.001, b: 0, a: 0}
-    - _SourceCol: {r: 0, g: 0.3803922, b: 0.43529415, a: 1}
-    - _SourcePos: {r: 0.37273872, g: 1.8810015, b: -1.421308, a: 0}
-    - _TramColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SourceCol: {r: 1, g: 0.82959574, b: 0.514151, a: 1}
+    - _SourcePos: {r: 13.809824, g: -0.16231227, b: 12.940196, a: 0}

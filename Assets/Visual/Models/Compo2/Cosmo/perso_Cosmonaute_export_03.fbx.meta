@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 77582b5876e86ec46948561e311f05c4
+guid: 63ed25100f7d2694da9bc3c5b28ce3c6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -125,20 +125,21 @@ ModelImporter:
     100238: B_twst_arm_R__33
     100240: B_twst_arm_R__33_end
     100242: Bone.001
-    100244: Foor_IK_Main_L
-    100246: Foor_IK_Main_R
-    100248: FootRoll_main_L
-    100250: FootRoll_main_L_end
-    100252: FootRoll_main_R
-    100254: FootRoll_main_R_end
-    100256: Hips_main
-    100258: Hips_second
-    100260: //RootNode
-    100262: Perso_Cosmonaute_mesh
-    100264: Roll_back_L
-    100266: Roll_back_R
-    100268: Roll_front_L
-    100270: Roll_front_R
+    100244: clope
+    100246: Foor_IK_Main_L
+    100248: Foor_IK_Main_R
+    100250: FootRoll_main_L
+    100252: FootRoll_main_L_end
+    100254: FootRoll_main_R
+    100256: FootRoll_main_R_end
+    100258: Hips_main
+    100260: Hips_second
+    100262: //RootNode
+    100264: Perso_Cosmonaute_mesh
+    100266: Roll_back_L
+    100268: Roll_back_R
+    100270: Roll_front_L
+    100272: Roll_front_R
     400000: Armature_cosmonaute
     400002: B_arm_L
     400004: B_arm_R
@@ -261,27 +262,45 @@ ModelImporter:
     400238: B_twst_arm_R__33
     400240: B_twst_arm_R__33_end
     400242: Bone.001
-    400244: Foor_IK_Main_L
-    400246: Foor_IK_Main_R
-    400248: FootRoll_main_L
-    400250: FootRoll_main_L_end
-    400252: FootRoll_main_R
-    400254: FootRoll_main_R_end
-    400256: Hips_main
-    400258: Hips_second
-    400260: //RootNode
-    400262: Perso_Cosmonaute_mesh
-    400264: Roll_back_L
-    400266: Roll_back_R
-    400268: Roll_front_L
-    400270: Roll_front_R
-    2100000: Material
-    4300000: Perso_Cosmonaute_mesh
-    7400000: Armature_cosmonaute|Idle_Cosmonaute
-    7400002: Armature_cosmonaute|Tpose
+    400244: clope
+    400246: Foor_IK_Main_L
+    400248: Foor_IK_Main_R
+    400250: FootRoll_main_L
+    400252: FootRoll_main_L_end
+    400254: FootRoll_main_R
+    400256: FootRoll_main_R_end
+    400258: Hips_main
+    400260: Hips_second
+    400262: //RootNode
+    400264: Perso_Cosmonaute_mesh
+    400266: Roll_back_L
+    400268: Roll_back_R
+    400270: Roll_front_L
+    400272: Roll_front_R
+    2100000: No Name
+    2100002: Material
+    2300000: clope
+    3300000: clope
+    4300000: clope
+    4300002: Perso_Cosmonaute_mesh
+    7400000: Armature_cosmonaute|Cosmonaute_anim01
+    7400002: Armature_cosmonaute|Cosmonaute_anim02
+    7400004: Armature_cosmonaute|Cosmonaute_anim03
+    7400006: Armature_cosmonaute|Idle_Cosmonaute
+    7400008: Armature_cosmonaute|Tpose
     9500000: //RootNode
     13700000: Perso_Cosmonaute_mesh
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 033f74b4af5cc8142b2f21c44561f3cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 1b8b802d6e22bce438fa8f5a9bdc9d69, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -309,6 +328,90 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
+    - serializedVersion: 16
+      name: Armature_cosmonaute|Cosmonaute_anim01
+      takeName: Armature_cosmonaute|Cosmonaute_anim01
+      firstFrame: 0
+      lastFrame: 76
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature_cosmonaute|Cosmonaute_anim02
+      takeName: Armature_cosmonaute|Cosmonaute_anim02
+      firstFrame: 0
+      lastFrame: 76
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature_cosmonaute|Cosmonaute_anim03
+      takeName: Armature_cosmonaute|Cosmonaute_anim03
+      firstFrame: 0
+      lastFrame: 76
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Armature_cosmonaute|Idle_Cosmonaute
       takeName: Armature_cosmonaute|Idle_Cosmonaute
@@ -348,7 +451,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

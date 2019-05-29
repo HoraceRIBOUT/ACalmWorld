@@ -10,6 +10,7 @@
 		_SourceInt("Source intensity", Range(0,2)) = 1
 
 			_Debug("Debug", float) = 1
+		_ColorDebug("Color Debug", Color) = (1,1,1,1)
 	}
 
 		SubShader{
@@ -36,8 +37,10 @@
 
 		float _Debug;
 
+		half4 _ColorDebug;
+
 		void surf(Input IN, inout SurfaceOutput o) {
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex);
+			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _ColorDebug;
 
 			float3 lightDir = float3(IN.worldPos.x - _SourcePos.x, IN.worldPos.y - _SourcePos.y, IN.worldPos.z - _SourcePos.z);
 			half NdotL = clamp(dot(IN.worldNormal, lightDir),0,1);
