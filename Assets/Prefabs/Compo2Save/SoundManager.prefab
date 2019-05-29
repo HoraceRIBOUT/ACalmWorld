@@ -222,6 +222,12 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   onTransition: 0
+  regularBeatEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  averageDelayBetweenEvent: 4
+  possibleOffset: {x: -2, y: 2}
   bankToLoad:
     idInternal: 0
     valueGuidInternal: 

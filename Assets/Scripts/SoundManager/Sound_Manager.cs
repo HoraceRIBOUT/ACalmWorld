@@ -96,6 +96,13 @@ public class Sound_Manager : MonoBehaviour
     public AK.Wwise.Event endTransition;
     public bool onTransition = false;
 
+    [Header("Event every X beat")]
+    public AK.Wwise.Event regularBeatEvent;
+    public int averageDelayBetweenEvent = 4;
+    public Vector2 possibleOffset = Vector2.zero;
+    private int currentBeat = 0;
+    private int nextBeat = 4;
+
     [Header("Bank")]
     public AK.Wwise.Bank bankToLoad;
     private AK.Wwise.Bank bankToUnload = null;
@@ -177,6 +184,20 @@ public class Sound_Manager : MonoBehaviour
 
             if(!ifSoundManagerIsDestroy)
                 Invoke("CallBackUnDone", 0.1f);
+
+
+            if(averageDelayBetweenEvent == currentBeat )
+            {
+                currentBeat = 0;
+                nextBeat = averageDelayBetweenEvent + Random.Range((int)possibleOffset.x, (int)possibleOffset.y);
+                if(regularBeatEvent.IsValid())
+                    AkSoundEngine.PostEvent(regularBeatEvent.Id, gameObject);
+            }
+            else
+            {
+                currentBeat++;
+            }
+
         }
     }
 
