@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2dbab81db74f9c47b960c9262200ba39
     GuidInternal: 
-    m_lastTime: -8586435180510366347
+    m_lastTime: -8586424883452446131
     List:
     - name: Menu
       guid: 64a99a69f942b948ba4efb44c5701b21
@@ -71,7 +71,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8b3b7fd60fe434469f67fb15c866b032
     GuidInternal: 
-    m_lastTime: -8586435180511360916
+    m_lastTime: -8586424887194018710
     List:
     - name: Mute_ACW_Lofi_Musique_Percus_01_Lp
       guid: 35403a9dbef26746833ef0121cea4cc5
@@ -289,9 +289,11 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Musique_01_V1
         ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
       - ElementName: Play_ACW_Noise_Lp
         ObjectType: 3
-      Path: Musique\Musique_01_V1\Play_ACW_Noise_Lp
+      Path: Musique\Musique_01_V1\Play_Innit\Play_ACW_Noise_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -404,6 +406,38 @@ MonoBehaviour:
       - ElementName: Stop_ACW_Voice_System
         ObjectType: 3
       Path: Musique\Musique_01_V1\Voices\Stop_ACW_Voice_System
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_Musique_01
+      guid: 00dce286344c21418b0fa04270f43068
+      id: 233872981
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Stop_Musique_01
+        ObjectType: 3
+      Path: Musique\Musique_02\Play_Innit\Stop_Musique_01
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_Musique_02
+      guid: 8d6b5e209a6c4a4fbe9ffc93fb95f459
+      id: 233872982
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_01_V1
+        ObjectType: 4
+      - ElementName: Play_Innit
+        ObjectType: 4
+      - ElementName: Stop_Musique_02
+        ObjectType: 3
+      Path: Musique\Musique_01_V1\Play_Innit\Stop_Musique_02
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -572,7 +606,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 05c1c6b07a958446a3d6bd4d76f94476
     GuidInternal: 
-    m_lastTime: -8586447109278609825
+    m_lastTime: -8586424894482543786
     List:
     - name: Kick_Meter
       guid: 58530fa645fa094d8f3840b80c0b22f9
@@ -596,6 +630,15 @@ MonoBehaviour:
       - ElementName: Piano_Vintage_Meter
         ObjectType: 13
       Path: Default Work Unit\Wwise_Meters\Piano_Vintage_Meter
+    - name: PlaybackSpeed
+      guid: ebe8d4bccc045b409d6014ff1b27f64f
+      id: 1897326479
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlaybackSpeed
+        ObjectType: 13
+      Path: Default Work Unit\PlaybackSpeed
     - name: Synth_Aerie_Offset
       guid: a6d34d7f20495447a307fc782ff2ff54
       id: 3853040844
@@ -878,9 +921,9 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /ACalmWorld_WwiseProject
-  - /ACalmWorld_WwiseProject/Switches
-  - /ACalmWorld_WwiseProject/Switches/Default Work Unit
-  - /ACalmWorld_WwiseProject/Switches/Default Work Unit/Lofi_Musique01
-  - /ACalmWorld_WwiseProject/Switches/Default Work Unit/Lofi_Musique01/Music1_Synth_Aerie
+  - /ACalmWorld_WwiseProject/Events
+  - /ACalmWorld_WwiseProject/Events/Musique
+  - /ACalmWorld_WwiseProject/Events/Musique/Musique_02
+  - /ACalmWorld_WwiseProject/Events/Musique/Musique_02/Play_Innit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
