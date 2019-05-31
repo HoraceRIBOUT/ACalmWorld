@@ -22,7 +22,7 @@ public class MenuController : MonoBehaviour
     public AK.Wwise.Event launchGameEvent;
     public GameObject optionButton;
     public bool isOptionPush = false;
-    public GameObject panelCredit;  
+    public GameObject panelCredit;
 
     private float heightScreenRatio;
     private float widthScreenRatio;
@@ -85,19 +85,20 @@ public class MenuController : MonoBehaviour
             if (Input.touchCount > 0)
             {
                 Vector3 pos = Input.GetTouch(0).position;
-                if (Input.GetTouch(0).phase == TouchPhase.Ended)
-                {
-                    if (pos.x * widthScreenRatio > Camera.main.pixelWidth * widthScreenRatio - (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2 || pos.x * widthScreenRatio < (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2)
+                if (!isOptionPush)
+                    if (Input.GetTouch(0).phase == TouchPhase.Ended)
                     {
-                        panelOption.SetActive(false);
-                        panelCredit.SetActive(false);
+                        if (pos.x * widthScreenRatio > Camera.main.pixelWidth * widthScreenRatio - (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2 || pos.x * widthScreenRatio < (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2)
+                        {
+                            panelOption.SetActive(false);
+                            panelCredit.SetActive(false);
+                        }
+                        else if (pos.y * heightScreenRatio > Camera.main.pixelHeight * heightScreenRatio - (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y * heightScreenRatio < (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2)
+                        {
+                            panelOption.SetActive(false);
+                            panelCredit.SetActive(false);
+                        }
                     }
-                    else if (pos.y * heightScreenRatio > Camera.main.pixelHeight * heightScreenRatio - (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y * heightScreenRatio < (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2)
-                    {
-                        panelOption.SetActive(false);
-                        panelCredit.SetActive(false);
-                    }
-                }
             }
         }
         isOptionPush = false;
@@ -118,7 +119,7 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-  
+
 
     public void OnKeepPlaying()
     {
