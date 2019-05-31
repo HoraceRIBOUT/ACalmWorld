@@ -176,6 +176,12 @@ public class GameManager : MonoBehaviour
             Application.Quit();
 #endif
 
+        //for Stand
+        if (!snd_mng.transitionInstrument.activeSelf && Time.timeSinceLevelLoad > 300)
+        {
+            snd_mng.ActivateTransitionInstru();
+        }
+
     }
 
     public static bool KeepPlaying()
@@ -274,9 +280,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadNextScene());
         targetLerpValue = 0;
     }
-
-    public AK.Wwise.RTPC playbackSpeed;
-
+    
     public IEnumerator LoadNextScene()
     {
         //The transition on (transition on is the transition that start when you click on the plant. 
@@ -290,7 +294,7 @@ public class GameManager : MonoBehaviour
             animatorMainCam.speed = transitionOnSlowMo;
             shaderHandler.lerpForTarget[shaderHandler.lerpForTarget.Count - 1] = 1 - transitionOnSlowMo;
 
-            AkSoundEngine.SetRTPCValue(playbackSpeed.Id, transitionOnSlowMo);
+            snd_mng.TransitionSetValue(transitionOnSlowMo);
 
             yield return new WaitForSeconds(0.1f);
         }

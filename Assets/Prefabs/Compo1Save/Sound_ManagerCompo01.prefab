@@ -53,7 +53,8 @@ MonoBehaviour:
   glitchAppearEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 9be0ffa20e65c324f9cfd4fd03964e47,
+      type: 2}
   listInstru:
   - id: Personnage-pianoVintage
     gameObjectOfTheInstrument: {fileID: 0}
@@ -334,12 +335,23 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 3891a5cf45edee84e83038953ada7326,
       type: 2}
   onTransition: 0
+  playbackSpeed:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 46d07993937d50a45a346f6043006a12,
+      type: 2}
   regularBeatEvent:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   averageDelayBetweenEvent: 4
   possibleOffset: {x: 0, y: 0}
+  regularBeatEvent2:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  averageDelayBetweenEvent2: 4
+  possibleOffset2: {x: 0, y: 0}
   bankToLoad:
     idInternal: 0
     valueGuidInternal: 

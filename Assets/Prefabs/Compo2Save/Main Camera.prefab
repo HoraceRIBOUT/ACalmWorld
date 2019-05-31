@@ -325,7 +325,7 @@ MonoBehaviour:
     verticalGlitch: 0
     vitesseBug: 1
     tolerance: 0.192
-    noiseColor: {r: 1, g: 0.25490198, b: 0, a: 0}
+    noiseColor: {r: 0.23799999, g: 0.168, b: 0.23426667, a: 1}
     tramFrac: 3
     tramRythm: 2
     tramIntensity: 0.02
@@ -427,7 +427,7 @@ MonoBehaviour:
   nextScene: 0
   transitionOnDuration: 1.5
   transitionOnSlowMo: 1
-  transitionRecDuration: 5
+  transitionRecDuration: 1.5
   timerAtBeginning: -2
   allVisualInteractibleObject:
   - {fileID: 0}
@@ -457,10 +457,6 @@ MonoBehaviour:
   autoplayDeactivate: AUTOPLAY_DEACTIVATED
   durationAtScreenOfText: 2.5
   shaderIndex: 2
-  playbackSpeed:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
 --- !u!95 &3863417158849205289
 Animator:
   serializedVersion: 3

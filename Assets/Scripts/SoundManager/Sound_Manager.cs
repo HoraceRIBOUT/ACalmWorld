@@ -95,6 +95,7 @@ public class Sound_Manager : MonoBehaviour
     public AK.Wwise.Event startTransition;
     public AK.Wwise.Event endTransition;
     public bool onTransition = false;
+    public AK.Wwise.RTPC playbackSpeed;
 
     [Header("Event every X beat")]
     public AK.Wwise.Event regularBeatEvent;
@@ -283,7 +284,7 @@ public class Sound_Manager : MonoBehaviour
         AkSoundEngine.PostEvent(glitchAppearEvent.Id, gameObject);
 
 
-        AkSoundEngine.SetRTPCValue(GameManager.instance.playbackSpeed.Id, 1);
+        AkSoundEngine.SetRTPCValue(playbackSpeed.Id, 1);
     }
 
     public InstruData getData(int index)
@@ -382,6 +383,11 @@ public class Sound_Manager : MonoBehaviour
         onTransition = true;
         GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
         GameManager.instance.LaunchTransition();
+    }
+
+    public void TransitionSetValue(float value)
+    {
+        AkSoundEngine.SetRTPCValue(playbackSpeed.Id, value);
     }
     
     public void TransitionFinish()

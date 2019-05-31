@@ -6,6 +6,9 @@ public class NotifController : MonoBehaviour
 {
     public UnityEngine.UI.Text debugText;
 
+
+    public bool focus = true;
+
     private void OnApplicationFocus(bool focus)
     {
 #if !UNITY_EDITOR
@@ -28,11 +31,14 @@ public class NotifController : MonoBehaviour
             Debug.Log("Pause " + Time.realtimeSinceStartup);
             GameManager.instance.Pause();
         }
+
+        focus = false;
     }
 
     public void ComeBack()
     {
         Debug.Log("Resume " + Time.realtimeSinceStartup);
+        focus = true;
     }
 
     public void CallBack_PauseResume()

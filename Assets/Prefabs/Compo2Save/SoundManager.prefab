@@ -56,7 +56,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 9be0ffa20e65c324f9cfd4fd03964e47,
       type: 2}
   listInstru:
-  - id: NO LINK TO GAME OBJECT
+  - id: Cosmonaut
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: 0
-  - id: NO LINK TO GAME OBJECT
+  - id: Oni
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: 0
-  - id: NO LINK TO GAME OBJECT
+  - id: InformationSpot
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: 0
-  - id: NO LINK TO GAME OBJECT
+  - id: Trees
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -240,13 +240,25 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 4bc3d259e5aefe54d8be2a2ae6b95be8,
       type: 2}
   onTransition: 0
+  playbackSpeed:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 46d07993937d50a45a346f6043006a12,
+      type: 2}
   regularBeatEvent:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 9b65bfa7e272cd44185dd35a4dc20779,
       type: 2}
-  averageDelayBetweenEvent: 8
-  possibleOffset: {x: -2, y: 4}
+  averageDelayBetweenEvent: 4
+  possibleOffset: {x: -2, y: 2}
+  regularBeatEvent2:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9996f4475badf3647be4ee0b7c6bdbeb,
+      type: 2}
+  averageDelayBetweenEvent2: 4
+  possibleOffset2: {x: -2, y: 2}
   bankToLoad:
     idInternal: 0
     valueGuidInternal: 
