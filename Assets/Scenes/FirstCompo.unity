@@ -112,38 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!84 &150065
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: TextSize640_360
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 640
-  m_Height: 360
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &13188567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,6 +1878,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e30c9e9d5eb547ba8c786b3c223a553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!84 &196653027
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TextSize243_136
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 243
+  m_Height: 136
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!114 &224952010 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5301658034206774009, guid: 0c8e2c53d1af9d34ea44e793990091c6,
@@ -20136,38 +20136,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &1403499910
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: TextSize640_360
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 640
-  m_Height: 360
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1408426133
 GameObject:
   m_ObjectHideFlags: 0
@@ -22715,6 +22683,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &2088427068
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TextSize243_136
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 243
+  m_Height: 136
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &2110702134
 GameObject:
   m_ObjectHideFlags: 0
@@ -23362,6 +23362,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5301658034804695557, guid: 0c8e2c53d1af9d34ea44e793990091c6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301658034206774011, guid: 0c8e2c53d1af9d34ea44e793990091c6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5301658034146091719, guid: 0c8e2c53d1af9d34ea44e793990091c6,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -23642,22 +23652,22 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6624982172861087604, guid: 0c8e2c53d1af9d34ea44e793990091c6,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6624982173538352077, guid: 0c8e2c53d1af9d34ea44e793990091c6,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7974260703591841917, guid: 0c8e2c53d1af9d34ea44e793990091c6,
+    - target: {fileID: 6624982172861087604, guid: 0c8e2c53d1af9d34ea44e793990091c6,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7974260704235521220, guid: 0c8e2c53d1af9d34ea44e793990091c6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974260703591841917, guid: 0c8e2c53d1af9d34ea44e793990091c6,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -23670,16 +23680,6 @@ PrefabInstance:
     - target: {fileID: 8916466617057681377, guid: 0c8e2c53d1af9d34ea44e793990091c6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5301658034804695557, guid: 0c8e2c53d1af9d34ea44e793990091c6,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5301658034206774011, guid: 0c8e2c53d1af9d34ea44e793990091c6,
-        type: 3}
-      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -23919,7 +23919,12 @@ PrefabInstance:
     - target: {fileID: 5689864512667794895, guid: b01ea2424f24f2043b938fa778bf4811,
         type: 3}
       propertyPath: transitionOnDuration
-      value: 1.5
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689864512667794895, guid: b01ea2424f24f2043b938fa778bf4811,
+        type: 3}
+      propertyPath: transitionRecDuration
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5689864512667794890, guid: b01ea2424f24f2043b938fa778bf4811,
         type: 3}
@@ -23980,12 +23985,12 @@ PrefabInstance:
         type: 3}
       propertyPath: texturesGlitch
       value: 
-      objectReference: {fileID: 1403499910}
+      objectReference: {fileID: 2088427068}
     - target: {fileID: 5689864511922094206, guid: b01ea2424f24f2043b938fa778bf4811,
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 1403499910}
+      objectReference: {fileID: 2088427068}
     - target: {fileID: 5689864513227769885, guid: b01ea2424f24f2043b938fa778bf4811,
         type: 3}
       propertyPath: debugText

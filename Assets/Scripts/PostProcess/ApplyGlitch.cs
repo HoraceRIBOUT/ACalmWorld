@@ -72,10 +72,7 @@ public class ApplyGlitch : MonoBehaviour
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-#if !UNITY_EDITOR
-        //This is a delay for when the shader cannot load (it's then backbuffer to the previous (so last) Render. 
-        if(Time.fixedTime > 3f) {
-#endif
+
         if (matToApply != null)
         {
             RenderTexture tmp = destination;
@@ -86,11 +83,7 @@ public class ApplyGlitch : MonoBehaviour
         }
         else
             Graphics.Blit(source, destination);
-#if !UNITY_EDITOR
-        }
-        else
-            Graphics.Blit(source, destination);
-#endif
+
     }
 
     public void OnDestroy()

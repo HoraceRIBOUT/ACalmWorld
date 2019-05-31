@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Apparition at start")]
     public float timerAtBeginning = -3f;
-    private float saveTimerAtBeginning;
     public List<GameObject> allVisualInteractibleObject;
 
     [Header("Camera movement")]
@@ -91,7 +90,6 @@ public class GameManager : MonoBehaviour
         {
             gO.SetActive(false);
         }
-        saveTimerAtBeginning = timerAtBeginning;
     }
 
     private void StartTransition()
@@ -206,7 +204,7 @@ public class GameManager : MonoBehaviour
     {
         while (shaderHandler.lerpForTarget[index] <= 1)
         {
-            shaderHandler.lerpForTarget[index] += Time.deltaTime * speedForVoiceEffect;
+            shaderHandler.lerpForTarget[index] += 0.01f * speedForVoiceEffect;
             yield return new WaitForSeconds(0.01f);
         }
         shaderHandler.lerpForTarget[index] = 1;
@@ -216,7 +214,7 @@ public class GameManager : MonoBehaviour
     {
         while (shaderHandler.lerpForTarget[index] >= 0)
         {
-            shaderHandler.lerpForTarget[index] -= Time.deltaTime * speedForVoiceEffect;
+            shaderHandler.lerpForTarget[index] -= 0.01f * speedForVoiceEffect;
             yield return new WaitForSeconds(0.01f);
         }
         shaderHandler.lerpForTarget[index] = 0;
@@ -287,7 +285,7 @@ public class GameManager : MonoBehaviour
         //                  (transition receive is the one when you start the scene but are coming from an other scene)
         while (transitionOnSlowMo > 0)
         {
-            transitionOnSlowMo -= Time.deltaTime / transitionOnDuration;
+            transitionOnSlowMo -= (0.1f / transitionOnDuration);
             if (transitionOnSlowMo < 0)
                 transitionOnSlowMo = 0;
 

@@ -281,7 +281,7 @@ public class Sound_Manager : MonoBehaviour
     public void StartGlitchAppear()
     {
         if(glitchAppearEvent.IsValid())
-        AkSoundEngine.PostEvent(glitchAppearEvent.Id, gameObject);
+            AkSoundEngine.PostEvent(glitchAppearEvent.Id, gameObject);
 
 
         AkSoundEngine.SetRTPCValue(playbackSpeed.Id, 1);
