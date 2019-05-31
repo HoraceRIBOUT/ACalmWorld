@@ -31,4 +31,9 @@ public class OptionController : MonoBehaviour
             AkSoundEngine.PostEvent(clickEvent.Id, this.gameObject);
         }
     }
+
+    public void OnQuitButton()
+    {
+        this.gameObject.SetActive(false);
+    }
 }
