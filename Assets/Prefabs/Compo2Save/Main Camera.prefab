@@ -438,6 +438,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   onTransition: 0
   pauseBtn: {fileID: 0}
   resumeBtn: {fileID: 0}
@@ -449,6 +457,10 @@ MonoBehaviour:
   autoplayDeactivate: AUTOPLAY_DEACTIVATED
   durationAtScreenOfText: 2.5
   shaderIndex: 2
+  playbackSpeed:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!95 &3863417158849205289
 Animator:
   serializedVersion: 3
