@@ -13,8 +13,8 @@ public class ChangeValueScreenShader : Change
 
     public override void AddEventOnListener(MainInstrument mI)
     {
-        //mI.onUpdatEvent.AddListener(ChangeOnUpdate);
         mI.onClickEvent.AddListener(ChangeOnClick);
+        mI.onUpdatEvent.AddListener(ChangeOnUpdate);
         mainInstrument = mI;
     }
 
@@ -24,11 +24,12 @@ public class ChangeValueScreenShader : Change
         matSource.ChangeRange(changeToRange[mainInstrument.instruData.currentState]);
     }
 
-    /*public void ChangeOnUpdate()
+    public void ChangeOnUpdate()
     {
-    Color col = ;
-        matSource.ChangeColor(col);
-    }*/
+        float valueZerOne = (mainInstrument.instruData.rtpcValue + 48) / 48;
+        
+        matSource.ChangeRange(changeToRange[mainInstrument.instruData.currentState] * (1 + valueZerOne * GameManager.instance.transitionOnSlowMo * 0.5f) );
+    }
 
 
     public void OnDestroy()

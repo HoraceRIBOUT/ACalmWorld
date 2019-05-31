@@ -11,6 +11,8 @@ public class SpriteChangeToTex : Change
     public Vector4 tillingAndOffset = new Vector4(0.05f,0.05f,0,0);
     public Vector4 movement = new Vector4(0,0, 0.005f, 0.001f);
 
+    public AnimationCurve slowMoRTPCurve;
+
     public override void AddEventOnListener(MainInstrument mI)
     {
         mI.onClickEvent.AddListener(ChangeOnClick);
@@ -28,7 +30,15 @@ public class SpriteChangeToTex : Change
 
     public void ChangeOnUpdate()
     {
-        tillingAndOffset += movement * Time.deltaTime * GameManager.instance.transitionOnSlowMo; // TO DO : rtpc value cuurve
+        float valueZerOne = (mainInstrument.instruData.rtpcValue + 48) / 48;
+
+        if (GameManager.instance.transitionOnSlowMo != 1)
+        {
+            valueZerOne = slowMoRTPCurve.Evaluate(GameManager.instance.transitionOnSlowMo);
+        }
+
+
+        tillingAndOffset += movement * Time.deltaTime * GameManager.instance.transitionOnSlowMo * valueZerOne; // TO DO : rtpc value cuurve
         targetMaterial.SetVector("_SecondTex_ST", tillingAndOffset);
     }
 

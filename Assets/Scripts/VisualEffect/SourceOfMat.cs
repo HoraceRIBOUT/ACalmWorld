@@ -36,7 +36,7 @@ public class SourceOfMat : MonoBehaviour
 
     public void ChangeRange(float newSize)
     {
-        mat.SetFloat("_SouceSiz", newSize);
+        mat.SetFloat("_SourceSiz", newSize);
     }
 
 }

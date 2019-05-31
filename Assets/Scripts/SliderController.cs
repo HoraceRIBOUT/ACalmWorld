@@ -18,7 +18,7 @@ public class SliderController : MonoBehaviour
 
     private void Start()
     {
-        barNumber = PlayerPrefs.GetInt(namePlayerPrefs);
+        barNumber = PlayerPrefs.GetInt(namePlayerPrefs, 10);
         SliderMaster.GetComponent<Slider>().value = barNumber;
         onClickSlider();
     }

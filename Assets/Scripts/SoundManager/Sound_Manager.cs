@@ -260,6 +260,9 @@ public class Sound_Manager : MonoBehaviour
     {
         if(glitchAppearEvent.IsValid())
         AkSoundEngine.PostEvent(glitchAppearEvent.Id, gameObject);
+
+
+        AkSoundEngine.SetRTPCValue(GameManager.instance.playbackSpeed.Id, 1);
     }
 
     public InstruData getData(int index)
