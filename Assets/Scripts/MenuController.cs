@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class MenuController : MonoBehaviour
@@ -19,6 +20,9 @@ public class MenuController : MonoBehaviour
     public AK.Wwise.Event startEvent;
     public AK.Wwise.Event clickEvent;
     public AK.Wwise.Event launchGameEvent;
+    public GameObject optionButton;
+    public bool isOptionPush = false;
+    public GameObject panelCredit;  
 
     private float heightScreenRatio;
     private float widthScreenRatio;
@@ -36,54 +40,67 @@ public class MenuController : MonoBehaviour
         heightScreenRatio = 1080f / Camera.main.pixelHeight;
     }
 
+    public void OnPushOption()
+    {
+        isOptionPush = true;
+        panelOption.SetActive(!panelOption.activeSelf);
+        if (panelOption.activeSelf)
+            panelCredit.SetActive(false);
+    }
+
+    public void OnPushCredit()
+    {
+        isOptionPush = true;
+        panelCredit.SetActive(!panelCredit.activeSelf);
+        if (panelCredit.activeSelf)
+            panelOption.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
 
         timeText.text = System.DateTime.Now.TimeOfDay.ToString().Substring(0, 5);
-        /*if (Input.touchCount> 0 && panelOption.activeInHierarchy)
-        {
-             float height = Camera.main.orthographicSize * 2.0f;
-             float width = height * Screen.width / Screen.height;
 
-            if (Input.GetTouch(0).position.x > (width-(panelOption.transform.localScale.x)/2) )
-            {
-                Debug.Log("test");
-            }
-        }*/
-
-        if (panelOption.activeInHierarchy)
+        if (panelOption.activeInHierarchy || panelCredit.activeInHierarchy)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonUp(0))
             {
                 Vector3 pos = Input.mousePosition;
-                if (pos.x * widthScreenRatio > Camera.main.pixelWidth* widthScreenRatio - (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2 || pos.x * widthScreenRatio < (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2)
-                {
-                    
-                    panelOption.SetActive(false);
-                }
-                else if (pos.y * heightScreenRatio > Camera.main.pixelHeight* heightScreenRatio - (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y * heightScreenRatio < (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2)
-                {
-                    panelOption.SetActive(false);
-                }
+                if (!isOptionPush)
+                    if (pos.x * widthScreenRatio > Camera.main.pixelWidth * widthScreenRatio - (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2 || pos.x * widthScreenRatio < (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2)
+                    {
+
+                        panelOption.SetActive(false);
+                        panelCredit.SetActive(false);
+                    }
+                    else if (pos.y * heightScreenRatio > Camera.main.pixelHeight * heightScreenRatio - (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y * heightScreenRatio < (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2)
+                    {
+                        panelOption.SetActive(false);
+                        panelCredit.SetActive(false);
+                    }
+
             }
 
             if (Input.touchCount > 0)
             {
                 Vector3 pos = Input.GetTouch(0).position;
-                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                if (Input.GetTouch(0).phase == TouchPhase.Ended)
                 {
                     if (pos.x * widthScreenRatio > Camera.main.pixelWidth * widthScreenRatio - (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2 || pos.x * widthScreenRatio < (Camera.main.pixelWidth * widthScreenRatio - panelOption.GetComponent<RectTransform>().rect.width) / 2)
                     {
                         panelOption.SetActive(false);
+                        panelCredit.SetActive(false);
                     }
-                    else if (pos.y* heightScreenRatio > Camera.main.pixelHeight * heightScreenRatio - (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y * heightScreenRatio < (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2)
+                    else if (pos.y * heightScreenRatio > Camera.main.pixelHeight * heightScreenRatio - (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2 || pos.y * heightScreenRatio < (Camera.main.pixelHeight * heightScreenRatio - panelOption.GetComponent<RectTransform>().rect.height) / 2)
                     {
                         panelOption.SetActive(false);
+                        panelCredit.SetActive(false);
                     }
                 }
             }
         }
+        isOptionPush = false;
     }
 
     public void OnPushPlay()
@@ -101,10 +118,7 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-    public void OnPushOption()
-    {
-        panelOption.SetActive(!panelOption.activeSelf);
-    }
+  
 
     public void OnKeepPlaying()
     {
