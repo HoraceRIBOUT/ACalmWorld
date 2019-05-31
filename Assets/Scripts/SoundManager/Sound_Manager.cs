@@ -103,6 +103,14 @@ public class Sound_Manager : MonoBehaviour
     private int currentBeat = 0;
     private int nextBeat = 4;
 
+
+    [Header("Event every X beat 2")]
+    public AK.Wwise.Event regularBeatEvent2;
+    public int averageDelayBetweenEvent2 = 4;
+    public Vector2 possibleOffset2 = Vector2.zero;
+    private int currentBeat2 = 0;
+    private int nextBeat2 = 4;
+
     [Header("Bank")]
     public AK.Wwise.Bank bankToLoad;
     private AK.Wwise.Bank bankToUnload = null;
@@ -190,6 +198,19 @@ public class Sound_Manager : MonoBehaviour
             else
             {
                 currentBeat++;
+            }
+
+            //2
+            if (averageDelayBetweenEvent2 == currentBeat2)
+            {
+                currentBeat2 = 0;
+                nextBeat2 = averageDelayBetweenEvent2 + Random.Range((int)possibleOffset2.x, (int)possibleOffset2.y);
+                if (regularBeatEvent2.IsValid())
+                    AkSoundEngine.PostEvent(regularBeatEvent2.Id, gameObject);
+            }
+            else
+            {
+                currentBeat2++;
             }
 
         }

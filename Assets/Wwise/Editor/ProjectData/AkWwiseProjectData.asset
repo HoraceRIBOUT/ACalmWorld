@@ -24,14 +24,25 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 0ff6def33c40d34caed71a7661ebbde4
     GuidInternal: 
-    m_lastTime: -8586447109278360513
-    List: []
+    m_lastTime: -8586423023262419380
+    List:
+    - name: Rvrb
+      guid: 4112f93d3a68af4a8cef13698afbbb57
+      id: 2157448753
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Rvrb
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Rvrb
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2dbab81db74f9c47b960c9262200ba39
     GuidInternal: 
-    m_lastTime: -8586424883452446131
+    m_lastTime: -8586423023260375543
     List:
     - name: Menu
       guid: 64a99a69f942b948ba4efb44c5701b21
@@ -71,7 +82,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8b3b7fd60fe434469f67fb15c866b032
     GuidInternal: 
-    m_lastTime: -8586424887194018710
+    m_lastTime: -8586423023262267831
     List:
     - name: Mute_ACW_Lofi_Musique_Percus_01_Lp
       guid: 35403a9dbef26746833ef0121cea4cc5
@@ -329,6 +340,22 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_Chant_Choeur_RNd
+      guid: f1832980d5acdf4cb4f52b762fb4fd65
+      id: 4041134700
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: Ambiances
+        ObjectType: 4
+      - ElementName: Play_Chant_Choeur_RNd
+        ObjectType: 3
+      Path: Musique\Musique_02\Ambiances\Play_Chant_Choeur_RNd
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Musique_02_Innit
       guid: fd5d9e5d2b4a774b92f9fa884f435c6e
       id: 3777834939
@@ -345,6 +372,22 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_Phrases_Rnd
+      guid: d114d84e1b5d4e4996a4348522292c78
+      id: 3391789549
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Musique_02
+        ObjectType: 4
+      - ElementName: Ambiances
+        ObjectType: 4
+      - ElementName: Play_Phrases_Rnd
+        ObjectType: 3
+      Path: Musique\Musique_02\Ambiances\Play_Phrases_Rnd
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Pluie
       guid: 1c28a152de81b647842e440f9ddba02e
       id: 3241332153
@@ -358,6 +401,18 @@ MonoBehaviour:
       - ElementName: Play_Pluie
         ObjectType: 3
       Path: Musique\Musique_01_V1\Ambianceq\Play_Pluie
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_SFX_Buzz_Os
+      guid: d9e13ac04d77dd4e88fd0f7fd9b3bd89
+      id: 3116670766
+      PathAndIcons:
+      - ElementName: Musique
+        ObjectType: 12
+      - ElementName: Play_SFX_Buzz_Os
+        ObjectType: 3
+      Path: Musique\Play_SFX_Buzz_Os
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -606,8 +661,41 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 05c1c6b07a958446a3d6bd4d76f94476
     GuidInternal: 
-    m_lastTime: -8586424894482543786
+    m_lastTime: -8586424719900651689
     List:
+    - name: Amb
+      guid: 09ec1edef40f39488c644493c982990a
+      id: 1117531639
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Slider_Volumes
+        ObjectType: 4
+      - ElementName: Amb
+        ObjectType: 13
+      Path: Default Work Unit\Slider_Volumes\Amb
+    - name: Autres
+      guid: 6ce7261ca94eca4e92bab8cf303ce893
+      id: 4144360873
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Slider_Volumes
+        ObjectType: 4
+      - ElementName: Autres
+        ObjectType: 13
+      Path: Default Work Unit\Slider_Volumes\Autres
+    - name: Drums
+      guid: 13518a59e32202429ea212c4a469efce
+      id: 2726606664
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Slider_Volumes
+        ObjectType: 4
+      - ElementName: Drums
+        ObjectType: 13
+      Path: Default Work Unit\Slider_Volumes\Drums
     - name: Kick_Meter
       guid: 58530fa645fa094d8f3840b80c0b22f9
       id: 1313634581
@@ -619,6 +707,17 @@ MonoBehaviour:
       - ElementName: Kick_Meter
         ObjectType: 13
       Path: Default Work Unit\Wwise_Meters\Kick_Meter
+    - name: Master
+      guid: 98b5731d7e5eee43b1f334e9da3147f9
+      id: 4056684167
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Slider_Volumes
+        ObjectType: 4
+      - ElementName: Master
+        ObjectType: 13
+      Path: Default Work Unit\Slider_Volumes\Master
     - name: Piano_Vintage_Meter
       guid: d448187836f17243bb2d42b1b1b9f184
       id: 926458545
@@ -923,7 +1022,9 @@ MonoBehaviour:
   - /ACalmWorld_WwiseProject
   - /ACalmWorld_WwiseProject/Events
   - /ACalmWorld_WwiseProject/Events/Musique
+  - /ACalmWorld_WwiseProject/Events/Musique/Musique_01_V1
+  - /ACalmWorld_WwiseProject/Events/Musique/Musique_01_V1/Mute
   - /ACalmWorld_WwiseProject/Events/Musique/Musique_02
-  - /ACalmWorld_WwiseProject/Events/Musique/Musique_02/Play_Innit
+  - /ACalmWorld_WwiseProject/Events/Musique/Musique_02/Ambiances
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
