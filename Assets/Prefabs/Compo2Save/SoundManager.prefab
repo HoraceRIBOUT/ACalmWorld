@@ -48,15 +48,15 @@ MonoBehaviour:
   startEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3f50841bd2cd6409980d730dd976b070,
+    WwiseObjectReference: {fileID: 11400000, guid: 43b24be8e5aec465c98a38eba610ad7e,
       type: 2}
   glitchAppearEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9be0ffa20e65c324f9cfd4fd03964e47,
+    WwiseObjectReference: {fileID: 11400000, guid: 43b24be8e5aec465c98a38eba610ad7e,
       type: 2}
   listInstru:
-  - id: Cosmonaut
+  - id: NO LINK TO GAME OBJECT
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: 0
-  - id: Oni
+  - id: NO LINK TO GAME OBJECT
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: 0
-  - id: InformationSpot
+  - id: NO LINK TO GAME OBJECT
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
     on: 0
     currentState: 0
     rtpcValue: 0
-  - id: Trees
+  - id: NO LINK TO GAME OBJECT
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -215,7 +215,8 @@ MonoBehaviour:
   firstClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 3f50841bd2cd6409980d730dd976b070,
+      type: 2}
   transitionInstrument: {fileID: 0}
   combiForTransition:
     onPlay: 0
@@ -248,17 +249,10 @@ MonoBehaviour:
   regularBeatEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9b65bfa7e272cd44185dd35a4dc20779,
+    WwiseObjectReference: {fileID: 11400000, guid: 47c706553bab9453a86d61735719baeb,
       type: 2}
-  averageDelayBetweenEvent: 4
-  possibleOffset: {x: -2, y: 2}
-  regularBeatEvent2:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9996f4475badf3647be4ee0b7c6bdbeb,
-      type: 2}
-  averageDelayBetweenEvent2: 4
-  possibleOffset2: {x: -2, y: 2}
+  averageDelayBetweenEvent: 8
+  possibleOffset: {x: -2, y: 4}
   bankToLoad:
     idInternal: 0
     valueGuidInternal: 
