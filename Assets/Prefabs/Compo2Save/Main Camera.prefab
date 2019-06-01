@@ -318,7 +318,7 @@ MonoBehaviour:
     blurBlueIntensity: 0
     tint: {r: 1, g: 1, b: 1, a: 0}
     decalageBleu: {x: 0.003, y: 0.001, z: 0, w: 0}
-    saturation: 1.3
+    saturation: 1.7
     noirEtBlanc: 0
     tailleBug: 0.01
     decalageDansLeBug: 0.04
@@ -425,9 +425,9 @@ MonoBehaviour:
   speed: 0.1
   animationMaxWeight: 0.3
   nextScene: 0
-  transitionOnDuration: 1
+  transitionOnDuration: 2.5
   transitionOnSlowMo: 1
-  transitionRecDuration: 2
+  transitionRecDuration: 3
   timerAtBeginning: -2
   allVisualInteractibleObject:
   - {fileID: 0}

@@ -114,12 +114,6 @@ MonoBehaviour:
       groupGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: a46baf4bce2369c449632f7a05308271,
         type: 2}
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: dca4ddb88352fb642b2882cc38e61f49,
-        type: 2}
     rtpcId:
       idInternal: 0
       valueGuidInternal: 
@@ -129,33 +123,6 @@ MonoBehaviour:
     currentState: 0
     rtpcValue: 0
   - id: InformationSpot
-    gameObjectOfTheInstrument: {fileID: 0}
-    nameEventUnMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: e6f8aa199b6944fb0a2f07744cfe1059,
-        type: 2}
-    nameEventMute:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: debf0d5d61da44e629e2ebdb040cd0fa,
-        type: 2}
-    switches:
-    - idInternal: 0
-      valueGuidInternal: 
-      groupIdInternal: 0
-      groupGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 9f2e292362672457eb5b8f7378a6c0a0,
-        type: 2}
-    rtpcId:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 4a7b3c4b3dd35274390c96a09740f2ce,
-        type: 2}
-    on: 0
-    currentState: 0
-    rtpcValue: 0
-  - id: Trees
     gameObjectOfTheInstrument: {fileID: 0}
     nameEventUnMute:
       idInternal: 0
@@ -174,10 +141,55 @@ MonoBehaviour:
       groupGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 1aee03f9205154c8f98b7c11becee102,
         type: 2}
+    - idInternal: 0
+      valueGuidInternal: 
+      groupIdInternal: 0
+      groupGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 753b461ad79da493398af23f926889c8,
+        type: 2}
     rtpcId:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 972887e476843da45bf96efc1dd6dc20,
+        type: 2}
+    on: 0
+    currentState: 0
+    rtpcValue: 0
+  - id: Trees
+    gameObjectOfTheInstrument: {fileID: 0}
+    nameEventUnMute:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: e6f8aa199b6944fb0a2f07744cfe1059,
+        type: 2}
+    nameEventMute:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: debf0d5d61da44e629e2ebdb040cd0fa,
+        type: 2}
+    switches:
+    - idInternal: 0
+      valueGuidInternal: 
+      groupIdInternal: 0
+      groupGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 9f2e292362672457eb5b8f7378a6c0a0,
+        type: 2}
+    - idInternal: 0
+      valueGuidInternal: 
+      groupIdInternal: 0
+      groupGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: eaa208897fcc748e2a1330847e23e957,
+        type: 2}
+    - idInternal: 0
+      valueGuidInternal: 
+      groupIdInternal: 0
+      groupGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 4022e3c50b7de4cc88d356d465af987a,
+        type: 2}
+    rtpcId:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 4a7b3c4b3dd35274390c96a09740f2ce,
         type: 2}
     on: 0
     currentState: 0
