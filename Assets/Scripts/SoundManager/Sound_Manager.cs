@@ -162,7 +162,7 @@ public class Sound_Manager : MonoBehaviour
 
         AkSoundEngine.PostEvent(startEvent.Id, instance.gameObject);
 
-        //startEvent.Post(this.gameObject, (uint)callBackToSeek, CallBackFunction);
+        startEvent.Post(this.gameObject, (uint)callBackToSeek, CallBackFunction);
 
         for (int i = 0; i < listInstru.Count; i++)
         {
@@ -172,7 +172,50 @@ public class Sound_Manager : MonoBehaviour
 
     private bool callBackDone = false;
 
-    
+    void CallBackFunction(object baseObject, AkCallbackType type, object info)
+    {
+        if (!callBackDone)
+        {
+            callBackDone = true;
+            //Verif
+            VoiceCombinaisonVerification();
+            ////Glitch in rythm
+            //GameManager.instance.shaderHandler.OnEachBar();
+
+            if(autoPlaying)
+                autoPlay.BarCall(listInstru, numberInstruOn);
+
+            if(GameManager.instance.transitionOnSlowMo == 1)
+                Invoke("CallBackUnDone", 0.1f);
+
+
+            if(averageDelayBetweenEvent == currentBeat )
+            {
+                currentBeat = 0;
+                nextBeat = averageDelayBetweenEvent + Random.Range((int)possibleOffset.x, (int)possibleOffset.y);
+                if(regularBeatEvent.IsValid())
+                    AkSoundEngine.PostEvent(regularBeatEvent.Id, gameObject);
+            }
+            else
+            {
+                currentBeat++;
+            }
+
+            //2
+            if (averageDelayBetweenEvent2 == currentBeat2)
+            {
+                currentBeat2 = 0;
+                nextBeat2 = averageDelayBetweenEvent2 + Random.Range((int)possibleOffset2.x, (int)possibleOffset2.y);
+                if (regularBeatEvent2.IsValid())
+                    AkSoundEngine.PostEvent(regularBeatEvent2.Id, gameObject);
+            }
+            else
+            {
+                currentBeat2++;
+            }
+
+        }
+    }
 
     void CallBackUnDone()
     {
@@ -257,7 +300,6 @@ public class Sound_Manager : MonoBehaviour
             firstClick = false;
             if (firstClickEvent.IsValid())
             {
-		Debug.Log("Hello i first click");
                 AkSoundEngine.PostEvent(firstClickEvent.Id, gameObject);
             }
             if(bankToUnload != null)
@@ -267,7 +309,6 @@ public class Sound_Manager : MonoBehaviour
                 Debug.Log("Unload !" + eResult.ToString());
             }
         }
-
         AkSoundEngine.PostEvent(getData(indexForSoundManager).nameEventUnMute.Id, gameObject);
 
         //Part for the prog
@@ -297,8 +338,6 @@ public class Sound_Manager : MonoBehaviour
     public void Switch(int instrumentIndexForSoundManager, int variationIndex)
     {
         InstruData instruData = getData(instrumentIndexForSoundManager);
-
-		Debug.Log("Hello i switch");
         AkSoundEngine.SetSwitch(instruData.switches[variationIndex].GroupId, instruData.switches[variationIndex].Id, gameObject);
         instruData.currentState = variationIndex + 1;
 
