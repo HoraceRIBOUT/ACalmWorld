@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 0ff6def33c40d34caed71a7661ebbde4
     GuidInternal: 
-    m_lastTime: -8586423023262419380
+    m_lastTime: -8586420354611223116
     List:
     - name: Rvrb
       guid: 4112f93d3a68af4a8cef13698afbbb57
@@ -42,7 +42,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2dbab81db74f9c47b960c9262200ba39
     GuidInternal: 
-    m_lastTime: -8586423023260375543
+    m_lastTime: -8586420577466158877
     List:
     - name: Menu
       guid: 64a99a69f942b948ba4efb44c5701b21
@@ -82,7 +82,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8b3b7fd60fe434469f67fb15c866b032
     GuidInternal: 
-    m_lastTime: -8586422029198292569
+    m_lastTime: -8586420577466348367
     List:
     - name: Mute_ACW_Lofi_Musique_Percus_01_Lp
       guid: 35403a9dbef26746833ef0121cea4cc5
@@ -298,13 +298,9 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Musique
         ObjectType: 12
-      - ElementName: Musique_01_V1
-        ObjectType: 4
-      - ElementName: Play_Innit
-        ObjectType: 4
       - ElementName: Play_ACW_Noise_Lp
         ObjectType: 3
-      Path: Musique\Musique_01_V1\Play_Innit\Play_ACW_Noise_Lp
+      Path: Musique\Play_ACW_Noise_Lp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0

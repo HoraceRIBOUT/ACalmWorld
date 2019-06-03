@@ -4,80 +4,195 @@ using UnityEngine;
 
 public class AutoPlay : MonoBehaviour
 {
-    public int offsetBeatweenChange = 2;
+    ///TRUE REAL AUTO PLAY FOR COMPO1
+    [Header("Here start the real deal")]
+    public int[] numberOfBarBeforeNext = new int[5];
+    public int[] nextVarToPush = new int[5];
+
+    public List<int> instrumentOff = new List<int>();
+
+    private int lastIndexMelody = -1;
+
+    public enum TypeInst
+    {
+        melody,
+        drums,
+        bass,
+    }
+
+    [System.Serializable]
+    public class BehaviourInstrInAutoPlay
+    {
+        public List<int> durationOn = new List<int>();
+        public List<int> durationOff = new List<int>();
+        public TypeInst type = TypeInst.melody;
+
+        public int intForThisOne = -1;
+    }
+    [Header("Behaviour")]
+    [SerializeField]
+    public List<BehaviourInstrInAutoPlay> behaviourForEach = new List<BehaviourInstrInAutoPlay>();
+
+    private int indexOfDrums = 4;
+    private int indexOfBass = 2;
+
+    [Header("Melody random")]
+    public int offsetBeatweenChange = 4;
     public Vector2 randomMargeValue = Vector2.one;
     private int currentBeatWait = 0;
 
-    //swap
-    private bool haveSwap = false;
 
+    private List<MainInstrument> mIForEach = new List<MainInstrument>();
 
+    public void Init(List<Sound_Manager.InstruData> instruDatas)
+    {
+        int numberInstr = instruDatas.Count;
+        //init list and array
+        mIForEach = new List<MainInstrument>();
+        numberOfBarBeforeNext = new int[numberInstr];
+        nextVarToPush = new int[numberInstr];
+
+        //a little loop
+        for (int i = 0; i < numberInstr; i++)
+        {
+            instrumentOff.Add(i);
+            mIForEach.Add(instruDatas[i].gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>());
+
+            //search wich one is drums
+            if (behaviourForEach[i].type == TypeInst.drums)
+                indexOfDrums = i;
+            //search wich one is bass
+            if (behaviourForEach[i].type == TypeInst.bass)
+                indexOfDrums = i;
+        }
+    }
 
     public void BarCall(List<Sound_Manager.InstruData> instruDatas, int numberInstruOn)
     {
-        if (GameManager.instance.onTransition || GameManager.instance.transitionOnSlowMo != 1)
-            return;
+        if(instrumentOff.Count == instruDatas.Count)
+        {
+            //Consequence : start
+            StartFromZero(instruDatas);
+        }
+        else
+        {
+            for (int index = 0; index < numberOfBarBeforeNext.Length; index++)
+            {
+                if (numberOfBarBeforeNext[index] > 0)
+                {
+                    numberOfBarBeforeNext[index]--;
+                    if (numberOfBarBeforeNext[index] == 0)
+                    {
+                        Consequence(instruDatas, index);
+                    }
+                    //else : wait till consequence
+                }
+            }
+        }
 
         currentBeatWait++;
-        if(currentBeatWait >= offsetBeatweenChange)
+        if (currentBeatWait >= offsetBeatweenChange)
         {
-            if (numberInstruOn == 3 && !haveSwap)
-            {
-                SwapRandomInstr(instruDatas);
-                haveSwap = true;
-            }
-            else
-            {
-                ChangeRandomInstr(instruDatas, numberInstruOn);
-                haveSwap = false;
-            }
-
+            RandomLaunchForMelody(instruDatas, 1);
             currentBeatWait = Random.Range((int)randomMargeValue.x, (int)randomMargeValue.y);
         }
+        
+    }
+
+    private void StartFromZero(List<Sound_Manager.InstruData> instruDatas)
+    {
+        //TO DO : launch drum. In 2 , launch bass. Random : 4 or 6 --> one of the melody, with a random variation
+
+        //For Drums 
+        ChangeInstr(instruDatas, indexOfDrums, GetAVarButNotTheCurrent(instruDatas, indexOfDrums));
+        numberOfBarBeforeNext[indexOfDrums] = 8;
+        nextVarToPush[indexOfDrums] = GetAVarButNotTheCurrent(instruDatas, indexOfDrums);
+        instrumentOff.RemoveAt(indexOfDrums);
+
+        //For Bass
+        numberOfBarBeforeNext[indexOfBass] = 2;
+        nextVarToPush[indexOfBass] = GetAVarButNotTheCurrent(instruDatas, indexOfBass);
+        instrumentOff.RemoveAt(indexOfBass);
+
+        //For the melody ?
+        //Codee en dur TO DO : re utilise, factorise
+        RandomLaunchForMelody(instruDatas, 4);
 
     }
 
-    private void SwapRandomInstr(List<Sound_Manager.InstruData> listInstrData)
+    private int GetAVarButNotTheCurrent(List<Sound_Manager.InstruData> instruDatas, int indexOfInstr)
     {
-
-
-        int offInstr = Random.Range(0, listInstrData.Count);
-        for (int i = 0; i < listInstrData.Count; i++)
+        int randomNumber = Random.Range(1, instruDatas[indexOfInstr].switches.Count);
+        if(randomNumber == instruDatas[indexOfInstr].currentState)
         {
-            if (!listInstrData[offInstr].on)
+            randomNumber++;
+            if (randomNumber == instruDatas[indexOfInstr].switches.Count)
+                randomNumber = 1;
+        }
+        return randomNumber;
+    }
+
+    private void Consequence(List<Sound_Manager.InstruData> listInstrData, int indexOfTheInstr)
+    {
+        if (behaviourForEach[indexOfTheInstr].type == TypeInst.drums)
+        {
+            ChangeInstr(listInstrData, indexOfTheInstr, nextVarToPush[indexOfTheInstr]);
+            numberOfBarBeforeNext[indexOfTheInstr] = behaviourForEach[indexOfTheInstr].durationOn[0];
+            nextVarToPush[indexOfTheInstr] = GetAVarButNotTheCurrent(listInstrData, indexOfTheInstr);
+        }
+        else if (behaviourForEach[indexOfTheInstr].type == TypeInst.bass)
+        {
+            ChangeInstr(listInstrData, indexOfTheInstr, nextVarToPush[indexOfTheInstr]);
+            numberOfBarBeforeNext[indexOfTheInstr] = behaviourForEach[indexOfTheInstr].durationOn[0];
+            nextVarToPush[indexOfTheInstr] = GetAVarButNotTheCurrent(listInstrData, indexOfTheInstr);
+        }
+        else //so melody
+        {
+            if(nextVarToPush[indexOfTheInstr] == 0)
             {
-                offInstr++;
-                if (offInstr >= listInstrData.Count)
-                    offInstr = 0;
+                ChangeInstr(listInstrData, indexOfTheInstr, nextVarToPush[indexOfTheInstr]/*So , zero*/);
+                nextVarToPush[indexOfTheInstr] = -1;
+                instrumentOff.Add(indexOfTheInstr);
             }
             else
             {
-                i = listInstrData.Count + 1;
+                ChangeInstr(listInstrData, indexOfTheInstr, nextVarToPush[indexOfTheInstr]);
+                if (Random.Range(-1.0f, 1.0f) > 0)
+                {
+                    //Next is Stop
+                    nextVarToPush[indexOfTheInstr] = 0;
+                    numberOfBarBeforeNext[indexOfTheInstr] = behaviourForEach[indexOfTheInstr].durationOn[behaviourForEach[indexOfTheInstr].intForThisOne];
+                }
+                else
+                {
+                    //Next is still playing but not the same
+                    nextVarToPush[indexOfTheInstr] = GetAVarButNotTheCurrent(listInstrData, indexOfTheInstr);
+                    numberOfBarBeforeNext[indexOfTheInstr] = behaviourForEach[indexOfTheInstr].durationOn[behaviourForEach[indexOfTheInstr].intForThisOne];
+                }
             }
         }
+    }
 
-        int onInstr = Random.Range(0, listInstrData.Count);
-        for (int i = 0; i < listInstrData.Count; i++)
+    private void RandomLaunchForMelody(List<Sound_Manager.InstruData> instruDatas, int delay)
+    {
+        //Yep, complexe 
+        int indexInInstrOff = Random.Range(0, instrumentOff.Count);
+        if (lastIndexMelody == instrumentOff[indexInInstrOff])
+            indexInInstrOff = Random.Range(0, instrumentOff.Count);
+
+        int indexOfAnInactiveInstr = instrumentOff[indexInInstrOff];
+
+        if (behaviourForEach[indexOfAnInactiveInstr].intForThisOne == -1)
         {
-            if(onInstr == offInstr || listInstrData[offInstr].on)
-            {
-                onInstr++;
-                if (onInstr >= listInstrData.Count)
-                    onInstr = 0;
-            }
-            else
-            {
-                i = listInstrData.Count + 1;
-            }
+            int lenght = behaviourForEach[indexOfAnInactiveInstr].durationOn.Count;
+            behaviourForEach[indexOfAnInactiveInstr].intForThisOne = (lenght == 1 ? 0 : Random.Range(0, lenght));
         }
 
-        //            if all instr turn on, stop one (randVar = 0) else, random.   if none instr on, no turn off.                                       + 1 because 0 == off 
-        int randVar = Random.Range(1, listInstrData[onInstr].switches.Count + 1);
+        numberOfBarBeforeNext[indexOfAnInactiveInstr] = delay;
+        nextVarToPush[indexOfAnInactiveInstr] = GetAVarButNotTheCurrent(instruDatas, indexOfAnInactiveInstr);
+        instrumentOff.RemoveAt(indexInInstrOff);
 
-
-        ChangeInstr(listInstrData, offInstr, 0);
-        ChangeInstr(listInstrData, onInstr, randVar);
-        //else : already in that state. 
+        lastIndexMelody = indexInInstrOff;
     }
 
     private void ChangeRandomInstr(List<Sound_Manager.InstruData> listInstrData, int numberInstruOn)
@@ -107,7 +222,7 @@ public class AutoPlay : MonoBehaviour
                 instruData.currentState = indexVariation; //so == 0
                 Sound_Manager.instance.Mute(indexInstrument);
             }
-            //else : Do  nothing
+            //else : Do  nothing : it's already off.
         }
         else
         {
@@ -118,11 +233,11 @@ public class AutoPlay : MonoBehaviour
                 Sound_Manager.instance.UnMute(indexInstrument);
             }
             instruData.currentState = indexVariation;
+
             //switch to the right height
             Sound_Manager.instance.Switch(indexInstrument, indexVariation - 1);
         }
-        //ok, I SERIOUSLY need to optimize that
-        instruData.gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().ChangeOnSwitch();
+        mIForEach[indexInstrument].ChangeOnSwitch();
     }
 
 

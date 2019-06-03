@@ -168,6 +168,9 @@ public class Sound_Manager : MonoBehaviour
         {
             listInstru[i].gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().indexForSoundManager = i;
         }
+
+
+        autoPlay.Init(listInstru);
     }
 
     private bool callBackDone = false;
