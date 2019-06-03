@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AutoPlay : MonoBehaviour
 {
+    //Ouhla que c'est moche ! Pitie, je garde pas ça au soutenance !
+    public bool compo2 = false;
+
     ///TRUE REAL AUTO PLAY FOR COMPO1
     [Header("Here start the real deal")]
     public int[] numberOfBarBeforeNext = new int[5];
@@ -93,7 +96,15 @@ public class AutoPlay : MonoBehaviour
         currentBeatWait++;
         if (currentBeatWait >= offsetBeatweenChange)
         {
-            RandomLaunchForMelody(instruDatas, 1);
+            if (compo2)
+            {
+                Debug.Log("Call at random bar");
+                ChangeRandomInstr(instruDatas, (instrumentOff.Count < 2));
+            }
+            else
+            {
+                RandomLaunchForMelody(instruDatas, 1);
+            }
             currentBeatWait = Random.Range((int)randomMargeValue.x, (int)randomMargeValue.y);
         }
         
@@ -107,12 +118,12 @@ public class AutoPlay : MonoBehaviour
         ChangeInstr(instruDatas, indexOfDrums, GetAVarButNotTheCurrent(instruDatas, indexOfDrums));
         numberOfBarBeforeNext[indexOfDrums] = 8;
         nextVarToPush[indexOfDrums] = GetAVarButNotTheCurrent(instruDatas, indexOfDrums);
-        instrumentOff.RemoveAt(indexOfDrums);
+        instrumentOff.Remove(indexOfDrums);
 
         //For Bass
         numberOfBarBeforeNext[indexOfBass] = 2;
         nextVarToPush[indexOfBass] = GetAVarButNotTheCurrent(instruDatas, indexOfBass);
-        instrumentOff.RemoveAt(indexOfBass);
+        instrumentOff.Remove(indexOfBass);
 
         //For the melody ?
         //Codee en dur TO DO : re utilise, factorise
@@ -126,7 +137,7 @@ public class AutoPlay : MonoBehaviour
         if(randomNumber == instruDatas[indexOfInstr].currentState)
         {
             randomNumber++;
-            if (randomNumber == instruDatas[indexOfInstr].switches.Count)
+            if (randomNumber == instruDatas[indexOfInstr].switches.Count + 1)
                 randomNumber = 1;
         }
         return randomNumber;
@@ -148,7 +159,7 @@ public class AutoPlay : MonoBehaviour
         }
         else //so melody
         {
-            if(nextVarToPush[indexOfTheInstr] == 0)
+            if(nextVarToPush[indexOfTheInstr] == 0 && !compo2)
             {
                 ChangeInstr(listInstrData, indexOfTheInstr, nextVarToPush[indexOfTheInstr]/*So , zero*/);
                 nextVarToPush[indexOfTheInstr] = -1;
@@ -190,17 +201,16 @@ public class AutoPlay : MonoBehaviour
 
         numberOfBarBeforeNext[indexOfAnInactiveInstr] = delay;
         nextVarToPush[indexOfAnInactiveInstr] = GetAVarButNotTheCurrent(instruDatas, indexOfAnInactiveInstr);
-        instrumentOff.RemoveAt(indexInInstrOff);
+        instrumentOff.Remove(indexOfAnInactiveInstr);
 
         lastIndexMelody = indexInInstrOff;
     }
 
-    private void ChangeRandomInstr(List<Sound_Manager.InstruData> listInstrData, int numberInstruOn)
+    private void ChangeRandomInstr(List<Sound_Manager.InstruData> listInstrData, bool canStop)
     {
         int randInstr = Random.Range(0, listInstrData.Count);
 
-        //            if all instr turn on, stop one (randVar = 0) else, random.   if none instr on, no turn off.                                       + 1 because 0 == off 
-        int randVar = (numberInstruOn == listInstrData.Count) ? 0 : Random.Range(numberInstruOn <= 1 ? 1 : 0, listInstrData[randInstr].switches.Count + 1);
+        int randVar = Random.Range(canStop ? 0 : 1, listInstrData[randInstr].switches.Count + 1);
         
         if(listInstrData[randInstr].currentState != randVar)
             ChangeInstr(listInstrData, randInstr, randVar);

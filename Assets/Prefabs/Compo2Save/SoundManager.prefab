@@ -312,5 +312,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e524fdafa516334cbd4dd3d0fcee9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetBeatweenChange: 1
-  randomMargeValue: {x: 0, y: 0}
+  compo2: 1
+  numberOfBarBeforeNext: 00000000000000000000000000000000
+  nextVarToPush: 00000000000000000000000000000000
+  instrumentOff: 
+  behaviourForEach:
+  - durationOn: 0f000000
+    durationOff: 01000000
+    type: 1
+    intForThisOne: 0
+  - durationOn: 0c000000
+    durationOff: 08000000
+    type: 2
+    intForThisOne: 0
+  - durationOn: 0c000000
+    durationOff: 08000000
+    type: 0
+    intForThisOne: 0
+  - durationOn: 0c000000
+    durationOff: 08000000
+    type: 0
+    intForThisOne: 0
+  offsetBeatweenChange: 8
+  randomMargeValue: {x: -4, y: 4}
