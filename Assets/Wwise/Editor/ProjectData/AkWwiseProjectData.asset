@@ -1032,5 +1032,10 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /ACalmWorld_WwiseProject
+  - /ACalmWorld_WwiseProject/Events
+  - /ACalmWorld_WwiseProject/Events/Musique
+  - /ACalmWorld_WwiseProject/Events/Musique/Musique_01_V1
+  - /ACalmWorld_WwiseProject/Events/Musique/Musique_01_V1/Mute
+  - /ACalmWorld_WwiseProject/Events/Musique/Musique_01_V1/Play_Innit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
