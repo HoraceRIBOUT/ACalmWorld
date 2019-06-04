@@ -27,6 +27,8 @@ public class MenuController : MonoBehaviour
     private float heightScreenRatio;
     private float widthScreenRatio;
 
+    public List<SliderController> listSlider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,11 @@ public class MenuController : MonoBehaviour
         ChangeYesNo();
         widthScreenRatio = 1920f / Camera.main.pixelWidth;
         heightScreenRatio = 1080f / Camera.main.pixelHeight;
+
+        foreach (SliderController sliderCon in listSlider)
+        {
+            AkSoundEngine.SetRTPCValue(sliderCon.rtpcId.Id, PlayerPrefs.GetInt(sliderCon.namePlayerPrefs) * 10);
+        }
     }
 
     public void OnPushOption()
