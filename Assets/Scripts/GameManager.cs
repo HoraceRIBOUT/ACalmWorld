@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
 #endif
 
         //for Stand
-        if (!snd_mng.transitionInstrument.activeSelf && Time.timeSinceLevelLoad > 300)
+        if (!snd_mng.transitionInstrument.activeSelf && Time.timeSinceLevelLoad - Sound_Manager.instance.lastTransitionTime > 300 )
         {
             snd_mng.ActivateTransitionInstru();
         }
