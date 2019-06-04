@@ -35,7 +35,8 @@ public class ColorChange : Change
     
     public void ChangeOnUpdate()
     {
-        ChangeColor(debug ? (mainInstrument.instruData.currentState != 0 ? 0 : -48) : mainInstrument.instruData.rtpcValue);
+        if(mainInstrument.instruData.on)
+            ChangeColor(debug ? (mainInstrument.instruData.currentState != 0 ? 0 : -48) : mainInstrument.instruData.rtpcValue);
     }
 
     public void ChangeColor(float rtpcValue)

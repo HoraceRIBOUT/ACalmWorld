@@ -359,6 +359,7 @@ MonoBehaviour:
       type: 2}
   autoPlaying: 0
   autoPlay: {fileID: 1942660616}
+  lastTransitionTime: 0
 --- !u!114 &2301719244556836651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,11 +394,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e524fdafa516334cbd4dd3d0fcee9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compo2: 0
+  timeToChangeCompo: 600
   numberOfBarBeforeNext: ffffffffffffffffffffffffffffffffffffffff
   nextVarToPush: ffffffffffffffffffffffffffffffffffffffff
   instrumentOff: 
   behaviourForEach:
-  - durationOn: 02000000
+  - durationOn: 04000000
     durationOff: 02000000
     type: 0
     intForThisOne: -1

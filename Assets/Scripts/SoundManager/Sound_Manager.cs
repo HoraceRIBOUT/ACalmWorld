@@ -135,6 +135,7 @@ public class Sound_Manager : MonoBehaviour
             instance.Unload();
             //not anymore !
             autoPlaying = instance.autoPlaying;
+            lastTransitionTime = instance.lastTransitionTime;
             GameManager.instance.UpdateAutoPlayButton(false);
 
             AwakeCall();
@@ -372,10 +373,15 @@ public class Sound_Manager : MonoBehaviour
         transitionInstrument.SetActive(true);
     }
 
+    public float lastTransitionTime = 0;
+
     public void LaunchTransition()
     {
-        //deactivate other instr 
-        foreach(InstruData instr in listInstru)
+        lastTransitionTime = Time.time;
+
+        onTransition = true;
+        //deactivate other instr click
+        foreach (InstruData instr in listInstru)
         {
             instr.gameObjectOfTheInstrument.GetComponentInChildren<MainInstrument>().active = false;
             //deactivate all instr 
@@ -383,7 +389,6 @@ public class Sound_Manager : MonoBehaviour
         if(startTransition.IsValid())
             AkSoundEngine.PostEvent(startTransition.Id, gameObject);
 
-        onTransition = true;
         GameManager.instance.shaderHandler.lerpForTarget[GameManager.instance.shaderHandler.lerpForTarget.Count - 1] = ((float)listInstru.Count - numberInstruOn) / (float)listInstru.Count;
         GameManager.instance.LaunchTransition();
     }

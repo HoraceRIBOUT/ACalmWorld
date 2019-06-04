@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             Physics.autoSimulation = false;
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
         }
         else
         {

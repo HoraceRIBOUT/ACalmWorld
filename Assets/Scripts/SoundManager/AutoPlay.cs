@@ -9,6 +9,7 @@ public class AutoPlay : MonoBehaviour
 
     ///TRUE REAL AUTO PLAY FOR COMPO1
     [Header("Here start the real deal")]
+    public float timeToChangeCompo = 600;
     public int[] numberOfBarBeforeNext = new int[5];
     public int[] nextVarToPush = new int[5];
 
@@ -72,6 +73,10 @@ public class AutoPlay : MonoBehaviour
 
     public void BarCall(List<Sound_Manager.InstruData> instruDatas, int numberInstruOn)
     {
+        if (GameManager.instance.transitionOnSlowMo != 1 || GameManager.instance.timerAtBeginning < 1) //no launch when in trnasition
+            return;
+
+        
         if(instrumentOff.Count == instruDatas.Count)
         {
             //Consequence : start
@@ -107,7 +112,14 @@ public class AutoPlay : MonoBehaviour
             }
             currentBeatWait = Random.Range((int)randomMargeValue.x, (int)randomMargeValue.y);
         }
-        
+
+        Debug.Log("Time.time - Sound_Manager.instance.lastTransitionTime " + (Time.time - Sound_Manager.instance.lastTransitionTime) + " vs " + timeToChangeCompo);
+
+        if (Time.time - Sound_Manager.instance.lastTransitionTime > timeToChangeCompo && !Sound_Manager.instance.onTransition)
+        {
+            Debug.Log("Transition from autoPlay");
+            Sound_Manager.instance.LaunchTransition();
+        }
     }
 
     private void StartFromZero(List<Sound_Manager.InstruData> instruDatas)

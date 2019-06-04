@@ -278,6 +278,7 @@ MonoBehaviour:
       type: 2}
   autoPlaying: 0
   autoPlay: {fileID: 799289535}
+  lastTransitionTime: 0
 --- !u!114 &8237344637757833358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   compo2: 1
+  timeToChangeCompo: 600
   numberOfBarBeforeNext: 00000000000000000000000000000000
   nextVarToPush: 00000000000000000000000000000000
   instrumentOff: 
