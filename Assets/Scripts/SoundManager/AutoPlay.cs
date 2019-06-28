@@ -76,8 +76,8 @@ public class AutoPlay : MonoBehaviour
         if (GameManager.instance.transitionOnSlowMo != 1 || GameManager.instance.timerAtBeginning < 1) //no launch when in trnasition
             return;
 
-        
-        if(instrumentOff.Count == instruDatas.Count)
+
+        if (instrumentOff.Count == instruDatas.Count)
         {
             //Consequence : start
             StartFromZero(instruDatas);
@@ -113,7 +113,7 @@ public class AutoPlay : MonoBehaviour
             currentBeatWait = Random.Range((int)randomMargeValue.x, (int)randomMargeValue.y);
         }
 
-        Debug.Log("Time.time - Sound_Manager.instance.lastTransitionTime " + (Time.time - Sound_Manager.instance.lastTransitionTime) + " vs " + timeToChangeCompo);
+        //Debug.Log("Time.time - Sound_Manager.instance.lastTransitionTime " + (Time.time - Sound_Manager.instance.lastTransitionTime) + " vs " + timeToChangeCompo);
 
         if (Time.time - Sound_Manager.instance.lastTransitionTime > timeToChangeCompo && !Sound_Manager.instance.onTransition)
         {
@@ -143,14 +143,15 @@ public class AutoPlay : MonoBehaviour
 
     }
 
-    private int GetAVarButNotTheCurrent(List<Sound_Manager.InstruData> instruDatas, int indexOfInstr)
+    private int GetAVarButNotTheCurrent(List<Sound_Manager.InstruData> instruDatas, int indexOfInstr, bool canStop = false)
     {
-        int randomNumber = Random.Range(1, instruDatas[indexOfInstr].switches.Count);
-        if(randomNumber == instruDatas[indexOfInstr].currentState)
+        int randomNumber = Random.Range(canStop ? 0 : 1, instruDatas[indexOfInstr].switches.Count + 1);
+        if (randomNumber == instruDatas[indexOfInstr].currentState)
         {
+            //Debug.LogError("Eh yep, random same +"+ randomNumber +" and "+ instruDatas[indexOfInstr].currentState + " from instr " + instruDatas[indexOfInstr].gameObjectOfTheInstrument.name);
             randomNumber++;
             if (randomNumber == instruDatas[indexOfInstr].switches.Count + 1)
-                randomNumber = 1;
+                randomNumber = canStop ? 0 : 1;
         }
         return randomNumber;
     }
@@ -171,7 +172,7 @@ public class AutoPlay : MonoBehaviour
         }
         else //so melody
         {
-            if(nextVarToPush[indexOfTheInstr] == 0 && !compo2)
+            if (nextVarToPush[indexOfTheInstr] == 0 && !compo2)
             {
                 ChangeInstr(listInstrData, indexOfTheInstr, nextVarToPush[indexOfTheInstr]/*So , zero*/);
                 nextVarToPush[indexOfTheInstr] = -1;
@@ -222,9 +223,9 @@ public class AutoPlay : MonoBehaviour
     {
         int randInstr = Random.Range(0, listInstrData.Count);
 
-        int randVar = Random.Range(canStop ? 0 : 1, listInstrData[randInstr].switches.Count + 1);
-        
-        if(listInstrData[randInstr].currentState != randVar)
+        int randVar = GetAVarButNotTheCurrent(listInstrData, randInstr, canStop);
+
+        if (listInstrData[randInstr].currentState != randVar)
             ChangeInstr(listInstrData, randInstr, randVar);
         //else : already in that state. 
     }
@@ -232,10 +233,10 @@ public class AutoPlay : MonoBehaviour
 
     private void ChangeInstr(List<Sound_Manager.InstruData> listInstrData, int indexInstrument, int indexVariation)
     {
-        Debug.Log("Instr = " + indexInstrument + " with var = " + indexVariation + " info : "+ listInstrData[indexInstrument].switches.Count + " and "+ listInstrData[indexInstrument].gameObjectOfTheInstrument.name);
+        Debug.Log("Instr = " + indexInstrument + " with var = " + indexVariation + " info : " + listInstrData[indexInstrument].switches.Count + " and " + listInstrData[indexInstrument].gameObjectOfTheInstrument.name);
         Sound_Manager.InstruData instruData = listInstrData[indexInstrument];
 
-        if(indexVariation == 0)
+        if (indexVariation == 0)
         {
             if (instruData.on)
             {
@@ -260,7 +261,44 @@ public class AutoPlay : MonoBehaviour
             Sound_Manager.instance.Switch(indexInstrument, indexVariation - 1);
         }
         mIForEach[indexInstrument].ChangeOnSwitch();
+
+
+        //Verif if close to voice : 
+        VerificationCloseToVoice(listInstrData);
     }
 
+    public void VerificationCloseToVoice(List<Sound_Manager.InstruData> instruData)
+    {
+        int instrToChange = -1;
+        int varToMake = -1;
+        foreach (Sound_Manager.CombinaisonGagnante combi in Sound_Manager.instance.voiceCombi)
+        {
+            if (!combi.onPlay && instrToChange == -1)
+            {
+                int numberFalse = 0;
+                
+                foreach (Sound_Manager.CombinaisonGagnante.InstruEtNum instState in combi.instruAndStateNeeded)
+                {
+                    if(instruData[(int)instState.instru].currentState != instState.stateNeeded)
+                    {
+                        numberFalse++;
+                        instrToChange = (int)instState.instru;
+                        varToMake = instState.stateNeeded;
+                    }
+                }
+
+                //foreach finish
+                if (numberFalse != 1)
+                {
+                    instrToChange = -1;
+                    varToMake = -1;
+                }
+            }
+        }
+
+        if (instrToChange != -1)
+            ChangeInstr(instruData, instrToChange, varToMake);
+            //switch !
+    }
 
 }
