@@ -43,7 +43,7 @@ public class ColorChange : Change
     {
         float valueZerOne = (rtpcValue + 48) / 48;
 
-        if (GameManager.instance.transitionOnSlowMo != 1)
+        if (GameManager.instance != null && GameManager.instance.transitionOnSlowMo != 1)
         {
             valueZerOne = slowMoRTPCurve.Evaluate(GameManager.instance.transitionOnSlowMo);
         }
@@ -63,4 +63,15 @@ public class ColorChange : Change
             meshRdr.material.color = Color.Lerp(startColor, changeToColor[colState], valueZerOne);
         }
     }
+
+    public int indexForCurrentState = 2;
+
+    [ContextMenu("ChangeColor")]
+    public void ChangeColorDebugMode()
+    {
+        mainInstrument = GetComponentInParent<MainInstrument>();
+        mainInstrument.instruData.currentState = indexForCurrentState;
+        ChangeColor(-8);
+    }
+
 }
