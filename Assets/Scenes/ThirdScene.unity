@@ -527,6 +527,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainInst: {fileID: 0}
+--- !u!84 &76047079
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TextSize242_142
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 242
+  m_Height: 142
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!114 &208090764 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
@@ -1307,6 +1339,7 @@ GameObject:
   - component: {fileID: 1158368464}
   - component: {fileID: 1158368465}
   - component: {fileID: 1158368466}
+  - component: {fileID: 1158368467}
   m_Layer: 0
   m_Name: Eau
   m_TagString: Untagged
@@ -1322,7 +1355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158368462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.082559, y: -5.36, z: 46.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1827504274}
@@ -1429,19 +1462,19 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
-      outSlope: 1
-      tangentMode: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
+      inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -1593,6 +1626,19 @@ MonoBehaviour:
     m_RotationOrder: 4
   debug: 0
   indexForCurrentState: 4
+--- !u!65 &1158368467
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158368462}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100, y: 1, z: 100}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1188673950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,38 +1701,6 @@ Transform:
   m_Father: {fileID: 56219935}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1245439190
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: TextSize257_142
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 257
-  m_Height: 142
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1250039111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,12 +2513,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1517288463}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1517288466 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100244, guid: 63ed25100f7d2694da9bc3c5b28ce3c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1517288463}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1517288469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400244, guid: 63ed25100f7d2694da9bc3c5b28ce3c6,
@@ -2523,38 +2531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e30c9e9d5eb547ba8c786b3c223a553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!84 &1792077798
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: TextSize257_142
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 257
-  m_Height: 142
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1815116164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,7 +2689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827504270}
   m_LocalRotation: {x: -0.008726465, y: 0, z: 0, w: 0.999962}
-  m_LocalPosition: {x: -2.0825586, y: -5.36, z: 46.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 1158368463}
@@ -3059,7 +3035,7 @@ PrefabInstance:
     - target: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: allVisualInteractibleObject.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
@@ -3080,17 +3056,17 @@ PrefabInstance:
         type: 3}
       propertyPath: allVisualInteractibleObject.Array.data[0]
       value: 
-      objectReference: {fileID: 1517288465}
+      objectReference: {fileID: 1827504270}
     - target: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: allVisualInteractibleObject.Array.data[1]
       value: 
-      objectReference: {fileID: 1517288466}
+      objectReference: {fileID: 1842885943}
     - target: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: allVisualInteractibleObject.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1517288465}
     - target: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: allVisualInteractibleObject.Array.data[3]
@@ -3225,7 +3201,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 1792077798}
+      objectReference: {fileID: 76047079}
+    - target: {fileID: 3863417158729669803, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: field of view
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: targetEffect.Array.size
@@ -3594,7 +3575,7 @@ PrefabInstance:
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[0].switches.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
@@ -3698,17 +3679,20 @@ PrefabInstance:
         type: 3}
       propertyPath: listInstru.Array.data[0].nameEventUnMute.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: dbbe2f367c6084353871dc14e13b5567,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[0].nameEventMute.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 4ef707d203f724f1e8d1749cf54dcd7f,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[0].rtpcId.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 972887e476843da45bf96efc1dd6dc20,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[1].nameEventUnMute.WwiseObjectReference
@@ -3764,6 +3748,18 @@ PrefabInstance:
       propertyPath: combiForTransition.instruAndStateNeeded.Array.data[0].instru
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
+        type: 3}
+      propertyPath: listInstru.Array.data[0].switches.Array.data[0].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 1aee03f9205154c8f98b7c11becee102,
+        type: 2}
+    - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
+        type: 3}
+      propertyPath: listInstru.Array.data[0].switches.Array.data[1].WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 753b461ad79da493398af23f926889c8,
+        type: 2}
     - target: {fileID: 8237344639397026891, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: m_LocalPosition.x

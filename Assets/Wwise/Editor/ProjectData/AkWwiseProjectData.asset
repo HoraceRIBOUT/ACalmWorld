@@ -17,14 +17,14 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2c5b7e0f5392624d8fa47ddf70bbb28d
     GuidInternal: 
-    m_lastTime: -8586447109273373844
+    m_lastTime: -8586378209143814622
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 0ff6def33c40d34caed71a7661ebbde4
     GuidInternal: 
-    m_lastTime: -8586420354611223116
+    m_lastTime: -8586378209158640770
     List:
     - name: Rvrb
       guid: 4112f93d3a68af4a8cef13698afbbb57
@@ -42,7 +42,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2dbab81db74f9c47b960c9262200ba39
     GuidInternal: 
-    m_lastTime: -8586420577466158877
+    m_lastTime: -8586378209143920101
     List:
     - name: Menu
       guid: 64a99a69f942b948ba4efb44c5701b21
@@ -76,13 +76,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d462de141e6c514394705aab8fc2359b
     GuidInternal: 
-    m_lastTime: -8586447109278629786
+    m_lastTime: -8586378209158869657
     List: []
   - PhysicalPath: Events\Musique.wwu
     ParentPhysicalPath: 
     guid: 8b3b7fd60fe434469f67fb15c866b032
     GuidInternal: 
-    m_lastTime: -8586420577466348367
+    m_lastTime: -8586378209158790339
     List:
     - name: Mute_ACW_Lofi_Musique_Percus_01_Lp
       guid: 35403a9dbef26746833ef0121cea4cc5
@@ -673,7 +673,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 05c1c6b07a958446a3d6bd4d76f94476
     GuidInternal: 
-    m_lastTime: -8586424719900651689
+    m_lastTime: -8586378209158850184
     List:
     - name: Amb
       guid: 09ec1edef40f39488c644493c982990a
@@ -843,14 +843,14 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 7a2691cf65a679439ca95d450aab9be0
     GuidInternal: 
-    m_lastTime: -8586447109273393790
+    m_lastTime: -8586378209144104547
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 4089d2fa6f52c44eac8a8c9d1394d133
     GuidInternal: 
-    m_lastTime: -8586447109273423708
+    m_lastTime: -8586378209143930416
     List:
     - name: Music1_Drums
       guid: 8a08d38db744734faebdfc84fd9b38c4
@@ -1028,14 +1028,9 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: cfc3182b04a73347a78c464a022294a7
     GuidInternal: 
-    m_lastTime: -8586447109273363868
+    m_lastTime: -8586378209143965412
     List: []
   ExpandedItems:
   - /ACalmWorld_WwiseProject
-  - /ACalmWorld_WwiseProject/Events
-  - /ACalmWorld_WwiseProject/Events/Musique
-  - /ACalmWorld_WwiseProject/Events/Musique/Musique_01_V1
-  - /ACalmWorld_WwiseProject/Events/Musique/Musique_01_V1/Mute
-  - /ACalmWorld_WwiseProject/Events/Musique/Musique_01_V1/Play_Innit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
