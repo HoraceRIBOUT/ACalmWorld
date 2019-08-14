@@ -527,38 +527,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainInst: {fileID: 0}
---- !u!84 &76047079
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: TextSize242_142
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 242
-  m_Height: 142
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!114 &208090764 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
@@ -2272,6 +2240,38 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!84 &1452528961
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TextSize241_142
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 241
+  m_Height: 142
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &1517288463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2834,38 +2834,6 @@ MonoBehaviour:
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!84 &1971887353
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: TextSize257_142
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 257
-  m_Height: 142
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!95 &2082872478 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5301658036047468494, guid: 0c8e2c53d1af9d34ea44e793990091c6,
@@ -3035,7 +3003,7 @@ PrefabInstance:
     - target: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: allVisualInteractibleObject.Array.size
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
@@ -3071,17 +3039,17 @@ PrefabInstance:
         type: 3}
       propertyPath: allVisualInteractibleObject.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 71726178}
     - target: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: allVisualInteractibleObject.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 554043799}
     - target: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: allVisualInteractibleObject.Array.data[5]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 409110463}
     - target: {fileID: 3863417158849205288, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: allVisualInteractibleObject.Array.data[6]
@@ -3201,7 +3169,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 76047079}
+      objectReference: {fileID: 1452528961}
     - target: {fileID: 3863417158729669803, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: field of view
@@ -3210,18 +3178,18 @@ PrefabInstance:
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: targetEffect.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: lerpForTarget.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: texturesGlitch
       value: 
-      objectReference: {fileID: 1971887353}
+      objectReference: {fileID: 1452528961}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: lerpForTarget.Array.data[3]
@@ -3405,12 +3373,12 @@ PrefabInstance:
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: targetEffect.Array.data[1].decalageBleu.y
-      value: 0
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: targetEffect.Array.data[1].saturation
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
@@ -3430,17 +3398,17 @@ PrefabInstance:
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: targetEffect.Array.data[1].tolerance
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: targetEffect.Array.data[1].noiseColor.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: targetEffect.Array.data[1].noiseColor.g
-      value: 1
+      value: 0.8927181
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
@@ -3455,17 +3423,17 @@ PrefabInstance:
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: targetEffect.Array.data[1].tramFrac
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: targetEffect.Array.data[1].tramRythm
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: targetEffect.Array.data[1].tramIntensity
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
@@ -3505,6 +3473,81 @@ PrefabInstance:
     - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
         type: 3}
       propertyPath: targetEffect.Array.data[0].blurBlueIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[1].blurBlueIntensity
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[1].noirEtBlanc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].tint.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].tint.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].decalageBleu.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].noirEtBlanc
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].noiseColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].noiseColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].tramFrac
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].tramRythm
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].tramIntensity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].tramColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].tramColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: lerpForTarget.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863417158849205295, guid: 906b1844acb9d9145b7480cc465ef6d9,
+        type: 3}
+      propertyPath: targetEffect.Array.data[2].blurIntensity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3863417158645850791, guid: 906b1844acb9d9145b7480cc465ef6d9,
@@ -3641,12 +3684,14 @@ PrefabInstance:
         type: 3}
       propertyPath: listInstru.Array.data[4].nameEventUnMute.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: cac8fcbf23c095644b4a9283b921b5dc,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[4].nameEventMute.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 06761a723daf9a145b0bdecbd635fad8,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[4].switches.Array.data[0].WwiseObjectReference
@@ -3669,7 +3714,8 @@ PrefabInstance:
         type: 3}
       propertyPath: listInstru.Array.data[4].rtpcId.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 91b42222e925c3744986813b6af5a2dd,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[0].id
@@ -3697,47 +3743,56 @@ PrefabInstance:
         type: 3}
       propertyPath: listInstru.Array.data[1].nameEventUnMute.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: e6f8aa199b6944fb0a2f07744cfe1059,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[1].nameEventMute.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: debf0d5d61da44e629e2ebdb040cd0fa,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[1].rtpcId.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 4a7b3c4b3dd35274390c96a09740f2ce,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[2].nameEventUnMute.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 8ae2462d26d4a45138d96ec365e4176f,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[2].nameEventMute.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 18e06f7e33960418c864e2093b6474c5,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[2].rtpcId.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: ff71c9c8e75b2c74eadc6971be62c3d5,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[3].nameEventUnMute.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 5aa1d1105ee1e4f90b9b1bcf284a1b04,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[3].nameEventMute.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: d00bd27f0dfcc4051bc9ffea242e7b61,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[3].rtpcId.WwiseObjectReference
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: ae6a503ed47e48c4fa10ab3d2bec1262,
+        type: 2}
     - target: {fileID: 8237344639397026890, guid: df7adbd766a1e4041a5b416a9a243ca2,
         type: 3}
       propertyPath: listInstru.Array.data[4].gameObjectOfTheInstrument
